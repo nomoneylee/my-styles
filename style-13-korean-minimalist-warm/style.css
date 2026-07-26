@@ -566,6 +566,10 @@ body {
   gap: 0.5rem;
   margin-bottom: 1.5rem;
   width: fit-content;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
 }
 
 .kr-tab-btn {
@@ -703,7 +707,17 @@ body {
 }
 
 .kr-table th {
-  background-color: #f7f2eb;
+  background-color: var(--kr-bg-subtle);
   color: var(--kr-color-primary);
   font-weight: 700;
+}
+
+@media (max-width: 576px) {
+  .kr-container { padding: 0 1rem; }
+  .kr-hero { padding: 2.5rem 1.2rem; }
+  .kr-hero .kr-flex-center { flex-direction: column; width: 100%; }
+  .kr-hero .kr-btn { width: 100%; }
+  .kr-modal { padding: 1.5rem 1rem; }
+  .kr-modal .kr-flex { flex-direction: column-reverse; width: 100%; gap: 0.5rem; }
+  .kr-modal .kr-btn { width: 100%; }
 }

@@ -37,24 +37,16 @@ body {
 .lx-col-6  { grid-column: span 6; }
 .lx-col-4  { grid-column: span 4; }
 .lx-col-3  { grid-column: span 3; }
-@media (max-width: 768px) {
-  .lx-col-6, .lx-col-4, .lx-col-3 { grid-column: span 12; }
-  .lx-nav-links { display: none; }
-  .lx-table {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-  }
-  .lx-offcanvas { width: 85vw; }
-}
+
 
 @media (max-width: 576px) {
   .lx-container { padding: 0 1rem; }
   .lx-hero { padding: 5rem 1.2rem 3rem; margin-top: 5rem; }
-  .lx-flex[style*="justify-content: center"] { flex-direction: column; width: 100%; }
-  .lx-flex[style*="justify-content: center"] .lx-btn { width: 100%; }
+  .lx-flex {
+    flex-direction: column;
+    width: 100%;
+  }
+  .lx-flex .lx-btn { width: 100%; }
   .lx-modal { padding: 1.5rem; width: 95%; }
 }
 

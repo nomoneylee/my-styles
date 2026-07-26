@@ -535,6 +535,10 @@ body {
   display: flex;
   gap: 0.8rem;
   margin-bottom: 1.5rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
 }
 
 .rt-tab-btn {
@@ -614,6 +618,10 @@ body {
 }
 
 @media (max-width: 576px) {
+  .rt-container { padding: 0 1rem; }
+  .rt-hero { padding: 3rem 1.2rem; }
+  .rt-hero .rt-flex-center { flex-direction: column; width: 100%; }
+  .rt-hero .rt-btn { width: 100%; }
   .rt-modal {
     padding: 1.5rem 1.2rem;
   }

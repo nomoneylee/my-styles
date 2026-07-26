@@ -535,6 +535,10 @@ body {
   border-bottom: 1px solid var(--ex-border-color);
   gap: 1.5rem;
   margin-bottom: 1.5rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
 }
 
 .ex-tab-btn {
@@ -614,6 +618,10 @@ body {
 }
 
 @media (max-width: 576px) {
+  .ex-container { padding: 0 1rem; }
+  .ex-hero { padding: 3rem 1.2rem; }
+  .ex-hero .ex-flex-center { flex-direction: column; width: 100%; }
+  .ex-hero .ex-btn { width: 100%; }
   .ex-modal {
     padding: 1.5rem 1rem;
   }

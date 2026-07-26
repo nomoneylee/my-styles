@@ -513,6 +513,10 @@ body {
   gap: 0.5rem;
   margin-bottom: 1.5rem;
   width: fit-content;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
 }
 
 .nd-tab-btn {
@@ -591,6 +595,10 @@ body {
 }
 
 @media (max-width: 576px) {
+  .nd-container { padding: 0 1rem; }
+  .nd-hero { padding: 3rem 1.2rem; }
+  .nd-hero .nd-flex-center { flex-direction: column; width: 100%; }
+  .nd-hero .nd-btn { width: 100%; }
   .nd-modal {
     padding: 1.5rem 1.2rem;
   }

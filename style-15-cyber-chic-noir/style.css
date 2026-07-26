@@ -23,7 +23,7 @@
 
   /* 光暈與邊框 */
   --cb-radius-sm: 6px;
-  --kr-radius-md: 12px;
+  --cb-radius-md: 12px;
   --cb-radius-lg: 20px;
 
   --cb-glow-magenta: 0 0 12px rgba(255, 42, 133, 0.4);
@@ -551,6 +551,10 @@ body {
   border-bottom: 1px solid var(--cb-border-color);
   gap: 1rem;
   margin-bottom: 1.5rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
 }
 
 .cb-tab-btn {
@@ -633,6 +637,10 @@ body {
 }
 
 @media (max-width: 576px) {
+  .cb-container { padding: 0 1rem; }
+  .cb-hero { padding: 3rem 1.2rem; }
+  .cb-hero .cb-flex-center { flex-direction: column; width: 100%; }
+  .cb-hero .cb-btn { width: 100%; }
   .cb-modal {
     padding: 1.5rem 1rem;
   }

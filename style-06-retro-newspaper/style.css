@@ -39,24 +39,16 @@ h1, h2, h3, .np-font-serif {
 .np-col-6  { grid-column: span 6; }
 .np-col-4  { grid-column: span 4; }
 .np-col-3  { grid-column: span 3; }
-@media (max-width: 768px) {
-  .np-col-6, .np-col-4, .np-col-3 { grid-column: span 12; }
-  .np-nav-links { display: none; }
-  .np-table {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-  }
-  .np-offcanvas { width: 85vw; }
-}
+
 
 @media (max-width: 576px) {
   .np-container { padding: 0 1rem; }
   .np-hero { padding: 4rem 1.2rem 2.5rem; margin-top: 5rem; }
-  .np-flex[style*="justify-content: center"] { flex-direction: column; width: 100%; }
-  .np-flex[style*="justify-content: center"] .np-btn { width: 100%; }
+  .np-flex {
+    flex-direction: column;
+    width: 100%;
+  }
+  .np-flex .np-btn { width: 100%; }
   .np-modal { padding: 1.5rem; width: 95%; }
 }
 

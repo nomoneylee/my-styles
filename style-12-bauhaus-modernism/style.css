@@ -238,6 +238,10 @@ body {
 
 @media (max-width: 768px) {
   .bh-hero { grid-template-columns: 1fr; }
+  .bh-hero-graphic {
+    border-left: none;
+    border-top: var(--bh-border-width) solid var(--bh-border-color);
+  }
 }
 
 .bh-hero-content {
@@ -576,6 +580,10 @@ body {
   gap: 0;
   border-bottom: var(--bh-border-width) solid var(--bh-border-color);
   margin-bottom: 1.5rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
 }
 
 .bh-tab-btn {
@@ -709,6 +717,23 @@ body {
 .bh-table th, .bh-table td {
   padding: 1rem 1.25rem;
   border: var(--bh-border-width) solid var(--bh-border-color);
+}
+
+@media (max-width: 768px) {
+  .bh-hero-graphic {
+    border-left: none;
+    border-top: 3px solid var(--bh-border-color);
+  }
+}
+
+@media (max-width: 576px) {
+  .bh-container { padding: 0 1rem; }
+  .bh-hero-content { padding: 2rem 1.2rem; }
+  .bh-hero .bh-flex-center { flex-direction: column; width: 100%; }
+  .bh-hero .bh-btn { width: 100%; }
+  .bh-modal { padding: 1.5rem 1rem; }
+  .bh-modal .bh-flex { flex-direction: column-reverse; width: 100%; gap: 0.5rem; }
+  .bh-modal .bh-btn { width: 100%; }
 }
 
 .bh-table th {

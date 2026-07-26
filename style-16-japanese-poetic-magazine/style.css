@@ -566,6 +566,10 @@ body {
   border-bottom: 1px solid var(--jp-border-color);
   gap: 1.5rem;
   margin-bottom: 1.5rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
 }
 
 .jp-tab-btn {
@@ -644,6 +648,10 @@ body {
 }
 
 @media (max-width: 576px) {
+  .jp-container { padding: 0 1rem; }
+  .jp-hero { padding: 3rem 1.2rem; }
+  .jp-hero .jp-flex-center { flex-direction: column; width: 100%; }
+  .jp-hero .jp-btn { width: 100%; }
   .jp-modal {
     padding: 1.5rem 1rem;
   }

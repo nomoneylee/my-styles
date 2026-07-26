@@ -588,6 +588,10 @@ body {
   border-bottom: 2px solid var(--st-border-color);
   gap: 1rem;
   margin-bottom: 1.5rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
 }
 
 .st-tab-btn {
@@ -667,6 +671,10 @@ body {
 }
 
 @media (max-width: 576px) {
+  .st-container { padding: 0 1rem; }
+  .st-hero { padding: 3rem 1.2rem; }
+  .st-hero .st-flex-center { flex-direction: column; width: 100%; }
+  .st-hero .st-btn { width: 100%; }
   .st-modal {
     padding: 1.5rem 1rem;
   }

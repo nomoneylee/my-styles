@@ -34,18 +34,7 @@ body {
 .cw-col-6  { grid-column: span 6; }
 .cw-col-4  { grid-column: span 4; }
 .cw-col-3  { grid-column: span 3; }
-@media (max-width: 768px) {
-  .cw-col-6, .cw-col-4, .cw-col-3 { grid-column: span 12; }
-  .cw-nav-links { display: none; }
-  .cw-table {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-  }
-  .cw-offcanvas { width: 85vw; }
-}
+
 
 @media (max-width: 576px) {
   .cw-container { padding: 0 1rem; }

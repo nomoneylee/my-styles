@@ -515,6 +515,10 @@ body {
   display: flex;
   border-bottom: var(--sw-border-width) solid var(--sw-border-color);
   margin-bottom: 2rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
 }
 
 .sw-tab-btn {
@@ -594,6 +598,12 @@ body {
 }
 
 @media (max-width: 576px) {
+  .sw-container { padding: 0 1rem; }
+  .sw-hero { padding: 3rem 1.2rem; }
+  .sw-hero .sw-flex-center { flex-direction: column; width: 100%; }
+  .sw-hero .sw-btn { width: 100%; }
+  .sw-p-4 { padding: 1.2rem; }
+  .sw-p-3 { padding: 1rem; }
   .sw-modal {
     padding: 1.5rem 1rem;
   }

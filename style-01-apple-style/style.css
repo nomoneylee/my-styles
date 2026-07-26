@@ -64,6 +64,14 @@ body {
 .ap-col-4  { grid-column: span 4; }
 .ap-col-3  { grid-column: span 3; }
 
+.ap-flex { display: flex; }
+.ap-flex-center { display: flex; align-items: center; justify-content: center; }
+.ap-flex-wrap { flex-wrap: wrap; }
+.ap-gap-2 { gap: 0.5rem; }
+.ap-gap-3 { gap: 1rem; }
+.ap-mb-3 { margin-bottom: 1rem; }
+.ap-text-muted { color: var(--ap-color-secondary); }
+
 /* --- 3. Header & Navbar --- */
 .ap-navbar {
   position: fixed;
@@ -210,6 +218,19 @@ body {
   .ap-offcanvas {
     width: 85vw;
   }
+}
+
+@media (max-width: 576px) {
+  .ap-container { padding: 0 1rem; }
+  .ap-hero { padding: 5rem 1.2rem 3rem; }
+  .ap-flex-center {
+    flex-direction: column;
+    width: 100%;
+  }
+  .ap-flex-center .ap-btn {
+    width: 100%;
+  }
+  .ap-modal { padding: 1.5rem; width: 95%; }
 }
 
 /* --- 4. Hero Section --- */
