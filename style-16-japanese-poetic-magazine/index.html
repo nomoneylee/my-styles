@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格十六：日系幾何雜誌 / 詩意風格 (Pure Vanilla CSS/JS)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <nav class="jp-navbar">
+    <div class="jp-container jp-navbar-container">
+      <a class="jp-nav-brand" href="#">生活雜誌 <span>暮らし</span></a>
+      <button class="jp-navbar-toggler" id="jpNavbarToggler" aria-label="Toggle navigation">目次</button>
+      <div class="jp-navbar-collapse" id="jpNavbarCollapse">
+        <ul class="jp-nav-links">
+          <li><a class="jp-nav-link active" href="#palette">色彩系統</a></li>
+          <li><a class="jp-nav-link" href="#hero">詩意雜誌</a></li>
+          <li><a class="jp-nav-link" href="#forms">寄稿表單</a></li>
+          <li><a class="jp-nav-link" href="#components">幾何元件</a></li>
+          <li><a class="jp-nav-link" href="#tables">專題目錄</a></li>
+        </ul>
+        <div class="jp-flex jp-gap-2">
+          <a href="../index.html" class="jp-btn jp-btn-outline" style="padding: 0.4rem 1rem; font-size: 0.85rem;">HUB 總覽</a>
+          <button class="jp-btn jp-btn-accent" id="openOffcanvas" style="padding: 0.4rem 1rem; font-size: 0.85rem;">雜誌選單</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="jp-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="jp-hero">
+      <div>
+        <span class="jp-hero-badge">POETIC MAGAZINE EDITORIAL</span>
+        <h1 class="jp-hero-title">靜謐的日常，文字與呼吸的留白</h1>
+        <p class="jp-hero-subtitle">仿照日本質感生活雜誌（如 Popeye、Brutus）視覺風格。溫暖淡黃灰背景，直排與橫排文字交錯，極細黑線與幾何圓點點綴。</p>
+        <div class="jp-flex jp-gap-3">
+          <button class="jp-btn jp-btn-primary">閱覽創刊號</button>
+          <button class="jp-btn jp-btn-outline" id="openModal">對話 Modal</button>
+        </div>
+      </div>
+      <div class="jp-flex jp-flex-center">
+        <div class="jp-vertical-text">
+          風が通り抜ける朝的散步<br>
+          言葉と空間の美學
+        </div>
+      </div>
+    </section>
+
+    <!-- Color Palette Showcase -->
+    <section id="palette" class="jp-section">
+      <h2 class="jp-section-title">日系雜誌配色系統 (POETIC PALETTE)</h2>
+      <p class="jp-text-muted jp-mb-4">以溫暖淡黃灰為畫布，融入詩意朱紅與莫蘭迪綠：</p>
+      
+      <div class="jp-grid">
+        <div class="jp-col-4">
+          <div class="jp-swatch-box jp-bg-primary">
+            <span>Primary 印墨炭黑</span>
+            <code>--jp-color-primary (#222222)</code>
+          </div>
+        </div>
+        <div class="jp-col-4">
+          <div class="jp-swatch-box jp-bg-secondary">
+            <span>Secondary 詩意中灰</span>
+            <code>--jp-color-secondary (#555555)</code>
+          </div>
+        </div>
+        <div class="jp-col-4">
+          <div class="jp-swatch-box jp-bg-accent">
+            <span>Accent 詩意朱紅</span>
+            <code>--jp-color-accent (#c83e2b)</code>
+          </div>
+        </div>
+        <div class="jp-col-3">
+          <div class="jp-swatch-box jp-bg-info">
+            <span>Info 莫蘭迪青綠</span>
+            <code>--jp-color-info (#6a7f72)</code>
+          </div>
+        </div>
+        <div class="jp-col-3">
+          <div class="jp-swatch-box jp-bg-success">
+            <span>Success 竹林苔綠</span>
+            <code>--jp-color-success (#5a7d65)</code>
+          </div>
+        </div>
+        <div class="jp-col-3">
+          <div class="jp-swatch-box jp-bg-warning">
+            <span>Warning 柿子黃橘</span>
+            <code>--jp-color-warning (#d99b26)</code>
+          </div>
+        </div>
+        <div class="jp-col-3">
+          <div class="jp-swatch-box jp-bg-error">
+            <span>Error 茜草深紅</span>
+            <code>--jp-color-error (#ad3324)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notification Alert Section -->
+    <section class="jp-section">
+      <h2 class="jp-section-title">雜誌動態通知 (Alert Notifications)</h2>
+      <div class="jp-alert jp-alert-info">
+        <strong>莫蘭迪綠:</strong> 2026 夏日特輯「喫茶店與黑膠唱片」現正發售中。
+      </div>
+      <div class="jp-alert jp-alert-success">
+        <strong>竹林苔綠:</strong> 讀者投稿《東京古書店散策》已選入本期推薦專欄。
+      </div>
+      <div class="jp-alert jp-alert-warning">
+        <strong>柿子黃橘:</strong> 創刊號限量附錄「日式質感帆布袋」數量即將完售。
+      </div>
+      <div class="jp-alert jp-alert-error">
+        <strong>茜草深紅:</strong> 原定明日舉行的編輯座談會因雨延期至下週六。
+      </div>
+    </section>
+
+    <!-- Typography & Badges -->
+    <section class="jp-section">
+      <h2 class="jp-section-title">1. 排版與細線標籤 (Typography & Badges)</h2>
+      <div class="jp-grid">
+        <div class="jp-col-6">
+          <h1 class="jp-mb-2">H1 日常的幾何美學 <span class="jp-badge">Vol.01</span></h1>
+          <h2 class="jp-mb-2">H2 雜誌編輯的呼吸感 <span class="jp-badge" style="border-color: var(--jp-color-accent); color: var(--jp-color-accent);">詩意</span></h2>
+          <h3 class="jp-mb-3">H3 城市角落的喫茶散策</h3>
+          <p class="jp-text-muted jp-mb-3">大面積留白與極細黑線對比，讓閱讀者在翻頁間感受到如同日式庭園一般的靜謐與放鬆。</p>
+        </div>
+        <div class="jp-col-6">
+          <blockquote style="border-left: 2px solid var(--jp-color-accent); padding-left: 1.2rem; background: white; padding: 1.2rem; border-radius: 4px;">
+            「美好的生活雜誌，不只是記錄視覺，更是記錄光影與空氣流動的詩篇。」
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buttons -->
+    <section class="jp-section">
+      <h2 class="jp-section-title">2. 日式質感按鈕 (Buttons)</h2>
+      <div class="jp-flex jp-gap-3 jp-flex-wrap">
+        <button class="jp-btn jp-btn-primary">Primary 炭黑按鈕</button>
+        <button class="jp-btn jp-btn-accent">Accent 朱紅按鈕</button>
+        <button class="jp-btn jp-btn-outline">Outline 細邊框按鈕</button>
+      </div>
+    </section>
+
+    <!-- Form Controls -->
+    <section id="forms" class="jp-section">
+      <h2 class="jp-section-title">3. 原生表單控制項 (Form Controls)</h2>
+      <form>
+        <div class="jp-grid">
+          <div class="jp-col-6">
+            <div class="jp-form-group">
+              <label class="jp-form-label" for="jpName">讀者姓名</label>
+              <input type="text" id="jpName" class="jp-input" placeholder="例如: 村上先生">
+            </div>
+          </div>
+          <div class="jp-col-6">
+            <div class="jp-form-group">
+              <label class="jp-form-label" for="jpTopic">投稿主題</label>
+              <select id="jpTopic" class="jp-select">
+                <option>京都町家改建與生活記錄</option>
+                <option>昭和印象：隱密喫茶店巡禮</option>
+                <option>幾何建築與生活道具選品</option>
+              </select>
+            </div>
+          </div>
+          <div class="jp-col-12">
+            <div class="jp-form-group">
+              <label class="jp-form-label" for="jpContent">散文摘要說明</label>
+              <textarea id="jpContent" class="jp-textarea" rows="3" placeholder="填寫您的日常生活詩意散文..."></textarea>
+            </div>
+          </div>
+
+          <!-- Checkbox, Radio, Switch, Range -->
+          <div class="jp-col-6">
+            <div class="jp-form-group">
+              <label class="jp-form-label">訂閱雜誌類型 (Checkbox)</label>
+              <div class="jp-flex jp-gap-3" style="margin-top: 0.5rem;">
+                <label class="jp-checkbox-label">
+                  <input type="checkbox" class="jp-checkbox" checked> 每月實體雜誌寄送
+                </label>
+                <label class="jp-checkbox-label">
+                  <input type="checkbox" class="jp-checkbox"> 數位電子詩篇
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="jp-col-6">
+            <div class="jp-form-group">
+              <label class="jp-form-label">封面藝術版本 (Radio)</label>
+              <div class="jp-flex jp-gap-3" style="margin-top: 0.5rem;">
+                <label class="jp-radio-label">
+                  <input type="radio" name="jpCover" class="jp-radio" checked> 朱紅幾何限定版
+                </label>
+                <label class="jp-radio-label">
+                  <input type="radio" name="jpCover" class="jp-radio"> 莫蘭迪綠攝影版
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="jp-col-6">
+            <div class="jp-form-group">
+              <label class="jp-form-label">電子沙龍通知 (Switch)</label>
+              <label class="jp-switch-label" style="margin-top: 0.5rem;">
+                <input type="checkbox" class="jp-switch-input" checked>
+                <span class="jp-switch-slider"></span>
+                <span>訂閱週日早晨朗讀會</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="jp-col-6">
+            <div class="jp-form-group">
+              <label class="jp-form-label">閱讀字體級距 (Range Slider)</label>
+              <input type="range" class="jp-range" min="12" max="24" value="16">
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="jp-section">
+      <h2 class="jp-section-title">4. 幾何詩意卡片 (Cards)</h2>
+      <div class="jp-grid">
+        <div class="jp-col-4">
+          <div class="jp-card">
+            <span class="jp-badge jp-mb-2">建築散策</span>
+            <h3 class="jp-card-title">東京吉岡德仁展</h3>
+            <p class="jp-text-muted jp-mb-3">光的幾何與透明質感，詮釋極致日式現代主義美學。</p>
+            <button class="jp-btn jp-btn-primary" style="width: 100%;">閱覽專題</button>
+          </div>
+        </div>
+        <div class="jp-col-4">
+          <div class="jp-card">
+            <span class="jp-badge jp-mb-2" style="border-color: var(--jp-color-accent); color: var(--jp-color-accent);">工藝美學</span>
+            <h3 class="jp-card-title">南部鐵器與和紙</h3>
+            <p class="jp-text-muted jp-mb-3">手工雕琢的溫度，將幾百年的生活記憶溫柔傳承。</p>
+            <button class="jp-btn jp-btn-accent" style="width: 100%;">訪談記錄</button>
+          </div>
+        </div>
+        <div class="jp-col-4">
+          <div class="jp-card">
+            <span class="jp-badge jp-mb-2" style="border-color: var(--jp-color-info); color: var(--jp-color-info);">音樂空間</span>
+            <h3 class="jp-card-title">名曲喫茶 Lion</h3>
+            <p class="jp-text-muted jp-mb-3">澀谷後巷的靜謐角落，幾十年未曾改變的黑膠重低音。</p>
+            <button class="jp-btn jp-btn-outline" style="width: 100%;">查看地圖</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Components Section -->
+    <section id="components" class="jp-section">
+      <h2 class="jp-section-title">5. 雜誌互動元件 (Tabs, Accordion & Progress)</h2>
+      
+      <!-- Progress Bar -->
+      <div class="jp-mb-4">
+        <div class="jp-flex-between jp-mb-2">
+          <span style="font-weight: 700; color: var(--jp-color-primary);">本期雜誌編輯出版進度</span>
+          <span style="font-weight: 700; color: var(--jp-color-accent);">85% 校對完成</span>
+        </div>
+        <div class="jp-progress">
+          <div class="jp-progress-bar" style="width: 85%;"></div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="jp-tabs">
+        <button class="jp-tab-btn active" data-tab="tab-1">01. 詩意理念</button>
+        <button class="jp-tab-btn" data-tab="tab-2">02. 幾何排版</button>
+        <button class="jp-tab-btn" data-tab="tab-3">03. 編輯團隊</button>
+      </div>
+
+      <div id="tab-1" class="jp-tab-pane active">
+        <div class="jp-card">
+          <h4>言葉與空間的呼吸感</h4>
+          <p class="jp-text-muted">強調圖文之間的適度對比，利用大面積淺灰白留白給予眼睛充分休息。</p>
+        </div>
+      </div>
+      <div id="tab-2" class="jp-tab-pane">
+        <div class="jp-card">
+          <h4>直排與橫排的對稱美學</h4>
+          <p class="jp-text-muted">傳統日本明體直排呈現深邃意境，橫排呈現客觀數據與說明資訊。</p>
+        </div>
+      </div>
+      <div id="tab-3" class="jp-tab-pane">
+        <div class="jp-card">
+          <h4>獨立生活雜誌編輯社</h4>
+          <p class="jp-text-muted">由攝影師、建築師與詩人組成的獨立出版小組，紀錄真實生活日常。</p>
+        </div>
+      </div>
+
+      <!-- Accordion -->
+      <h3 style="margin: 2.5rem 0 1rem; color: var(--jp-color-primary);">讀者常見疑問 (Accordion)</h3>
+      <div class="jp-accordion-item open">
+        <div class="jp-accordion-header">雜誌的出版週期與發行量為何？</div>
+        <div class="jp-accordion-body">
+          《暮らし》為雙月刊出版，每期限量印製 3,000 本，並隨刊附贈原創幾何明信片。
+        </div>
+      </div>
+      <div class="jp-accordion-item">
+        <div class="jp-accordion-header">是否提供海外讀者郵寄與數位版？</div>
+        <div class="jp-accordion-body">
+          是的，我們提供全港台及海外郵寄服務，購買實體刊物皆附贈數位全文 PDF 閱讀權限。
+        </div>
+      </div>
+    </section>
+
+    <!-- Table Section -->
+    <section id="tables" class="jp-section">
+      <h2 class="jp-section-title">6. 創刊號專題文章目錄 (Tables)</h2>
+      <div class="jp-table-container">
+        <table class="jp-table">
+          <thead>
+            <tr>
+              <th>文章標題</th>
+              <th>專欄分類</th>
+              <th>執筆作者</th>
+              <th>頁碼範圍</th>
+              <th>典藏狀態</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>光與幾何：吉岡德仁的新生活道具</strong></td>
+              <td>現代設計</td>
+              <td>高橋 健一</td>
+              <td>P.12 - P.25</td>
+              <td><span class="jp-badge">本期主打</span></td>
+            </tr>
+            <tr>
+              <td><strong>靜寂的昭和午後：神保町老喫茶點滴</strong></td>
+              <td>城市散策</td>
+              <td>村上 詩織</td>
+              <td>P.26 - P.38</td>
+              <td><span class="jp-badge">熱門閱讀</span></td>
+            </tr>
+            <tr>
+              <td><strong>南部鐵器的百年鑄造工藝與現代茶道</strong></td>
+              <td>傳統工藝</td>
+              <td>佐藤 宗太</td>
+              <td>P.39 - P.52</td>
+              <td><span class="jp-badge">讀者推薦</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Modal Component -->
+  <div class="jp-modal-overlay" id="jpModalOverlay">
+    <div class="jp-modal">
+      <div class="jp-modal-header">
+        <h3 class="jp-modal-title">📖 詩意生活雜誌訂閱確認</h3>
+        <button class="jp-close-modal" style="background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--jp-color-primary);">&times;</button>
+      </div>
+      <p class="jp-text-muted jp-mb-4">感謝您對《暮らし》雜誌的支持。請確認您的訂閱資訊，我們將儘快為您送上溫暖實體書刊。</p>
+      <div class="jp-flex jp-gap-2" style="justify-content: flex-end;">
+        <button class="jp-btn jp-btn-outline jp-close-modal">取消</button>
+        <button class="jp-btn jp-btn-primary jp-close-modal">確認訂閱</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas Component -->
+  <div class="jp-offcanvas" id="jpOffcanvas">
+    <div class="jp-flex-between jp-mb-4" style="border-bottom: 1px solid var(--jp-border-color); padding-bottom: 1rem;">
+      <h3 style="color: var(--jp-color-primary);">雜誌文獻輯</h3>
+      <button class="jp-close-modal" id="closeOffcanvas" style="background: none; border: none; font-size: 1.4rem; cursor: pointer;">&times;</button>
+    </div>
+    <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.2rem;">
+      <li><a href="#" style="color: var(--jp-text-main); text-decoration: none; font-weight: 600;">✦ 日式字體與直排對齊指南</a></li>
+      <li><a href="#" style="color: var(--jp-text-main); text-decoration: none; font-weight: 600;">✦ 幾何圓點與分割線設計</a></li>
+      <li><a href="#" style="color: var(--jp-text-main); text-decoration: none; font-weight: 600;">✦ 全台隱密民藝茶館地圖</a></li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

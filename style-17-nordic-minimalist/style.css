@@ -1,0 +1,665 @@
+/* ==========================================================================
+   Style 17: 北歐極簡木質風 (Nordic Minimalist Style)
+   Pure Vanilla CSS - 100% 自建無外部依賴
+   ========================================================================== */
+
+:root {
+  /* 北歐極簡木質專屬色彩 Token */
+  --nd-color-primary: #333333;     /* 北歐深岩灰 (文字與核心) */
+  --nd-color-secondary: #7a6858;   /* 冷木頭棕 (木質溫暖調) */
+  --nd-color-accent: #4a5d4e;      /* 北歐橄欖綠 (主要高亮) */
+  --nd-color-info: #7b8e9b;        /* 莫蘭迪灰藍 (資訊與 Notify) */
+  --nd-color-success: #607d67;     /* 松木綠 */
+  --nd-color-warning: #bd9b76;     /* 暖原木黃 */
+  --nd-color-error: #a85854;       /* 莫蘭迪赭紅 */
+
+  /* 中性色與區域背景 (無邊框、色塊區隔) */
+  --nd-bg-main: #eae8e3;           /* 淺灰大理石底色 */
+  --nd-bg-card: #f4f2ee;           /* 柔和色塊底 */
+  --nd-bg-subtle: #dedad4;         /* 深灰石區塊 */
+  --nd-text-main: #333333;         /* 深岩灰內文 */
+  --nd-text-muted: #888888;        /* 柔和灰文字 */
+  --nd-border-color: transparent;  /* 幾乎無實線邊框 */
+
+  --nd-radius-sm: 8px;
+  --nd-radius-md: 16px;
+  --nd-radius-lg: 24px;
+  --nd-radius-pill: 999px;
+
+  --nd-shadow-flat: 0 4px 20px rgba(0, 0, 0, 0.03);
+
+  --nd-font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+/* 全域 Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--nd-font-family);
+  background-color: var(--nd-bg-main);
+  color: var(--nd-text-main);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 佈局 Grid & Container */
+.nd-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.nd-section {
+  padding: 4.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nd-section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--nd-color-primary);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.nd-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.nd-col-12 { grid-column: span 12; }
+.nd-col-8  { grid-column: span 8; }
+.nd-col-6  { grid-column: span 6; }
+.nd-col-4  { grid-column: span 4; }
+.nd-col-3  { grid-column: span 3; }
+
+@media (max-width: 768px) {
+  .nd-col-8, .nd-col-6, .nd-col-4, .nd-col-3 {
+    grid-column: span 12;
+  }
+}
+
+.nd-flex { display: flex; }
+.nd-flex-center { display: flex; align-items: center; justify-content: center; }
+.nd-flex-between { display: flex; align-items: center; justify-content: space-between; }
+.nd-flex-wrap { flex-wrap: wrap; }
+.nd-gap-2 { gap: 0.75rem; }
+.nd-gap-3 { gap: 1rem; }
+.nd-gap-4 { gap: 1.5rem; }
+.nd-mb-2 { margin-bottom: 0.5rem; }
+.nd-mb-3 { margin-bottom: 1rem; }
+.nd-mb-4 { margin-bottom: 1.5rem; }
+.nd-text-muted { color: var(--nd-text-muted); }
+
+/* Header & Navbar */
+.nd-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(234, 232, 227, 0.92);
+  backdrop-filter: blur(16px);
+}
+
+.nd-navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 80px;
+}
+
+.nd-nav-brand {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--nd-color-primary);
+  text-decoration: none;
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.nd-nav-brand span {
+  color: var(--nd-color-accent);
+}
+
+.nd-navbar-collapse {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  margin-left: 2.5rem;
+}
+
+.nd-nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nd-nav-link {
+  color: var(--nd-text-main);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--nd-radius-pill);
+  white-space: nowrap;
+}
+
+.nd-nav-link:hover, .nd-nav-link.active {
+  background-color: var(--nd-bg-card);
+  color: var(--nd-color-accent);
+}
+
+.nd-navbar-toggler {
+  display: none;
+  background: var(--nd-bg-card);
+  border: none;
+  border-radius: var(--nd-radius-sm);
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  color: var(--nd-color-primary);
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .nd-navbar-container {
+    flex-wrap: wrap;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+  }
+  .nd-navbar-toggler { display: block; }
+  .nd-navbar-collapse {
+    display: none;
+    width: 100%;
+    margin-left: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+  }
+  .nd-navbar-collapse.show { display: flex; }
+  .nd-nav-links { flex-direction: column; gap: 0.5rem; width: 100%; }
+  .nd-navbar-collapse .nd-flex {
+    width: 100%;
+    margin-left: 0 !important;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .nd-navbar-collapse .nd-btn {
+    width: 100%;
+  }
+}
+
+/* Hero Section (大塊面無邊框) */
+.nd-hero {
+  background-color: var(--nd-bg-card);
+  border-radius: var(--nd-radius-lg);
+  padding: 5rem 3rem;
+  margin: 2.5rem 0;
+  box-shadow: var(--nd-shadow-flat);
+}
+
+.nd-hero-badge {
+  display: inline-block;
+  background-color: rgba(74, 93, 78, 0.12);
+  color: var(--nd-color-accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.4rem 1.2rem;
+  border-radius: var(--nd-radius-pill);
+  margin-bottom: 1.2rem;
+}
+
+.nd-hero-title {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  color: var(--nd-color-primary);
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.03em;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.nd-hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--nd-text-muted);
+  max-width: 680px;
+  margin-bottom: 2rem;
+}
+
+/* 色彩展演區塊 */
+.nd-swatch-box {
+  padding: 1.5rem;
+  border-radius: var(--nd-radius-md);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 120px;
+  font-weight: 600;
+}
+
+.nd-swatch-box code {
+  font-size: 0.8rem;
+  background: rgba(0,0,0,0.15);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.nd-bg-primary   { background-color: var(--nd-color-primary); }
+.nd-bg-secondary { background-color: var(--nd-color-secondary); }
+.nd-bg-accent    { background-color: var(--nd-color-accent); }
+.nd-bg-info      { background-color: var(--nd-color-info); }
+.nd-bg-success   { background-color: var(--nd-color-success); }
+.nd-bg-warning   { background-color: var(--nd-color-warning); color: black; }
+.nd-bg-error     { background-color: var(--nd-color-error); }
+
+/* Alerts Notification */
+.nd-alert {
+  padding: 1.1rem 1.5rem;
+  border-radius: var(--nd-radius-md);
+  margin-bottom: 1rem;
+  font-weight: 500;
+  background-color: var(--nd-bg-card);
+  box-shadow: var(--nd-shadow-flat);
+}
+
+.nd-alert-info    { color: var(--nd-color-info); border-left: 4px solid var(--nd-color-info); }
+.nd-alert-success { color: var(--nd-color-success); border-left: 4px solid var(--nd-color-success); }
+.nd-alert-warning { color: var(--nd-color-warning); border-left: 4px solid var(--nd-color-warning); }
+.nd-alert-error   { color: var(--nd-color-error); border-left: 4px solid var(--nd-color-error); }
+
+/* Badges & Buttons */
+.nd-badge {
+  display: inline-block;
+  padding: 0.3em 0.8em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: var(--nd-radius-pill);
+  background-color: var(--nd-bg-subtle);
+  color: var(--nd-color-primary);
+}
+
+.nd-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--nd-radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.nd-btn-primary {
+  background-color: var(--nd-color-accent);
+  color: #ffffff;
+}
+
+.nd-btn-primary:hover {
+  background-color: #3b4b3e;
+}
+
+.nd-btn-secondary {
+  background-color: var(--nd-color-secondary);
+  color: #ffffff;
+}
+
+.nd-btn-outline {
+  background-color: var(--nd-bg-card);
+  color: var(--nd-color-primary);
+}
+
+.nd-btn-outline:hover {
+  background-color: var(--nd-bg-subtle);
+}
+
+/* Cards System (無邊框美學) */
+.nd-card {
+  background-color: var(--nd-bg-card);
+  border-radius: var(--nd-radius-md);
+  padding: 2.2rem;
+  box-shadow: var(--nd-shadow-flat);
+  transition: transform 0.25s ease;
+}
+
+.nd-card:hover {
+  transform: translateY(-4px);
+}
+
+.nd-card-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--nd-color-primary);
+  margin-bottom: 0.75rem;
+}
+
+/* Form Controls */
+.nd-form-group {
+  margin-bottom: 1.4rem;
+}
+
+.nd-form-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--nd-color-primary);
+  margin-bottom: 0.4rem;
+}
+
+.nd-input, .nd-select, .nd-textarea {
+  width: 100%;
+  padding: 0.85rem 1.2rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--nd-text-main);
+  background-color: var(--nd-bg-card);
+  border: none;
+  border-radius: var(--nd-radius-sm);
+  outline: none;
+  transition: background 0.2s ease;
+}
+
+.nd-input:focus, .nd-select:focus, .nd-textarea:focus {
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(74, 93, 78, 0.2);
+}
+
+/* Custom Checkbox & Radio */
+.nd-checkbox-label, .nd-radio-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.nd-checkbox, .nd-radio {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--nd-bg-subtle);
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+}
+
+.nd-radio { border-radius: 50%; }
+
+.nd-checkbox:checked, .nd-radio:checked {
+  background-color: var(--nd-color-accent);
+}
+
+.nd-checkbox:checked::after {
+  content: '✓';
+  color: white;
+  font-size: 13px;
+  position: absolute;
+  top: -1px;
+  left: 4px;
+}
+
+/* Switch */
+.nd-switch-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.nd-switch-input { display: none; }
+
+.nd-switch-slider {
+  width: 48px;
+  height: 26px;
+  background-color: var(--nd-bg-subtle);
+  border-radius: var(--nd-radius-pill);
+  position: relative;
+}
+
+.nd-switch-slider::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.2s ease;
+}
+
+.nd-switch-input:checked + .nd-switch-slider {
+  background-color: var(--nd-color-accent);
+}
+
+.nd-switch-input:checked + .nd-switch-slider::before {
+  transform: translateX(22px);
+}
+
+/* Range Slider */
+.nd-range {
+  width: 100%;
+  accent-color: var(--nd-color-accent);
+  cursor: pointer;
+}
+
+/* Accordion */
+.nd-accordion-item {
+  background: var(--nd-bg-card);
+  border-radius: var(--nd-radius-md);
+  margin-bottom: 0.8rem;
+  overflow: hidden;
+}
+
+.nd-accordion-header {
+  padding: 1.3rem 1.8rem;
+  font-weight: 600;
+  color: var(--nd-color-primary);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nd-accordion-header::after {
+  content: '+';
+  font-size: 1.2rem;
+  color: var(--nd-color-secondary);
+}
+
+.nd-accordion-item.open .nd-accordion-header::after {
+  content: '−';
+}
+
+.nd-accordion-body {
+  display: none;
+  padding: 1.3rem 1.8rem;
+  border-top: 1px solid rgba(0,0,0,0.04);
+  color: var(--nd-text-muted);
+}
+
+.nd-accordion-item.open .nd-accordion-body {
+  display: block;
+}
+
+/* Tabs */
+.nd-tabs {
+  display: flex;
+  background-color: var(--nd-bg-subtle);
+  padding: 0.4rem;
+  border-radius: var(--nd-radius-pill);
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  width: fit-content;
+}
+
+.nd-tab-btn {
+  padding: 0.6rem 1.6rem;
+  font-weight: 600;
+  color: var(--nd-text-muted);
+  background: none;
+  border: none;
+  border-radius: var(--nd-radius-pill);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nd-tab-btn.active {
+  background: #ffffff;
+  color: var(--nd-color-primary);
+  box-shadow: var(--nd-shadow-flat);
+}
+
+.nd-tab-pane {
+  display: none;
+}
+
+.nd-tab-pane.active {
+  display: block;
+}
+
+/* Modal Overlay & Modal */
+.nd-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(51, 51, 51, 0.4);
+  backdrop-filter: blur(10px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.nd-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nd-modal {
+  background: #ffffff;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  border-radius: var(--nd-radius-lg);
+  padding: 2.2rem 1.8rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  box-sizing: border-box;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.nd-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  gap: 0.5rem;
+}
+
+.nd-modal-title {
+  font-size: clamp(1.1rem, 4vw, 1.4rem);
+  font-weight: 600;
+  color: var(--nd-color-primary);
+  word-break: break-word;
+}
+
+@media (max-width: 576px) {
+  .nd-modal {
+    padding: 1.5rem 1.2rem;
+  }
+  .nd-modal .nd-flex {
+    flex-direction: column-reverse;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  .nd-modal .nd-btn {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    box-sizing: border-box;
+  }
+}
+
+/* Offcanvas */
+.nd-offcanvas {
+  position: fixed;
+  top: 0; right: -100%;
+  width: 340px;
+  max-width: 85vw;
+  height: 100%;
+  background: var(--nd-bg-card);
+  z-index: 2100;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+  transition: right 0.25s ease;
+  padding: 2.2rem 1.8rem;
+  box-sizing: border-box;
+}
+
+.nd-offcanvas.active {
+  right: 0;
+}
+
+/* Progress Bar */
+.nd-progress {
+  width: 100%;
+  height: 10px;
+  background-color: var(--nd-bg-subtle);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.nd-progress-bar {
+  height: 100%;
+  background-color: var(--nd-color-accent);
+}
+
+/* Table */
+.nd-table-container {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--nd-radius-md);
+  background: var(--nd-bg-card);
+}
+
+.nd-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.nd-table th, .nd-table td {
+  padding: 1.1rem 1.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.nd-table th {
+  background-color: var(--nd-bg-subtle);
+  color: var(--nd-color-primary);
+  font-weight: 600;
+}

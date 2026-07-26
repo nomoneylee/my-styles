@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格二十：當代展覽手冊 / 概念設計風 (Pure Vanilla CSS/JS)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <nav class="ex-navbar">
+    <div class="ex-container ex-navbar-container">
+      <a class="ex-nav-brand" href="#">EXHIBITION <span>[ 2026 ]</span></a>
+      <button class="ex-navbar-toggler" id="exNavbarToggler" aria-label="Toggle navigation">INDEX</button>
+      <div class="ex-navbar-collapse" id="exNavbarCollapse">
+        <ul class="ex-nav-links">
+          <li><a class="ex-nav-link active" href="#palette">01 // 色彩標註</a></li>
+          <li><a class="ex-nav-link" href="#hero">02 // 展覽手冊</a></li>
+          <li><a class="ex-nav-link" href="#forms">03 // 門票表單</a></li>
+          <li><a class="ex-nav-link" href="#components">04 // 實驗組件</a></li>
+          <li><a class="ex-nav-link" href="#tables">05 // 展品對照</a></li>
+        </ul>
+        <div class="ex-flex ex-gap-2">
+          <a href="../index.html" class="ex-btn ex-btn-outline" style="padding: 0.4rem 1rem; font-size: 0.8rem;">HUB 總覽</a>
+          <button class="ex-btn ex-btn-primary" id="openOffcanvas" style="padding: 0.4rem 1rem; font-size: 0.8rem;">[ 手冊選單 ]</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="ex-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="ex-hero">
+      <div class="ex-hero-meta">[ REF_2026 // CONTEMPORARY EDITORIAL EXHIBITION ]</div>
+      <h1 class="ex-hero-title">當代藝術展覽手冊與前衛實驗排版</h1>
+      <p class="ex-hero-subtitle">採用高對比灰白背景，搭配大量頁碼感標註（如 01/02/03）與小字號細節說明欄位。故意打破常規對齊，展現強烈的大字與小字反差。</p>
+      <div class="ex-flex ex-gap-3">
+        <button class="ex-btn ex-btn-primary">閱覽展覽手冊</button>
+        <button class="ex-btn ex-btn-outline" id="openModal">概念 Modal</button>
+      </div>
+    </section>
+
+    <!-- Color Palette Showcase -->
+    <section id="palette" class="ex-section">
+      <h2 class="ex-section-title">展覽標註配色系統 <span class="ref">[ REF_PALETTE_01 ]</span></h2>
+      <p class="ex-text-muted ex-mb-4">高對比展覽灰白背景，搭配概念純黑與醒目的展覽標註藍：</p>
+      
+      <div class="ex-grid">
+        <div class="ex-col-4">
+          <div class="ex-swatch-box ex-bg-primary">
+            <span>Primary 概念純黑</span>
+            <code>--ex-color-primary (#0a0a0a)</code>
+          </div>
+        </div>
+        <div class="ex-col-4">
+          <div class="ex-swatch-box ex-bg-secondary">
+            <span>Secondary 標註中灰</span>
+            <code>--ex-color-secondary (#666666)</code>
+          </div>
+        </div>
+        <div class="ex-col-4">
+          <div class="ex-swatch-box ex-bg-accent">
+            <span>Accent 展覽標註藍</span>
+            <code>--ex-color-accent (#0022ff)</code>
+          </div>
+        </div>
+        <div class="ex-col-3">
+          <div class="ex-swatch-box ex-bg-info">
+            <span>Info 概念靛藍</span>
+            <code>--ex-color-info (#4455bb)</code>
+          </div>
+        </div>
+        <div class="ex-col-3">
+          <div class="ex-swatch-box ex-bg-success">
+            <span>Success 實驗墨綠</span>
+            <code>--ex-color-success (#008844)</code>
+          </div>
+        </div>
+        <div class="ex-col-3">
+          <div class="ex-swatch-box ex-bg-warning">
+            <span>Warning 展覽警戒橘</span>
+            <code>--ex-color-warning (#e66000)</code>
+          </div>
+        </div>
+        <div class="ex-col-3">
+          <div class="ex-swatch-box ex-bg-error">
+            <span>Error 實驗亮紅</span>
+            <code>--ex-color-error (#ff3300)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notification Alert Section -->
+    <section class="ex-section">
+      <h2 class="ex-section-title">展覽狀態標註 <span class="ref">[ REF_NOTIFY_02 ]</span></h2>
+      <div class="ex-alert ex-alert-info">
+        <strong>[ INFO_01 ]:</strong> 當代藝術家聯展「邊界與對比」導覽講座即將於 14:00 開始。
+      </div>
+      <div class="ex-alert ex-alert-success">
+        <strong>[ SUCCESS_02 ]:</strong> 概念實驗展區 3D 空間光影互動測試完成。
+      </div>
+      <div class="ex-alert ex-alert-warning">
+        <strong>[ WARNING_03 ]:</strong> 展覽專刊限量手冊庫存僅剩 15 冊。
+      </div>
+      <div class="ex-alert ex-alert-error">
+        <strong>[ ERROR_04 ]:</strong> B2 實驗裝置保養中，該區域暫停開放。
+      </div>
+    </section>
+
+    <!-- Typography & Badges -->
+    <section class="ex-section">
+      <h2 class="ex-section-title">1. 強烈字級反差與頁碼標記 <span class="ref">[ TYPO_01 ]</span></h2>
+      <div class="ex-grid">
+        <div class="ex-col-6">
+          <h1 class="ex-mb-2">H1 EDITORIAL EXHIBITION <span class="ex-badge">[ 01/20 ]</span></h1>
+          <h2 class="ex-mb-2">H2 CONTEMPORARY ART MANUAL <span class="ex-badge" style="border-color: var(--ex-color-accent); color: var(--ex-color-accent);">EXPERIMENTAL</span></h2>
+          <h3 class="ex-mb-3">H3 大字與小字說明的強烈對比</h3>
+          <p class="ex-text-muted ex-mb-3">故意打破常見居中或常規對齊，使用大標題搭配 monospace 字型的小字號欄位，打造前衛且具備實驗性的藝術展覽風格。</p>
+        </div>
+        <div class="ex-col-6">
+          <blockquote style="border: 1px solid var(--ex-border-color); padding: 1.5rem; background: #ffffff; font-family: monospace; font-size: 0.85rem;">
+            // EXHIBITION STATEMENT:<br>
+            "Art is not about finding harmony, but revealing contrast and boundaries."
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buttons -->
+    <section class="ex-section">
+      <h2 class="ex-section-title">2. 前衛展覽按鈕 <span class="ref">[ BTN_02 ]</span></h2>
+      <div class="ex-flex ex-gap-3 ex-flex-wrap">
+        <button class="ex-btn ex-btn-primary">Primary 概念純黑</button>
+        <button class="ex-btn ex-btn-outline">Outline 灰白展覽按鈕</button>
+      </div>
+    </section>
+
+    <!-- Form Controls -->
+    <section id="forms" class="ex-section">
+      <h2 class="ex-section-title">3. 原生表單控制項 <span class="ref">[ FORM_03 ]</span></h2>
+      <form>
+        <div class="ex-grid">
+          <div class="ex-col-6">
+            <div class="ex-form-group">
+              <label class="ex-form-label">觀眾姓名 [ NAME_FIELD ]</label>
+              <input type="text" class="ex-input" placeholder="例如: 展覽訪客 A">
+            </div>
+          </div>
+          <div class="ex-col-6">
+            <div class="ex-form-group">
+              <label class="ex-form-label">參觀展區選擇 [ ZONE_SELECT ]</label>
+              <select class="ex-select">
+                <option>01 區：幾何與強烈文字對比</option>
+                <option>02 區：動態光影與實驗聲音</option>
+                <option>03 區：當代展覽冊頁手稿</option>
+              </select>
+            </div>
+          </div>
+          <div class="ex-col-12">
+            <div class="ex-form-group">
+              <label class="ex-form-label">觀展心得與實驗備註 [ REMARKS ]</label>
+              <textarea class="ex-textarea" rows="3" placeholder="請寫下您對當代視覺反差的看法..."></textarea>
+            </div>
+          </div>
+
+          <!-- Checkbox, Radio, Switch, Range -->
+          <div class="ex-col-6">
+            <div class="ex-form-group">
+              <label class="ex-form-label">門票加價選項 [ CHECKBOX ]</label>
+              <div class="ex-flex ex-gap-3" style="margin-top: 0.5rem;">
+                <label class="ex-checkbox-label">
+                  <input type="checkbox" class="ex-checkbox" checked> 附贈實體精裝展覽手冊
+                </label>
+                <label class="ex-checkbox-label">
+                  <input type="checkbox" class="ex-checkbox"> 專屬語音導覽機
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="ex-col-6">
+            <div class="ex-form-group">
+              <label class="ex-form-label">入場時段 [ RADIO ]</label>
+              <div class="ex-flex ex-gap-3" style="margin-top: 0.5rem;">
+                <label class="ex-radio-label">
+                  <input type="radio" name="exTime" class="ex-radio" checked> 日間展覽場次
+                </label>
+                <label class="ex-radio-label">
+                  <input type="radio" name="exTime" class="ex-radio"> 夜間沉浸式場次
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="ex-col-6">
+            <div class="ex-form-group">
+              <label class="ex-form-label">展覽對話快訊 [ SWITCH ]</label>
+              <label class="ex-switch-label" style="margin-top: 0.5rem;">
+                <input type="checkbox" class="ex-switch-input" checked>
+                <span class="ex-switch-slider"></span>
+                <span>訂閱每週策展人電子對話</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="ex-col-6">
+            <div class="ex-form-group">
+              <label class="ex-form-label">對比強度設定 [ RANGE ]</label>
+              <input type="range" class="ex-range" min="1" max="100" value="85">
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="ex-section">
+      <h2 class="ex-section-title">4. 概念展板卡片 <span class="ref">[ CARDS_04 ]</span></h2>
+      <div class="ex-grid">
+        <div class="ex-col-4">
+          <div class="ex-card">
+            <span class="ex-page-tag">P.08 / ART_01</span>
+            <h3 class="ex-card-title">Typographic Contrast</h3>
+            <p class="ex-text-muted ex-mb-3">文字大小比對達 1:8 的視覺張力展示。</p>
+            <button class="ex-btn ex-btn-primary" style="width: 100%;">查看展項</button>
+          </div>
+        </div>
+        <div class="ex-col-4">
+          <div class="ex-card">
+            <span class="ex-page-tag" style="color: var(--ex-color-primary);">P.14 / ART_02</span>
+            <h3 class="ex-card-title">Monochrome Space</h3>
+            <p class="ex-text-muted ex-mb-3">高對比灰白背景下的空間雕塑哲學。</p>
+            <button class="ex-btn ex-btn-outline" style="width: 100%;">策展紀錄</button>
+          </div>
+        </div>
+        <div class="ex-col-4">
+          <div class="ex-card">
+            <span class="ex-page-tag">P.22 / ART_03</span>
+            <h3 class="ex-card-title">Experimental Grid</h3>
+            <p class="ex-text-muted ex-mb-3">非標線打破常規對齊的頁面結構。</p>
+            <button class="ex-btn ex-btn-outline" style="width: 100%;">結構對照</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Components Section -->
+    <section id="components" class="ex-section">
+      <h2 class="ex-section-title">5. 實驗互動組件 <span class="ref">[ COMP_05 ]</span></h2>
+      
+      <!-- Progress Bar -->
+      <div class="ex-mb-4">
+        <div class="ex-flex-between ex-mb-2">
+          <span style="font-family: monospace; font-size: 0.85rem; font-weight: 700;">EXHIBITION DURATION PROGRESS</span>
+          <span style="font-family: monospace; font-size: 0.85rem; font-weight: 700; color: var(--ex-color-accent);">[ DAY 45 / 60 ]</span>
+        </div>
+        <div class="ex-progress">
+          <div class="ex-progress-bar" style="width: 75%;"></div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="ex-tabs">
+        <button class="ex-tab-btn active" data-tab="tab-1">01 // 策展理念</button>
+        <button class="ex-tab-btn" data-tab="tab-2">02 // 參展藝術家</button>
+        <button class="ex-tab-btn" data-tab="tab-3">03 // 展覽誌導覽</button>
+      </div>
+
+      <div id="tab-1" class="ex-tab-pane active">
+        <div class="ex-card">
+          <h4>打破視覺慣性的前衛實驗</h4>
+          <p class="ex-text-muted">利用大標題與頁碼註記的交錯，重新定義網頁與當代藝術手冊之間的界線。</p>
+        </div>
+      </div>
+      <div id="tab-2" class="ex-tab-pane">
+        <div class="ex-card">
+          <h4>來自全球 12 位當代視覺設計師</h4>
+          <p class="ex-text-muted">共同於台北美術館展出最新的幾何與字體實驗作品。</p>
+        </div>
+      </div>
+      <div id="tab-3" class="ex-tab-pane">
+        <div class="ex-card">
+          <h4>每日定時導覽場次</h4>
+          <p class="ex-text-muted">上午 10:30 與 下午 15:00 提供免費策展團隊導覽。</p>
+        </div>
+      </div>
+
+      <!-- Accordion -->
+      <h3 style="margin: 2.5rem 0 1rem; color: var(--ex-color-primary); font-size: 1.2rem; font-weight: 700;">展覽疑問標註 (Accordion)</h3>
+      <div class="ex-accordion-item open">
+        <div class="ex-accordion-header">為什麼排版故意採用強烈的字級反差？</div>
+        <div class="ex-accordion-body">
+          強烈的字級對比（如 4.5rem 與 0.75rem 並置）能引導觀者產生層次閱讀節奏，創造如同閱讀實體當代展覽手冊的體驗。
+        </div>
+      </div>
+      <div class="ex-accordion-item">
+        <div class="ex-accordion-header">展覽現場是否允許攝影與記錄？</div>
+        <div class="ex-accordion-body">
+          現場全區開放非商業攝影，歡迎使用展覽專用 Hashtag #EditorialExhibition2026 打卡分享。
+        </div>
+      </div>
+    </section>
+
+    <!-- Table Section -->
+    <section id="tables" class="ex-section">
+      <h2 class="ex-section-title">6. 展品目錄對照表 <span class="ref">[ TABLE_06 ]</span></h2>
+      <div class="ex-table-container">
+        <table class="ex-table">
+          <thead>
+            <tr>
+              <th>REF_NO</th>
+              <th>展品名稱</th>
+              <th>創作媒材</th>
+              <th>展區編號</th>
+              <th>典藏註記</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>[ ART_01 ]</strong></td>
+              <td>Typographic Contrast Study</td>
+              <td>當代網格與大標印刷</td>
+              <td>Zone 01</td>
+              <td><span class="ex-badge">主展品</span></td>
+            </tr>
+            <tr>
+              <td><strong>[ ART_02 ]</strong></td>
+              <td>Monochrome Spatial Installation</td>
+              <td>高對比灰白燈光與鏡面</td>
+              <td>Zone 02</td>
+              <td><span class="ex-badge" style="border-color: var(--ex-color-accent); color: var(--ex-color-accent);">推薦觀賞</span></td>
+            </tr>
+            <tr>
+              <td><strong>[ ART_03 ]</strong></td>
+              <td>Editorial Grid Manual</td>
+              <td>極簡紙本手冊與頁碼標註</td>
+              <td>Zone 03</td>
+              <td><span class="ex-badge">限量手稿</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Modal Component -->
+  <div class="ex-modal-overlay" id="exModalOverlay">
+    <div class="ex-modal">
+      <div class="ex-modal-header">
+        <h3 class="ex-modal-title">📋 當代展覽門票預約確認</h3>
+        <button class="ex-close-modal" style="background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--ex-color-primary);">&times;</button>
+      </div>
+      <p class="ex-text-muted ex-mb-4">感謝您預約《Editorial Exhibition 2026》。請確認您的電子門票資訊，憑 QR Code 即可入場。</p>
+      <div class="ex-flex ex-gap-2" style="justify-content: flex-end;">
+        <button class="ex-btn ex-btn-outline ex-close-modal">取消</button>
+        <button class="ex-btn ex-btn-primary ex-close-modal">確認門票</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas Component -->
+  <div class="ex-offcanvas" id="exOffcanvas">
+    <div class="ex-flex-between ex-mb-4" style="border-bottom: 1px solid var(--ex-border-color); padding-bottom: 1rem;">
+      <h3 style="color: var(--ex-color-primary);">展覽手冊索引</h3>
+      <button class="ex-close-modal" id="closeOffcanvas" style="background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--ex-color-primary);">&times;</button>
+    </div>
+    <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.2rem; font-family: monospace; font-size: 0.9rem;">
+      <li><a href="#" style="color: var(--ex-color-primary); text-decoration: none; font-weight: 700;">[ 01 ] 展覽前言與視覺聲明</a></li>
+      <li><a href="#" style="color: var(--ex-color-primary); text-decoration: none; font-weight: 700;">[ 02 ] 12 欄實驗對齊指南</a></li>
+      <li><a href="#" style="color: var(--ex-color-primary); text-decoration: none; font-weight: 700;">[ 03 ] 參展藝術家作品對照</a></li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

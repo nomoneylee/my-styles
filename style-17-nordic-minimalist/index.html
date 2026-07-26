@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格十七：北歐極簡木質風 (Pure Vanilla CSS/JS)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <nav class="nd-navbar">
+    <div class="nd-container nd-navbar-container">
+      <a class="nd-nav-brand" href="#">NORDIC <span>HOME</span></a>
+      <button class="nd-navbar-toggler" id="ndNavbarToggler" aria-label="Toggle navigation">MENU</button>
+      <div class="nd-navbar-collapse" id="ndNavbarCollapse">
+        <ul class="nd-nav-links">
+          <li><a class="nd-nav-link active" href="#palette">莫蘭迪調性</a></li>
+          <li><a class="nd-nav-link" href="#hero">極簡哲學</a></li>
+          <li><a class="nd-nav-link" href="#forms">傢俱客製</a></li>
+          <li><a class="nd-nav-link" href="#components">平靜組件</a></li>
+          <li><a class="nd-nav-link" href="#tables">新品目錄</a></li>
+        </ul>
+        <div class="nd-flex nd-gap-2">
+          <a href="../index.html" class="nd-btn nd-btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">HUB 總覽</a>
+          <button class="nd-btn nd-btn-primary" id="openOffcanvas" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">品味選單</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="nd-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="nd-hero">
+      <span class="nd-hero-badge">SCANDINAVIAN INTERIOR DESIGN</span>
+      <h1 class="nd-hero-title">自然色塊與留白的品味和諧</h1>
+      <p class="nd-hero-subtitle">參考北歐傢俱品牌（如 HAY）視覺精神。淺灰大理石底色搭配橄欖綠、冷木棕與莫蘭迪灰藍。幾乎無實線邊框，全靠平靜留白表現頂級品味。</p>
+      <div class="nd-flex nd-gap-3">
+        <button class="nd-btn nd-btn-primary">探索極簡空間</button>
+        <button class="nd-btn nd-btn-outline" id="openModal">平靜 Modal</button>
+      </div>
+    </section>
+
+    <!-- Color Palette Showcase -->
+    <section id="palette" class="nd-section">
+      <h2 class="nd-section-title">斯堪地那維亞色塊系統 (NORDIC PALETTE)</h2>
+      <p class="nd-text-muted nd-mb-4">全靠柔和色塊區隔，呈現平靜、高級且溫暖的莫蘭迪色調：</p>
+      
+      <div class="nd-grid">
+        <div class="nd-col-4">
+          <div class="nd-swatch-box nd-bg-primary">
+            <span>Primary 深岩灰</span>
+            <code>--nd-color-primary (#333333)</code>
+          </div>
+        </div>
+        <div class="nd-col-4">
+          <div class="nd-swatch-box nd-bg-secondary">
+            <span>Secondary 冷木頭棕</span>
+            <code>--nd-color-secondary (#7a6858)</code>
+          </div>
+        </div>
+        <div class="nd-col-4">
+          <div class="nd-swatch-box nd-bg-accent">
+            <span>Accent 北歐橄欖綠</span>
+            <code>--nd-color-accent (#4a5d4e)</code>
+          </div>
+        </div>
+        <div class="nd-col-3">
+          <div class="nd-swatch-box nd-bg-info">
+            <span>Info 莫蘭迪灰藍</span>
+            <code>--nd-color-info (#7b8e9b)</code>
+          </div>
+        </div>
+        <div class="nd-col-3">
+          <div class="nd-swatch-box nd-bg-success">
+            <span>Success 松木綠</span>
+            <code>--nd-color-success (#607d67)</code>
+          </div>
+        </div>
+        <div class="nd-col-3">
+          <div class="nd-swatch-box nd-bg-warning">
+            <span>Warning 暖原木黃</span>
+            <code>--nd-color-warning (#bd9b76)</code>
+          </div>
+        </div>
+        <div class="nd-col-3">
+          <div class="nd-swatch-box nd-bg-error">
+            <span>Error 莫蘭迪赭紅</span>
+            <code>--nd-color-error (#a85854)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notification Alert Section -->
+    <section class="nd-section">
+      <h2 class="nd-section-title">空間狀態通知 (Alert Notifications)</h2>
+      <div class="nd-alert nd-alert-info">
+        <strong>灰藍 notification:</strong> HAY 季節聯名單椅展覽將於本週末於展廳登場。
+      </div>
+      <div class="nd-alert nd-alert-success">
+        <strong>松木綠 success:</strong> 原木無邊框玄關櫃配送訂單已成功排單。
+      </div>
+      <div class="nd-alert nd-alert-warning">
+        <strong>暖木黃 warning:</strong> 客製冷木棕餐桌素材數量僅剩最後 3 組。
+      </div>
+      <div class="nd-alert nd-alert-error">
+        <strong>莫蘭迪紅 error:</strong> 展廳冷氣維護中，今日下午暫停預約導覽。
+      </div>
+    </section>
+
+    <!-- Typography & Badges -->
+    <section class="nd-section">
+      <h2 class="nd-section-title">1. 排版與無邊框標籤 (Typography & Badges)</h2>
+      <div class="nd-grid">
+        <div class="nd-col-6">
+          <h1 class="nd-mb-2">H1 北歐室內美學 <span class="nd-badge">HAY Style</span></h1>
+          <h2 class="nd-mb-2">H2 莫蘭迪調性與冷木棕 <span class="nd-badge" style="background: var(--nd-color-accent); color: white;">Nordic</span></h2>
+          <h3 class="nd-mb-3">H3 讓空間回歸生活本質</h3>
+          <p class="nd-text-muted nd-mb-3">捨棄繁複的裝飾與硬質實線，運用大面積平靜留白與自然色塊，讓家居與生活充滿呼吸感。</p>
+        </div>
+        <div class="nd-col-6">
+          <blockquote style="border-left: 4px solid var(--nd-color-accent); padding-left: 1.5rem; background: var(--nd-bg-card); padding: 1.5rem; border-radius: var(--nd-radius-md);">
+            「簡約並非缺乏細節，而是剔除多餘之後所展現的終極品質與內涵。」
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buttons -->
+    <section class="nd-section">
+      <h2 class="nd-section-title">2. 柔和色塊按鈕 (Buttons)</h2>
+      <div class="nd-flex nd-gap-3 nd-flex-wrap">
+        <button class="nd-btn nd-btn-primary">Primary 橄欖綠按鈕</button>
+        <button class="nd-btn nd-btn-secondary">Secondary 木棕按鈕</button>
+        <button class="nd-btn nd-btn-outline">Outline 大理石卡片按鈕</button>
+      </div>
+    </section>
+
+    <!-- Form Controls -->
+    <section id="forms" class="nd-section">
+      <h2 class="nd-section-title">3. 原生表單控制項 (Form Controls)</h2>
+      <form>
+        <div class="nd-grid">
+          <div class="nd-col-6">
+            <div class="nd-form-group">
+              <label class="nd-form-label" for="ndName">業主姓名</label>
+              <input type="text" id="ndName" class="nd-input" placeholder="例如: 艾力克斯 Alex">
+            </div>
+          </div>
+          <div class="nd-col-6">
+            <div class="nd-form-group">
+              <label class="nd-form-label" for="ndFurniture">訂製傢俱類別</label>
+              <select id="ndFurniture" class="nd-select">
+                <option>斯堪地那維亞實木餐桌</option>
+                <option>莫蘭迪灰藍織布沙發</option>
+                <option>北歐極簡簡約吊燈</option>
+              </select>
+            </div>
+          </div>
+          <div class="nd-col-12">
+            <div class="nd-form-group">
+              <label class="nd-form-label" for="ndSpace">空間規格與需求</label>
+              <textarea id="ndSpace" class="nd-textarea" rows="3" placeholder="例如: 客廳採光充沛，希望搭配橄欖綠與冷木頭棕質感..."></textarea>
+            </div>
+          </div>
+
+          <!-- Checkbox, Radio, Switch, Range -->
+          <div class="nd-col-6">
+            <div class="nd-form-group">
+              <label class="nd-form-label">選配塗裝選項 (Checkbox)</label>
+              <div class="nd-flex nd-gap-3" style="margin-top: 0.5rem;">
+                <label class="nd-checkbox-label">
+                  <input type="checkbox" class="nd-checkbox" checked> 環保水性冷木漆
+                </label>
+                <label class="nd-checkbox-label">
+                  <input type="checkbox" class="nd-checkbox"> 天然植物木蠟油
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="nd-col-6">
+            <div class="nd-form-group">
+              <label class="nd-form-label">色塊主題 (Radio)</label>
+              <div class="nd-flex nd-gap-3" style="margin-top: 0.5rem;">
+                <label class="nd-radio-label">
+                  <input type="radio" name="ndTheme" class="nd-radio" checked> 莫蘭迪灰藍
+                </label>
+                <label class="nd-radio-label">
+                  <input type="radio" name="ndTheme" class="nd-radio"> 北歐橄欖綠
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="nd-col-6">
+            <div class="nd-form-group">
+              <label class="nd-form-label">到府裝修諮詢 (Switch)</label>
+              <label class="nd-switch-label" style="margin-top: 0.5rem;">
+                <input type="checkbox" class="nd-switch-input" checked>
+                <span class="nd-switch-slider"></span>
+                <span>安排北歐軟裝設計師現場量測</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="nd-col-6">
+            <div class="nd-form-group">
+              <label class="nd-form-label">空間坪數規劃 (Range Slider)</label>
+              <input type="range" class="nd-range" min="10" max="150" value="35">
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="nd-section">
+      <h2 class="nd-section-title">4. 無邊框色塊卡片 (Cards)</h2>
+      <div class="nd-grid">
+        <div class="nd-col-4">
+          <div class="nd-card">
+            <span class="nd-badge nd-mb-2">經典單椅</span>
+            <h3 class="nd-card-title">HAY Lounge Chair</h3>
+            <p class="nd-text-muted nd-mb-3">極致人體工學曲面，搭配莫蘭迪灰藍細緻織布軟墊。</p>
+            <button class="nd-btn nd-btn-primary" style="width: 100%;">查看作品</button>
+          </div>
+        </div>
+        <div class="nd-col-4">
+          <div class="nd-card">
+            <span class="nd-badge nd-mb-2" style="background: rgba(122, 104, 88, 0.15); color: var(--nd-color-secondary);">冷木實木</span>
+            <h3 class="nd-card-title">Nordic Oak Table</h3>
+            <p class="nd-text-muted nd-mb-3">嚴選北歐白橡木，無邊框平滑磨邊導角工藝。</p>
+            <button class="nd-btn nd-btn-secondary" style="width: 100%;">材質細節</button>
+          </div>
+        </div>
+        <div class="nd-col-4">
+          <div class="nd-card">
+            <span class="nd-badge nd-mb-2" style="background: rgba(123, 142, 155, 0.15); color: var(--nd-color-info);">軟裝配飾</span>
+            <h3 class="nd-card-title">Marble Floor Lamp</h3>
+            <p class="nd-text-muted nd-mb-3">淺灰大理石基座，投射柔和漫射光線氛圍。</p>
+            <button class="nd-btn nd-btn-outline" style="width: 100%;">燈光設計</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Components Section -->
+    <section id="components" class="nd-section">
+      <h2 class="nd-section-title">5. 平靜互動組件 (Tabs, Accordion & Progress)</h2>
+      
+      <!-- Progress Bar -->
+      <div class="nd-mb-4">
+        <div class="nd-flex-between nd-mb-2">
+          <span style="font-weight: 600; color: var(--nd-color-primary);">北歐原木產地永續驗證</span>
+          <span style="font-weight: 700; color: var(--nd-color-accent);">100% FSC CERTIFIED</span>
+        </div>
+        <div class="nd-progress">
+          <div class="nd-progress-bar" style="width: 100%;"></div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="nd-tabs">
+        <button class="nd-tab-btn active" data-tab="tab-1">極簡設計哲學</button>
+        <button class="nd-tab-btn" data-tab="tab-2">永續材質認證</button>
+        <button class="nd-tab-btn" data-tab="tab-3">保固與養護</button>
+      </div>
+
+      <div id="tab-1" class="nd-tab-pane active">
+        <div class="nd-card">
+          <h4>留白與功能的平衡</h4>
+          <p class="nd-text-muted">摒棄不必要的裝飾，讓傢俱回歸視覺與使用本質，為生活創造平靜港灣。</p>
+        </div>
+      </div>
+      <div id="tab-2" class="nd-tab-pane">
+        <div class="nd-card">
+          <h4>100% FSC 永續森林</h4>
+          <p class="nd-text-muted">所有木材皆來自負責任經營的北歐森林，每採伐一棵樹木皆植回兩棵新苗。</p>
+        </div>
+      </div>
+      <div id="tab-3" class="nd-tab-pane">
+        <div class="nd-card">
+          <h4>10 年結構原廠保固</h4>
+          <p class="nd-text-muted">提供專屬冷木保養木蠟油與定期到府健檢服務。</p>
+        </div>
+      </div>
+
+      <!-- Accordion -->
+      <h3 style="margin: 2.5rem 0 1rem; color: var(--nd-color-primary);">常見空間疑問 (Accordion)</h3>
+      <div class="nd-accordion-item open">
+        <div class="nd-accordion-header">為什麼元件幾乎不採用線條邊框？</div>
+        <div class="nd-accordion-body">
+          北歐風格強調大氣無壓的視覺感受，透過色塊與留白區隔能減少視覺雜訊，創造更加平靜的空間氣氛。
+        </div>
+      </div>
+      <div class="nd-accordion-item">
+        <div class="nd-accordion-header">實木傢俱如何應對台灣潮濕氣候？</div>
+        <div class="nd-accordion-body">
+          我們的傢俱已完成高溫二次烘乾與專利水性防水塗裝，能完美適應海島型氣候。
+        </div>
+      </div>
+    </section>
+
+    <!-- Table Section -->
+    <section id="tables" class="nd-section">
+      <h2 class="nd-section-title">6. 新品傢俱規格清單 (Tables)</h2>
+      <div class="nd-table-container">
+        <table class="nd-table">
+          <thead>
+            <tr>
+              <th>品項名稱</th>
+              <th>主要材質</th>
+              <th>尺寸 (W x D x H cm)</th>
+              <th>參考價格 (NTD)</th>
+              <th>供應狀態</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>HAY Scandinavian Lounge Chair</strong></td>
+              <td>莫蘭迪灰藍織布、白橡木腳</td>
+              <td>82 x 75 x 78</td>
+              <td>$ 28,500</td>
+              <td><span class="nd-badge">熱銷中</span></td>
+            </tr>
+            <tr>
+              <td><strong>Nordic Oak Dining Table</strong></td>
+              <td>北歐冷木頭白橡木實木</td>
+              <td>180 x 90 x 75</td>
+              <td>$ 45,000</td>
+              <td><span class="nd-badge" style="background: rgba(74, 93, 78, 0.15); color: var(--nd-color-accent);">現貨充足</span></td>
+            </tr>
+            <tr>
+              <td><strong>Marble Ambient Floor Lamp</strong></td>
+              <td>淺灰大理石、莫蘭迪金屬</td>
+              <td>35 x 35 x 150</td>
+              <td>$ 16,800</td>
+              <td><span class="nd-badge">即將完售</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Modal Component -->
+  <div class="nd-modal-overlay" id="ndModalOverlay">
+    <div class="nd-modal">
+      <div class="nd-modal-header">
+        <h3 class="nd-modal-title">🌿 北歐軟裝預約確認</h3>
+        <button class="nd-close-modal" style="background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--nd-color-primary);">&times;</button>
+      </div>
+      <p class="nd-text-muted nd-mb-4">感謝您選擇 Nordic Home。請確認您的空間評估需求，我們將為您安排專屬軟裝設計師。</p>
+      <div class="nd-flex nd-gap-2" style="justify-content: flex-end;">
+        <button class="nd-btn nd-btn-outline nd-close-modal">返回修改</button>
+        <button class="nd-btn nd-btn-primary nd-close-modal">確認預約</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas Component -->
+  <div class="nd-offcanvas" id="ndOffcanvas">
+    <div class="nd-flex-between nd-mb-4" style="border-bottom: 1px solid rgba(0,0,0,0.06); padding-bottom: 1rem;">
+      <h3 style="color: var(--nd-color-primary);">品味靈感庫</h3>
+      <button class="nd-close-modal" id="closeOffcanvas" style="background: none; border: none; font-size: 1.4rem; cursor: pointer;">&times;</button>
+    </div>
+    <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.2rem;">
+      <li><a href="#" style="color: var(--nd-text-main); text-decoration: none; font-weight: 600;">🌿 莫蘭迪灰藍與冷木配色筆記</a></li>
+      <li><a href="#" style="color: var(--nd-text-main); text-decoration: none; font-weight: 600;">🌿 斯堪地那維亞居家光影美學</a></li>
+      <li><a href="#" style="color: var(--nd-text-main); text-decoration: none; font-weight: 600;">🌿 HAY 設計大師系列專訪</a></li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格十九：新美式復古 Arcade / 嬉皮風 (Pure Vanilla CSS/JS)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <nav class="rt-navbar">
+    <div class="rt-container rt-navbar-container">
+      <a class="rt-nav-brand" href="#">70s RETRO <span>VINYL</span></a>
+      <button class="rt-navbar-toggler" id="rtNavbarToggler" aria-label="Toggle navigation">MENU</button>
+      <div class="rt-navbar-collapse" id="rtNavbarCollapse">
+        <ul class="rt-nav-links">
+          <li><a class="rt-nav-link active" href="#palette">嬉皮調色</a></li>
+          <li><a class="rt-nav-link" href="#hero">70s 黑膠</a></li>
+          <li><a class="rt-nav-link" href="#forms">唱片預約</a></li>
+          <li><a class="rt-nav-link" href="#components">街機元件</a></li>
+          <li><a class="rt-nav-link" href="#tables">黑膠排行榜</a></li>
+        </ul>
+        <div class="rt-flex rt-gap-2">
+          <a href="../index.html" class="rt-btn rt-btn-outline" style="padding: 0.4rem 1rem; font-size: 0.85rem;">HUB 總覽</a>
+          <button class="rt-btn rt-btn-primary" id="openOffcanvas" style="padding: 0.4rem 1rem; font-size: 0.85rem;">arcade選單</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="rt-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="rt-hero">
+      <span class="rt-hero-badge">70s AMERICAN RETRO & VINYL ARCADE</span>
+      <h1 class="rt-hero-title">70 年代黑膠唱片與街機的懷舊生命力！</h1>
+      <p class="rt-hero-subtitle">美式復古黑膠唱片行與 Arcade 街機體驗。暖黃、芥末黃、嬉皮橘紅與深棕重立體陰影，充滿活潑熱情的視覺溫度！</p>
+      <div class="rt-flex rt-gap-3">
+        <button class="rt-btn rt-btn-primary">播放 70s 搖滾</button>
+        <button class="rt-btn rt-btn-outline" id="openModal">復古 Modal</button>
+      </div>
+    </section>
+
+    <!-- Color Palette Showcase -->
+    <section id="palette" class="rt-section">
+      <h2 class="rt-section-title">嬉皮 Arcade 配色系統 (RETRO PALETTE)</h2>
+      <p class="rt-text-muted rt-mb-4">以暖黃與深棕為骨幹，搭配熱情的嬉皮橘紅與綠松石藍：</p>
+      
+      <div class="rt-grid">
+        <div class="rt-col-4">
+          <div class="rt-swatch-box rt-bg-primary">
+            <span>Primary 復古深棕</span>
+            <code>--rt-color-primary (#4a2912)</code>
+          </div>
+        </div>
+        <div class="rt-col-4">
+          <div class="rt-swatch-box rt-bg-secondary">
+            <span>Secondary 芥末黃</span>
+            <code>--rt-color-secondary (#e3a826)</code>
+          </div>
+        </div>
+        <div class="rt-col-4">
+          <div class="rt-swatch-box rt-bg-accent">
+            <span>Accent 嬉皮橘紅</span>
+            <code>--rt-color-accent (#d94e2b)</code>
+          </div>
+        </div>
+        <div class="rt-col-3">
+          <div class="rt-swatch-box rt-bg-info">
+            <span>Info 綠松石藍</span>
+            <code>--rt-color-info (#3b7a8c)</code>
+          </div>
+        </div>
+        <div class="rt-col-3">
+          <div class="rt-swatch-box rt-bg-success">
+            <span>Success 酪梨綠</span>
+            <code>--rt-color-success (#558c44)</code>
+          </div>
+        </div>
+        <div class="rt-col-3">
+          <div class="rt-swatch-box rt-bg-warning">
+            <span>Warning 太陽橘</span>
+            <code>--rt-color-warning (#f28d35)</code>
+          </div>
+        </div>
+        <div class="rt-col-3">
+          <div class="rt-swatch-box rt-bg-error">
+            <span>Error 街機櫻桃紅</span>
+            <code>--rt-color-error (#c42b2b)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notification Alert Section -->
+    <section class="rt-section">
+      <h2 class="rt-section-title">街機廣播通知 (Alert Notifications)</h2>
+      <div class="rt-alert rt-alert-info">
+        <strong>綠松石藍:</strong> 本週五夜狂歡 Funk & Disco 黑膠試聽會開放免費入場。
+      </div>
+      <div class="rt-alert rt-alert-success">
+        <strong>酪梨綠 success:</strong> 恭喜玩家獲得 Arcade 吃角子老虎高分記錄！
+      </div>
+      <div class="rt-alert rt-alert-warning">
+        <strong>太陽橘 warning:</strong> 70 年代經典樂團限量原版黑膠僅剩最後 2 張！
+      </div>
+      <div class="rt-alert rt-alert-error">
+        <strong>櫻桃紅 error:</strong> Pinball 彈珠台 3 號機代幣投幣卡幣維修中。
+      </div>
+    </section>
+
+    <!-- Typography & Badges -->
+    <section class="rt-section">
+      <h2 class="rt-section-title">1. 厚實復古字體與陰影標籤 (Typography & Badges)</h2>
+      <div class="rt-grid">
+        <div class="rt-col-6">
+          <h1 class="rt-mb-2">H1 FUNKY RETRO 70S <span class="rt-badge">★ ARCADE</span></h1>
+          <h2 class="rt-mb-2">H2 GROOVY VINYL RECORDS <span class="rt-badge" style="background: var(--rt-color-accent); color: white;">POPULAR</span></h2>
+          <h3 class="rt-mb-3">H3 圓潤厚重字體與立體筆觸</h3>
+          <p class="rt-text-muted rt-mb-3">條紋背景與深棕實心陰影（5px 5px Offset），展現美式復古黑膠唱片行的活潑與懷舊氛圍。</p>
+        </div>
+        <div class="rt-col-6">
+          <blockquote style="border: 3px solid var(--rt-border-color); padding: 1.5rem; background: var(--rt-bg-card); box-shadow: var(--rt-shadow-retro); font-weight: 700;">
+            「音樂與街機代幣，就是 70 年代熱血青春最不朽的靈魂註腳！」
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buttons -->
+    <section class="rt-section">
+      <h2 class="rt-section-title">2. 厚重立體陰影按鈕 (Buttons)</h2>
+      <div class="rt-flex rt-gap-3 rt-flex-wrap">
+        <button class="rt-btn rt-btn-primary">Primary 嬉皮橘紅</button>
+        <button class="rt-btn rt-btn-secondary">Secondary 芥末黃</button>
+        <button class="rt-btn rt-btn-outline">Outline 奶黃卡片按鈕</button>
+      </div>
+    </section>
+
+    <!-- Form Controls -->
+    <section id="forms" class="rt-section">
+      <h2 class="rt-section-title">3. 原生表單控制項 (Form Controls)</h2>
+      <form>
+        <div class="rt-grid">
+          <div class="rt-col-6">
+            <div class="rt-form-group">
+              <label class="rt-form-label" for="rtName">玩家 / 樂迷暱稱</label>
+              <input type="text" id="rtName" class="rt-input" placeholder="例如: Funky Boy John">
+            </div>
+          </div>
+          <div class="rt-col-6">
+            <div class="rt-form-group">
+              <label class="rt-form-label" for="rtGenre">黑膠音樂曲風</label>
+              <select id="rtGenre" class="rt-select">
+                <option>70s Funk & Disco 靈魂樂</option>
+                <option>Classic Hard Rock 經典硬搖滾</option>
+                <option>Psychedelic Hippie 迷幻嬉皮</option>
+              </select>
+            </div>
+          </div>
+          <div class="rt-col-12">
+            <div class="rt-form-group">
+              <label class="rt-form-label" for="rtSong">許願尋找的絕版唱片</label>
+              <textarea id="rtSong" class="rt-textarea" rows="3" placeholder="請填寫您尋找多年的 70 年代黑膠專輯名稱..."></textarea>
+            </div>
+          </div>
+
+          <!-- Checkbox, Radio, Switch, Range -->
+          <div class="rt-col-6">
+            <div class="rt-form-group">
+              <label class="rt-form-label">唱片保養禮包 (Checkbox)</label>
+              <div class="rt-flex rt-gap-3" style="margin-top: 0.5rem;">
+                <label class="rt-checkbox-label">
+                  <input type="checkbox" class="rt-checkbox" checked> 抗靜電黑膠刷
+                </label>
+                <label class="rt-checkbox-label">
+                  <input type="checkbox" class="rt-checkbox"> Arcade 專屬金屬代幣
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="rt-col-6">
+            <div class="rt-form-group">
+              <label class="rt-form-label">唱片轉速規格 (Radio)</label>
+              <div class="rt-flex rt-gap-3" style="margin-top: 0.5rem;">
+                <label class="rt-radio-label">
+                  <input type="radio" name="rtSpeed" class="rt-radio" checked> 33 1/3 RPM 專輯
+                </label>
+                <label class="rt-radio-label">
+                  <input type="radio" name="rtSpeed" class="rt-radio"> 45 RPM 單曲
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="rt-col-6">
+            <div class="rt-form-group">
+              <label class="rt-form-label">Arcade 比賽廣播 (Switch)</label>
+              <label class="rt-switch-label" style="margin-top: 0.5rem;">
+                <input type="checkbox" class="rt-switch-input" checked>
+                <span class="rt-switch-slider"></span>
+                <span>訂閱每週彈珠台高分挑戰簡訊</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="rt-col-6">
+            <div class="rt-form-group">
+              <label class="rt-form-label">黑膠音響音量 (Range Slider)</label>
+              <input type="range" class="rt-range" min="1" max="11" value="9">
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="rt-section">
+      <h2 class="rt-section-title">4. 懷舊街機卡片 (Cards)</h2>
+      <div class="rt-grid">
+        <div class="rt-col-4">
+          <div class="rt-card">
+            <span class="rt-badge rt-mb-2">1977 ALBUM</span>
+            <h3 class="rt-card-title">Funkadelic Grooves</h3>
+            <p class="rt-text-muted rt-mb-3">充滿爆發力的 BASS 低音與華麗 Disco 律動。</p>
+            <button class="rt-btn rt-btn-primary" style="width: 100%;">試聽唱片</button>
+          </div>
+        </div>
+        <div class="rt-col-4">
+          <div class="rt-card">
+            <span class="rt-badge rt-mb-2" style="background: var(--rt-color-accent); color: white;">ARCADE GAME</span>
+            <h3 class="rt-card-title">Retro Pinball Machine</h3>
+            <p class="rt-text-muted rt-mb-3">傳統機械彈珠台，金屬撞擊聲與五彩霓虹燈。</p>
+            <button class="rt-btn rt-btn-secondary" style="width: 100%;">投幣挑戰</button>
+          </div>
+        </div>
+        <div class="rt-col-4">
+          <div class="rt-card">
+            <span class="rt-badge rt-mb-2">TURNTABLE</span>
+            <h3 class="rt-card-title">Vintage Record Player</h3>
+            <p class="rt-text-muted rt-mb-3">木質外殼與真空管擴大機，溫暖飽滿的唱針聲響。</p>
+            <button class="rt-btn rt-btn-outline" style="width: 100%;">配備細節</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Components Section -->
+    <section id="components" class="rt-section">
+      <h2 class="rt-section-title">5. 街機互動元件 (Tabs, Accordion & Progress)</h2>
+      
+      <!-- Progress Bar -->
+      <div class="rt-mb-4">
+        <div class="rt-flex-between rt-mb-2">
+          <span style="font-weight: 900;">70s 黑膠絕版唱片數位化進度</span>
+          <span style="font-weight: 900; color: var(--rt-color-accent);">78% COMPLETED</span>
+        </div>
+        <div class="rt-progress">
+          <div class="rt-progress-bar" style="width: 78%;"></div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="rt-tabs">
+        <button class="rt-tab-btn active" data-tab="tab-1">黑膠文化</button>
+        <button class="rt-tab-btn" data-tab="tab-2">街機賽事</button>
+        <button class="rt-tab-btn" data-tab="tab-3">嬉皮服飾</button>
+      </div>
+
+      <div id="tab-1" class="rt-tab-pane active">
+        <div class="rt-card">
+          <h4>黑膠唱片溫暖的真空管音質</h4>
+          <p class="rt-text-muted">比數位 MP3 更加寬廣的聲場與頻響，記錄最真實的樂團演奏現場。</p>
+        </div>
+      </div>
+      <div id="tab-2" class="rt-tab-pane">
+        <div class="rt-card">
+          <h4>全台 70s Pinball 彈珠台聯賽</h4>
+          <p class="rt-text-muted">冠軍可獲得 70 年代限量原版吉他與 Arcade 終身免費投幣金卡。</p>
+        </div>
+      </div>
+      <div id="tab-3" class="rt-tab-pane">
+        <div class="rt-card">
+          <h4>喇叭褲與芥末黃皮革夾克</h4>
+          <p class="rt-text-muted">重現 70 年代舊金山嬉皮搖滾節的狂放穿搭哲學。</p>
+        </div>
+      </div>
+
+      <!-- Accordion -->
+      <h3 style="margin: 2.5rem 0 1rem; color: var(--rt-color-primary); font-weight: 900;">熱血搖滾問答 (Accordion)</h3>
+      <div class="rt-accordion-item open">
+        <div class="rt-accordion-header">黑膠唱片該如何防潮與妥善保存？</div>
+        <div class="rt-accordion-body">
+          建議使用抗靜電內袋直立擺放，避免陽光直射與高溫，並定期使用專用靜電刷清理灰塵。
+        </div>
+      </div>
+      <div class="rt-accordion-item">
+        <div class="rt-accordion-header">Arcade 遊戲機台是否提供租借活動？</div>
+        <div class="rt-accordion-body">
+          是的，我們提供派對與展覽的 70 年代美式機台運送與專人安裝服務。
+        </div>
+      </div>
+    </section>
+
+    <!-- Table Section -->
+    <section id="tables" class="rt-section">
+      <h2 class="rt-section-title">6. 70s 黑膠唱片排行榜 (Tables)</h2>
+      <div class="rt-table-container">
+        <table class="rt-table">
+          <thead>
+            <tr>
+              <th>排名</th>
+              <th>專輯名稱</th>
+              <th>演繹樂團</th>
+              <th>發行年份</th>
+              <th>珍稀程度</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>#01</strong></td>
+              <td>Groovy Soul Train Funk Vol.1</td>
+              <td>The Funky Express</td>
+              <td>1974</td>
+              <td><span class="rt-badge">五顆星珍稀</span></td>
+            </tr>
+            <tr>
+              <td><strong>#02</strong></td>
+              <td>Psychedelic Rock Revolution</td>
+              <td>Hippie Sunshine Band</td>
+              <td>1971</td>
+              <td><span class="rt-badge" style="background: var(--rt-color-accent); color: white;">絕版發行</span></td>
+            </tr>
+            <tr>
+              <td><strong>#03</strong></td>
+              <td>Arcade Pinball Fever Disco</td>
+              <td>Retro Beats Crew</td>
+              <td>1978</td>
+              <td><span class="rt-badge">白金唱片</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Modal Component -->
+  <div class="rt-modal-overlay" id="rtModalOverlay">
+    <div class="rt-modal">
+      <div class="rt-modal-header">
+        <h3 class="rt-modal-title">🕹️ 70s RETRO ARCADE 預約確認</h3>
+        <button class="rt-close-modal" style="background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--rt-color-primary);">&times;</button>
+      </div>
+      <p class="rt-text-muted rt-mb-4">準備好進入 70 年代黑膠與 Arcade 的熱血世界了嗎？請確認您的試聽與投幣預約。</p>
+      <div class="rt-flex rt-gap-2" style="justify-content: flex-end;">
+        <button class="rt-btn rt-btn-outline rt-close-modal">返回</button>
+        <button class="rt-btn rt-btn-primary rt-close-modal">Let's Groove!</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas Component -->
+  <div class="rt-offcanvas" id="rtOffcanvas">
+    <div class="rt-flex-between rt-mb-4" style="border-bottom: 2px solid var(--rt-border-color); padding-bottom: 1rem;">
+      <h3 style="color: var(--rt-color-primary);">嬉皮街機選單</h3>
+      <button class="rt-close-modal" id="closeOffcanvas" style="background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--rt-color-primary);">&times;</button>
+    </div>
+    <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.2rem;">
+      <li><a href="#" style="color: var(--rt-color-primary); text-decoration: none; font-weight: 900;">★ 70 年代經典黑膠收藏清單</a></li>
+      <li><a href="#" style="color: var(--rt-color-primary); text-decoration: none; font-weight: 900;">★ 彈珠台與機台維護手冊</a></li>
+      <li><a href="#" style="color: var(--rt-color-primary); text-decoration: none; font-weight: 900;">★ 復古 Funk 音樂節門票</a></li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
