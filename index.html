@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pure Vanilla CSS 十大美學風格 Homepage 總覽 Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0d12;
+      color: #e2e8f0;
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .hub-header {
+      padding: 5rem 0 3rem;
+      text-align: center;
+      border-bottom: 1px solid #1e293b;
+    }
+    .hub-badge {
+      display: inline-block;
+      background: #0284c7;
+      color: #ffffff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.4em 1em;
+      border-radius: 999px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .hub-title {
+      font-weight: 900;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.03em;
+    }
+    .hub-subtitle {
+      color: #94a3b8;
+      font-size: 1.15rem;
+      max-width: 720px;
+      margin: 1rem auto 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.8rem;
+      padding: 4rem 0;
+    }
+    .style-card {
+      background: #141824;
+      border: 1px solid #232b3b;
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .style-card:hover {
+      transform: translateY(-6px);
+      border-color: #38bdf8;
+      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.15);
+    }
+    .style-num {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #38bdf8;
+      text-transform: uppercase;
+    }
+    .style-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0.5rem 0 0.75rem;
+    }
+    .style-desc {
+      color: #94a3b8;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .badge-tag {
+      background: #1e2636;
+      color: #cbd5e1;
+      font-size: 0.78rem;
+      padding: 0.3em 0.7em;
+      border-radius: 6px;
+      border: 1px solid #334155;
+    }
+    .card-actions {
+      display: flex;
+      gap: 0.75rem;
+    }
+    .btn-preview {
+      flex: 1;
+      background: #ffffff;
+      color: #0b0d12;
+      font-weight: 700;
+      border-radius: 10px;
+      padding: 0.65rem 1rem;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+    }
+    .btn-preview:hover {
+      background: #38bdf8;
+      color: #0b0d12;
+    }
+    .btn-doc {
+      background: #1e293b;
+      color: #94a3b8;
+      font-weight: 600;
+      border-radius: 10px;
+      padding: 0.65rem 1rem;
+      text-decoration: none;
+      text-align: center;
+      font-size: 0.9rem;
+      border: 1px solid #334155;
+    }
+    .btn-doc:hover {
+      background: #334155;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hub-header container">
+    <span class="hub-badge">100% Pure Vanilla CSS Design Systems</span>
+    <h1 class="hub-title">10 大獨特 Homepage 美學風格展示 Hub</h1>
+    <p class="hub-subtitle">
+      零 Bootstrap 5 依賴，Antigravity 100% 完全自建！每種風格皆包含獨立的 Pure Vanilla CSS、專屬配色系統展示區與詳細的 README.md 類別說明文件。
+    </p>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+
+      <!-- Style 01 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 01</span>
+          <h3 class="style-name">Apple 官網 / 高級設計雜誌</h3>
+          <p class="style-desc">極簡白與深灰、大留白呼吸感，自建極簡配色系統與膠囊細邊框按鈕。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">極簡白與深灰</span>
+            <span class="badge-tag">自建色彩 Tokens</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-01-apple-style/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-01-apple-style/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 02 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 02</span>
+          <h3 class="style-name">無印良品 / 誠品書店風格</h3>
+          <p class="style-desc">溫暖米白背景、木質調與暗褐色文字，和風原木、抹茶青與柿子橘專屬色彩。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">溫暖米白</span>
+            <span class="badge-tag">和風木質色系</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-02-muji-eslite/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-02-muji-eslite/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 03 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 03</span>
+          <h3 class="style-name">戶外露營 / 文青咖啡廳菜單</h3>
+          <p class="style-desc">大地色系（橄欖綠、燕麥色、暗橘色），重磅直角邊框與露營菜單質感。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">露營橄欖綠</span>
+            <span class="badge-tag">直角硬派</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-03-outdoor-cafe/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-03-outdoor-cafe/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 04 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 04</span>
+          <h3 class="style-name">高檔飯店 / 精品品牌</h3>
+          <p class="style-desc">深墨綠沉穩深色底，搭配皇家金與香檳奶茶點綴，呈現奢華飯店質感。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">深墨綠底</span>
+            <span class="badge-tag">皇家金 Accent</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-04-luxury-hotel/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-04-luxury-hotel/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 05 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 05</span>
+          <h3 class="style-name">手作感 / 溫馨繪本風格</h3>
+          <p class="style-desc">奶油黃與淺奶茶色背景，暗棕手繪邊框、草莓紅點綴與微凸立體陰影。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">奶油黃背景</span>
+            <span class="badge-tag">微凸手繪邊框</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-05-handcrafted-picturebook/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-05-handcrafted-picturebook/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 06 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 06</span>
+          <h3 class="style-name">美式復古報紙 / 舊時代雜誌</h3>
+          <p class="style-desc">米黃舊紙張背景、報墨深黑文字、強烈雙線直欄分割與郵戳紅點綴。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">米黃舊紙張</span>
+            <span class="badge-tag">報墨雙直線</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-06-retro-newspaper/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-06-retro-newspaper/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 07 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 07</span>
+          <h3 class="style-name">當代藝廊 / 當代美術館</h3>
+          <p class="style-desc">極簡大面積純白留白，搭配醒目巨型黑體字標題與當代彩度對比。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">純白大留白</span>
+            <span class="badge-tag">巨型黑體</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-07-art-gallery/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-07-art-gallery/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 08 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 08</span>
+          <h3 class="style-name">建築事務所 / 日系現代設計</h3>
+          <p class="style-desc">水泥白背景，搭配 1px 精細幾何線條分割、大標題與微縮內文級距。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">水泥白背景</span>
+            <span class="badge-tag">1px幾何細線</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-08-architectural-modern/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-08-architectural-modern/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 09 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 09</span>
+          <h3 class="style-name">80 年代 Apple 電腦 / 復古電子</h3>
+          <p class="style-desc">灰綠與暖灰背景，Bevel 雙層立體邊框視窗與 CRT 螢光綠文字點陣質感。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">暖灰綠背景</span>
+            <span class="badge-tag">Bevel立體邊框</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-09-retro-apple80s/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-09-retro-apple80s/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 10 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 10</span>
+          <h3 class="style-name">潮流品牌 / 音樂節宣傳海報</h3>
+          <p class="style-desc">高對比米白搭深墨綠與濃褐色，巨型粗體、5px 實心黑色陰影與動態跑馬燈。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">高對比色</span>
+            <span class="badge-tag">實心黑色陰影</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-10-streetwear-poster/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-10-streetwear-poster/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer style="padding: 3rem 0; text-align: center; color: #64748b; border-top: 1px solid #1e293b; font-size: 0.85rem;">
+    <p>© 2026 100% Pure Vanilla CSS Multi-Style Collection. Zero Framework Dependencies.</p>
+  </footer>
+
+</body>
+</html>

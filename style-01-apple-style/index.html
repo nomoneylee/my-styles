@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格一：Apple 官網 / 高級設計雜誌風格 (Pure Vanilla CSS/JS)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header / Navbar Component -->
+  <nav class="ap-navbar">
+    <div class="ap-container ap-navbar-container">
+      <a class="ap-nav-brand" href="#">MINIMALIST</a>
+      <button class="ap-navbar-toggler" id="apNavbarToggler" aria-label="Toggle navigation">
+        <span class="ap-toggler-icon"></span>
+      </button>
+      <div class="ap-navbar-collapse" id="apNavbarCollapse">
+        <ul class="ap-nav-links">
+          <li><a class="ap-nav-link active" href="#palette">Color Palette</a></li>
+          <li><a class="ap-nav-link" href="#hero">Overview</a></li>
+          <li><a class="ap-nav-link" href="#forms">Forms</a></li>
+          <li><a class="ap-nav-link" href="#components">Components</a></li>
+          <li><a class="ap-nav-link" href="#tables">Tables</a></li>
+        </ul>
+        <div class="ap-flex ap-gap-2 ap-nav-actions">
+          <a href="../index.html" class="ap-btn ap-btn-secondary">返回總覽 Hub</a>
+          <button class="ap-btn ap-btn-outline" id="openOffcanvas">選單 Offcanvas</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="ap-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="ap-hero">
+      <span class="ap-badge ap-mb-3">2026 Pure Design System</span>
+      <h1 class="ap-hero-title">設計的極致，在於極簡與純粹。</h1>
+      <p class="ap-hero-subtitle">100% 自建 Pure Vanilla CSS & Vanilla JS。零外部框架依賴，大面積留白、蘋果經典深灰與蘋果藍配調。</p>
+      <div class="ap-flex-center ap-gap-3">
+        <button class="ap-btn ap-btn-outline">探索藝廊</button>
+        <button class="ap-btn ap-btn-primary" id="openModal">開啟 Modal 對話框</button>
+      </div>
+    </section>
+
+    <!-- Color Palette System Showcase -->
+    <section id="palette" class="ap-section">
+      <h2 class="ap-section-title">蘋果極簡專屬色彩系統 (Apple Palette System)</h2>
+      <p class="ap-text-muted ap-mb-4">依據極簡與高級設計雜誌風格專屬打造的色彩 Tokens，展現 Primary, Secondary, Accent, Info, Success, Warning, Error 系統色彩：</p>
+      
+      <div class="ap-grid">
+        <div class="ap-col-4">
+          <div class="ap-swatch-box ap-bg-primary">
+            <span>Primary 炭黑</span>
+            <code>--ap-color-primary (#1d1d1f)</code>
+          </div>
+        </div>
+        <div class="ap-col-4">
+          <div class="ap-swatch-box ap-bg-secondary">
+            <span>Secondary 輔助灰</span>
+            <code>--ap-color-secondary (#86868b)</code>
+          </div>
+        </div>
+        <div class="ap-col-4">
+          <div class="ap-swatch-box ap-bg-accent">
+            <span>Accent 蘋果藍</span>
+            <code>--ap-color-accent (#0066cc)</code>
+          </div>
+        </div>
+        <div class="ap-col-3">
+          <div class="ap-swatch-box ap-bg-info">
+            <span>Info 冰藍</span>
+            <code>--ap-color-info (#34aadc)</code>
+          </div>
+        </div>
+        <div class="ap-col-3">
+          <div class="ap-swatch-box ap-bg-success">
+            <span>Success 翡翠綠</span>
+            <code>--ap-color-success (#34c759)</code>
+          </div>
+        </div>
+        <div class="ap-col-3">
+          <div class="ap-swatch-box ap-bg-warning">
+            <span>Warning 琥珀橘</span>
+            <code>--ap-color-warning (#ff9500)</code>
+          </div>
+        </div>
+        <div class="ap-col-3">
+          <div class="ap-swatch-box ap-bg-error">
+            <span>Error 珊瑚紅</span>
+            <code>--ap-color-error (#ff3b30)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alerts Notification Section -->
+    <section class="ap-section">
+      <h2 class="ap-section-title">狀態與通知 (Alert Notifications)</h2>
+      <div class="ap-alert ap-alert-info">
+        <strong>Info Notification:</strong> 這是以 Ice Blue 展示的系統通知。
+      </div>
+      <div class="ap-alert ap-alert-success">
+        <strong>Success Notification:</strong> 這是以 Emerald Green 展示的成功狀態。
+      </div>
+      <div class="ap-alert ap-alert-warning">
+        <strong>Warning Notification:</strong> 這是以 Amber Orange 展示的警告提示。
+      </div>
+      <div class="ap-alert ap-alert-error">
+        <strong>Error Notification:</strong> 這是以 Coral Red 展示的錯誤提醒。
+      </div>
+    </section>
+
+    <!-- Typography & Badges -->
+    <section class="ap-section">
+      <h2 class="ap-section-title">1. 排版與標籤 (Typography & Badges)</h2>
+      <div class="ap-grid">
+        <div class="ap-col-6">
+          <h1 class="ap-mb-2">H1 蘋果極簡標題 <span class="ap-badge">New</span></h1>
+          <h2 class="ap-mb-2">H2 高級雜誌次標題 <span class="ap-badge">Pro</span></h2>
+          <h3 class="ap-mb-3">H3 專題文章小標</h3>
+          <p class="ap-text-muted ap-mb-3">Lead Paragraph：大留白與優雅的文字間距，讓閱覽者沉浸於簡潔純粹的資訊本身。</p>
+        </div>
+        <div class="ap-col-6">
+          <blockquote style="border-left: 3px solid var(--ap-color-primary); padding-left: 1rem; margin-bottom: 1rem; font-style: italic;">
+            「簡單比複雜更難：你必須付出巨大努力才能清空大腦，讓設計變得簡單。」
+          </blockquote>
+          <p class="ap-text-muted">— Steve Jobs, Apple Design Philosophy</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buttons Section -->
+    <section class="ap-section">
+      <h2 class="ap-section-title">2. 按鈕系統 (Buttons)</h2>
+      <div class="ap-flex ap-gap-3 ap-flex-wrap">
+        <button class="ap-btn ap-btn-primary">Primary 炭黑按鈕</button>
+        <button class="ap-btn ap-btn-outline">Outline 細邊框按鈕</button>
+        <button class="ap-btn ap-btn-secondary">Secondary 邊框按鈕</button>
+      </div>
+    </section>
+
+    <!-- Form Controls & Inputs -->
+    <section id="forms" class="ap-section">
+      <h2 class="ap-section-title">3. 原生表單控制項 (Form Controls)</h2>
+      <form>
+        <div class="ap-grid">
+          <div class="ap-col-6">
+            <div class="ap-form-group">
+              <label class="ap-label">電子郵件 (Email Input)</label>
+              <input type="email" class="ap-input" placeholder="name@apple.com">
+            </div>
+          </div>
+          <div class="ap-col-6">
+            <div class="ap-form-group">
+              <label class="ap-label">密碼 (Password Input)</label>
+              <input type="password" class="ap-input" placeholder="••••••••">
+            </div>
+          </div>
+          <div class="ap-col-6">
+            <div class="ap-form-group">
+              <label class="ap-label">產品選擇 (Custom Select)</label>
+              <select class="ap-select">
+                <option selected>請選擇 Apple 裝置...</option>
+                <option value="1">MacBook Pro 16"</option>
+                <option value="2">Studio Display XDR</option>
+              </select>
+            </div>
+          </div>
+          <div class="ap-col-6">
+            <div class="ap-form-group">
+              <label class="ap-label">檔案上傳 (File Input)</label>
+              <input type="file" class="ap-input">
+            </div>
+          </div>
+          <div class="ap-col-12">
+            <div class="ap-form-group">
+              <label class="ap-label">訊息備註 (Textarea)</label>
+              <textarea class="ap-textarea" rows="3" placeholder="請輸入極簡哲學思考..."></textarea>
+            </div>
+          </div>
+
+          <div class="ap-col-4">
+            <div class="ap-flex ap-items-center ap-gap-2">
+              <input type="checkbox" class="ap-checkbox" id="check1" checked>
+              <label for="check1" class="ap-label">同意服務條款</label>
+            </div>
+          </div>
+          <div class="ap-col-4">
+            <div class="ap-flex ap-items-center ap-gap-2">
+              <input type="checkbox" class="ap-switch" id="switch1" checked>
+              <label for="switch1" class="ap-label">開啟極簡護眼模式</label>
+            </div>
+          </div>
+          <div class="ap-col-4">
+            <div class="ap-flex ap-items-center ap-gap-2">
+              <input type="color" class="ap-input" style="width: 50px; height: 38px; padding: 2px;" value="#0066cc">
+              <label class="ap-label">主題色彩選擇器</label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- Cards & Components Section -->
+    <section id="components" class="ap-section">
+      <h2 class="ap-section-title">4. 卡片與手風琴 (Cards & Accordion)</h2>
+      <div class="ap-grid ap-mb-5">
+        <div class="ap-col-4">
+          <div class="ap-card">
+            <span class="ap-badge">Display</span>
+            <h3 class="ap-card-title">Studio Display</h3>
+            <p class="ap-text-muted ap-mb-3">極致細緻的視覺呈現，專為頂尖創作者打造。</p>
+            <button class="ap-btn ap-btn-outline">深入了解</button>
+          </div>
+        </div>
+        <div class="ap-col-4">
+          <div class="ap-card">
+            <span class="ap-badge">Chip</span>
+            <h3 class="ap-card-title">M3 Max Chip</h3>
+            <p class="ap-text-muted ap-mb-3">強大的運算架構，為複雜渲染提供無與倫比的效能。</p>
+            <button class="ap-btn ap-btn-outline">規格技術</button>
+          </div>
+        </div>
+        <div class="ap-col-4">
+          <div class="ap-card">
+            <span class="ap-badge">Design</span>
+            <h3 class="ap-card-title">Minimalist Magazine</h3>
+            <p class="ap-text-muted ap-mb-3">探討當代工業設計中的留白哲學。</p>
+            <button class="ap-btn ap-btn-outline">閱讀典藏</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion -->
+      <div class="ap-accordion-item open">
+        <div class="ap-accordion-header">
+          <span>什麼是 Pure Vanilla CSS 設計系統？</span>
+          <span>▼</span>
+        </div>
+        <div class="ap-accordion-body">
+          此頁面 100% 不依賴任何第三方 CSS 框架（如 Bootstrap 5），由原生 CSS Variables, Flexbox, CSS Grid 及原生 JavaScript 獨立檔 `script.js` 打造。
+        </div>
+      </div>
+      <div class="ap-accordion-item">
+        <div class="ap-accordion-header">
+          <span>如何開關對話框與側邊選單？</span>
+          <span>▼</span>
+        </div>
+        <div class="ap-accordion-body">
+          點擊頁面導覽列中的按鈕即可開啟原生的 Modal 對話框或 Offcanvas 側邊視窗。
+        </div>
+      </div>
+    </section>
+
+    <!-- Table Section -->
+    <section id="tables" class="ap-section">
+      <h2 class="ap-section-title">5. 資料表格 (Data Tables)</h2>
+      <table class="ap-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>產品名稱</th>
+            <th>規格</th>
+            <th>狀態</th>
+            <th>價格</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td>Ultra Display 32"</td>
+            <td>Retina XDR 6K</td>
+            <td><span class="ap-badge" style="background: var(--ap-color-success); color: #fff;">In Stock</span></td>
+            <td>$4,999</td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>Mac Studio Workstation</td>
+            <td>M3 Ultra / 128GB</td>
+            <td><span class="ap-badge" style="background: var(--ap-color-warning); color: #fff;">Pre-order</span></td>
+            <td>$3,999</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding: 4rem 0; text-align: center; color: var(--ap-color-secondary); border-top: 1px solid var(--ap-border-light);">
+      <p>© 2026 Style 01 - Apple / Premium Magazine Pure Vanilla CSS Design System.</p>
+    </footer>
+
+  </div>
+
+  <!-- Offcanvas Element -->
+  <div class="ap-offcanvas" id="offcanvasElement">
+    <div class="ap-flex-between ap-mb-4">
+      <h3 style="font-weight: 600;">側邊選單 (Offcanvas)</h3>
+      <button class="ap-btn" id="closeOffcanvas" style="padding: 0.2rem 0.6rem;">✕</button>
+    </div>
+    <p class="ap-text-muted ap-mb-4">獨立 `script.js` 控制的滑出選單。</p>
+    <ul style="list-style: none;">
+      <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--ap-border-light);"><a href="#" style="color: var(--ap-color-primary); text-decoration: none;">極簡作品輯</a></li>
+      <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--ap-border-light);"><a href="#" style="color: var(--ap-color-primary); text-decoration: none;">設計規範文件</a></li>
+    </ul>
+  </div>
+
+  <!-- Modal Element -->
+  <div class="ap-modal-overlay" id="modalOverlay">
+    <div class="ap-modal">
+      <div class="ap-flex-between ap-mb-3">
+        <h3 style="font-weight: 600;">原生 Modal 對話框</h3>
+        <button class="ap-btn" id="closeModal" style="padding: 0.2rem 0.6rem;">✕</button>
+      </div>
+      <p class="ap-text-muted ap-mb-4">這是在 Apple 極簡風格下的自建原生 Modal 元件，帶有動態微模糊背景。</p>
+      <div class="ap-flex ap-gap-2" style="justify-content: flex-end;">
+        <button class="ap-btn ap-btn-secondary" id="closeModalBtn">關閉</button>
+        <button class="ap-btn ap-btn-primary">確認送出</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- External Native Vanilla JS -->
+  <script src="script.js"></script>
+</body>
+</html>

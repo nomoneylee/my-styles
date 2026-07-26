@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格九：80 年代 Apple 電腦 / 經典復古電子設備 (Pure Vanilla CSS/JS)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header / Navbar Component -->
+  <nav class="mc-navbar">
+    <div class="mc-container mc-navbar-container">
+      <a class="mc-nav-brand" href="#"> APPLE Macintosh II (1987)</a>
+      <button class="mc-navbar-toggler" id="mcNavbarToggler" aria-label="Toggle navigation">
+        <span class="mc-toggler-icon"></span>
+      </button>
+      <div class="mc-navbar-collapse" id="mcNavbarCollapse">
+        <ul class="mc-nav-links">
+          <li><a class="mc-nav-link active" href="#palette">CRT PALETTE</a></li>
+          <li><a class="mc-nav-link" href="#hero">DESKTOP</a></li>
+          <li><a class="mc-nav-link" href="#forms">SYSTEM FORMS</a></li>
+          <li><a class="mc-nav-link" href="#components">DISK CARDS</a></li>
+          <li><a class="mc-nav-link" href="#tables">SPECS</a></li>
+        </ul>
+        <div class="mc-flex mc-gap-2 mc-nav-actions">
+          <a href="../index.html" class="mc-btn">返回總覽 Hub</a>
+          <button class="mc-btn mc-btn-primary" id="openOffcanvas">CONTROL PANEL</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mc-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="mc-hero">
+      <span class="mc-badge mc-mb-4">SYSTEM 6.0.8 OPERATING SYSTEM</span>
+      <h1 class="mc-hero-title">WELCOME TO MACINTOSH COMPUTING.</h1>
+      <p class="mc-hero-subtitle">100% Pure Vanilla CSS。灰綠色暖灰背景，Bevel 雙層立體邊框視窗。經典打字機與點陣風格字體，打造極具溫度的 80 年代客製復古科技質感。</p>
+      <div class="mc-flex mc-gap-3">
+        <button class="mc-btn mc-btn-primary">BOOT DISKETTE 3.5"</button>
+        <button class="mc-btn" id="openModal">ALERT DIALOG MODAL</button>
+      </div>
+    </section>
+
+    <!-- Color Palette System Showcase -->
+    <section id="palette" class="mc-section">
+      <h2 class="mc-section-title">80s Macintosh CRT Color Palette System</h2>
+      <p style="margin-bottom: 1.5rem; font-weight: 700;">CRT 螢光綠、墨黑、系統藍、CRT 琥珀金與 System Bomb 紅：</p>
+      
+      <div class="mc-grid">
+        <div class="mc-col-4">
+          <div class="mc-swatch-box mc-bg-dark">
+            <span>Primary CRT 墨黑</span>
+            <code>--mc-color-dark (#1b2419)</code>
+          </div>
+        </div>
+        <div class="mc-col-4">
+          <div class="mc-swatch-box mc-bg-apple">
+            <span>Accent CRT 螢光綠</span>
+            <code>--mc-color-apple (#386828)</code>
+          </div>
+        </div>
+        <div class="mc-col-4">
+          <div class="mc-swatch-box mc-bg-steel">
+            <span>Secondary 輔助灰</span>
+            <code>--mc-color-steel (#485444)</code>
+          </div>
+        </div>
+        <div class="mc-col-4">
+          <div class="mc-swatch-box mc-bg-cyan">
+            <span>Info 系統藍</span>
+            <code>--mc-color-cyan (#286868)</code>
+          </div>
+        </div>
+        <div class="mc-col-4">
+          <div class="mc-swatch-box mc-bg-amber">
+            <span>Warning CRT 琥珀金</span>
+            <code>--mc-color-amber (#8a6c1e)</code>
+          </div>
+        </div>
+        <div class="mc-col-4">
+          <div class="mc-swatch-box mc-bg-bomb">
+            <span>Error System Bomb 紅</span>
+            <code>--mc-color-bomb (#8a221e)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alerts Section -->
+    <section class="mc-section">
+      <h2 class="mc-section-title">System Alerts & Dialogs</h2>
+      <div class="mc-alert">
+        <strong>SYSTEM BOMB PREVENTED:</strong> System 6.0.8 memory address space restored successfully.
+      </div>
+    </section>
+
+    <!-- Typography & Badges -->
+    <section class="mc-section">
+      <h2 class="mc-section-title">01. 80s Typography & CRT Badges</h2>
+      <div class="mc-grid">
+        <div class="mc-col-6">
+          <h1 style="font-weight: 700;">BITMAP TYPEFACE <span class="mc-badge">PRO</span></h1>
+          <h2>68030 PROCESSOR <span class="mc-badge" style="background: var(--mc-color-steel);">16MHz</span></h2>
+          <p style="margin-top: 1rem;">Monospaced font rendering mimicking early Macintosh desktop graphics in Pure Vanilla CSS.</p>
+        </div>
+        <div class="mc-col-6">
+          <blockquote style="border: 2px solid var(--mc-color-dark); padding: 1.5rem; background: var(--mc-bg-surface);">
+            <p style="font-weight: 700;">"INSANELY GREAT."</p>
+            <span style="font-size: 0.9rem;">— Steve Jobs, Macintosh Unveiling 1984</span>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Forms Section -->
+    <section id="forms" class="mc-section">
+      <h2 class="mc-section-title">02. System Forms & Inputs</h2>
+      <form>
+        <div class="mc-grid">
+          <div class="mc-col-6">
+            <div class="mc-form-group">
+              <label style="font-weight: 700;">APPLELINK MAIL ADDRESS</label>
+              <input type="email" class="mc-input" placeholder="user@applelink.apple.com">
+            </div>
+          </div>
+          <div class="mc-col-6">
+            <div class="mc-form-group">
+              <label style="font-weight: 700;">SYSTEM PASSWORD</label>
+              <input type="password" class="mc-input" placeholder="••••••••">
+            </div>
+          </div>
+          <div class="mc-col-6">
+            <div class="mc-form-group">
+              <label style="font-weight: 700;">SCSI TARGET SELECT</label>
+              <select class="mc-select">
+                <option selected>Select SCSI Device ID...</option>
+                <option value="1">SCSI ID 0: Internal 40MB HD</option>
+                <option value="2">SCSI ID 1: External SyQuest 44MB</option>
+              </select>
+            </div>
+          </div>
+          <div class="mc-col-6">
+            <div class="mc-form-group">
+              <label style="font-weight: 700;">MACWRITE DOCUMENT MEMO (TEXTAREA)</label>
+              <textarea class="mc-textarea" rows="2" placeholder="Enter System 6 memo notes..."></textarea>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- Cards & Components Section -->
+    <section id="components" class="mc-section">
+      <h2 class="mc-section-title">03. 80s Bevel Window Cards & Accordion</h2>
+      <div class="mc-grid mc-mb-4">
+        <div class="mc-col-4">
+          <div class="mc-card">
+            <span class="mc-badge">HARDWARE</span>
+            <h3 style="margin: 0.5rem 0;">Macintosh SE/30</h3>
+            <p style="margin-bottom: 1rem;">Compact Macintosh featuring Motorola 68030 CPU.</p>
+            <button class="mc-btn">READ SPEC</button>
+          </div>
+        </div>
+        <div class="mc-col-4">
+          <div class="mc-card">
+            <span class="mc-badge">SOFTWARE</span>
+            <h3 style="margin: 0.5rem 0;">Aldus PageMaker 3.0</h3>
+            <p style="margin-bottom: 1rem;">Desktop publishing application that transformed design.</p>
+            <button class="mc-btn">LAUNCH APP</button>
+          </div>
+        </div>
+        <div class="mc-col-4">
+          <div class="mc-card">
+            <span class="mc-badge">PERIPHERAL</span>
+            <h3 style="margin: 0.5rem 0;">ADB Mouse</h3>
+            <p style="margin-bottom: 1rem;">Single-button optomechanical mouse with ADB connector.</p>
+            <button class="mc-btn">VIEW INFO</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion -->
+      <div class="mc-accordion-item open">
+        <div class="mc-accordion-header">
+          <span>HOW TO REBUILD DESKTOP FILE IN SYSTEM 6?</span>
+          <span>▼</span>
+        </div>
+        <div class="mc-accordion-body">
+          Hold down Option and Command keys during system boot-up sequence until dialog prompt.
+        </div>
+      </div>
+    </section>
+
+    <!-- Table Section -->
+    <section id="tables" class="mc-section">
+      <h2 class="mc-section-title">04. System Memory Specifications Table</h2>
+      <table class="mc-table">
+        <thead>
+          <tr>
+            <th>ADDR</th>
+            <th>SYSTEM MODULE</th>
+            <th>RAM SIZE</th>
+            <th>STATUS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0x0000</td>
+            <td>System ROM Chip</td>
+            <td>256 KB</td>
+            <td>OK</td>
+          </tr>
+          <tr>
+            <td>0x0010</td>
+            <td>Main Memory SIMM</td>
+            <td>4,096 KB</td>
+            <td>OK</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer style="padding: 4rem 0; text-align: center; font-weight: 700; border-top: 3px solid var(--mc-bevel-dark);">
+      <p>© 1987-2026 Style 09 - APPLE MACINTOSH PURE VANILLA SYSTEM.</p>
+    </footer>
+
+  </div>
+
+  <!-- Offcanvas -->
+  <div class="mc-offcanvas" id="offcanvasElement">
+    <div class="mc-flex-between mc-mb-4">
+      <h3>CONTROL PANEL</h3>
+      <button class="mc-btn" id="closeOffcanvas">✕</button>
+    </div>
+    <p>System Desk Accessories DA.</p>
+  </div>
+
+  <!-- Modal -->
+  <div class="mc-modal-overlay" id="modalOverlay">
+    <div class="mc-modal">
+      <div class="mc-flex-between mc-mb-4">
+        <h3>SYSTEM ALERT DIALOG</h3>
+        <button class="mc-btn" id="closeModal">✕</button>
+      </div>
+      <p style="margin-bottom: 1.5rem;">Are you sure you want to shut down your Macintosh computer in Pure Vanilla CSS?</p>
+      <div class="mc-flex" style="justify-content: flex-end; gap: 0.5rem;">
+        <button class="mc-btn" id="closeModalBtn">CANCEL</button>
+        <button class="mc-btn mc-btn-primary">RESTART</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- External Native Vanilla JS -->
+  <script src="script.js"></script>
+</body>
+</html>

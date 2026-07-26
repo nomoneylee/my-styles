@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格八：建築事務所 / 日系現代設計品牌 (Pure Vanilla CSS/JS)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header / Navbar Component -->
+  <nav class="ar-navbar">
+    <div class="ar-container ar-navbar-container">
+      <a class="ar-nav-brand" href="#">KUBUS ARCHITECTS</a>
+      <button class="ar-navbar-toggler" id="arNavbarToggler" aria-label="Toggle navigation">
+        <span class="ar-toggler-icon"></span>
+      </button>
+      <div class="ar-navbar-collapse" id="arNavbarCollapse">
+        <ul class="ar-nav-links">
+          <li><a class="ar-nav-link active" href="#palette">METRICS</a></li>
+          <li><a class="ar-nav-link" href="#hero">PROJECTS</a></li>
+          <li><a class="ar-nav-link" href="#forms">INQUIRIES</a></li>
+          <li><a class="ar-nav-link" href="#components">STRUCTURES</a></li>
+          <li><a class="ar-nav-link" href="#tables">SPECS</a></li>
+        </ul>
+        <div class="ar-flex ar-gap-2 ar-nav-actions">
+          <a href="../index.html" class="ar-btn">返回總覽 Hub</a>
+          <button class="ar-btn ar-btn-primary" id="openOffcanvas">GEOMETRY MENU</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="ar-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="ar-hero">
+      <span class="ar-badge ar-mb-4">SPATIAL CONSTRUCT 2026</span>
+      <h1 class="ar-hero-title">PRECISION & LIGHT IN MINIMAL SPACE.</h1>
+      <p class="ar-hero-subtitle">100% Pure Vanilla CSS。水泥白與淺灰空間底色，1px 精細幾何線條分割。無任何誇張陰影，極致拉大字體級距，展現乾淨俐落的純粹空間感。</p>
+      <div class="ar-flex ar-gap-3">
+        <button class="ar-btn ar-btn-primary">VIEW ARCHITECTURE</button>
+        <button class="ar-btn" id="openModal">SPATIAL MODAL</button>
+      </div>
+    </section>
+
+    <!-- Color Palette System Showcase -->
+    <section id="palette" class="ar-section">
+      <h2 class="ar-section-title">01. Architectural 1px Color Palette</h2>
+      <p style="font-size: 0.9rem; color: var(--ar-color-steel); margin-bottom: 2rem;">極簡炭黑、鋼鐵灰、玻璃藍、綠建築綠與標記紅：</p>
+      
+      <div class="ar-grid">
+        <div class="ar-col-4">
+          <div class="ar-swatch-box ar-bg-charcoal">
+            <span>Primary 極簡黑</span>
+            <code>--ar-color-charcoal (#18191b)</code>
+          </div>
+        </div>
+        <div class="ar-col-4">
+          <div class="ar-swatch-box ar-bg-steel">
+            <span>Secondary 鋼鐵灰</span>
+            <code>--ar-color-steel (#646a73)</code>
+          </div>
+        </div>
+        <div class="ar-col-4">
+          <div class="ar-swatch-box ar-bg-glass">
+            <span>Info 玻璃藍</span>
+            <code>--ar-color-glass (#3b82f6)</code>
+          </div>
+        </div>
+        <div class="ar-col-4">
+          <div class="ar-swatch-box ar-bg-mint">
+            <span>Success 綠建築綠</span>
+            <code>--ar-color-mint (#10b981)</code>
+          </div>
+        </div>
+        <div class="ar-col-4">
+          <div class="ar-swatch-box ar-bg-amber">
+            <span>Warning 警戒黃</span>
+            <code>--ar-color-amber (#f59e0b)</code>
+          </div>
+        </div>
+        <div class="ar-col-4">
+          <div class="ar-swatch-box ar-bg-crimson">
+            <span>Accent/Error 標記紅</span>
+            <code>--ar-color-crimson (#ef4444)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alerts Section -->
+    <section class="ar-section">
+      <h2 class="ar-section-title">02. System Status & Alerts</h2>
+      <div class="ar-alert">
+        <strong>STATUS:</strong> Structural CAD BIM geometry calculations validated at 1px precision.
+      </div>
+    </section>
+
+    <!-- Typography & Badges -->
+    <section class="ar-section">
+      <h2 class="ar-section-title">03. Typography Scale & Badges</h2>
+      <div class="ar-grid">
+        <div class="ar-col-7">
+          <h1 style="font-weight: 300; font-size: 3rem;">MODULAR GRID <span class="ar-badge">1PX</span></h1>
+          <h2 style="font-weight: 400; font-size: 1.8rem;">CEMENT & WHITE SPACE <span class="ar-badge" style="background: var(--ar-color-steel);">JAPANESE</span></h2>
+          <p style="font-size: 0.9rem; color: var(--ar-color-steel); margin-top: 1.5rem;">High contrast typographic hierarchy paired with razor-sharp 1px boundary lines.</p>
+        </div>
+        <div class="ar-col-5 border-start ps-4">
+          <blockquote style="border-left: 2px solid #18191b; padding-left: 1rem;">
+            <p style="font-weight: 300; font-size: 1.1rem;">"Architecture is the learned game, correct and magnificent, of forms assembled in light."</p>
+            <span style="font-size: 0.8rem; color: #666;">— Le Corbusier</span>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Forms Section -->
+    <section id="forms" class="ar-section">
+      <h2 class="ar-section-title">04. Project Inquiries & Forms</h2>
+      <form>
+        <div class="ar-grid">
+          <div class="ar-col-6">
+            <div class="ar-form-group">
+              <label style="font-size: 0.8rem; font-weight: 600;">CLIENT EMAIL ADDRESS</label>
+              <input type="email" class="ar-input" placeholder="client@kubus.com">
+            </div>
+          </div>
+          <div class="ar-col-6">
+            <div class="ar-form-group">
+              <label style="font-size: 0.8rem; font-weight: 600;">PORTAL ACCESS KEY</label>
+              <input type="password" class="ar-input" placeholder="••••••••">
+            </div>
+          </div>
+          <div class="ar-col-6">
+            <div class="ar-form-group">
+              <label style="font-size: 0.8rem; font-weight: 600;">TYPOLOGY SELECT</label>
+              <select class="ar-select">
+                <option selected>Select project category...</option>
+                <option value="1">Residential Villa</option>
+                <option value="2">Commercial Complex</option>
+              </select>
+            </div>
+          </div>
+          <div class="ar-col-6">
+            <div class="ar-form-group">
+              <label style="font-size: 0.8rem; font-weight: 600;">SITE PROGRAM (TEXTAREA)</label>
+              <textarea class="ar-textarea" rows="2" placeholder="Enter square meters and material specs..."></textarea>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- Cards & Components Section -->
+    <section id="components" class="ar-section">
+      <h2 class="ar-section-title">05. Architectural Cards & Accordion</h2>
+      <div class="ar-grid ar-mb-4">
+        <div class="ar-col-4">
+          <div class="ar-card">
+            <span class="ar-badge">RESIDENTIAL</span>
+            <h3 style="font-weight: 300; margin: 0.8rem 0;">House in Kamakura</h3>
+            <p style="font-size: 0.88rem; color: var(--ar-color-steel); margin-bottom: 1.5rem;">Minimal concrete residence embedded into bamboo slopes.</p>
+            <button class="ar-btn">PROJECT SPECS</button>
+          </div>
+        </div>
+        <div class="ar-col-4">
+          <div class="ar-card">
+            <span class="ar-badge">COMMERCIAL</span>
+            <h3 style="font-weight: 300; margin: 0.8rem 0;">Omotesando Flagship</h3>
+            <p style="font-size: 0.88rem; color: var(--ar-color-steel); margin-bottom: 1.5rem;">1px steel glass curtain facade creating transparency.</p>
+            <button class="ar-btn">PROJECT SPECS</button>
+          </div>
+        </div>
+        <div class="ar-col-4">
+          <div class="ar-card">
+            <span class="ar-badge">CULTURAL</span>
+            <h3 style="font-weight: 300; margin: 0.8rem 0;">Kyoto Art Pavilion</h3>
+            <p style="font-size: 0.88rem; color: var(--ar-color-steel); margin-bottom: 1.5rem;">Lightweight timber lattice floating over reflection basin.</p>
+            <button class="ar-btn">PROJECT SPECS</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion -->
+      <div class="ar-accordion-item open">
+        <div class="ar-accordion-header">
+          <span>WHAT IS THE DESIGN PROCESS METHODOLOGY?</span>
+          <span>▼</span>
+        </div>
+        <div class="ar-accordion-body">
+          Our studio operates through physical model iterations combined with parametric 1px geometric grid systems.
+        </div>
+      </div>
+    </section>
+
+    <!-- Table Section -->
+    <section id="tables" class="ar-section">
+      <h2 class="ar-section-title">06. Architectural Specs Table</h2>
+      <table class="ar-table">
+        <thead>
+          <tr>
+            <th>NO.</th>
+            <th>COMPONENT</th>
+            <th>MATERIAL SPEC</th>
+            <th>TOLERANCE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td>Curtain Wall Mullion</td>
+            <td>Anodized Aluminum 1px Border</td>
+            <td>± 0.5 mm</td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>Fair-faced Wall Panel</td>
+            <td>Self-compacting Concrete</td>
+            <td>± 1.0 mm</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer style="padding: 4rem 0; text-align: center; font-size: 0.85rem; color: var(--ar-color-steel); border-top: var(--ar-border-fine);">
+      <p>© 2026 Style 08 - KUBUS ARCHITECTS JAPANESE MODERN PURE VANILLA SYSTEM.</p>
+    </footer>
+
+  </div>
+
+  <!-- Offcanvas -->
+  <div class="ar-offcanvas" id="offcanvasElement">
+    <div class="ar-flex-between ar-mb-4">
+      <h3 style="font-size: 0.9rem; font-weight: 700;">GEOMETRY DIRECTORY</h3>
+      <button class="ar-btn" id="closeOffcanvas">✕</button>
+    </div>
+    <p style="font-size: 0.85rem; color: var(--ar-color-steel);">Architectural Studio Navigation.</p>
+  </div>
+
+  <!-- Modal -->
+  <div class="ar-modal-overlay" id="modalOverlay">
+    <div class="ar-modal">
+      <div class="ar-flex-between ar-mb-4">
+        <h3 style="font-size: 1rem; font-weight: 700;">SPATIAL MODAL</h3>
+        <button class="ar-btn" id="closeModal">✕</button>
+      </div>
+      <p style="font-size: 0.88rem; color: var(--ar-color-steel); margin-bottom: 1.5rem;">Architectural modal element with zero shadow and precise 1px geometric borders in Pure Vanilla CSS.</p>
+      <div class="ar-flex" style="justify-content: flex-end; gap: 0.5rem;">
+        <button class="ar-btn" id="closeModalBtn">CLOSE</button>
+        <button class="ar-btn ar-btn-primary">CONFIRM</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- External Native Vanilla JS -->
+  <script src="script.js"></script>
+</body>
+</html>

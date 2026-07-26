@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格七：當代藝廊 / 當代美術館文宣風格 (Pure Vanilla CSS/JS)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header / Navbar Component -->
+  <nav class="gl-navbar">
+    <div class="gl-container gl-navbar-container">
+      <a class="gl-nav-brand" href="#">MUSEUM OF CONTEMPORARY ART</a>
+      <button class="gl-navbar-toggler" id="glNavbarToggler" aria-label="Toggle navigation">
+        <span class="gl-toggler-icon"></span>
+      </button>
+      <div class="gl-navbar-collapse" id="glNavbarCollapse">
+        <ul class="gl-nav-links">
+          <li><a class="gl-nav-link active" href="#palette">PALETTE</a></li>
+          <li><a class="gl-nav-link" href="#hero">EXHIBITION</a></li>
+          <li><a class="gl-nav-link" href="#forms">TICKETING</a></li>
+          <li><a class="gl-nav-link" href="#components">WORKS</a></li>
+          <li><a class="gl-nav-link" href="#tables">CATALOGUE</a></li>
+        </ul>
+        <div class="gl-flex gl-gap-2 gl-nav-actions">
+          <a href="../index.html" class="gl-btn">返回總覽 Hub</a>
+          <button class="gl-btn gl-btn-primary" id="openOffcanvas">MENU OFFCANVAS</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="gl-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="gl-hero">
+      <span class="gl-badge gl-mb-4">SOLO EXHIBITION 2026</span>
+      <h1 class="gl-hero-title">RADICAL MONOCHROME.</h1>
+      <p class="gl-hero-subtitle">100% Pure Vanilla CSS。大面積純白留白，極大顆黑體標題。沒有裝飾性漸層或背景色彩，視覺焦點直擊視覺藝術本質。</p>
+      <div class="gl-flex gl-gap-3">
+        <button class="gl-btn gl-btn-primary">BUY TICKETS</button>
+        <button class="gl-btn" id="openModal">ARTIST STATEMENT MODAL</button>
+      </div>
+    </section>
+
+    <!-- Color Palette System Showcase -->
+    <section id="palette" class="gl-section">
+      <h2 class="gl-section-title">00 // MONOCHROME PALETTE SYSTEM</h2>
+      <p style="font-weight: 700; margin-bottom: 2rem;">極簡黑白基調搭配當代高視覺強度色彩：</p>
+      
+      <div class="gl-grid">
+        <div class="gl-col-4">
+          <div class="gl-swatch-box gl-bg-stark">
+            <span>Primary 純黑</span>
+            <code>--gl-color-stark (#000000)</code>
+          </div>
+        </div>
+        <div class="gl-col-4">
+          <div class="gl-swatch-box gl-bg-subtle">
+            <span>Secondary 冷灰</span>
+            <code>--gl-color-subtle (#666666)</code>
+          </div>
+        </div>
+        <div class="gl-col-4">
+          <div class="gl-swatch-box gl-bg-alert">
+            <span>Accent/Error 強烈紅</span>
+            <code>--gl-color-alert (#ff0033)</code>
+          </div>
+        </div>
+        <div class="gl-col-4">
+          <div class="gl-swatch-box gl-bg-cyan">
+            <span>Info 當代藍</span>
+            <code>--gl-color-cyan (#0077ff)</code>
+          </div>
+        </div>
+        <div class="gl-col-4">
+          <div class="gl-swatch-box gl-bg-neon">
+            <span>Success 酷綠</span>
+            <code>--gl-color-neon (#00cc66)</code>
+          </div>
+        </div>
+        <div class="gl-col-4">
+          <div class="gl-swatch-box gl-bg-yellow">
+            <span>Warning 展覽黃</span>
+            <code>--gl-color-yellow (#ffcc00)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alerts Section -->
+    <section class="gl-section">
+      <h2 class="gl-section-title">01 // GALLERY ANNOUNCEMENTS</h2>
+      <div class="gl-alert">
+        GALLERY ANNOUNCEMENT: Main pavilion hosting the 2026 Biennial Preview.
+      </div>
+    </section>
+
+    <!-- Typography & Badges -->
+    <section class="gl-section">
+      <h2 class="gl-section-title">02 // BRUTALIST TYPOGRAPHY</h2>
+      <div class="gl-grid">
+        <div class="gl-col-6">
+          <h1 style="font-size: 3rem; font-weight: 900;">SWISS TYPE <span class="gl-badge">CURATED</span></h1>
+          <h2>SWISS DESIGN SYSTEM <span class="gl-badge" style="background: var(--gl-color-subtle);">2026</span></h2>
+          <p style="margin-top: 1.5rem; font-weight: 700;">Uncompromising layout structure focusing entirely on font size hierarchy and raw spatial composition.</p>
+        </div>
+        <div class="gl-col-6">
+          <blockquote style="border-left: 4px solid #000; padding-left: 1.5rem;">
+            <p style="font-size: 1.5rem; font-weight: 900;">"PERFECTION IS ACHIEVED WHEN THERE IS NOTHING LEFT TO TAKE AWAY."</p>
+            <span style="font-weight: 700;">— Antoine de Saint-Exupéry</span>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Forms Section -->
+    <section id="forms" class="gl-section">
+      <h2 class="gl-section-title">03 // TICKETING & FORMS</h2>
+      <form>
+        <div class="gl-grid">
+          <div class="gl-col-6">
+            <div class="gl-form-group">
+              <label style="font-weight: 900;">VISITOR EMAIL ADDRESS</label>
+              <input type="email" class="gl-input" placeholder="visitor@moca.org">
+            </div>
+          </div>
+          <div class="gl-col-6">
+            <div class="gl-form-group">
+              <label style="font-weight: 900;">MEMBERSHIP ACCESS CODE</label>
+              <input type="password" class="gl-input" placeholder="••••••••">
+            </div>
+          </div>
+          <div class="gl-col-6">
+            <div class="gl-form-group">
+              <label style="font-weight: 900;">EXHIBITION ENTRY SLOT</label>
+              <select class="gl-select">
+                <option selected>Select Entry Slot...</option>
+                <option value="1">10:00 AM — Morning Slot</option>
+                <option value="2">02:00 PM — Afternoon Slot</option>
+              </select>
+            </div>
+          </div>
+          <div class="gl-col-6">
+            <div class="gl-form-group">
+              <label style="font-weight: 900;">ARTWORK INQUIRY (TEXTAREA)</label>
+              <textarea class="gl-textarea" rows="2" placeholder="Enter inquiry details..."></textarea>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- Cards & Components Section -->
+    <section id="components" class="gl-section">
+      <h2 class="gl-section-title">04 // ARTWORK CARDS & ACCORDION</h2>
+      <div class="gl-grid gl-mb-4">
+        <div class="gl-col-4">
+          <div class="gl-card">
+            <span class="gl-badge">EXHIBIT #01</span>
+            <h3 style="margin: 0.8rem 0; font-weight: 900;">STRUCTURE & VOID</h3>
+            <p style="font-weight: 700; margin-bottom: 1.5rem;">Steel, concrete, and monochromatic light installation.</p>
+            <button class="gl-btn">VIEW WORK</button>
+          </div>
+        </div>
+        <div class="gl-col-4">
+          <div class="gl-card">
+            <span class="gl-badge">EXHIBIT #02</span>
+            <h3 style="margin: 0.8rem 0; font-weight: 900;">DIGITAL SILENCE</h3>
+            <p style="font-weight: 700; margin-bottom: 1.5rem;">Generative acoustic algorithms projected in darkness.</p>
+            <button class="gl-btn">VIEW WORK</button>
+          </div>
+        </div>
+        <div class="gl-col-4">
+          <div class="gl-card">
+            <span class="gl-badge">EXHIBIT #03</span>
+            <h3 style="margin: 0.8rem 0; font-weight: 900;">WHITE CANVAS NO. 9</h3>
+            <p style="font-weight: 700; margin-bottom: 1.5rem;">Oil and plaster on linen exploring texture.</p>
+            <button class="gl-btn">VIEW WORK</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion -->
+      <div class="gl-accordion-item open">
+        <div class="gl-accordion-header">
+          <span>GALLERY PHOTOGRAPHY POLICY</span>
+          <span>▼</span>
+        </div>
+        <div class="gl-accordion-body">
+          Non-flash photography permitted for personal use. Commercial filming requires press accreditation.
+        </div>
+      </div>
+    </section>
+
+    <!-- Table Section -->
+    <section id="tables" class="gl-section">
+      <h2 class="gl-section-title">05 // EXHIBITION CATALOGUE TABLE</h2>
+      <table class="gl-table">
+        <thead>
+          <tr>
+            <th>LOT</th>
+            <th>ARTWORK TITLE</th>
+            <th>MEDIUM</th>
+            <th>YEAR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>Composition in Black and White</td>
+            <td>Oil on Canvas</td>
+            <td>2026</td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>Monolithic Void #8</td>
+            <td>Cast Iron</td>
+            <td>2025</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer style="padding: 5rem 0; text-align: center; font-weight: 900; border-top: 2px solid #000;">
+      <p>© 2026 Style 07 - MUSEUM OF CONTEMPORARY ART PURE VANILLA SYSTEM.</p>
+    </footer>
+
+  </div>
+
+  <!-- Offcanvas -->
+  <div class="gl-offcanvas" id="offcanvasElement">
+    <div class="gl-flex-between gl-mb-4">
+      <h3 style="font-weight: 900;">GALLERY OFFCANVAS</h3>
+      <button class="gl-btn" id="closeOffcanvas">✕</button>
+    </div>
+    <p style="font-weight: 700;">Contemporary Art Directory.</p>
+  </div>
+
+  <!-- Modal -->
+  <div class="gl-modal-overlay" id="modalOverlay">
+    <div class="gl-modal">
+      <div class="gl-flex-between gl-mb-4">
+        <h3 style="font-weight: 900;">ARTIST STATEMENT MODAL</h3>
+        <button class="gl-btn" id="closeModal">✕</button>
+      </div>
+      <p style="margin-bottom: 1.5rem; font-weight: 700;">Stark monochrome modal dialog rendered with bold Inter typography in Pure Vanilla CSS.</p>
+      <div class="gl-flex" style="justify-content: flex-end; gap: 0.5rem;">
+        <button class="gl-btn" id="closeModalBtn">CLOSE</button>
+        <button class="gl-btn gl-btn-primary">CONFIRM</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- External Native Vanilla JS -->
+  <script src="script.js"></script>
+</body>
+</html>

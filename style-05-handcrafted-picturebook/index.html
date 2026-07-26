@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格五：手作感 / 溫馨繪本風格 (Pure Vanilla CSS/JS)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header / Navbar Component -->
+  <nav class="pb-navbar">
+    <div class="pb-container pb-navbar-container">
+      <a class="pb-nav-brand" href="#">🧸 溫馨繪本館</a>
+      <button class="pb-navbar-toggler" id="pbNavbarToggler" aria-label="Toggle navigation">
+        <span class="pb-toggler-icon"></span>
+      </button>
+      <div class="pb-navbar-collapse" id="pbNavbarCollapse">
+        <ul class="pb-nav-links">
+          <li><a class="pb-nav-link active" href="#palette">手繪 Palette</a></li>
+          <li><a class="pb-nav-link" href="#hero">繪本首頁</a></li>
+          <li><a class="pb-nav-link" href="#forms">手作留言</a></li>
+          <li><a class="pb-nav-link" href="#components">故事卡片</a></li>
+          <li><a class="pb-nav-link" href="#tables">出版清單</a></li>
+        </ul>
+        <div class="pb-flex pb-gap-2 pb-nav-actions">
+          <a href="../index.html" class="pb-btn">返回總覽 Hub</a>
+          <button class="pb-btn pb-btn-primary" id="openOffcanvas">故事選單</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="pb-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="pb-hero">
+      <span class="pb-badge pb-mb-4">HANDMADE STORYBOOK SYSTEM</span>
+      <h1 class="pb-hero-title">溫暖、親切、無距離感的繪本世界 🎨</h1>
+      <p class="pb-hero-subtitle">100% Pure Vanilla CSS。奶油黃與淺奶茶色為主的溫柔筆觸。不使用純黑，改用暗棕手繪線條與微凸卡片，帶來滿滿的手作溫度與陪伴。</p>
+      <div class="pb-flex" style="justify-content: center; gap: 1rem;">
+        <button class="pb-btn">翻開故事書 📖</button>
+        <button class="pb-btn pb-btn-primary" id="openModal">繪本 Modal 彈窗</button>
+      </div>
+    </section>
+
+    <!-- Color Palette System Showcase -->
+    <section id="palette" class="pb-section">
+      <h2 class="pb-section-title">手作繪本專屬溫馨色彩系統 (Picturebook Palette)</h2>
+      <p style="margin-bottom: 1.5rem; font-weight: 700;">摒棄純黑冷硬感，使用暗棕手繪邊框、草莓紅、薄荷綠與蜂蜜黃：</p>
+      
+      <div class="pb-grid">
+        <div class="pb-col-4">
+          <div class="pb-swatch-box pb-bg-brown">
+            <span>Primary 暗棕手繪框</span>
+            <code>--pb-color-brown (#4a3f35)</code>
+          </div>
+        </div>
+        <div class="pb-col-4">
+          <div class="pb-swatch-box pb-bg-strawberry">
+            <span>Accent 溫馨草莓紅</span>
+            <code>--pb-color-strawberry (#e07a5f)</code>
+          </div>
+        </div>
+        <div class="pb-col-4">
+          <div class="pb-swatch-box pb-bg-mint">
+            <span>Info 森林薄荷綠</span>
+            <code>--pb-color-mint (#709775)</code>
+          </div>
+        </div>
+        <div class="pb-col-4">
+          <div class="pb-swatch-box pb-bg-honey">
+            <span>Success 甜蜜蜂蜜黃</span>
+            <code>--pb-color-honey (#d4a373)</code>
+          </div>
+        </div>
+        <div class="pb-col-4">
+          <div class="pb-swatch-box pb-bg-terracotta">
+            <span>Error 溫馨磚紅</span>
+            <code>--pb-color-terracotta (#bc4749)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alerts Section -->
+    <section class="pb-section">
+      <h2 class="pb-section-title">溫馨小提示 (Alert Notifications)</h2>
+      <div class="pb-alert">
+        <strong>提示：</strong> 您報名的手作黏土工坊將於本週六正式開課囉！
+      </div>
+    </section>
+
+    <!-- Typography & Badges -->
+    <section class="pb-section">
+      <h2 class="pb-section-title">1. 排版與標籤 (Typography & Badges)</h2>
+      <div class="pb-grid">
+        <div class="pb-col-6">
+          <h1 style="font-weight: 900;">溫馨的大標題 <span class="pb-badge">新品</span></h1>
+          <h2 style="font-weight: 900;">可愛的手作次標題 <span class="pb-badge" style="background: var(--pb-color-mint);">暢銷</span></h2>
+          <p style="margin-top: 1rem; font-weight: 700;">採用圓潤的 Zen Maru Gothic 手繪字型，充滿溫柔陪伴的距離感。</p>
+        </div>
+        <div class="pb-col-6">
+          <blockquote style="border: 2.5px solid var(--pb-color-brown); padding: 1.5rem; background: #fff; border-radius: 16px; box-shadow: 4px 4px 0px var(--pb-color-brown);">
+            <p style="font-weight: 900;">「只要用心手作，每一份溫柔都能傳遞到遠方。」</p>
+            <span style="font-size: 0.9rem; font-weight: 700;">— 森林繪本小屋</span>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Forms Section -->
+    <section id="forms" class="pb-section">
+      <h2 class="pb-section-title">2. 手作留言表單 (Forms)</h2>
+      <form>
+        <div class="pb-grid">
+          <div class="pb-col-6">
+            <div class="pb-form-group">
+              <label style="font-weight: 900;">小讀者信箱 (Email)</label>
+              <input type="email" class="pb-input" placeholder="bear@forest.com">
+            </div>
+          </div>
+          <div class="pb-col-6">
+            <div class="pb-form-group">
+              <label style="font-weight: 900;">通關秘密暗號 (Password)</label>
+              <input type="password" class="pb-input" placeholder="••••••••">
+            </div>
+          </div>
+          <div class="pb-col-6">
+            <div class="pb-form-group">
+              <label style="font-weight: 900;">選擇故事角色 (SELECT)</label>
+              <select class="pb-select">
+                <option selected>選擇主角...</option>
+                <option value="1">🐻 栗子小熊</option>
+                <option value="2">🐰 麵包兔兔子</option>
+              </select>
+            </div>
+          </div>
+          <div class="pb-col-6">
+            <div class="pb-form-group">
+              <label style="font-weight: 900;">給繪本作者的話 (TEXTAREA)</label>
+              <textarea class="pb-textarea" rows="2" placeholder="寫下讀完故事後的感想..."></textarea>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- Cards & Components Section -->
+    <section id="components" class="pb-section">
+      <h2 class="pb-section-title">3. 繪本卡片與手風琴 (Cards & Accordion)</h2>
+      <div class="pb-grid pb-mb-4">
+        <div class="pb-col-4">
+          <div class="pb-card">
+            <span class="pb-badge">PICTUREBOOK</span>
+            <h3 style="margin: 0.5rem 0; font-weight: 900;">《栗子熊的暖心果醬》</h3>
+            <p style="margin-bottom: 1rem; font-weight: 700;">小熊在秋天森林裡收集果實做成果醬的溫馨故事。</p>
+            <button class="pb-btn">試讀章節</button>
+          </div>
+        </div>
+        <div class="pb-col-4">
+          <div class="pb-card">
+            <span class="pb-badge" style="background: var(--pb-color-mint);">HANDMADE</span>
+            <h3 style="margin: 0.5rem 0; font-weight: 900;">羊毛氈手作小木屋</h3>
+            <p style="margin-bottom: 1rem; font-weight: 700;">純羊毛戳戳樂工坊，做出一間迷你小木屋。</p>
+            <button class="pb-btn">預約工坊</button>
+          </div>
+        </div>
+        <div class="pb-col-4">
+          <div class="pb-card">
+            <span class="pb-badge" style="background: var(--pb-color-honey);">BAKING</span>
+            <h3 style="margin: 0.5rem 0; font-weight: 900;">小兔子烘焙手作餅乾</h3>
+            <p style="margin-bottom: 1rem; font-weight: 700;">天然奶油烘焙出香氣十足的動物餅乾。</p>
+            <button class="pb-btn">試吃包</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion -->
+      <div class="pb-accordion-item open">
+        <div class="pb-accordion-header">
+          <span>手作材料包適合幾歲的小孩？</span>
+          <span>▼</span>
+        </div>
+        <div class="pb-accordion-body" style="font-weight: 700;">
+          附有安全圓頭剪刀與無毒膠水，適合 3 歲以上小朋友家長陪伴下一起製作。
+        </div>
+      </div>
+    </section>
+
+    <!-- Table Section -->
+    <section id="tables" class="pb-section">
+      <h2 class="pb-section-title">4. 繪本出版表 (Tables)</h2>
+      <table class="pb-table">
+        <thead>
+          <tr>
+            <th>編號</th>
+            <th>書名</th>
+            <th>繪者</th>
+            <th>售價</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PB-01</td>
+            <td>栗子熊的暖心果醬</td>
+            <td>米米老師</td>
+            <td>NT$ 320</td>
+          </tr>
+          <tr>
+            <td>PB-02</td>
+            <td>小兔子的麵包屋</td>
+            <td>森林繪本社</td>
+            <td>NT$ 350</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer style="padding: 4rem 0; text-align: center; font-weight: 900; border-top: 2.5px solid var(--pb-color-brown);">
+      <p>© 2026 Style 05 - HANDCRAFTED PICTUREBOOK PURE VANILLA SYSTEM.</p>
+    </footer>
+
+  </div>
+
+  <!-- Offcanvas -->
+  <div class="pb-offcanvas" id="offcanvasElement">
+    <div class="pb-flex-between pb-mb-4">
+      <h3 style="font-weight: 900;">繪本目錄</h3>
+      <button class="pb-btn" id="closeOffcanvas">✕</button>
+    </div>
+    <p style="font-weight: 700;">溫馨繪本選單。</p>
+  </div>
+
+  <!-- Modal -->
+  <div class="pb-modal-overlay" id="modalOverlay">
+    <div class="pb-modal">
+      <div class="pb-flex-between pb-mb-4">
+        <h3 style="font-weight: 900;">故事 Modal</h3>
+        <button class="pb-btn" id="closeModal">✕</button>
+      </div>
+      <p style="margin-bottom: 1.5rem; font-weight: 700;">溫馨繪本風格下的微凸手繪感 Modal 彈窗元件。</p>
+      <div class="pb-flex" style="justify-content: flex-end; gap: 0.5rem;">
+        <button class="pb-btn" id="closeModalBtn">關閉</button>
+        <button class="pb-btn pb-btn-primary">收到故事</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- External Native Vanilla JS -->
+  <script src="script.js"></script>
+</body>
+</html>

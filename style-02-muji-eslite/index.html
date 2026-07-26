@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格二：無印良品 / 誠品書店風格 (Pure Vanilla CSS/JS)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header / Navbar Component -->
+  <nav class="mj-navbar">
+    <div class="mj-container mj-navbar-container">
+      <a class="mj-nav-brand" href="#">生活與閱讀誌</a>
+      <button class="mj-navbar-toggler" id="mjNavbarToggler" aria-label="Toggle navigation">
+        <span class="mj-toggler-icon"></span>
+      </button>
+      <div class="mj-navbar-collapse" id="mjNavbarCollapse">
+        <ul class="mj-nav-links">
+          <li><a class="mj-nav-link active" href="#palette">色彩系統 Palette</a></li>
+          <li><a class="mj-nav-link" href="#hero">首頁總覽</a></li>
+          <li><a class="mj-nav-link" href="#forms">表單填寫</a></li>
+          <li><a class="mj-nav-link" href="#components">選品卡片</a></li>
+          <li><a class="mj-nav-link" href="#tables">書籍清單</a></li>
+        </ul>
+        <div class="mj-flex mj-gap-2 mj-nav-actions">
+          <a href="../index.html" class="mj-btn">返回總覽 Hub</a>
+          <button class="mj-btn mj-btn-outline" id="openOffcanvas">側邊閱覽</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mj-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="mj-hero">
+      <span class="mj-badge mj-mb-4">日常的溫度 ‧ 純粹獨立系統</span>
+      <h1 class="mj-hero-title">靜謐質樸，質感的簡潔美學。</h1>
+      <p class="mj-hero-subtitle">100% Pure Vanilla CSS。使用溫暖米白背景與暗褐色木質調。如雜誌般安靜呼吸的留白排版，回歸生活最真實純粹的模樣。</p>
+      <div class="mj-flex" style="justify-content: center; gap: 1rem;">
+        <button class="mj-btn mj-btn-outline">探索閱讀清單</button>
+        <button class="mj-btn mj-btn-primary" id="openModal">開啟選書 Modal</button>
+      </div>
+    </section>
+
+    <!-- Color Palette System Showcase -->
+    <section id="palette" class="mj-section">
+      <h2 class="mj-section-title">無印與誠品專屬和風色彩系統 (Japanese Wood Palette)</h2>
+      <p style="color: var(--mj-color-sand); margin-bottom: 1.5rem;">調和原木深褐、和風砂色、抹茶青與柿子橘等溫潤色調：</p>
+      
+      <div class="mj-grid">
+        <div class="mj-col-4">
+          <div class="mj-swatch-box mj-bg-wood">
+            <span>Primary 原木深褐</span>
+            <code>--mj-color-wood (#3d342d)</code>
+          </div>
+        </div>
+        <div class="mj-col-4">
+          <div class="mj-swatch-box mj-bg-sand">
+            <span>Secondary 和風砂色</span>
+            <code>--mj-color-sand (#7a6b5d)</code>
+          </div>
+        </div>
+        <div class="mj-col-4">
+          <div class="mj-swatch-box mj-bg-matcha">
+            <span>Info 抹茶青</span>
+            <code>--mj-color-matcha (#5c6b57)</code>
+          </div>
+        </div>
+        <div class="mj-col-4">
+          <div class="mj-swatch-box mj-bg-bamboo">
+            <span>Success 竹翠綠</span>
+            <code>--mj-color-bamboo (#487258)</code>
+          </div>
+        </div>
+        <div class="mj-col-4">
+          <div class="mj-swatch-box mj-bg-persimmon">
+            <span>Warning 柿子橘</span>
+            <code>--mj-color-persimmon (#d96b43)</code>
+          </div>
+        </div>
+        <div class="mj-col-4">
+          <div class="mj-swatch-box mj-bg-vermilion">
+            <span>Error 朱紅</span>
+            <code>--mj-color-vermilion (#b83b33)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alerts Section -->
+    <section class="mj-section">
+      <h2 class="mj-section-title">狀態與提示 (Alert Notifications)</h2>
+      <div class="mj-alert" style="border-left-color: var(--mj-color-matcha);">
+        <strong>抹茶青 Notification:</strong> 您的誠品會員讀書點數已累積升等。
+      </div>
+      <div class="mj-alert" style="border-left-color: var(--mj-color-persimmon);">
+        <strong>柿子橘 Warning:</strong> 本季手作木工講座名額剩餘最後 2 位。
+      </div>
+    </section>
+
+    <!-- Typography & Badges -->
+    <section class="mj-section">
+      <h2 class="mj-section-title">1. 排版與標籤 (Typography & Badges)</h2>
+      <div class="mj-grid">
+        <div class="mj-col-6">
+          <h1 class="mj-font-serif mj-mb-4">H1 明朝體標題 <span class="mj-badge">新品</span></h1>
+          <h2 class="mj-font-serif mj-mb-4">H2 人文閱讀次標題 <span class="mj-badge">選書</span></h2>
+          <p style="color: var(--mj-color-sand);">這般就好。不多做無謂的粉飾，讓物品自然展現材質本身的樸素與質感。</p>
+        </div>
+        <div class="mj-col-6">
+          <blockquote style="border-left: 3px solid var(--mj-color-wood); padding-left: 1rem; font-style: italic;">
+            「在書頁翻動之間，遇見更好的自己。」
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Forms Section -->
+    <section id="forms" class="mj-section">
+      <h2 class="mj-section-title">2. 表單與輸入元件 (Forms)</h2>
+      <form>
+        <div class="mj-grid">
+          <div class="mj-col-6">
+            <div class="mj-form-group">
+              <label>讀者信箱 (Email)</label>
+              <input type="email" class="mj-input" placeholder="reader@eslite.com">
+            </div>
+          </div>
+          <div class="mj-col-6">
+            <div class="mj-form-group">
+              <label>會員密碼 (Password)</label>
+              <input type="password" class="mj-input" placeholder="••••••••">
+            </div>
+          </div>
+          <div class="mj-col-6">
+            <div class="mj-form-group">
+              <label>選品類別 (Select)</label>
+              <select class="mj-select">
+                <option selected>請選擇閱讀主題...</option>
+                <option value="1">人文思潮與歷史</option>
+                <option value="2">空間設計與建築</option>
+              </select>
+            </div>
+          </div>
+          <div class="mj-col-6">
+            <div class="mj-form-group">
+              <label>讀後感言 (Textarea)</label>
+              <textarea class="mj-textarea" rows="2" placeholder="寫下您的閱讀思考..."></textarea>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- Cards & Components Section -->
+    <section id="components" class="mj-section">
+      <h2 class="mj-section-title">3. 選品卡片與手風琴 (Cards & Accordion)</h2>
+      <div class="mj-grid mj-mb-4">
+        <div class="mj-col-4">
+          <div class="mj-card">
+            <span class="mj-badge">生活道具</span>
+            <h3 class="mj-font-serif" style="margin: 0.5rem 0;">溫潤櫸木餐具組</h3>
+            <p style="color: var(--mj-color-sand); margin-bottom: 1rem;">取材天然原木，經由工匠打磨出的圓潤手感。</p>
+            <button class="mj-btn">細節賞析</button>
+          </div>
+        </div>
+        <div class="mj-col-4">
+          <div class="mj-card">
+            <span class="mj-badge">人文選書</span>
+            <h3 class="mj-font-serif" style="margin: 0.5rem 0;">《靜寂的幾何》</h3>
+            <p style="color: var(--mj-color-sand); margin-bottom: 1rem;">探討現代建築與自然的調和。</p>
+            <button class="mj-btn">閱讀試讀</button>
+          </div>
+        </div>
+        <div class="mj-col-4">
+          <div class="mj-card">
+            <span class="mj-badge">香氛生活</span>
+            <h3 class="mj-font-serif" style="margin: 0.5rem 0;">白茶與檜木線香</h3>
+            <p style="color: var(--mj-color-sand); margin-bottom: 1rem;">自然的木質調香氣，沉澱心靈。</p>
+            <button class="mj-btn">了解香氣</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion -->
+      <div class="mj-accordion-item open">
+        <div class="mj-accordion-header">
+          <span>選品的天然材質如何保養？</span>
+          <span>▼</span>
+        </div>
+        <div class="mj-accordion-body">
+          建議使用微濕軟布擦拭，避免陽光直射，定期使用植物油滋養即可。
+        </div>
+      </div>
+    </section>
+
+    <!-- Table Section -->
+    <section id="tables" class="mj-section">
+      <h2 class="mj-section-title">4. 典藏書目 (Tables)</h2>
+      <table class="mj-table">
+        <thead>
+          <tr>
+            <th>書號</th>
+            <th>書名</th>
+            <th>作者</th>
+            <th>定價</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>BK-01</td>
+            <td>日用之美：生活器具選著</td>
+            <td>柳宗理 / 著</td>
+            <td>NT$ 480</td>
+          </tr>
+          <tr>
+            <td>BK-02</td>
+            <td>留白與呼吸：空間哲學</td>
+            <td>原研哉 / 著</td>
+            <td>NT$ 520</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer style="padding: 4rem 0; text-align: center; color: var(--mj-color-sand); border-top: 1px solid var(--mj-border-color);">
+      <p>© 2026 Style 02 - MUJI & Eslite Bookstore Pure Vanilla System.</p>
+    </footer>
+
+  </div>
+
+  <!-- Offcanvas -->
+  <div class="mj-offcanvas" id="offcanvasElement">
+    <div class="mj-flex-between mj-mb-4">
+      <h3 class="mj-font-serif">閱讀空間選單</h3>
+      <button class="mj-btn" id="closeOffcanvas">✕</button>
+    </div>
+    <p style="color: var(--mj-color-sand);">歡迎探索靜謐質樸的生活美學選單。</p>
+  </div>
+
+  <!-- Modal -->
+  <div class="mj-modal-overlay" id="modalOverlay">
+    <div class="mj-modal">
+      <div class="mj-flex-between mj-mb-4">
+        <h3 class="mj-font-serif">選購書籍 Modal</h3>
+        <button class="mj-btn" id="closeModal">✕</button>
+      </div>
+      <p style="color: var(--mj-color-sand); margin-bottom: 1.5rem;">這是在溫暖米白與木質調下呈現的原生 Modal 彈窗元件。</p>
+      <div class="mj-flex" style="justify-content: flex-end; gap: 0.5rem;">
+        <button class="mj-btn" id="closeModalBtn">關閉</button>
+        <button class="mj-btn mj-btn-primary">放入書籤</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- External Native Vanilla JS -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格六：美式復古報紙 / 舊時代經典雜誌 (Pure Vanilla CSS/JS)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header / Navbar Component -->
+  <nav class="np-navbar">
+    <div class="np-container np-navbar-container">
+      <a class="np-nav-brand" href="#">THE VINTAGE CHRONICLE</a>
+      <button class="np-navbar-toggler" id="npNavbarToggler" aria-label="Toggle navigation">
+        <span class="np-toggler-icon"></span>
+      </button>
+      <div class="np-navbar-collapse" id="npNavbarCollapse">
+        <ul class="np-nav-links">
+          <li><a class="np-nav-link active" href="#palette">PALETTE</a></li>
+          <li><a class="np-nav-link" href="#hero">FRONT PAGE</a></li>
+          <li><a class="np-nav-link" href="#forms">CLASSIFIEDS</a></li>
+          <li><a class="np-nav-link" href="#components">EDITORIALS</a></li>
+          <li><a class="np-nav-link" href="#tables">STOCK ARCHIVE</a></li>
+        </ul>
+        <div class="np-flex np-gap-2 np-nav-actions">
+          <a href="../index.html" class="np-btn">返回總覽 Hub</a>
+          <button class="np-btn np-btn-primary" id="openOffcanvas">GAZETTE MENU</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="np-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="np-hero">
+      <span class="np-badge np-mb-4">EXTRA! EXTRA! READ ALL ABOUT IT!</span>
+      <h1 class="np-hero-title">THE NEWSPAPER OF RECORD</h1>
+      <p class="np-hero-subtitle">100% Pure Vanilla CSS。全站採用經典米黃舊紙張質感。粗細強烈的雙直線欄位分割與經典復古襯線標題，彷彿閱讀一份沉澱百年的實體報紙。</p>
+      <div class="np-flex" style="justify-content: center; gap: 1rem;">
+        <button class="np-btn np-btn-primary">SUBSCRIBE NOW</button>
+        <button class="np-btn" id="openModal">PRESS RELEASE MODAL</button>
+      </div>
+    </section>
+
+    <!-- Color Palette System Showcase -->
+    <section id="palette" class="np-section">
+      <h2 class="np-section-title">美式復古報刊專屬色彩系統 (Vintage Newspaper Palette)</h2>
+      <p style="margin-bottom: 1.5rem; font-style: italic;">包含復古報墨深黑、鉛字灰、郵戳紅、海藍、活字綠與琥珀金：</p>
+      
+      <div class="np-grid">
+        <div class="np-col-4">
+          <div class="np-swatch-box np-bg-ink">
+            <span>Primary 報墨深黑</span>
+            <code>--np-color-ink (#111111)</code>
+          </div>
+        </div>
+        <div class="np-col-4">
+          <div class="np-swatch-box np-bg-lead">
+            <span>Secondary 鉛字灰</span>
+            <code>--np-color-lead (#444444)</code>
+          </div>
+        </div>
+        <div class="np-col-4">
+          <div class="np-swatch-box np-bg-stamp">
+            <span>Accent/Error 郵戳紅</span>
+            <code>--np-color-stamp (#8c1d18)</code>
+          </div>
+        </div>
+        <div class="np-col-4">
+          <div class="np-swatch-box np-bg-navy">
+            <span>Info 經典海藍</span>
+            <code>--np-color-navy (#1a3048)</code>
+          </div>
+        </div>
+        <div class="np-col-4">
+          <div class="np-swatch-box np-bg-press">
+            <span>Success 活字綠</span>
+            <code>--np-color-press (#284d2a)</code>
+          </div>
+        </div>
+        <div class="np-col-4">
+          <div class="np-swatch-box np-bg-amber">
+            <span>Warning 琥珀金</span>
+            <code>--np-color-amber (#996317)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alerts Section -->
+    <section class="np-section">
+      <h2 class="np-section-title">快報與公告 (Alert Notifications)</h2>
+      <div class="np-alert" style="border-left: 4px solid var(--np-color-stamp);">
+        <strong>TELEGRAM BULLETIN:</strong> High pressure system moving in across the East Coast region.
+      </div>
+    </section>
+
+    <!-- Typography & Badges -->
+    <section class="np-section">
+      <h2 class="np-section-title">1. 排版與標籤 (Typography & Badges)</h2>
+      <div class="np-grid">
+        <div class="np-col-6">
+          <h1 style="font-weight: 900;">HEADLINE NEWS <span class="np-badge">LATEST</span></h1>
+          <h2>SPECIAL EDITORIAL <span class="np-badge" style="background: var(--np-color-stamp);">VINTAGE</span></h2>
+          <p style="margin-top: 1rem;">Lead paragraph utilizing classical Times-style serif rendering for ultimate legibility.</p>
+        </div>
+        <div class="np-col-6">
+          <blockquote style="border: 2px solid var(--np-color-ink); padding: 1.5rem; background: var(--np-bg-surface);">
+            <p style="font-weight: 700;">"Journalism is the first rough draft of history."</p>
+            <span style="font-size: 0.9rem;">— Philip L. Graham, The Washington Post</span>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Forms Section -->
+    <section id="forms" class="np-section">
+      <h2 class="np-section-title">2. 分類廣告表單 (Forms)</h2>
+      <form>
+        <div class="np-grid">
+          <div class="np-col-6">
+            <div class="np-form-group">
+              <label style="font-weight: 700;">SUBSCRIBER EMAIL</label>
+              <input type="email" class="np-input" placeholder="editor@vintagechronicle.com">
+            </div>
+          </div>
+          <div class="np-col-6">
+            <div class="np-form-group">
+              <label style="font-weight: 700;">SECRETARY PASSWORD</label>
+              <input type="password" class="np-input" placeholder="••••••••">
+            </div>
+          </div>
+          <div class="np-col-6">
+            <div class="np-form-group">
+              <label style="font-weight: 700;">CLASSIFIED CATEGORY</label>
+              <select class="np-select">
+                <option selected>Select category...</option>
+                <option value="1">Real Estate & Manors</option>
+                <option value="2">Antiques & Fine Art</option>
+              </select>
+            </div>
+          </div>
+          <div class="np-col-6">
+            <div class="np-form-group">
+              <label style="font-weight: 700;">TELEGRAM MESSAGE (TEXTAREA)</label>
+              <textarea class="np-textarea" rows="2" placeholder="TYPE YOUR MESSAGE HERE..."></textarea>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- Cards & Components Section -->
+    <section id="components" class="np-section">
+      <h2 class="np-section-title">3. 報紙專題卡片 (Cards & Accordion)</h2>
+      <div class="np-grid np-mb-4">
+        <div class="np-col-4">
+          <div class="np-card">
+            <span class="np-badge">ESSAY</span>
+            <h3 style="margin: 0.5rem 0;">Industrial Age Legacy</h3>
+            <p style="margin-bottom: 1rem;">An in-depth investigation into print media defining culture.</p>
+            <button class="np-btn">READ ARTICLE</button>
+          </div>
+        </div>
+        <div class="np-col-4">
+          <div class="np-card">
+            <span class="np-badge">CULTURE</span>
+            <h3 style="margin: 0.5rem 0;">Broadway Season Opener</h3>
+            <p style="margin-bottom: 1rem;">Reviews of premier theatrical productions captivating audiences.</p>
+            <button class="np-btn">READ REVIEWS</button>
+          </div>
+        </div>
+        <div class="np-col-4">
+          <div class="np-card">
+            <span class="np-badge">FINANCIAL</span>
+            <h3 style="margin: 0.5rem 0;">Stock Market Dispatch</h3>
+            <p style="margin-bottom: 1rem;">Comprehensive analysis of global commodity prices.</p>
+            <button class="np-btn">VIEW MARKET</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion -->
+      <div class="np-accordion-item open">
+        <div class="np-accordion-header">
+          <span>HOW TO SUBMIT A LETTER TO THE EDITOR?</span>
+          <span>▼</span>
+        </div>
+        <div class="np-accordion-body">
+          Letters must be signed with full legal name and town of residence. Maximum 300 words.
+        </div>
+      </div>
+    </section>
+
+    <!-- Table Section -->
+    <section id="tables" class="np-section">
+      <h2 class="np-section-title">4. 股市與金價紀錄 (Tables)</h2>
+      <table class="np-table">
+        <thead>
+          <tr>
+            <th>ITEM</th>
+            <th>COMMODITY</th>
+            <th>MARKET EXCHANGE</th>
+            <th>CLOSING PRICE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td>Gold Bullion (Ounce)</td>
+            <td>London Exchange</td>
+            <td>$2,450.00</td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>Cotton Standard Futures</td>
+            <td>New York Board</td>
+            <td>$88.40</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer style="padding: 4rem 0; text-align: center; font-weight: 700; border-top: 4px double var(--np-color-ink);">
+      <p>© 2026 Style 06 - THE VINTAGE CHRONICLE PURE VANILLA SYSTEM.</p>
+    </footer>
+
+  </div>
+
+  <!-- Offcanvas -->
+  <div class="np-offcanvas" id="offcanvasElement">
+    <div class="np-flex-between np-mb-4">
+      <h3>GAZETTE SECTIONS</h3>
+      <button class="np-btn" id="closeOffcanvas">✕</button>
+    </div>
+    <p>Select Newspaper Section.</p>
+  </div>
+
+  <!-- Modal -->
+  <div class="np-modal-overlay" id="modalOverlay">
+    <div class="np-modal">
+      <div class="np-flex-between np-mb-4">
+        <h3>PRESS RELEASE MODAL</h3>
+        <button class="np-btn" id="closeModal">✕</button>
+      </div>
+      <p style="margin-bottom: 1.5rem;">Official dispatch modal element rendered in vintage newspaper typography in Pure Vanilla CSS.</p>
+      <div class="np-flex" style="justify-content: flex-end; gap: 0.5rem;">
+        <button class="np-btn" id="closeModalBtn">CLOSE</button>
+        <button class="np-btn np-btn-primary">PRINT RELEASE</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- External Native Vanilla JS -->
+  <script src="script.js"></script>
+</body>
+</html>

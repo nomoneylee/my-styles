@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格十：潮流品牌官網 / 音樂節宣傳海報風格 (Pure Vanilla CSS/JS)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header / Navbar Component -->
+  <nav class="st-navbar">
+    <div class="st-container st-navbar-container">
+      <a class="st-nav-brand" href="#">⚡ OVERSIZED FESTIVAL 2026</a>
+      <button class="st-navbar-toggler" id="stNavbarToggler" aria-label="Toggle navigation">
+        <span class="st-toggler-icon"></span>
+      </button>
+      <div class="st-navbar-collapse" id="stNavbarCollapse">
+        <ul class="st-nav-links">
+          <li><a class="st-nav-link active" href="#palette">POSTER PALETTE</a></li>
+          <li><a class="st-nav-link" href="#hero">LINEUP</a></li>
+          <li><a class="st-nav-link" href="#forms">RAFFLE</a></li>
+          <li><a class="st-nav-link" href="#components">DROP CARDS</a></li>
+          <li><a class="st-nav-link" href="#tables">MERCH</a></li>
+        </ul>
+        <div class="st-flex st-gap-2 st-nav-actions">
+          <a href="../index.html" class="st-btn">返回總覽 Hub</a>
+          <button class="st-btn st-btn-primary" id="openOffcanvas">VIP MENU</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div style="margin-top: 80px;">
+    <!-- Marquee Ticker Banner -->
+    <div class="st-ticker">
+      <div class="st-ticker-content">
+        ★ OVERSIZED STREETWEAR & MUSIC FESTIVAL 2026 ★ WORLD TOUR LIVE IN TOKYO ★ LIMITED EDITION DROP ★ NO RULES JUST ATTITUDE ★ OVERSIZED STREETWEAR & MUSIC FESTIVAL 2026 ★
+      </div>
+    </div>
+  </div>
+
+  <div class="st-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="st-hero">
+      <span class="st-badge st-mb-4">LIMITED CAPACITY WORLDWIDE</span>
+      <h1 class="st-hero-title">LOUD, BOLD & UNAPOLOGETIC.</h1>
+      <p class="st-hero-subtitle">100% Pure Vanilla CSS。米白底搭配深墨綠與濃褐色高對比配色。字體粗暴放大佔滿畫面，粗黑線切分與動態跑馬燈，展現態度鮮明的潮流張力。</p>
+      <div class="st-flex st-gap-3">
+        <button class="st-btn st-btn-primary">GET TICKETS NOW 🎟️</button>
+        <button class="st-btn" id="openModal">LINEUP MODAL</button>
+      </div>
+    </section>
+
+    <!-- Color Palette System Showcase -->
+    <section id="palette" class="st-section">
+      <h2 class="st-section-title">00 // STREETWEAR HIGH-CONTRAST PALETTE</h2>
+      <p style="font-weight: 900; margin-bottom: 2rem; font-size: 1.2rem;">濃墨綠、濃褐色、極致黑、高烈度警示紅、螢光綠與海報黃：</p>
+      
+      <div class="st-grid">
+        <div class="st-col-4">
+          <div class="st-swatch-box st-bg-forest">
+            <span>Primary 濃墨綠</span>
+            <code>--st-color-forest (#0f2e1e)</code>
+          </div>
+        </div>
+        <div class="st-col-4">
+          <div class="st-swatch-box st-bg-espresso">
+            <span>Secondary 濃褐色</span>
+            <code>--st-color-espresso (#381c0d)</code>
+          </div>
+        </div>
+        <div class="st-col-4">
+          <div class="st-swatch-box st-bg-danger">
+            <span>Accent/Error 警示紅</span>
+            <code>--st-color-danger (#ff0044)</code>
+          </div>
+        </div>
+        <div class="st-col-4">
+          <div class="st-swatch-box st-bg-neon">
+            <span>Info 螢光綠</span>
+            <code>--st-color-neon (#00e676)</code>
+          </div>
+        </div>
+        <div class="st-col-4">
+          <div class="st-swatch-box st-bg-warning">
+            <span>Warning 海報黃</span>
+            <code>--st-color-warning (#ffaa00)</code>
+          </div>
+        </div>
+        <div class="st-col-4">
+          <div class="st-swatch-box st-bg-black">
+            <span>Border 極致黑</span>
+            <code>--st-color-black (#000000)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alerts Section -->
+    <section class="st-section">
+      <h2 class="st-section-title">01 // TICKET ALERTS</h2>
+      <div class="st-alert">
+        🔥 TICKET ALERT: Phase 1 General Admission Passes are 95% Sold Out!
+      </div>
+    </section>
+
+    <!-- Typography & Badges -->
+    <section class="st-section">
+      <h2 class="st-section-title">02 // HEAVYWEIGHT TYPOGRAPHY</h2>
+      <div class="st-grid">
+        <div class="st-col-7">
+          <h1 style="font-size: 3.5rem; font-weight: 900;">RAW STREET ATTITUDE <span class="st-badge">DROP #01</span></h1>
+          <h2 style="font-size: 2.2rem; font-weight: 900;">NOISY SYNTH BASS <span class="st-badge" style="background: var(--st-color-black);">SOLD OUT</span></h2>
+          <p style="margin-top: 1.5rem; font-weight: 900; font-size: 1.2rem;">Massive scale typography designed to grab instant visual attention in Pure Vanilla CSS.</p>
+        </div>
+        <div class="st-col-5 border-start border-4 border-dark ps-4">
+          <blockquote style="border: 4px solid #000; padding: 1.5rem; background: #fff; box-shadow: 5px 5px 0px #000;">
+            <p style="font-size: 1.5rem; font-weight: 900;">"WE DON'T FOLLOW TRENDS. WE CRASH THEM."</p>
+            <span style="font-weight: 900;">— Streetwear Collective</span>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Forms Section -->
+    <section id="forms" class="st-section">
+      <h2 class="st-section-title">03 // RAFFLE & FORMS</h2>
+      <form>
+        <div class="st-grid">
+          <div class="st-col-6">
+            <div class="st-form-group">
+              <label style="font-weight: 900;">RAFFLE EMAIL ADDRESS</label>
+              <input type="email" class="st-input" placeholder="hypebeast@streetwear.com">
+            </div>
+          </div>
+          <div class="st-col-6">
+            <div class="st-form-group">
+              <label style="font-weight: 900;">VIP SECRET PASS</label>
+              <input type="password" class="st-input" placeholder="••••••••">
+            </div>
+          </div>
+          <div class="st-col-6">
+            <div class="st-form-group">
+              <label style="font-weight: 900;">SNKRS SIZE SELECT</label>
+              <select class="st-select">
+                <option selected>Select Size...</option>
+                <option value="1">US 10 / Oversized Hoodie M</option>
+                <option value="2">US 11 / Oversized Hoodie L</option>
+              </select>
+            </div>
+          </div>
+          <div class="st-col-6">
+            <div class="st-form-group">
+              <label style="font-weight: 900;">CUSTOM SLOGAN (TEXTAREA)</label>
+              <textarea class="st-textarea" rows="2" placeholder="Enter custom slogan..."></textarea>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- Cards & Components Section -->
+    <section id="components" class="st-section">
+      <h2 class="st-section-title">04 // DROP CARDS & ACCORDION</h2>
+      <div class="st-grid st-mb-4">
+        <div class="st-col-4">
+          <div class="st-card">
+            <span class="st-badge">DROP 01</span>
+            <h3 style="margin: 0.8rem 0; font-weight: 900;">500GSM HEAVY HOODIE</h3>
+            <p style="font-weight: 700; margin-bottom: 1.5rem;">Heavyweight organic cotton with high-density puff print.</p>
+            <button class="st-btn">SNAG DROP</button>
+          </div>
+        </div>
+        <div class="st-col-4">
+          <div class="st-card">
+            <span class="st-badge" style="background: var(--st-color-espresso);">HEADLINER</span>
+            <h3 style="margin: 0.8rem 0; font-weight: 900;">THE SYNTH MANIFESTO</h3>
+            <p style="font-weight: 700; margin-bottom: 1.5rem;">Live modular synthesizer with 360 laser grid.</p>
+            <button class="st-btn">LISTEN SAMPLE</button>
+          </div>
+        </div>
+        <div class="st-col-4">
+          <div class="st-card">
+            <span class="st-badge" style="background: var(--st-color-black);">COLLAB</span>
+            <h3 style="margin: 0.8rem 0; font-weight: 900;">RAILS CHUNK SNEAKER</h3>
+            <p style="font-weight: 700; margin-bottom: 1.5rem;">Thick tread rubber outsole for 12h rave endurance.</p>
+            <button class="st-btn">PRE-ORDER</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion -->
+      <div class="st-accordion-item open">
+        <div class="st-accordion-header">
+          <span>WHAT IS THE RE-ENTRY POLICY AT MAIN GATES?</span>
+          <span>▼</span>
+        </div>
+        <div class="st-accordion-body">
+          Wristbands allow unlimited re-entry until 22:00 PM upon scanning NFC festival chips.
+        </div>
+      </div>
+    </section>
+
+    <!-- Table Section -->
+    <section id="tables" class="st-section">
+      <h2 class="st-section-title">05 // MERCH PRICING TABLE</h2>
+      <table class="st-table">
+        <thead>
+          <tr>
+            <th>ITEM CODE</th>
+            <th>MERCH ITEM</th>
+            <th>FABRIC WEIGHT</th>
+            <th>PRICE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>MERCH-01</td>
+            <td>Oversized Heavyweight Hoodie</td>
+            <td>500 GSM Organic Cotton</td>
+            <td>$140 USD</td>
+          </tr>
+          <tr>
+            <td>MERCH-02</td>
+            <td>Festival Vinyl Boxset (3-LP)</td>
+            <td>180g Heavyweight Vinyl</td>
+            <td>$95 USD</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer style="padding: 5rem 0; text-align: center; font-weight: 900; border-top: var(--st-border-thick);">
+      <p>© 2026 Style 10 - OVERSIZED STREETWEAR & MUSIC FESTIVAL PURE VANILLA SYSTEM.</p>
+    </footer>
+
+  </div>
+
+  <!-- Offcanvas -->
+  <div class="st-offcanvas" id="offcanvasElement">
+    <div class="st-flex-between st-mb-4">
+      <h3 style="font-weight: 900;">FESTIVAL VIP MENU</h3>
+      <button class="st-btn" id="closeOffcanvas">✕</button>
+    </div>
+    <p style="font-weight: 700;">Street Culture Quick Links.</p>
+  </div>
+
+  <!-- Modal -->
+  <div class="st-modal-overlay" id="modalOverlay">
+    <div class="st-modal">
+      <div class="st-flex-between st-mb-4">
+        <h3 style="font-weight: 900;">LINEUP MODAL</h3>
+        <button class="st-btn" id="closeModal">✕</button>
+      </div>
+      <p style="margin-bottom: 1.5rem; font-weight: 700;">High-contrast streetwear poster modal element with 4px solid borders in Pure Vanilla CSS.</p>
+      <div class="st-flex" style="justify-content: flex-end; gap: 0.5rem;">
+        <button class="st-btn" id="closeModalBtn">CLOSE</button>
+        <button class="st-btn st-btn-primary">BUY PASSES</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- External Native Vanilla JS -->
+  <script src="script.js"></script>
+</body>
+</html>

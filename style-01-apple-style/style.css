@@ -1,0 +1,553 @@
+/* ==========================================================================
+   Style 01: Apple / Premium Design Magazine (Pure Vanilla CSS)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* --- 1. Design Tokens & Color Palette --- */
+:root {
+  --ap-bg-main: #ffffff;
+  --ap-bg-surface: #f5f5f7;
+  --ap-bg-card: #ffffff;
+  
+  /* Apple Palette System */
+  --ap-color-primary: #1d1d1f;   /* 深灰炭黑 */
+  --ap-color-secondary: #86868b; /* 輔助中灰 */
+  --ap-color-accent: #0066cc;    /* 蘋果科技藍 */
+  --ap-color-info: #34aadc;      /* 冰藍 Info */
+  --ap-color-success: #34c759;   /* 翡翠綠 Success */
+  --ap-color-warning: #ff9500;   /* 琥珀橘 Warning */
+  --ap-color-error: #ff3b30;     /* 珊瑚紅 Error */
+
+  --ap-border-color: #d2d2d7;
+  --ap-border-light: #e5e5ea;
+  
+  --ap-radius-sm: 8px;
+  --ap-radius-md: 16px;
+  --ap-radius-lg: 24px;
+  --ap-radius-pill: 980px;
+
+  --ap-font-main: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+}
+
+/* --- 2. Base Reset & Layout Grid --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--ap-font-main);
+  background-color: var(--ap-bg-main);
+  color: var(--ap-color-primary);
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ap-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.ap-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.ap-col-12 { grid-column: span 12; }
+.ap-col-8  { grid-column: span 8; }
+.ap-col-6  { grid-column: span 6; }
+.ap-col-4  { grid-column: span 4; }
+.ap-col-3  { grid-column: span 3; }
+
+/* --- 3. Header & Navbar --- */
+.ap-navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  min-height: 64px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.ap-navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  flex-wrap: wrap;
+}
+
+.ap-nav-brand {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ap-color-primary);
+  text-decoration: none;
+  letter-spacing: -0.03em;
+}
+
+.ap-navbar-toggler {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--ap-border-color);
+  padding: 8px 10px;
+  min-height: 38px;
+  min-width: 38px;
+  border-radius: var(--ap-radius-sm);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.ap-toggler-icon {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--ap-color-primary);
+  position: relative;
+  margin: 6px 0;
+}
+
+.ap-toggler-icon::before,
+.ap-toggler-icon::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: var(--ap-color-primary);
+  left: 0;
+}
+
+.ap-toggler-icon::before { top: -6px; }
+.ap-toggler-icon::after { top: 6px; }
+
+.ap-navbar-collapse {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  margin-left: 2rem;
+}
+
+.ap-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ap-nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.ap-nav-link {
+  color: var(--ap-color-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.ap-nav-link:hover, .ap-nav-link.active {
+  color: var(--ap-color-primary);
+}
+
+@media (max-width: 768px) {
+  .ap-col-8, .ap-col-6, .ap-col-4, .ap-col-3 {
+    grid-column: span 12;
+  }
+  .ap-navbar-container {
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+  }
+  .ap-navbar-toggler {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ap-navbar-collapse {
+    display: none;
+    width: 100%;
+    margin-left: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    border-top: 1px solid var(--ap-border-light);
+  }
+  .ap-navbar-collapse.show {
+    display: flex;
+  }
+  .ap-nav-links {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+  .ap-nav-actions {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .ap-nav-actions .ap-btn {
+    width: 100%;
+  }
+  .ap-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  .ap-offcanvas {
+    width: 85vw;
+  }
+}
+
+/* --- 4. Hero Section --- */
+.ap-hero {
+  padding: 8rem 2rem 5rem;
+  background-color: var(--ap-bg-surface);
+  border-radius: var(--ap-radius-lg);
+  margin-top: 5rem;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.ap-hero-title {
+  font-size: clamp(2.5rem, 5.5vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--ap-color-primary);
+  margin-bottom: 1.2rem;
+}
+
+.ap-hero-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  color: var(--ap-color-secondary);
+  font-weight: 400;
+  max-width: 680px;
+  margin: 0 auto 2.2rem;
+  line-height: 1.4;
+}
+
+/* --- 5. Buttons & Badges --- */
+.ap-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.6rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: var(--ap-radius-pill);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  background: transparent;
+}
+
+.ap-btn-primary {
+  background-color: var(--ap-color-primary);
+  color: #ffffff;
+}
+
+.ap-btn-primary:hover {
+  background-color: #333336;
+}
+
+.ap-btn-outline {
+  border-color: var(--ap-color-primary);
+  color: var(--ap-color-primary);
+}
+
+.ap-btn-outline:hover {
+  background-color: var(--ap-color-primary);
+  color: #ffffff;
+}
+
+.ap-btn-secondary {
+  border-color: var(--ap-border-color);
+  color: var(--ap-color-primary);
+}
+
+.ap-btn-secondary:hover {
+  background-color: var(--ap-bg-surface);
+}
+
+.ap-badge {
+  display: inline-block;
+  padding: 0.3em 0.8em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: var(--ap-radius-pill);
+  background-color: var(--ap-bg-surface);
+  color: var(--ap-color-primary);
+}
+
+/* --- 6. Color Palette System Showcase Classes --- */
+.ap-swatch-box {
+  padding: 1.5rem;
+  border-radius: var(--ap-radius-md);
+  color: #ffffff;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 120px;
+}
+
+.ap-bg-primary   { background-color: var(--ap-color-primary); color: #fff; }
+.ap-bg-secondary { background-color: var(--ap-color-secondary); color: #fff; }
+.ap-bg-accent    { background-color: var(--ap-color-accent); color: #fff; }
+.ap-bg-info      { background-color: var(--ap-color-info); color: #fff; }
+.ap-bg-success   { background-color: var(--ap-color-success); color: #fff; }
+.ap-bg-warning   { background-color: var(--ap-color-warning); color: #fff; }
+.ap-bg-error     { background-color: var(--ap-color-error); color: #fff; }
+
+/* --- 7. Cards & Component Section --- */
+.ap-section {
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--ap-border-light);
+}
+
+.ap-section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+}
+
+.ap-card {
+  background: var(--ap-bg-card);
+  border: 1px solid var(--ap-border-color);
+  border-radius: var(--ap-radius-md);
+  padding: 1.8rem;
+  height: 100%;
+  transition: border-color 0.3s ease;
+}
+
+.ap-card:hover {
+  border-color: #a0a0a5;
+}
+
+.ap-card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+/* --- 8. Forms & Inputs --- */
+.ap-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.ap-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ap-color-primary);
+}
+
+.ap-input, .ap-select, .ap-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  border: 1px solid var(--ap-border-color);
+  border-radius: var(--ap-radius-sm);
+  background-color: var(--ap-bg-surface);
+  color: var(--ap-color-primary);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.ap-input:focus, .ap-select:focus, .ap-textarea:focus {
+  background-color: #ffffff;
+  border-color: var(--ap-color-primary);
+  box-shadow: 0 0 0 3px rgba(29, 29, 31, 0.1);
+}
+
+.ap-checkbox, .ap-radio, .ap-switch {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--ap-border-color);
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  vertical-align: middle;
+  background-color: var(--ap-bg-surface);
+}
+
+.ap-checkbox:checked {
+  background-color: var(--ap-color-primary);
+  border-color: var(--ap-color-primary);
+}
+
+.ap-checkbox:checked::after {
+  content: '✓';
+  color: #fff;
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ap-switch {
+  width: 44px;
+  height: 24px;
+  border-radius: var(--ap-radius-pill);
+  transition: background-color 0.25s;
+}
+
+.ap-switch::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  background-color: #ffffff;
+  transition: transform 0.25s;
+}
+
+.ap-switch:checked {
+  background-color: var(--ap-color-success);
+}
+
+.ap-switch:checked::before {
+  transform: translateX(20px);
+}
+
+/* --- 9. Accordion, Modal, Offcanvas --- */
+.ap-accordion-item {
+  border: 1px solid var(--ap-border-color);
+  border-radius: var(--ap-radius-sm);
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+
+.ap-accordion-header {
+  padding: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--ap-bg-card);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ap-accordion-body {
+  padding: 1.2rem;
+  display: none;
+  background: var(--ap-bg-surface);
+  border-top: 1px solid var(--ap-border-light);
+  color: var(--ap-color-secondary);
+}
+
+.ap-accordion-item.open .ap-accordion-body {
+  display: block;
+}
+
+/* Modal Overlay */
+.ap-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.ap-modal-overlay.active {
+  display: flex;
+}
+
+.ap-modal {
+  background: #ffffff;
+  border-radius: var(--ap-radius-md);
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Offcanvas */
+.ap-offcanvas {
+  position: fixed;
+  top: 0; right: -350px;
+  width: 320px;
+  height: 100%;
+  background: #ffffff;
+  border-left: 1px solid var(--ap-border-color);
+  padding: 2rem;
+  z-index: 2000;
+  transition: right 0.3s ease;
+}
+
+.ap-offcanvas.active {
+  right: 0;
+}
+
+/* --- 10. Table, Progress, Toast --- */
+.ap-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.ap-table th, .ap-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--ap-border-light);
+  text-align: left;
+}
+
+.ap-table th {
+  font-weight: 600;
+  color: var(--ap-color-secondary);
+}
+
+.ap-progress {
+  width: 100%;
+  height: 8px;
+  background-color: var(--ap-bg-surface);
+  border-radius: var(--ap-radius-pill);
+  overflow: hidden;
+}
+
+.ap-progress-bar {
+  height: 100%;
+  background-color: var(--ap-color-primary);
+  border-radius: var(--ap-radius-pill);
+}
+
+/* Alert Notification */
+.ap-alert {
+  padding: 1rem 1.5rem;
+  border-radius: var(--ap-radius-sm);
+  background-color: var(--ap-bg-surface);
+  border-left: 4px solid var(--ap-color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.ap-alert-info { border-left-color: var(--ap-color-info); }
+.ap-alert-warning { border-left-color: var(--ap-color-warning); }
+.ap-alert-error { border-left-color: var(--ap-color-error); }
+.ap-alert-success { border-left-color: var(--ap-color-success); }

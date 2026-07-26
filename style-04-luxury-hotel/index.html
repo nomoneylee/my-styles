@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格四：高檔飯店 / 精品品牌風格 (Pure Vanilla CSS/JS)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header / Navbar Component -->
+  <nav class="lx-navbar">
+    <div class="lx-container lx-navbar-container">
+      <a class="lx-nav-brand" href="#">THE EMERALD GRAND</a>
+      <button class="lx-navbar-toggler" id="lxNavbarToggler" aria-label="Toggle navigation">
+        <span class="lx-toggler-icon"></span>
+      </button>
+      <div class="lx-navbar-collapse" id="lxNavbarCollapse">
+        <ul class="lx-nav-links">
+          <li><a class="lx-nav-link active" href="#palette">PALETTE</a></li>
+          <li><a class="lx-nav-link" href="#hero">SUITES</a></li>
+          <li><a class="lx-nav-link" href="#forms">RESERVATION</a></li>
+          <li><a class="lx-nav-link" href="#components">BOUTIQUE</a></li>
+          <li><a class="lx-nav-link" href="#tables">RATES</a></li>
+        </ul>
+        <div class="lx-flex lx-gap-2 lx-nav-actions">
+          <a href="../index.html" class="lx-btn">返回總覽 Hub</a>
+          <button class="lx-btn lx-btn-primary" id="openOffcanvas">RESERVE NOW</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="lx-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="lx-hero">
+      <span class="lx-badge lx-mb-4">EXCLUSIVITY & ELEGANCE</span>
+      <h1 class="lx-hero-title">TIMELESS OPULENCE.</h1>
+      <p class="lx-hero-subtitle">100% Pure Vanilla CSS。深墨綠沉穩基調搭配極致皇家金綴飾。經典襯線字體，演繹奢華飯店與高級精品品牌的尊榮體驗。</p>
+      <div class="lx-flex" style="justify-content: center; gap: 1rem;">
+        <button class="lx-btn lx-btn-primary">BOOK A ROYAL SUITE</button>
+        <button class="lx-btn lx-btn-outline" id="openModal">VIP PRIVATE MODAL</button>
+      </div>
+    </section>
+
+    <!-- Color Palette System Showcase -->
+    <section id="palette" class="lx-section">
+      <h2 class="lx-section-title">高檔精品專屬奢華色彩系統 (Luxury Emerald Palette)</h2>
+      <p style="text-align: center; color: var(--lx-color-champagne); margin-bottom: 2rem;">沉穩深墨綠、皇家金、香檳奶茶、藍寶石與勃根地紅：</p>
+      
+      <div class="lx-grid">
+        <div class="lx-col-4">
+          <div class="lx-swatch-box lx-bg-gold">
+            <span>Accent 皇家金</span>
+            <code>--lx-color-gold (#c5a059)</code>
+          </div>
+        </div>
+        <div class="lx-col-4">
+          <div class="lx-swatch-box lx-bg-champagne">
+            <span>Secondary 香檳奶茶</span>
+            <code>--lx-color-champagne (#e6d5c3)</code>
+          </div>
+        </div>
+        <div class="lx-col-4">
+          <div class="lx-swatch-box lx-bg-sapphire">
+            <span>Info 深藍寶石</span>
+            <code>--lx-color-sapphire (#2d4a60)</code>
+          </div>
+        </div>
+        <div class="lx-col-4">
+          <div class="lx-swatch-box lx-bg-jade">
+            <span>Success 玉石綠</span>
+            <code>--lx-color-jade (#2a5c43)</code>
+          </div>
+        </div>
+        <div class="lx-col-4">
+          <div class="lx-swatch-box lx-bg-bronze">
+            <span>Warning 古銅金</span>
+            <code>--lx-color-bronze (#b3823e)</code>
+          </div>
+        </div>
+        <div class="lx-col-4">
+          <div class="lx-swatch-box lx-bg-burgundy">
+            <span>Error 勃根地紅</span>
+            <code>--lx-color-burgundy (#7a1f29)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alerts Section -->
+    <section class="lx-section">
+      <h2 class="lx-section-title">VIP 尊榮通知 (Alert Notifications)</h2>
+      <div class="lx-alert">
+        <strong>VIP NOTICE:</strong> Your luxury suite upgrade has been confirmed by Executive Butler Concierge.
+      </div>
+    </section>
+
+    <!-- Typography & Badges -->
+    <section class="lx-section">
+      <h2 class="lx-section-title">1. 排版與標籤 (Typography & Badges)</h2>
+      <div class="lx-grid">
+        <div class="lx-col-6">
+          <h1 style="color: var(--lx-color-gold);">PRESIDENTIAL SUITE <span class="lx-badge">VIP</span></h1>
+          <h2>FINE JEWELRY & WATCHES <span class="lx-badge" style="background: var(--lx-color-champagne);">LIMITED</span></h2>
+          <p style="color: var(--lx-color-champagne); font-style: italic; margin-top: 1rem;">An unforgettable sanctuary designed for those who appreciate understated elegance.</p>
+        </div>
+        <div class="lx-col-6">
+          <blockquote style="border: 1px solid var(--lx-color-gold); padding: 1.5rem; background: var(--lx-bg-surface);">
+            <p style="color: var(--lx-color-gold); font-style: italic;">"Elegance is not standing out, but being remembered."</p>
+            <span style="font-size: 0.9rem; color: #aaa;">— Giorgio Armani Haute Couture</span>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Forms Section -->
+    <section id="forms" class="lx-section">
+      <h2 class="lx-section-title">2. 預訂與尊榮表單 (Forms)</h2>
+      <form>
+        <div class="lx-grid">
+          <div class="lx-col-6">
+            <div class="lx-form-group">
+              <label style="color: var(--lx-color-gold);">GUEST EMAIL ADDRESS</label>
+              <input type="email" class="lx-input" placeholder="guest@emeraldgrand.com">
+            </div>
+          </div>
+          <div class="lx-col-6">
+            <div class="lx-form-group">
+              <label style="color: var(--lx-color-gold);">VIP PASSCODE</label>
+              <input type="password" class="lx-input" placeholder="••••••••">
+            </div>
+          </div>
+          <div class="lx-col-6">
+            <div class="lx-form-group">
+              <label style="color: var(--lx-color-gold);">SUITE CATEGORY</label>
+              <select class="lx-select">
+                <option selected>Select accommodation...</option>
+                <option value="1">The Emerald Penthouse Suite</option>
+                <option value="2">Royal Oceanfront Villa</option>
+              </select>
+            </div>
+          </div>
+          <div class="lx-col-6">
+            <div class="lx-form-group">
+              <label style="color: var(--lx-color-gold);">CONCIERGE REQUESTS</label>
+              <textarea class="lx-textarea" rows="2" placeholder="Private butler requirements..."></textarea>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- Cards & Components Section -->
+    <section id="components" class="lx-section">
+      <h2 class="lx-section-title">3. 精品卡片與尊榮答疑 (Cards & Accordion)</h2>
+      <div class="lx-grid lx-mb-4">
+        <div class="lx-col-4">
+          <div class="lx-card">
+            <span class="lx-badge">EXCLUSIVE</span>
+            <h3 style="color: var(--lx-color-gold); margin: 0.5rem 0;">The Royal Chronograph</h3>
+            <p style="color: var(--lx-color-champagne); margin-bottom: 1rem;">Crafted in 18k Rose Gold with sapphire crystal casing.</p>
+            <button class="lx-btn">BROCHURE</button>
+          </div>
+        </div>
+        <div class="lx-col-4">
+          <div class="lx-card">
+            <span class="lx-badge">GASTRONOMY</span>
+            <h3 style="color: var(--lx-color-gold); margin: 0.5rem 0;">Le Jardin Michelin 3-Star</h3>
+            <p style="color: var(--lx-color-champagne); margin-bottom: 1rem;">Multi-sensory culinary voyage prepared by Executive Chef.</p>
+            <button class="lx-btn">RESERVE</button>
+          </div>
+        </div>
+        <div class="lx-col-4">
+          <div class="lx-card">
+            <span class="lx-badge">WELLNESS</span>
+            <h3 style="color: var(--lx-color-gold); margin: 0.5rem 0;">Imperial Thermal Spa</h3>
+            <p style="color: var(--lx-color-champagne); margin-bottom: 1rem;">Hydrotherapy baths and gold leaf facials in total seclusion.</p>
+            <button class="lx-btn">TREATMENTS</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion -->
+      <div class="lx-accordion-item open">
+        <div class="lx-accordion-header">
+          <span>WHAT IS THE PRIVATE BUTLER SERVICE POLICY?</span>
+          <span>▼</span>
+        </div>
+        <div class="lx-accordion-body">
+          Every suite features 24-hour dedicated butler service to fulfill packing, private dining, and custom itinerary requests with absolute discretion.
+        </div>
+      </div>
+    </section>
+
+    <!-- Table Section -->
+    <section id="tables" class="lx-section">
+      <h2 class="lx-section-title">4. 尊榮尊享價格 (Tables)</h2>
+      <table class="lx-table">
+        <thead>
+          <tr>
+            <th>CODE</th>
+            <th>ACCOMMODATION</th>
+            <th>SQUARE METERS</th>
+            <th>RATE PER NIGHT</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>STE-01</td>
+            <td>The Emerald Grand Penthouse</td>
+            <td>450 m²</td>
+            <td style="color: var(--lx-color-gold);">$8,500 USD</td>
+          </tr>
+          <tr>
+            <td>STE-02</td>
+            <td>Imperial Oceanfront Pavilion</td>
+            <td>320 m²</td>
+            <td style="color: var(--lx-color-gold);">$5,800 USD</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer style="padding: 4rem 0; text-align: center; color: var(--lx-color-champagne); border-top: 1px solid var(--lx-color-gold);">
+      <p>© 2026 Style 04 - THE EMERALD GRAND LUXURY BOUTIQUE VANILLA SYSTEM.</p>
+    </footer>
+
+  </div>
+
+  <!-- Offcanvas -->
+  <div class="lx-offcanvas" id="offcanvasElement">
+    <div class="lx-flex-between lx-mb-4">
+      <h3 style="color: var(--lx-color-gold);">VIP RESERVATION</h3>
+      <button class="lx-btn" id="closeOffcanvas">✕</button>
+    </div>
+    <p style="color: var(--lx-color-champagne);">Confidential Butler Services.</p>
+  </div>
+
+  <!-- Modal -->
+  <div class="lx-modal-overlay" id="modalOverlay">
+    <div class="lx-modal">
+      <div class="lx-flex-between lx-mb-4">
+        <h3 style="color: var(--lx-color-gold);">PRIVATE RESERVATION</h3>
+        <button class="lx-btn" id="closeModal">✕</button>
+      </div>
+      <p style="color: var(--lx-color-champagne); margin-bottom: 1.5rem;">Confidential VIP Concierge booking system in Pure Vanilla CSS.</p>
+      <div class="lx-flex" style="justify-content: flex-end; gap: 0.5rem;">
+        <button class="lx-btn" id="closeModalBtn">CANCEL</button>
+        <button class="lx-btn lx-btn-primary">CONFIRM REQUEST</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- External Native Vanilla JS -->
+  <script src="script.js"></script>
+</body>
+</html>
