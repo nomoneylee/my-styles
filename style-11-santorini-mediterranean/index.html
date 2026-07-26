@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格十一：希臘聖托里尼 / 地中海度假風 (Pure Vanilla CSS/JS)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <nav class="st-navbar">
+    <div class="st-container st-navbar-container">
+      <a class="st-nav-brand" href="#">SANTORINI <span>RESORT</span></a>
+      <button class="st-navbar-toggler" id="stNavbarToggler" aria-label="Toggle navigation">☰</button>
+      <div class="st-navbar-collapse" id="stNavbarCollapse">
+        <ul class="st-nav-links">
+          <li><a class="st-nav-link active" href="#palette">色彩系統</a></li>
+          <li><a class="st-nav-link" href="#hero">主視覺</a></li>
+          <li><a class="st-nav-link" href="#forms">表單元件</a></li>
+          <li><a class="st-nav-link" href="#components">互動元件</a></li>
+          <li><a class="st-nav-link" href="#tables">房型表格</a></li>
+        </ul>
+        <div class="st-flex st-gap-2">
+          <a href="../index.html" class="st-btn st-btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">返回總覽 Hub</a>
+          <button class="st-btn st-btn-accent" id="openOffcanvas" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">度假選單</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="st-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="st-hero">
+      <span class="st-hero-badge">✦ MEDITERRANEAN SUMMER VACATION ✦</span>
+      <h1 class="st-hero-title">沉醉在藍白交織的陽光島嶼</h1>
+      <p class="st-hero-subtitle">希臘聖托里尼純白建築與湛藍愛琴海的完美契合。高彩度大海藍搭配陽光金黃，享受透澈放鬆的度假氛圍。</p>
+      <div class="st-flex-center st-gap-3">
+        <button class="st-btn st-btn-primary">預約奢華海景房</button>
+        <button class="st-btn st-btn-accent" id="openModal">開啟預訂 Modal</button>
+      </div>
+    </section>
+
+    <!-- Color Palette Showcase -->
+    <section id="palette" class="st-section">
+      <h2 class="st-section-title">地中海度假專屬配色系統 (Mediterranean Palette System)</h2>
+      <p class="st-text-muted st-mb-4">以藍白經典為主軸，融合作物橄欖綠與夕陽金黃，呈現專屬渡假誌色彩 Tokens：</p>
+      
+      <div class="st-grid">
+        <div class="st-col-4">
+          <div class="st-swatch-box st-bg-primary">
+            <span>Primary 聖托里尼大海藍</span>
+            <code>--st-color-primary (#0055b8)</code>
+          </div>
+        </div>
+        <div class="st-col-4">
+          <div class="st-swatch-box st-bg-secondary">
+            <span>Secondary 愛琴海深藍</span>
+            <code>--st-color-secondary (#003e8a)</code>
+          </div>
+        </div>
+        <div class="st-col-4">
+          <div class="st-swatch-box st-bg-accent">
+            <span>Accent 日照金黃色</span>
+            <code>--st-color-accent (#f5a623)</code>
+          </div>
+        </div>
+        <div class="st-col-3">
+          <div class="st-swatch-box st-bg-info">
+            <span>Info 碧海綠</span>
+            <code>--st-color-info (#00a896)</code>
+          </div>
+        </div>
+        <div class="st-col-3">
+          <div class="st-swatch-box st-bg-success">
+            <span>Success 地中海橄欖綠</span>
+            <code>--st-color-success (#2a9d8f)</code>
+          </div>
+        </div>
+        <div class="st-col-3">
+          <div class="st-swatch-box st-bg-warning">
+            <span>Warning 陽光落日橘</span>
+            <code>--st-color-warning (#f4a261)</code>
+          </div>
+        </div>
+        <div class="st-col-3">
+          <div class="st-swatch-box st-bg-error">
+            <span>Error 九重葛紫紅</span>
+            <code>--st-color-error (#e76f51)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notification Alert Section -->
+    <section class="st-section">
+      <h2 class="st-section-title">度假訊息提醒 (Alert Notifications)</h2>
+      <div class="st-alert st-alert-info">
+        <strong>碧海藍資訊:</strong> 您預訂的愛琴海巡航艇行程將於明日上午 09:00 出航。
+      </div>
+      <div class="st-alert st-alert-success">
+        <strong>橄欖綠成功:</strong> 海景套房預訂成功！已將入住憑證發送至您的電子信箱。
+      </div>
+      <div class="st-alert st-alert-warning">
+        <strong>落日橘警告:</strong> 聖托里尼正值正午強光時刻，請記得補擦防曬乳與配戴墨鏡。
+      </div>
+      <div class="st-alert st-alert-error">
+        <strong>九重葛提醒:</strong> 私人泳池區目前正進行定期消毒，暫停開放 30 分鐘。
+      </div>
+    </section>
+
+    <!-- Typography & Badges -->
+    <section class="st-section">
+      <h2 class="st-section-title">1. 排版與標籤 (Typography & Badges)</h2>
+      <div class="st-grid">
+        <div class="st-col-6">
+          <h1 class="st-mb-2">H1 愛琴海的晨曦 <span class="st-badge">Santorini</span></h1>
+          <h2 class="st-mb-2">H2 希臘風情藍白教堂 <span class="st-badge">Resort</span></h2>
+          <h3 class="st-mb-3">H3 懸崖頂端的私人泳池</h3>
+          <p class="st-text-muted st-mb-3">感受風吹過圓頂教堂的寧靜，陽光灑落落在純白微彎的階梯上，帶來滿滿的假期療癒感。</p>
+        </div>
+        <div class="st-col-6">
+          <blockquote style="border-left: 4px solid var(--st-color-accent); padding-left: 1.2rem; background: white; padding: 1rem 1.2rem; border-radius: 0 12px 12px 0;">
+            「在聖托里尼，時間彷彿被大海與陽光溫柔放大，每一秒都是浪漫的定格。」
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buttons -->
+    <section class="st-section">
+      <h2 class="st-section-title">2. 度假風格按鈕 (Buttons)</h2>
+      <div class="st-flex st-gap-3 st-flex-wrap">
+        <button class="st-btn st-btn-primary">Primary 大海藍按鈕</button>
+        <button class="st-btn st-btn-accent">Accent 陽光金黃按鈕</button>
+        <button class="st-btn st-btn-outline">Outline 藍框按鈕</button>
+      </div>
+    </section>
+
+    <!-- Form Controls -->
+    <section id="forms" class="st-section">
+      <h2 class="st-section-title">3. 原生表單控制項 (Form Controls)</h2>
+      <form>
+        <div class="st-grid">
+          <div class="st-col-6">
+            <div class="st-form-group">
+              <label class="st-form-label" for="stName">貴賓姓名</label>
+              <input type="text" id="stName" class="st-input" placeholder="例如: 亞歷山大先生">
+            </div>
+          </div>
+          <div class="st-col-6">
+            <div class="st-form-group">
+              <label class="st-form-label" for="stRoomType">房型選擇</label>
+              <select id="stRoomType" class="st-select">
+                <option>聖托里尼日落海景套房</option>
+                <option>愛琴海懸崖私人泳池別墅</option>
+                <option>純白穹頂家庭套房</option>
+              </select>
+            </div>
+          </div>
+          <div class="st-col-12">
+            <div class="st-form-group">
+              <label class="st-form-label" for="stNote">特別需求備註</label>
+              <textarea id="stNote" class="st-textarea" rows="3" placeholder="例如: 需要安排機場接送或蜜月佈置..."></textarea>
+            </div>
+          </div>
+
+          <!-- Controls: Checkbox, Radio, Switch, Range -->
+          <div class="st-col-6">
+            <div class="st-form-group">
+              <label class="st-form-label">包含行程選項 (Checkbox)</label>
+              <div class="st-flex st-gap-3" style="margin-top: 0.5rem;">
+                <label class="st-checkbox-label">
+                  <input type="checkbox" class="st-checkbox" checked> 包含每日美式早餐
+                </label>
+                <label class="st-checkbox-label">
+                  <input type="checkbox" class="st-checkbox"> 日落夕陽遊艇
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="st-col-6">
+            <div class="st-form-group">
+              <label class="st-form-label">接送服務 (Radio)</label>
+              <div class="st-flex st-gap-3" style="margin-top: 0.5rem;">
+                <label class="st-radio-label">
+                  <input type="radio" name="stTransfer" class="st-radio" checked> 私人專車接送
+                </label>
+                <label class="st-radio-label">
+                  <input type="radio" name="stTransfer" class="st-radio"> 自行前往
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="st-col-6">
+            <div class="st-form-group">
+              <label class="st-form-label">夜間警報/溫馨提示 (Switch)</label>
+              <label class="st-switch-label" style="margin-top: 0.5rem;">
+                <input type="checkbox" class="st-switch-input" checked>
+                <span class="st-switch-slider"></span>
+                <span>啟用星空酒吧專屬訂位通知</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="st-col-6">
+            <div class="st-form-group">
+              <label class="st-form-label">期望房間預算 (Range Slider)</label>
+              <input type="range" class="st-range" min="300" max="2000" value="850">
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="st-section">
+      <h2 class="st-section-title">4. 卡片系統 (Cards)</h2>
+      <div class="st-grid">
+        <div class="st-col-4">
+          <div class="st-card">
+            <span class="st-badge st-mb-2">海景套房</span>
+            <h3 class="st-card-title">懸崖日落 Villa</h3>
+            <p class="st-text-muted st-mb-3">坐擁伊亞鎮（Oia）最美夕陽景觀，配有戶外按摩溫水池。</p>
+            <button class="st-btn st-btn-primary" style="width: 100%;">查看詳情</button>
+          </div>
+        </div>
+        <div class="st-col-4">
+          <div class="st-card">
+            <span class="st-badge st-mb-2">美食體驗</span>
+            <h3 class="st-card-title">地中海鮮魚米其林</h3>
+            <p class="st-text-muted st-mb-3">每日特採愛琴海新鮮海鮮，搭配希臘優質橄欖油與白酒。</p>
+            <button class="st-btn st-btn-outline" style="width: 100%;">線上訂位</button>
+          </div>
+        </div>
+        <div class="st-col-4">
+          <div class="st-card">
+            <span class="st-badge st-mb-2">SPA 放鬆</span>
+            <h3 class="st-card-title">愛琴海精油水療</h3>
+            <p class="st-text-muted st-mb-3">融合天然海水礦物質與希臘草本精油，徹底釋放旅行疲憊。</p>
+            <button class="st-btn st-btn-accent" style="width: 100%;">預約水療</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Components Section (Tabs, Accordion, Progress) -->
+    <section id="components" class="st-section">
+      <h2 class="st-section-title">5. 互動元件 (Tabs, Accordion & Progress)</h2>
+      
+      <!-- Progress -->
+      <div class="st-mb-4">
+        <div class="st-flex-between st-mb-2">
+          <span style="font-weight: 700; color: var(--st-color-primary);">熱門夏日假期房間預訂率</span>
+          <span style="font-weight: 700; color: var(--st-color-accent);">88% 已完訂</span>
+        </div>
+        <div class="st-progress">
+          <div class="st-progress-bar" style="width: 88%;"></div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="st-tabs">
+        <button class="st-tab-btn active" data-tab="tab-1">渡假設施</button>
+        <button class="st-tab-btn" data-tab="tab-2">位置交通</button>
+        <button class="st-tab-btn" data-tab="tab-3">取消政策</button>
+      </div>
+
+      <div id="tab-1" class="st-tab-pane active">
+        <div class="st-card">
+          <h4>渡假村專屬設施</h4>
+          <p class="st-text-muted">提供無邊際無瑕泳池、私人海灘貴賓席、24 小時禮賓管家服務與全區免費極速 Wi-Fi。</p>
+        </div>
+      </div>
+      <div id="tab-2" class="st-tab-pane">
+        <div class="st-card">
+          <h4>地點與接駁說明</h4>
+          <p class="st-text-muted">距離聖托里尼機場（JTR）約 20 分鐘車程，飯店提供直達豪華休旅專車接送。</p>
+        </div>
+      </div>
+      <div id="tab-3" class="st-tab-pane">
+        <div class="st-card">
+          <h4>靈活取消規則</h4>
+          <p class="st-text-muted">入住前 7 天皆可免費取消並全額退款，無隱藏手續費。</p>
+        </div>
+      </div>
+
+      <!-- Accordion -->
+      <h3 style="margin: 2rem 0 1rem; color: var(--st-color-primary);">常見度假疑問 (Accordion)</h3>
+      <div class="st-accordion-item open">
+        <div class="st-accordion-header">飯店的退房與入住時間是什麼時候？</div>
+        <div class="st-accordion-body">
+          標準入住時間為下午 15:00，退房時間為上午 11:00。如需提早入住或延後退房，可提前聯絡櫃檯。
+        </div>
+      </div>
+      <div class="st-accordion-item">
+        <div class="st-accordion-header">套房內是否提供私人泳池恆溫？</div>
+        <div class="st-accordion-body">
+          是的，所有懸崖 Villa 的獨立泳池皆具備全天候 28°C 智慧恆溫系統。
+        </div>
+      </div>
+    </section>
+
+    <!-- Table Section -->
+    <section id="tables" class="st-section">
+      <h2 class="st-section-title">6. 房型與定價明細表 (Tables)</h2>
+      <div class="st-table-container">
+        <table class="st-table">
+          <thead>
+            <tr>
+              <th>房型名稱</th>
+              <th>容納人數</th>
+              <th>景觀特色</th>
+              <th>旺季價格 (EUR)</th>
+              <th>狀態</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>愛琴海無邊際泳池 Villa</strong></td>
+              <td>2-4 人</td>
+              <td>180° 愛琴海火山口第一排</td>
+              <td>€ 1,200 / 晚</td>
+              <td><span class="st-badge" style="background: #eaf6f4; color: #1d665e;">熱銷中</span></td>
+            </tr>
+            <tr>
+              <td><strong>日落懸崖奢華套房</strong></td>
+              <td>2 人</td>
+              <td>伊亞夕陽景緻與獨立按摩池</td>
+              <td>€ 850 / 晚</td>
+              <td><span class="st-badge" style="background: #eaf6f4; color: #1d665e;">尚有空房</span></td>
+            </tr>
+            <tr>
+              <td><strong>聖托里尼純白陽光雙人房</strong></td>
+              <td>2 人</td>
+              <td>藍頂教堂建築景觀與陽台</td>
+              <td>€ 520 / 晚</td>
+              <td><span class="st-badge" style="background: #fdf4e7; color: #9c5c00;">即將售罄</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Modal Component -->
+  <div class="st-modal-overlay" id="stModalOverlay">
+    <div class="st-modal">
+      <div class="st-modal-header">
+        <h3 class="st-modal-title">🌊 聖托里尼假期預訂確認</h3>
+        <button class="st-close-btn st-close-modal">&times;</button>
+      </div>
+      <p class="st-text-muted st-mb-4">感謝您選擇 Santorini Resort。請確認您的預訂資訊無誤，我們的禮賓專員將儘快與您聯繫。</p>
+      <div class="st-flex st-gap-2" style="justify-content: flex-end;">
+        <button class="st-btn st-btn-outline st-close-modal">取消</button>
+        <button class="st-btn st-btn-primary st-close-modal">確認送出</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas Component -->
+  <div class="st-offcanvas" id="stOffcanvas">
+    <div class="st-flex-between st-mb-4">
+      <h3 style="color: var(--st-color-primary);">度假專屬服務</h3>
+      <button class="st-close-btn" id="closeOffcanvas">&times;</button>
+    </div>
+    <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+      <li><a href="#" style="color: var(--st-text-main); text-decoration: none; font-weight: 600;">私人直升機導覽</a></li>
+      <li><a href="#" style="color: var(--st-text-main); text-decoration: none; font-weight: 600;">酒莊酒品品鑑會</a></li>
+      <li><a href="#" style="color: var(--st-text-main); text-decoration: none; font-weight: 600;">愛琴海潛水攝影</a></li>
+      <li><a href="#" style="color: var(--st-text-main); text-decoration: none; font-weight: 600;">全天候懸崖主廚晚宴</a></li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格十五：賽博龐克微燻風 (Pure Vanilla CSS/JS)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Orbitron:wght@600;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <nav class="cb-navbar">
+    <div class="cb-container cb-navbar-container">
+      <a class="cb-nav-brand" href="#">NOCTURNE <span>STUDIO</span></a>
+      <button class="cb-navbar-toggler" id="cbNavbarToggler" aria-label="Toggle navigation">☰</button>
+      <div class="cb-navbar-collapse" id="cbNavbarCollapse">
+        <ul class="cb-nav-links">
+          <li><a class="cb-nav-link active" href="#palette">NEON PALETTE</a></li>
+          <li><a class="cb-nav-link" href="#hero">OVERVIEW</a></li>
+          <li><a class="cb-nav-link" href="#forms">SYNTH FORM</a></li>
+          <li><a class="cb-nav-link" href="#components">MODULATION</a></li>
+          <li><a class="cb-nav-link" href="#tables">TRACKLIST</a></li>
+        </ul>
+        <div class="cb-flex cb-gap-2" style="margin-left: 1.5rem;">
+          <a href="../index.html" class="cb-btn cb-btn-outline" style="padding: 0.4rem 1rem; font-size: 0.8rem;">HUB 總覽</a>
+          <button class="cb-btn cb-btn-info" id="openOffcanvas" style="padding: 0.4rem 1rem; font-size: 0.8rem;">CHIC LOUNGE</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="cb-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="cb-hero">
+      <span class="cb-hero-badge">✦ CYBER-CHIC NOIR NIGHTCLUB ✦</span>
+      <h1 class="cb-hero-title">深紅與墨綠交織的深夜迷幻</h1>
+      <p class="cb-hero-subtitle">帶有科幻感的深夜酒吧 / 酷炫音樂工作室風格。極深墨綠與酒紅交織底色，搭配細微洋紅與螢光黃細線光暈，演繹微醺迷幻的故事感。</p>
+      <div class="cb-flex cb-gap-3">
+        <button class="cb-btn cb-btn-primary">進入微醺酒吧</button>
+        <button class="cb-btn cb-btn-outline" id="openModal">微醺 MODAL</button>
+      </div>
+    </section>
+
+    <!-- Color Palette Showcase -->
+    <section id="palette" class="cb-section">
+      <h2 class="cb-section-title">微醺霓虹配色系統 (CYBER NOIR PALETTE)</h2>
+      <p class="cb-text-muted cb-mb-4">遠離大眾科技藍卡片，採用深酒紅底、深墨綠底與強烈洋紅/螢光黃光暈：</p>
+      
+      <div class="cb-grid">
+        <div class="cb-col-4">
+          <div class="cb-swatch-box cb-bg-primary">
+            <span>Primary 深暗酒紅底</span>
+            <code>--cb-color-primary (#180a17)</code>
+          </div>
+        </div>
+        <div class="cb-col-4">
+          <div class="cb-swatch-box cb-bg-secondary">
+            <span>Secondary 深暗墨綠底</span>
+            <code>--cb-color-secondary (#0d1a16)</code>
+          </div>
+        </div>
+        <div class="cb-col-4">
+          <div class="cb-swatch-box cb-bg-accent">
+            <span>Accent 霓虹洋紅</span>
+            <code>--cb-color-accent (#ff2a85)</code>
+          </div>
+        </div>
+        <div class="cb-col-3">
+          <div class="cb-swatch-box cb-bg-info">
+            <span>Info 螢光黃</span>
+            <code>--cb-color-info (#ffe600)</code>
+          </div>
+        </div>
+        <div class="cb-col-3">
+          <div class="cb-swatch-box cb-bg-success">
+            <span>Success 微醺翡翠綠</span>
+            <code>--cb-color-success (#00ff9d)</code>
+          </div>
+        </div>
+        <div class="cb-col-3">
+          <div class="cb-swatch-box cb-bg-warning">
+            <span>Warning 強烈琥珀橘</span>
+            <code>--cb-color-warning (#ff9900)</code>
+          </div>
+        </div>
+        <div class="cb-col-3">
+          <div class="cb-swatch-box cb-bg-error">
+            <span>Error 微醺紫紅</span>
+            <code>--cb-color-error (#ff0055)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notification Alert Section -->
+    <section class="cb-section">
+      <h2 class="cb-section-title">深夜微醺通知 (Alert Notifications)</h2>
+      <div class="cb-alert cb-alert-info">
+        <strong>螢光黃 ALERT:</strong> DJ Live Set 合成器調音頻率已校正至 440Hz 迷幻頻段。
+      </div>
+      <div class="cb-alert cb-alert-success">
+        <strong>翡翠綠 ALERT:</strong> VIP 微醺特調「Cyber Magenta Punch」已調配完畢。
+      </div>
+      <div class="cb-alert cb-alert-warning">
+        <strong>琥珀橘 WARNING:</strong> 深夜入場人數已達 85% 上限，請提前預訂專屬包廂。
+      </div>
+      <div class="cb-alert cb-alert-error">
+        <strong>紫紅 ERROR:</strong> 請勿在微醺包廂區域使用過度閃爍的攝影閃光燈。
+      </div>
+    </section>
+
+    <!-- Typography & Badges -->
+    <section class="cb-section">
+      <h2 class="cb-section-title">1. 暗色調視覺與標籤 (Typography & Badges)</h2>
+      <div class="cb-grid">
+        <div class="cb-col-6">
+          <h1 class="cb-mb-2">H1 NOCTURNE LOUNGE <span class="cb-badge">2026</span></h1>
+          <h2 class="cb-mb-2">H2 SYNTHWAVE & CHIC <span class="cb-badge" style="background: rgba(255, 230, 0, 0.2); color: var(--cb-color-info); border-color: var(--cb-color-info);">NEON</span></h2>
+          <h3 class="cb-mb-3">H3 AMBIENT & RETRO-FUTURE</h3>
+          <p class="cb-text-muted cb-mb-3">沉浸在低頻貝斯與迷幻洋紅細線中，感受獨特深夜微醺酒吧與音樂工作室故事感。</p>
+        </div>
+        <div class="cb-col-6">
+          <blockquote style="border-left: 3px solid var(--cb-color-accent); padding-left: 1.2rem; background: var(--cb-bg-card); padding: 1.2rem; border-radius: 8px; box-shadow: var(--cb-glow-magenta);">
+            「城市的深夜不是終點，而是音樂與靈魂真正開始低鳴的微醺序曲。」
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buttons -->
+    <section class="cb-section">
+      <h2 class="cb-section-title">2. 霓虹微醺按鈕 (Buttons)</h2>
+      <div class="cb-flex cb-gap-3 cb-flex-wrap">
+        <button class="cb-btn cb-btn-primary">Primary 霓虹洋紅</button>
+        <button class="cb-btn cb-btn-info">Info 螢光黃按鈕</button>
+        <button class="cb-btn cb-btn-outline">Outline 細光線按鈕</button>
+      </div>
+    </section>
+
+    <!-- Form Controls -->
+    <section id="forms" class="cb-section">
+      <h2 class="cb-section-title">3. 合成器控制項 (Form Controls)</h2>
+      <form>
+        <div class="cb-grid">
+          <div class="cb-col-6">
+            <div class="cb-form-group">
+              <label class="cb-form-label" for="cbMember">賓客代號 / ARTIST ID</label>
+              <input type="text" id="cbMember" class="cb-input" placeholder="例如: Cyber-V-99">
+            </div>
+          </div>
+          <div class="cb-col-6">
+            <div class="cb-form-group">
+              <label class="cb-form-label" for="cbDrink">選擇微醺特調</label>
+              <select id="cbDrink" class="cb-select">
+                <option>Nocturne Magenta 霓虹洋紅苦精</option>
+                <option>Deep Emerald Absinthe 深墨綠苦艾酒</option>
+                <option>Synthwave Amber Highball 琥珀氣泡</option>
+              </select>
+            </div>
+          </div>
+          <div class="cb-col-12">
+            <div class="cb-form-group">
+              <label class="cb-form-label" for="cbNotes">音樂點歌與氣氛要求</label>
+              <textarea id="cbNotes" class="cb-textarea" rows="3" placeholder="例如: 希望播放 80s Dark Synthwave..."></textarea>
+            </div>
+          </div>
+
+          <!-- Checkbox, Radio, Switch, Range -->
+          <div class="cb-col-6">
+            <div class="cb-form-group">
+              <label class="cb-form-label">酒吧包廂權限 (Checkbox)</label>
+              <div class="cb-flex cb-gap-3" style="margin-top: 0.5rem;">
+                <label class="cb-checkbox-label">
+                  <input type="checkbox" class="cb-checkbox" checked> 包含錄音室聽歌通道
+                </label>
+                <label class="cb-checkbox-label">
+                  <input type="checkbox" class="cb-checkbox"> 專屬調酒師客製
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="cb-col-6">
+            <div class="cb-form-group">
+              <label class="cb-form-label">微醺氛圍燈光 (Radio)</label>
+              <div class="cb-flex cb-gap-3" style="margin-top: 0.5rem;">
+                <label class="cb-radio-label">
+                  <input type="radio" name="cbLight" class="cb-radio" checked> 霓虹洋紅 (Neon Magenta)
+                </label>
+                <label class="cb-radio-label">
+                  <input type="radio" name="cbLight" class="cb-radio"> 螢光黃 (Neon Yellow)
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="cb-col-6">
+            <div class="cb-form-group">
+              <label class="cb-form-label">聲波震盪同步 (Switch)</label>
+              <label class="cb-switch-label" style="margin-top: 0.5rem;">
+                <input type="checkbox" class="cb-switch-input" checked>
+                <span class="cb-switch-slider"></span>
+                <span>開啟重低音燈光連動反應</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="cb-col-6">
+            <div class="cb-form-group">
+              <label class="cb-form-label">黑膠音量分貝 (Range Slider)</label>
+              <input type="range" class="cb-range" min="0" max="120" value="85">
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="cb-section">
+      <h2 class="cb-section-title">4. 暗色微醺卡片 (Cards)</h2>
+      <div class="cb-grid">
+        <div class="cb-col-4">
+          <div class="cb-card">
+            <span class="cb-badge cb-mb-2">LIVE PERFORMANCE</span>
+            <h3 class="cb-card-title">Midnight Cyber Live</h3>
+            <p class="cb-text-muted cb-mb-3">深夜 01:00 登場的獨立合成器現場演出，搭配迷幻微醺調酒。</p>
+            <button class="cb-btn cb-btn-primary" style="width: 100%;">預約座位</button>
+          </div>
+        </div>
+        <div class="cb-col-4">
+          <div class="cb-card" style="border-color: var(--cb-color-info);">
+            <span class="cb-badge cb-mb-2" style="background: rgba(255, 230, 0, 0.2); color: var(--cb-color-info); border-color: var(--cb-color-info);">COCKTAILS</span>
+            <h3 class="cb-card-title">Magenta Velvet 特調</h3>
+            <p class="cb-text-muted cb-mb-3">以黑莓、金酒與微發泡紅酒調配，具備極致豐富的果香層次。</p>
+            <button class="cb-btn cb-btn-info" style="width: 100%;">查看酒單</button>
+          </div>
+        </div>
+        <div class="cb-col-4">
+          <div class="cb-card">
+            <span class="cb-badge cb-mb-2" style="background: rgba(0, 255, 157, 0.2); color: var(--cb-color-success); border-color: var(--cb-color-success);">STUDIO</span>
+            <h3 class="cb-card-title">Analog Recording</h3>
+            <p class="cb-text-muted cb-mb-3">提供頂級模擬類比合成器與盤帶錄音機，創作最純正的復古音色。</p>
+            <button class="cb-btn cb-btn-outline" style="width: 100%;">錄音室預約</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Components Section -->
+    <section id="components" class="cb-section">
+      <h2 class="cb-section-title">5. 微醺組件 (Tabs, Accordion & Progress)</h2>
+      
+      <!-- Progress Bar -->
+      <div class="cb-mb-4">
+        <div class="cb-flex-between cb-mb-2">
+          <span style="font-weight: 800; color: #ffffff;">微醺包廂預約進度</span>
+          <span style="font-weight: 900; color: var(--cb-color-accent);">92% RESERVED</span>
+        </div>
+        <div class="cb-progress">
+          <div class="cb-progress-bar" style="width: 92%;"></div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="cb-tabs">
+        <button class="cb-tab-btn active" data-tab="tab-1">MUSIC LOUNGE</button>
+        <button class="cb-tab-btn" data-tab="tab-2">VIP RESERVATION</button>
+        <button class="cb-tab-btn" data-tab="tab-3">SOUND GEAR</button>
+      </div>
+
+      <div id="tab-1" class="cb-tab-pane active">
+        <div class="cb-card">
+          <h4>NOCTURNE 音樂 Lounge</h4>
+          <p class="cb-text-muted">配備高解析度管機音響與復古沙發，全天候播放精選 Darkwave 與 Chillwave 音樂。</p>
+        </div>
+      </div>
+      <div id="tab-2" class="cb-tab-pane">
+        <div class="cb-card">
+          <h4>深夜 VIP 貴賓包廂</h4>
+          <p class="cb-text-muted">提供專屬獨立調酒台與私人音響控制面板，適合 6-10 人深夜聚會。</p>
+        </div>
+      </div>
+      <div id="tab-3" class="cb-tab-pane">
+        <div class="cb-card">
+          <h4>錄音室設備規格</h4>
+          <p class="cb-text-muted">包含 Moog One 類比合成器、Roland Jupiter-8 重刻版與精選膠片混音器。</p>
+        </div>
+      </div>
+
+      <!-- Accordion -->
+      <h3 style="margin: 2.5rem 0 1rem; color: #ffffff;">常見深夜疑問 (Accordion)</h3>
+      <div class="cb-accordion-item open">
+        <div class="cb-accordion-header">酒吧營運時間與入場服裝限制？</div>
+        <div class="cb-accordion-body">
+          營業時間為每日 20:00 至凌晨 04:00。服裝以 Cyber-Chic / 酷炫暗色調為主，請勿穿著拖鞋。
+        </div>
+      </div>
+      <div class="cb-accordion-item">
+        <div class="cb-accordion-header">音樂工作室是否開放非會員租借？</div>
+        <div class="cb-accordion-body">
+          是的，音樂工作室可透過官網線上預約時段，第一次租借需完成身份驗證。
+        </div>
+      </div>
+    </section>
+
+    <!-- Table Section -->
+    <section id="tables" class="cb-section">
+      <h2 class="cb-section-title">6. 深夜微醺特調與曲目表 (Tables)</h2>
+      <div class="cb-table-container">
+        <table class="cb-table">
+          <thead>
+            <tr>
+              <th>品項 / 曲目名稱</th>
+              <th>風味 / BPM</th>
+              <th>主要成分 / 音色</th>
+              <th>價格 / 時長</th>
+              <th>狀態</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Cyber Magenta Punch</strong></td>
+              <td>果香微酸</td>
+              <td>黑莓金酒、微發泡紅酒、青檸</td>
+              <td>$ 450</td>
+              <td><span class="cb-badge">酒吧招牌</span></td>
+            </tr>
+            <tr>
+              <td><strong>Nocturne Midnight Track</strong></td>
+              <td>110 BPM</td>
+              <td>Moog Analog Synth, Linndrum</td>
+              <td>04:35</td>
+              <td><span class="cb-badge" style="background: rgba(255, 230, 0, 0.2); color: var(--cb-color-info); border-color: var(--cb-color-info);">HOT PLAY</span></td>
+            </tr>
+            <tr>
+              <td><strong>Deep Emerald Absinthe Shot</strong></td>
+              <td>辛香苦艾</td>
+              <td>傳統艾草提煉、茴香、方糖</td>
+              <td>$ 380</td>
+              <td><span class="cb-badge">經典暢飲</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Modal Component -->
+  <div class="cb-modal-overlay" id="cbModalOverlay">
+    <div class="cb-modal">
+      <div class="cb-modal-header">
+        <h3 class="cb-modal-title">🍸 NOCTURNE LOUNGE RESERVATION</h3>
+        <button class="cb-close-modal" style="background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--cb-color-accent);">&times;</button>
+      </div>
+      <p class="cb-text-muted cb-mb-4">您即將預約 Cyber-Chic Noir 深夜微醺專屬包廂。請確認您的邀請碼以利專員安排入場。</p>
+      <div class="cb-flex cb-gap-2" style="justify-content: flex-end;">
+        <button class="cb-btn cb-btn-outline cb-close-modal">DISMISS</button>
+        <button class="cb-btn cb-btn-primary cb-close-modal">CONFIRM BOOKING</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas Component -->
+  <div class="cb-offcanvas" id="cbOffcanvas">
+    <div class="cb-flex-between cb-mb-4" style="border-bottom: 1px solid var(--cb-border-color); padding-bottom: 1rem;">
+      <h3 style="color: #ffffff;">CHIC NOIR SELECTION</h3>
+      <button class="cb-close-modal" id="closeOffcanvas" style="background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--cb-color-accent);">&times;</button>
+    </div>
+    <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.2rem;">
+      <li><a href="#" style="color: #ffffff; text-decoration: none; font-weight: 700;">✦ 深夜 Synthwave 排行榜</a></li>
+      <li><a href="#" style="color: #ffffff; text-decoration: none; font-weight: 700;">✦ 獨家微醺調酒特輯</a></li>
+      <li><a href="#" style="color: #ffffff; text-decoration: none; font-weight: 700;">✦ 類比合成器收藏清單</a></li>
+      <li><a href="#" style="color: #ffffff; text-decoration: none; font-weight: 700;">✦ 私人包廂派對預約</a></li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

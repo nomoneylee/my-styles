@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格十三：韓系奶油甜點風 (Pure Vanilla CSS/JS)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <nav class="kr-navbar">
+    <div class="kr-container kr-navbar-container">
+      <a class="kr-nav-brand" href="#">
+        Maison de Crème <span>CAFE</span>
+      </a>
+      <button class="kr-navbar-toggler" id="krNavbarToggler" aria-label="Toggle navigation">✿</button>
+      <div class="kr-navbar-collapse" id="krNavbarCollapse">
+        <ul class="kr-nav-links">
+          <li><a class="kr-nav-link active" href="#palette">柔和色彩</a></li>
+          <li><a class="kr-nav-link" href="#hero">品牌故事</a></li>
+          <li><a class="kr-nav-link" href="#forms">甜點訂製</a></li>
+          <li><a class="kr-nav-link" href="#components">溫柔組件</a></li>
+          <li><a class="kr-nav-link" href="#tables">每日菜單</a></li>
+        </ul>
+        <div class="kr-flex kr-gap-2">
+          <a href="../index.html" class="kr-btn kr-btn-outline" style="padding: 0.4rem 1.2rem; font-size: 0.85rem;">HUB 總覽</a>
+          <button class="kr-btn kr-btn-accent" id="openOffcanvas" style="padding: 0.4rem 1.2rem; font-size: 0.85rem;">甜點專欄</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="kr-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="kr-hero">
+      <span class="kr-hero-badge">♥ KOREAN DESSERT & CAFE STUDIO ♥</span>
+      <h1 class="kr-hero-title">奶油黃與薄荷綠的溫柔對白</h1>
+      <p class="kr-hero-subtitle">韓系文青咖啡廳質感，採用圓潤大圓角與燕麥奶色調。極度溫柔、舒服與療癒的手作烘焙氛圍。</p>
+      <div class="kr-flex-center kr-gap-3">
+        <button class="kr-btn kr-btn-primary">預約手作戚風蛋糕</button>
+        <button class="kr-btn kr-btn-mint" id="openModal">溫柔 Modal</button>
+      </div>
+    </section>
+
+    <!-- Color Palette Showcase -->
+    <section id="palette" class="kr-section">
+      <h2 class="kr-section-title">韓系奶油專屬配色系統 (Korean Warm Palette System)</h2>
+      <p class="kr-text-muted kr-mb-4">全站採用柔和低飽和莫蘭迪調性，給予視覺極致舒緩與療癒感：</p>
+      
+      <div class="kr-grid">
+        <div class="kr-col-4">
+          <div class="kr-swatch-box kr-bg-primary">
+            <span>Primary 暖燕麥濃褐</span>
+            <code>--kr-color-primary (#6b5b52)</code>
+          </div>
+        </div>
+        <div class="kr-col-4">
+          <div class="kr-swatch-box kr-bg-secondary">
+            <span>Secondary 柔和奶茶褐</span>
+            <code>--kr-color-secondary (#8c7a70)</code>
+          </div>
+        </div>
+        <div class="kr-col-4">
+          <div class="kr-swatch-box kr-bg-accent">
+            <span>Accent 溫柔奶油黃</span>
+            <code>--kr-color-accent (#f6e7c1)</code>
+          </div>
+        </div>
+        <div class="kr-col-3">
+          <div class="kr-swatch-box kr-bg-info">
+            <span>Info 低飽和薄荷綠</span>
+            <code>--kr-color-info (#b8dbce)</code>
+          </div>
+        </div>
+        <div class="kr-col-3">
+          <div class="kr-swatch-box kr-bg-success">
+            <span>Success 開心果草本綠</span>
+            <code>--kr-color-success (#a8c99c)</code>
+          </div>
+        </div>
+        <div class="kr-col-3">
+          <div class="kr-swatch-box kr-bg-warning">
+            <span>Warning 蜜桃粉橘</span>
+            <code>--kr-color-warning (#f5c2a5)</code>
+          </div>
+        </div>
+        <div class="kr-col-3">
+          <div class="kr-swatch-box kr-bg-error">
+            <span>Error 莓果柔粉紅</span>
+            <code>--kr-color-error (#e8a5a5)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notification Alert Section -->
+    <section class="kr-section">
+      <h2 class="kr-section-title">溫馨狀態通知 (Alert Notifications)</h2>
+      <div class="kr-alert kr-alert-info">
+        <strong>薄荷綠通知:</strong> 今日特調「草莓燕麥拿鐵」已出爐，歡迎點選品嚐。
+      </div>
+      <div class="kr-alert kr-alert-success">
+        <strong>草本綠成功:</strong> 您預訂的韓系客製化奶油生日蛋糕已成功排單。
+      </div>
+      <div class="kr-alert kr-alert-warning">
+        <strong>蜜桃橘溫馨提醒:</strong> 內用座位區客滿時，用餐時間為 90 分鐘。
+      </div>
+      <div class="kr-alert kr-alert-error">
+        <strong>莓果粉提醒:</strong> 「開心果千層塔」今日數量有限，目前已售罄。
+      </div>
+    </section>
+
+    <!-- Typography & Badges -->
+    <section class="kr-section">
+      <h2 class="kr-section-title">1. 細緻排版與軟萌標籤 (Typography & Badges)</h2>
+      <div class="kr-grid">
+        <div class="kr-col-6">
+          <h1 class="kr-mb-2">H1 韓系手作甜點 <span class="kr-badge">Fresh</span></h1>
+          <h2 class="kr-mb-2">H2 燕麥奶與奶油黃 <span class="kr-badge" style="background: var(--kr-color-info); color: #28473c;">Warm</span></h2>
+          <h3 class="kr-mb-3">H3 微小的舒心午後時光</h3>
+          <p class="kr-text-muted kr-mb-3">細緻優雅的邊框與軟萌大圓角，讓每一次點擊都像撫摸棉花糖般輕柔舒服。</p>
+        </div>
+        <div class="kr-col-6">
+          <blockquote style="border-left: 3px solid var(--kr-color-accent); padding-left: 1.2rem; background: white; padding: 1.2rem; border-radius: 20px; box-shadow: var(--kr-shadow-soft);">
+            「生活中那些微小而確切的甜美，都藏在一杯手沖咖啡與現烤司康的香氣裡。」
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buttons -->
+    <section class="kr-section">
+      <h2 class="kr-section-title">2. 膠囊軟萌按鈕 (Buttons)</h2>
+      <div class="kr-flex kr-gap-3 kr-flex-wrap">
+        <button class="kr-btn kr-btn-primary">Primary 濃褐按鈕</button>
+        <button class="kr-btn kr-btn-accent">Accent 奶油黃按鈕</button>
+        <button class="kr-btn kr-btn-mint">Info 薄荷綠按鈕</button>
+        <button class="kr-btn kr-btn-outline">Outline 燕麥邊框按鈕</button>
+      </div>
+    </section>
+
+    <!-- Form Controls -->
+    <section id="forms" class="kr-section">
+      <h2 class="kr-section-title">3. 原生表單控制項 (Form Controls)</h2>
+      <form>
+        <div class="kr-grid">
+          <div class="kr-col-6">
+            <div class="kr-form-group">
+              <label class="kr-form-label" for="krName">訂購人姓名</label>
+              <input type="text" id="krName" class="kr-input" placeholder="例如: 智秀 Ji-soo">
+            </div>
+          </div>
+          <div class="kr-col-6">
+            <div class="kr-form-group">
+              <label class="kr-form-label" for="krDessert">選擇甜點款式</label>
+              <select id="krDessert" class="kr-select">
+                <option>韓系純白伯爵茶奶油戚風</option>
+                <option>泰迪熊造型檸檬塔</option>
+                <option>開心果草莓千層蛋糕</option>
+              </select>
+            </div>
+          </div>
+          <div class="kr-col-12">
+            <div class="kr-form-group">
+              <label class="kr-form-label" for="krMessage">手繪蛋糕文字手稿說明</label>
+              <textarea id="krMessage" class="kr-textarea" rows="3" placeholder="例如: Happy Birthday Min-ho ♥"></textarea>
+            </div>
+          </div>
+
+          <!-- Checkbox, Radio, Switch, Range -->
+          <div class="kr-col-6">
+            <div class="kr-form-group">
+              <label class="kr-form-label">包裝升級 (Checkbox)</label>
+              <div class="kr-flex kr-gap-3" style="margin-top: 0.5rem;">
+                <label class="kr-checkbox-label">
+                  <input type="checkbox" class="kr-checkbox" checked> 附贈韓系粉嫩蠟燭
+                </label>
+                <label class="kr-checkbox-label">
+                  <input type="checkbox" class="kr-checkbox"> 禮盒緞帶束口袋
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="kr-col-6">
+            <div class="kr-form-group">
+              <label class="kr-form-label">甜度選擇 (Radio)</label>
+              <div class="kr-flex kr-gap-3" style="margin-top: 0.5rem;">
+                <label class="kr-radio-label">
+                  <input type="radio" name="krSugar" class="kr-radio" checked> 減糖 30% 低負擔
+                </label>
+                <label class="kr-radio-label">
+                  <input type="radio" name="krSugar" class="kr-radio"> 經典韓系奶油甜度
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="kr-col-6">
+            <div class="kr-form-group">
+              <label class="kr-form-label">簡訊出貨通知 (Switch)</label>
+              <label class="kr-switch-label" style="margin-top: 0.5rem;">
+                <input type="checkbox" class="kr-switch-input" checked>
+                <span class="kr-switch-slider"></span>
+                <span>即時發送 Kakao / 簡訊取件通知</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="kr-col-6">
+            <div class="kr-form-group">
+              <label class="kr-form-label">甜點份量人數 (Range Slider)</label>
+              <input type="range" class="kr-range" min="1" max="12" value="4">
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="kr-section">
+      <h2 class="kr-section-title">4. 軟萌卡片系統 (Cards)</h2>
+      <div class="kr-grid">
+        <div class="kr-col-4">
+          <div class="kr-card">
+            <span class="kr-badge kr-mb-2">招牌人氣</span>
+            <h3 class="kr-card-title">泰迪熊香草戚風</h3>
+            <p class="kr-text-muted kr-mb-3">選用馬達加斯加香草莢與極致細滑法國鮮奶油，造型超級可愛療癒。</p>
+            <button class="kr-btn kr-btn-accent" style="width: 100%;">收藏品嚐</button>
+          </div>
+        </div>
+        <div class="kr-col-4">
+          <div class="kr-card">
+            <span class="kr-badge kr-mb-2" style="background: var(--kr-color-info); color: #28473c;">季節限定</span>
+            <h3 class="kr-card-title">靜岡抹茶司康組合</h3>
+            <p class="kr-text-muted kr-mb-3">外酥內軟的溫熱司康，搭配自製抹醬與溫熱燕麥奶。</p>
+            <button class="kr-btn kr-btn-mint" style="width: 100%;">預約飲品</button>
+          </div>
+        </div>
+        <div class="kr-col-4">
+          <div class="kr-card">
+            <span class="kr-badge kr-mb-2" style="background: #fdf0ed; color: #753b2d;">手作體驗</span>
+            <h3 class="kr-card-title">韓系奶油抹面烘焙課</h3>
+            <p class="kr-text-muted kr-mb-3">小班制體驗抹面與手繪文字，帶走專屬於你的獨一無二蛋糕。</p>
+            <button class="kr-btn kr-btn-outline" style="width: 100%;">查看課程</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Components Section -->
+    <section id="components" class="kr-section">
+      <h2 class="kr-section-title">5. 溫柔組件 (Tabs, Accordion & Progress)</h2>
+      
+      <!-- Progress Bar -->
+      <div class="kr-mb-4">
+        <div class="kr-flex-between kr-mb-2">
+          <span style="font-weight: 700; color: var(--kr-color-primary);">今日手作甜點出爐進度</span>
+          <span style="font-weight: 700; color: #28473c;">75% 烘焙完成</span>
+        </div>
+        <div class="kr-progress">
+          <div class="kr-progress-bar" style="width: 75%;"></div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="kr-tabs">
+        <button class="kr-tab-btn active" data-tab="tab-1">店內環境</button>
+        <button class="kr-tab-btn" data-tab="tab-2">訂購須知</button>
+        <button class="kr-tab-btn" data-tab="tab-3">保存方法</button>
+      </div>
+
+      <div id="tab-1" class="kr-tab-pane active">
+        <div class="kr-card">
+          <h4>韓系極簡奶油白空間</h4>
+          <p class="kr-text-muted">提供充沛的自然採光與木質座椅，全店播送輕柔爵士樂，適合享受平靜的午後。</p>
+        </div>
+      </div>
+      <div id="tab-2" class="kr-tab-pane">
+        <div class="kr-card">
+          <h4>預約與取貨說明</h4>
+          <p class="kr-text-muted">客製化蛋糕請提前 3-5 天預訂，當日僅提供限量現做款式。</p>
+        </div>
+      </div>
+      <div id="tab-3" class="kr-tab-pane">
+        <div class="kr-card">
+          <h4>鮮奶油賞味保存</h4>
+          <p class="kr-text-muted">請於冷藏 4°C 保存，並於 2 日內食用完畢以享受最佳口感。</p>
+        </div>
+      </div>
+
+      <!-- Accordion -->
+      <h3 style="margin: 2.5rem 0 1rem; color: var(--kr-color-primary);">常見溫馨疑問 (Accordion)</h3>
+      <div class="kr-accordion-item open">
+        <div class="kr-accordion-header">是否有提供蛋奶素或無麩質品項？</div>
+        <div class="kr-accordion-body">
+          是的，我們的米粉戚風蛋糕系列皆為無麩質配方，歡迎安心選購。
+        </div>
+      </div>
+      <div class="kr-accordion-item">
+        <div class="kr-accordion-header">可以攜帶寵物入店用餐嗎？</div>
+        <div class="kr-accordion-body">
+          門市為寵物友善空間，請放置於寵物推車或提袋內即可。
+        </div>
+      </div>
+    </section>
+
+    <!-- Table Section -->
+    <section id="tables" class="kr-section">
+      <h2 class="kr-section-title">6. 每日甜點價目明細 (Tables)</h2>
+      <div class="kr-table-container">
+        <table class="kr-table">
+          <thead>
+            <tr>
+              <th>甜點名稱</th>
+              <th>主要風味</th>
+              <th>尺寸 / 規格</th>
+              <th>價格 (NTD)</th>
+              <th>供應狀態</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>泰迪熊香草戚風蛋糕</strong></td>
+              <td>法式香草莢、濃醇鮮奶油</td>
+              <td>6 吋</td>
+              <td>$ 980</td>
+              <td><span class="kr-badge">現正熱賣</span></td>
+            </tr>
+            <tr>
+              <td><strong>開心果草莓千層塔</strong></td>
+              <td>義大利開心果醬、新鮮草莓</td>
+              <td>單片</td>
+              <td>$ 220</td>
+              <td><span class="kr-badge" style="background: var(--kr-color-info); color: #28473c;">限量供應</span></td>
+            </tr>
+            <tr>
+              <td><strong>韓系伯爵茶司康組合</strong></td>
+              <td>唐寧伯爵茶、奶油抹醬</td>
+              <td>2 入組</td>
+              <td>$ 160</td>
+              <td><span class="kr-badge">現正熱賣</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Modal Component -->
+  <div class="kr-modal-overlay" id="krModalOverlay">
+    <div class="kr-modal">
+      <div class="kr-modal-header">
+        <h3 class="kr-modal-title">🍰 手作甜點訂單確認</h3>
+        <button class="kr-close-modal" style="background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--kr-text-muted);">&times;</button>
+      </div>
+      <p class="kr-text-muted kr-mb-4">感謝您的溫柔選擇。我們將為您精心製作專屬手作蛋糕，期待帶給您最甜美的時光。</p>
+      <div class="kr-flex kr-gap-2" style="justify-content: flex-end;">
+        <button class="kr-btn kr-btn-outline kr-close-modal">返回修改</button>
+        <button class="kr-btn kr-btn-primary kr-close-modal">確認訂單</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas Component -->
+  <div class="kr-offcanvas" id="krOffcanvas">
+    <div class="kr-flex-between kr-mb-4" style="border-bottom: 1.5px solid var(--kr-border-color); padding-bottom: 1rem;">
+      <h3 style="color: var(--kr-color-primary);">甜點靈感輯</h3>
+      <button class="kr-close-modal" id="closeOffcanvas" style="background: none; border: none; font-size: 1.4rem; cursor: pointer;">&times;</button>
+    </div>
+    <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.2rem;">
+      <li><a href="#" style="color: var(--kr-text-main); text-decoration: none; font-weight: 700;">♥ 季節奶油抹面配色指南</a></li>
+      <li><a href="#" style="color: var(--kr-text-main); text-decoration: none; font-weight: 700;">♥ 韓系桌花與擺盤攝影</a></li>
+      <li><a href="#" style="color: var(--kr-text-main); text-decoration: none; font-weight: 700;">♥ 私藏手沖燕麥奶調配</a></li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

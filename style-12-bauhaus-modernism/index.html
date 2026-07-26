@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格十二：包浩斯現代主義風 (Pure Vanilla CSS/JS)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <nav class="bh-navbar">
+    <div class="bh-container bh-navbar-container">
+      <a class="bh-nav-brand" href="#">
+        <span class="bh-brand-shape"></span> BAUHAUS 1919
+      </a>
+      <button class="bh-navbar-toggler" id="bhNavbarToggler" aria-label="Toggle navigation">☰ MENU</button>
+      <div class="bh-navbar-collapse" id="bhNavbarCollapse">
+        <ul class="bh-nav-links">
+          <li><a class="bh-nav-link active" href="#palette">COLOR SYSTEM</a></li>
+          <li><a class="bh-nav-link" href="#hero">OVERVIEW</a></li>
+          <li><a class="bh-nav-link" href="#forms">FORM CONTROLS</a></li>
+          <li><a class="bh-nav-link" href="#components">COMPONENTS</a></li>
+          <li><a class="bh-nav-link" href="#tables">ARCHIVE</a></li>
+        </ul>
+        <div class="bh-flex bh-gap-2" style="margin-left: 1rem;">
+          <a href="../index.html" class="bh-btn bh-btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">HUB 總覽</a>
+          <button class="bh-btn bh-btn-accent" id="openOffcanvas" style="padding: 0.5rem 1rem; font-size: 0.85rem;">MENU</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="bh-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="bh-hero">
+      <div class="bh-hero-content">
+        <span class="bh-hero-badge">FORM FOLLOWS FUNCTION</span>
+        <h1 class="bh-hero-title">形隨機能而生：極致經典包浩斯</h1>
+        <p class="bh-hero-subtitle">大膽的非對稱幾何色塊切分、米黃色質感底色搭配原色紅、黃、藍小面積重點點綴，向 1919 現代主義設計殿堂致敬。</p>
+        <div class="bh-flex bh-gap-3">
+          <button class="bh-btn bh-btn-primary">探索藝術宣言</button>
+          <button class="bh-btn bh-btn-warning" id="openModal">對話框 MODAL</button>
+        </div>
+      </div>
+      <div class="bh-hero-graphic">
+        <div class="bh-hero-shape-circle"></div>
+        <div style="font-weight: 900; font-size: 2rem; color: white; margin: 1.5rem 0;">GEOMETRIC DESIGN</div>
+        <div class="bh-hero-shape-rect"></div>
+      </div>
+    </section>
+
+    <!-- Color Palette Showcase -->
+    <section id="palette" class="bh-section">
+      <h2 class="bh-section-title">包浩斯經典配色系統 (Bauhaus Palette System)</h2>
+      <p class="bh-text-muted bh-mb-4">以米黃做為畫布背景，採用三原色（紅、藍、黃）與極致粗邊線進行幾何對比：</p>
+      
+      <div class="bh-grid">
+        <div class="bh-col-4">
+          <div class="bh-swatch-box bh-bg-primary">
+            <span>Primary 包浩斯黑</span>
+            <code>--bh-color-primary (#121212)</code>
+          </div>
+        </div>
+        <div class="bh-col-4">
+          <div class="bh-swatch-box bh-bg-secondary">
+            <span>Secondary 米黃背景</span>
+            <code>--bh-color-secondary (#f4efe6)</code>
+          </div>
+        </div>
+        <div class="bh-col-4">
+          <div class="bh-swatch-box bh-bg-accent">
+            <span>Accent 原色紅</span>
+            <code>--bh-color-accent (#d9381e)</code>
+          </div>
+        </div>
+        <div class="bh-col-3">
+          <div class="bh-swatch-box bh-bg-info">
+            <span>Info 原色藍</span>
+            <code>--bh-color-info (#00509d)</code>
+          </div>
+        </div>
+        <div class="bh-col-3">
+          <div class="bh-swatch-box bh-bg-success">
+            <span>Success 幾何青藍</span>
+            <code>--bh-color-success (#0a9396)</code>
+          </div>
+        </div>
+        <div class="bh-col-3">
+          <div class="bh-swatch-box bh-bg-warning">
+            <span>Warning 原色黃</span>
+            <code>--bh-color-warning (#ffb703)</code>
+          </div>
+        </div>
+        <div class="bh-col-3">
+          <div class="bh-swatch-box bh-bg-error">
+            <span>Error 深赭紅</span>
+            <code>--bh-color-error (#9b2226)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notification Alert Section -->
+    <section class="bh-section">
+      <h2 class="bh-section-title">設計狀態通知 (Alert Notifications)</h2>
+      <div class="bh-alert bh-alert-info">
+        <strong>原色藍 notification:</strong> 包浩斯 100 週年特展將於東京展覽館隆重登場。
+      </div>
+      <div class="bh-alert bh-alert-success">
+        <strong>幾何青 success:</strong> 色彩理論網格切分校正完成。
+      </div>
+      <div class="bh-alert bh-alert-warning">
+        <strong>原色黃 warning:</strong> 幾何佈局非對稱權限已獲得最高評級。
+      </div>
+      <div class="bh-alert bh-alert-error">
+        <strong>深赭紅 error:</strong> 禁止在經典包浩斯架構中加入毫無意義的裝飾漸層。
+      </div>
+    </section>
+
+    <!-- Typography & Badges -->
+    <section class="bh-section">
+      <h2 class="bh-section-title">1. 排版與幾何標籤 (Typography & Badges)</h2>
+      <div class="bh-grid">
+        <div class="bh-col-6">
+          <h1 class="bh-mb-2">H1 DESIGN ARCHIVE <span class="bh-badge">1919</span></h1>
+          <h2 class="bh-mb-2">H2 WALTER GROPIUS <span class="bh-badge" style="background: var(--bh-color-accent);">RED</span></h2>
+          <h3 class="bh-mb-3">H3 WEIMAR & DESSAU PERIOD</h3>
+          <p class="bh-text-muted bh-mb-3">將藝術與工藝完美結合，淘汰繁複奢華的維多利亞裝飾，邁向簡潔、實用、幾何的現代主義新紀元。</p>
+        </div>
+        <div class="bh-col-6">
+          <blockquote style="border: 2.5px solid #121212; padding: 1.5rem; background: white; box-shadow: 4px 4px 0px #121212; font-weight: 700;">
+            「建築師、雕塑家、畫家，我們都必須轉向手工藝！讓我們共同建立一座新建築的殿堂。」
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buttons -->
+    <section class="bh-section">
+      <h2 class="bh-section-title">2. 硬派幾何按鈕 (Buttons)</h2>
+      <div class="bh-flex bh-gap-3 bh-flex-wrap">
+        <button class="bh-btn bh-btn-primary">Primary 實黑按鈕</button>
+        <button class="bh-btn bh-btn-accent">Accent 原色紅按鈕</button>
+        <button class="bh-btn bh-btn-warning">Warning 原色黃按鈕</button>
+        <button class="bh-btn bh-btn-outline">Outline 純白按鈕</button>
+      </div>
+    </section>
+
+    <!-- Form Controls -->
+    <section id="forms" class="bh-section">
+      <h2 class="bh-section-title">3. 原生表單控制項 (Form Controls)</h2>
+      <form>
+        <div class="bh-grid">
+          <div class="bh-col-6">
+            <div class="bh-form-group">
+              <label class="bh-form-label" for="bhArtist">設計師姓名</label>
+              <input type="text" id="bhArtist" class="bh-input" placeholder="例如: Wassily Kandinsky">
+            </div>
+          </div>
+          <div class="bh-col-6">
+            <div class="bh-form-group">
+              <label class="bh-form-label" for="bhCategory">設計類別</label>
+              <select id="bhCategory" class="bh-select">
+                <option>幾何繪畫與平面排版</option>
+                <option>鋼管傢俱與產品設計</option>
+                <option>現代主義建築結構</option>
+              </select>
+            </div>
+          </div>
+          <div class="bh-col-12">
+            <div class="bh-form-group">
+              <label class="bh-form-label" for="bhConcept">設計理念宣言</label>
+              <textarea id="bhConcept" class="bh-textarea" rows="3" placeholder="請填寫形隨機能的幾何理念..."></textarea>
+            </div>
+          </div>
+
+          <!-- Checkbox, Radio, Switch, Range -->
+          <div class="bh-col-6">
+            <div class="bh-form-group">
+              <label class="bh-form-label">核心幾何元素 (Checkbox)</label>
+              <div class="bh-flex bh-gap-3" style="margin-top: 0.5rem;">
+                <label class="bh-checkbox-label">
+                  <input type="checkbox" class="bh-checkbox" checked> 圓形 Circle
+                </label>
+                <label class="bh-checkbox-label">
+                  <input type="checkbox" class="bh-checkbox" checked> 三角形 Triangle
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="bh-col-6">
+            <div class="bh-form-group">
+              <label class="bh-form-label">主要色彩著色 (Radio)</label>
+              <div class="bh-flex bh-gap-3" style="margin-top: 0.5rem;">
+                <label class="bh-radio-label">
+                  <input type="radio" name="bhColor" class="bh-radio" checked> 包浩斯原色紅
+                </label>
+                <label class="bh-radio-label">
+                  <input type="radio" name="bhColor" class="bh-radio"> 包浩斯原色藍
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="bh-col-6">
+            <div class="bh-form-group">
+              <label class="bh-form-label">非對稱網格對齊 (Switch)</label>
+              <label class="bh-switch-label" style="margin-top: 0.5rem;">
+                <input type="checkbox" class="bh-switch-input" checked>
+                <span class="bh-switch-slider"></span>
+                <span>開啟強烈黑邊實體陰影</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="bh-col-6">
+            <div class="bh-form-group">
+              <label class="bh-form-label">色彩對比度權重 (Range Slider)</label>
+              <input type="range" class="bh-range" min="0" max="100" value="90">
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="bh-section">
+      <h2 class="bh-section-title">4. 非對稱切分卡片 (Cards)</h2>
+      <div class="bh-grid">
+        <div class="bh-col-4">
+          <div class="bh-card bh-card-accent-top">
+            <span class="bh-badge bh-mb-2">1926 CLASSIC</span>
+            <h3 class="bh-card-title">Wassily Chair 瓦西里椅</h3>
+            <p class="bh-text-muted bh-mb-3">由 Marcel Breuer 設計，首創採用彎曲鍍鉻鋼管製作的世紀名椅。</p>
+            <button class="bh-btn bh-btn-primary" style="width: 100%;">查看作品</button>
+          </div>
+        </div>
+        <div class="bh-col-4">
+          <div class="bh-card" style="border-top: 10px solid var(--bh-color-info);">
+            <span class="bh-badge bh-mb-2" style="background: var(--bh-color-info);">COLOR THEORY</span>
+            <h3 class="bh-card-title">Kandinsky 三原色研究</h3>
+            <p class="bh-text-muted bh-mb-3">探索黃色與三角形、藍色與圓形、紅色與正方形之間的精神性連結。</p>
+            <button class="bh-btn bh-btn-outline" style="width: 100%;">閱讀文獻</button>
+          </div>
+        </div>
+        <div class="bh-col-4">
+          <div class="bh-card" style="border-top: 10px solid var(--bh-color-warning);">
+            <span class="bh-badge bh-mb-2" style="background: var(--bh-color-warning); color: #121212;">ARCHITECTURE</span>
+            <h3 class="bh-card-title">Dessau 校舍建築</h3>
+            <p class="bh-text-muted bh-mb-3">結合玻璃幕牆與金屬框架，現代主義功能美學的最高代表成就。</p>
+            <button class="bh-btn bh-btn-warning" style="width: 100%;">建築藍圖</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Components Section -->
+    <section id="components" class="bh-section">
+      <h2 class="bh-section-title">5. 互動與幾何組件 (Tabs, Accordion & Progress)</h2>
+      
+      <!-- Progress Bar -->
+      <div class="bh-mb-4">
+        <div class="bh-flex-between bh-mb-2">
+          <span style="font-weight: 800; text-transform: uppercase;">幾何設計進度與品質校驗</span>
+          <span style="font-weight: 900; color: var(--bh-color-accent);">100% COMPLETE</span>
+        </div>
+        <div class="bh-progress">
+          <div class="bh-progress-bar" style="width: 100%;"></div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="bh-tabs">
+        <button class="bh-tab-btn active" data-tab="tab-1">包浩斯宣言</button>
+        <button class="bh-tab-btn" data-tab="tab-2">色彩實驗室</button>
+        <button class="bh-tab-btn" data-tab="tab-3">工坊課程</button>
+      </div>
+
+      <div id="tab-1" class="bh-tab-pane active">
+        <div class="bh-card">
+          <h4>1919 魏瑪創立宣言</h4>
+          <p class="bh-text-muted">「讓我們建立一個沒有階級觀念的新工匠公會，它在工匠與藝術家之間建立起一道不可逾越的高牆。」</p>
+        </div>
+      </div>
+      <div id="tab-2" class="bh-tab-pane">
+        <div class="bh-card">
+          <h4>約翰·伊登色彩課程</h4>
+          <p class="bh-text-muted">透過對比、質感與十二色相環的科學研究，重新定義設計學子的視覺感官與創作根基。</p>
+        </div>
+      </div>
+      <div id="tab-3" class="bh-tab-pane">
+        <div class="bh-card">
+          <h4>金屬與金工實務</h4>
+          <p class="bh-text-muted">學生必須親自操作車床、鍛造與金屬拋光，將手工藝精神注入大規模工業化生產。</p>
+        </div>
+      </div>
+
+      <!-- Accordion -->
+      <h3 style="margin: 2.5rem 0 1rem; font-weight: 900; text-transform: uppercase;">常見包浩斯考據 (Accordion)</h3>
+      <div class="bh-accordion-item open">
+        <div class="bh-accordion-header">包浩斯（Bauhaus）名稱的由來為何？</div>
+        <div class="bh-accordion-body">
+          名稱是由德語中的「Bau」（建築）與「Haus」（房屋）組合而成，字面意為「造屋之校」，象徵集藝術、工藝與建築於一體的願景。
+        </div>
+      </div>
+      <div class="bh-accordion-item">
+        <div class="bh-accordion-header">為什麼經典配色偏好紅、黃、藍三原色？</div>
+        <div class="bh-accordion-body">
+          三原色被視為所有色彩的起源與基礎，最能代表客觀、理性、無裝飾的純粹視覺語言。
+        </div>
+      </div>
+    </section>
+
+    <!-- Table Section -->
+    <section id="tables" class="bh-section">
+      <h2 class="bh-section-title">6. 歷史代表作品典藏表 (Tables)</h2>
+      <div class="bh-table-container">
+        <table class="bh-table">
+          <thead>
+            <tr>
+              <th>作品名稱</th>
+              <th>創作者</th>
+              <th>創作年份</th>
+              <th>主要材質</th>
+              <th>典藏地點</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Wassily Chair 瓦西里椅</strong></td>
+              <td>Marcel Breuer</td>
+              <td>1925-1926</td>
+              <td>鍍鉻鋼管、Eisengarn 皮革</td>
+              <td>紐約 MOMA 美術館</td>
+            </tr>
+            <tr>
+              <td><strong>MT 49 檯燈</strong></td>
+              <td>Wilhelm Wagenfeld</td>
+              <td>1924</td>
+              <td>乳白玻璃、鍍鎳金屬</td>
+              <td>柏林包浩斯檔案館</td>
+            </tr>
+            <tr>
+              <td><strong>Barcelona Chair 巴塞隆納椅</strong></td>
+              <td>Mies van der Rohe</td>
+              <td>1929</td>
+              <td>不鏽鋼、牛皮鈕釦軟墊</td>
+              <td>巴塞隆納德國館</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Modal Component -->
+  <div class="bh-modal-overlay" id="bhModalOverlay">
+    <div class="bh-modal">
+      <div class="bh-modal-header">
+        <h3 class="bh-modal-title">📐 BAUHAUS ART MANIFESTO</h3>
+        <button class="bh-close-modal" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; font-weight: 900;">✕</button>
+      </div>
+      <p class="bh-text-muted bh-mb-4">您即將進入經典包浩斯非對稱幾何展廳。本區域嚴禁使用任何無意義的浮誇裝飾性陰影。</p>
+      <div class="bh-flex bh-gap-2" style="justify-content: flex-end;">
+        <button class="bh-btn bh-btn-outline bh-close-modal">CLOSE</button>
+        <button class="bh-btn bh-btn-accent bh-close-modal">ACCEPT MANIFESTO</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas Component -->
+  <div class="bh-offcanvas" id="bhOffcanvas">
+    <div class="bh-flex-between bh-mb-4" style="border-bottom: 2.5px solid #121212; padding-bottom: 1rem;">
+      <h3 style="font-weight: 900;">DESIGN CATALOG</h3>
+      <button class="bh-close-modal" id="closeOffcanvas" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; font-weight: 900;">✕</button>
+    </div>
+    <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.2rem;">
+      <li><a href="#" style="color: #121212; text-decoration: none; font-weight: 900; font-size: 1.1rem;">01. 幾何幾何圖形特輯</a></li>
+      <li><a href="#" style="color: #121212; text-decoration: none; font-weight: 900; font-size: 1.1rem;">02. 原色對比理論</a></li>
+      <li><a href="#" style="color: #121212; text-decoration: none; font-weight: 900; font-size: 1.1rem;">03. 鋼管與金屬工坊</a></li>
+      <li><a href="#" style="color: #121212; text-decoration: none; font-weight: 900; font-size: 1.1rem;">04. 現代主義建築檔案</a></li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

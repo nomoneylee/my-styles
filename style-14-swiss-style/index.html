@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格十四：瑞士國際主義字體風 (Pure Vanilla CSS/JS)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <nav class="sw-navbar">
+    <div class="sw-container sw-navbar-container">
+      <a class="sw-nav-brand" href="#">HELVETICA <span>1957</span></a>
+      <button class="sw-navbar-toggler" id="swNavbarToggler" aria-label="Toggle navigation">MENU</button>
+      <div class="sw-navbar-collapse" id="swNavbarCollapse">
+        <ul class="sw-nav-links">
+          <li><a class="sw-nav-link active" href="#palette">GRID & COLOR</a></li>
+          <li><a class="sw-nav-link" href="#hero">OVERVIEW</a></li>
+          <li><a class="sw-nav-link" href="#forms">FORM SYSTEM</a></li>
+          <li><a class="sw-nav-link" href="#components">GRID COMPONENTS</a></li>
+          <li><a class="sw-nav-link" href="#tables">TYPOGRAPHY INDEX</a></li>
+        </ul>
+        <div class="sw-flex sw-gap-2" style="align-items: center; margin-left: 2rem;">
+          <a href="../index.html" class="sw-btn sw-btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.8rem;">HUB 總覽</a>
+          <button class="sw-btn sw-btn-accent" id="openOffcanvas" style="padding: 0.5rem 1.2rem; font-size: 0.8rem;">INDEX</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="sw-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="sw-hero">
+      <div class="sw-hero-meta">SWISS INTERNATIONAL TYPOGRAPHIC STYLE</div>
+      <h1 class="sw-hero-title">SWISS DESIGN IS ALL ABOUT GRID & TYPE</h1>
+      <p class="sw-hero-subtitle">極度重視字體排版與嚴格 12 欄 Grid System。極簡純白背景、巨大標題字體與簡潔黑色實線切分。無任何裝飾性陰影與漸層，靠極致對比呈現頂級質感。</p>
+      <div class="sw-flex sw-gap-3">
+        <button class="sw-btn sw-btn-primary">EXPLORE TYPOGRAPHY</button>
+        <button class="sw-btn sw-btn-accent" id="openModal">OPEN MODAL</button>
+      </div>
+    </section>
+
+    <!-- Color Palette Showcase -->
+    <section id="palette" class="sw-section">
+      <h2 class="sw-section-title">SWISS COLOR PALETTE <span>// SYSTEM 01</span></h2>
+      <p class="sw-text-muted sw-mb-4">極簡黑白高對比為基底，輔以瑞士國旗經典紅與標準印刷 primary 色彩：</p>
+      
+      <div class="sw-grid">
+        <div class="sw-col-4">
+          <div class="sw-swatch-box sw-bg-primary">
+            <span>Primary 絕對純黑</span>
+            <code>--sw-color-primary (#000000)</code>
+          </div>
+        </div>
+        <div class="sw-col-4">
+          <div class="sw-swatch-box sw-bg-secondary">
+            <span>Secondary 中性灰</span>
+            <code>--sw-color-secondary (#555555)</code>
+          </div>
+        </div>
+        <div class="sw-col-4">
+          <div class="sw-swatch-box sw-bg-accent">
+            <span>Accent 瑞士經典紅</span>
+            <code>--sw-color-accent (#ff0000)</code>
+          </div>
+        </div>
+        <div class="sw-col-3">
+          <div class="sw-swatch-box sw-bg-info">
+            <span>Info 鈷藍</span>
+            <code>--sw-color-info (#0033cc)</code>
+          </div>
+        </div>
+        <div class="sw-col-3">
+          <div class="sw-swatch-box sw-bg-success">
+            <span>Success 墨綠</span>
+            <code>--sw-color-success (#006633)</code>
+          </div>
+        </div>
+        <div class="sw-col-3">
+          <div class="sw-swatch-box sw-bg-warning">
+            <span>Warning 金黃</span>
+            <code>--sw-color-warning (#ffcc00)</code>
+          </div>
+        </div>
+        <div class="sw-col-3">
+          <div class="sw-swatch-box sw-bg-error">
+            <span>Error 硃砂紅</span>
+            <code>--sw-color-error (#d32f2f)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notification Alert Section -->
+    <section class="sw-section">
+      <h2 class="sw-section-title">SYSTEM ALERTS <span>// NOTIFICATION</span></h2>
+      <div class="sw-alert sw-alert-info">
+        <strong>INFO:</strong> 瑞士平面設計展已成功載入嚴格 12 欄對齊網格數據。
+      </div>
+      <div class="sw-alert sw-alert-success">
+        <strong>SUCCESS:</strong> Helvetica 標題對齊係數通過 100% 驗證。
+      </div>
+      <div class="sw-alert sw-alert-warning">
+        <strong>WARNING:</strong> 偵測到未依規範設置的非無襯線字體，系統已強制切換。
+      </div>
+      <div class="sw-alert sw-alert-error">
+        <strong>ERROR:</strong> 嚴禁在此風格中加入任何 Drop-Shadow 陰影或 3D 效果。
+      </div>
+    </section>
+
+    <!-- Typography & Badges -->
+    <section class="sw-section">
+      <h2 class="sw-section-title">1. TYPOGRAPHY & CONTRAST <span>// 01</span></h2>
+      <div class="sw-grid">
+        <div class="sw-col-6 sw-p-4">
+          <h1 class="sw-mb-2" style="font-size: 3rem; font-weight: 900; letter-spacing: -0.04em;">H1 HELVETICA <span class="sw-badge">SWISS</span></h1>
+          <h2 class="sw-mb-2" style="font-size: 2rem; font-weight: 900;">H2 INTERNATIONAL STYLE <span class="sw-badge" style="background: var(--sw-color-accent);">1950s</span></h2>
+          <h3 class="sw-mb-3" style="font-size: 1.3rem; font-weight: 700;">H3 OBJECTIVE VISUAL COMMUNICATION</h3>
+          <p class="sw-text-muted sw-mb-3">以極度的理性、對齊與幾何網格，消弭主觀裝飾，將客觀資訊的傳遞提升至藝術與設計的巔峰。</p>
+        </div>
+        <div class="sw-col-6 sw-p-4">
+          <blockquote style="border-left: 4px solid var(--sw-color-primary); padding-left: 1.5rem; font-size: 1.2rem; font-weight: 700; line-height: 1.4;">
+            「網格系統（Grid System）並不是限制創意的框架，而是賦予字體與結構自由呼吸的客觀秩序。」
+          </blockquote>
+          <p class="sw-text-muted" style="margin-top: 1rem;">— Josef Müller-Brockmann</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buttons -->
+    <section class="sw-section">
+      <h2 class="sw-section-title">2. BUTTON SYSTEM <span>// ZERO ROUNDING</span></h2>
+      <div class="sw-flex sw-gap-3 sw-flex-wrap">
+        <button class="sw-btn sw-btn-primary">PRIMARY BLACK</button>
+        <button class="sw-btn sw-btn-accent">ACCENT HELVETIA RED</button>
+        <button class="sw-btn sw-btn-outline">OUTLINE BORDER</button>
+      </div>
+    </section>
+
+    <!-- Form Controls -->
+    <section id="forms" class="sw-section">
+      <h2 class="sw-section-title">3. GRID FORM CONTROLS <span>// INPUTS</span></h2>
+      <form>
+        <div class="sw-grid">
+          <div class="sw-col-6 sw-p-3">
+            <div class="sw-form-group">
+              <label class="sw-form-label" for="swDesigner">TYPOGRAPHER NAME</label>
+              <input type="text" id="swDesigner" class="sw-input" placeholder="e.g. Max Miedinger">
+            </div>
+          </div>
+          <div class="sw-col-6 sw-p-3">
+            <div class="sw-form-group">
+              <label class="sw-form-label" for="swFontFamily">FONT WEIGHT CATEGORY</label>
+              <select id="swFontFamily" class="sw-select">
+                <option>Helvetica Neue Bold 900</option>
+                <option>Akzidenz-Grotesk Medium</option>
+                <option>Univers 55 Regular</option>
+              </select>
+            </div>
+          </div>
+          <div class="sw-col-12 sw-p-3">
+            <div class="sw-form-group">
+              <label class="sw-form-label" for="swManifesto">DESIGN RATIONALE STATEMENT</label>
+              <textarea id="swManifesto" class="sw-textarea" rows="3" placeholder="Enter objective layout principles..."></textarea>
+            </div>
+          </div>
+
+          <!-- Checkbox, Radio, Switch, Range -->
+          <div class="sw-col-6 sw-p-3">
+            <div class="sw-form-group">
+              <label class="sw-form-label">GRID MODULE OPTIONS</label>
+              <div class="sw-flex sw-gap-3" style="margin-top: 0.5rem;">
+                <label class="sw-checkbox-label">
+                  <input type="checkbox" class="sw-checkbox" checked> 12-Column Grid
+                </label>
+                <label class="sw-checkbox-label">
+                  <input type="checkbox" class="sw-checkbox" checked> Flush Left Alignment
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="sw-col-6 sw-p-3">
+            <div class="sw-form-group">
+              <label class="sw-form-label">PRIMARY ACCENT COLOR</label>
+              <div class="sw-flex sw-gap-3" style="margin-top: 0.5rem;">
+                <label class="sw-radio-label">
+                  <input type="radio" name="swColor" class="sw-radio" checked> Swiss Red #FF0000
+                </label>
+                <label class="sw-radio-label">
+                  <input type="radio" name="swColor" class="sw-radio"> Pure Black #000000
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="sw-col-6 sw-p-3">
+            <div class="sw-form-group">
+              <label class="sw-form-label">ASYMMETRIC GRID SYSTEM</label>
+              <label class="sw-switch-label" style="margin-top: 0.5rem;">
+                <input type="checkbox" class="sw-switch-input" checked>
+                <span class="sw-switch-slider"></span>
+                <span>ENABLE RIGID BLACK BORDER SEPARATION</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="sw-col-6 sw-p-3">
+            <div class="sw-form-group">
+              <label class="sw-form-label">LETTER SPACING RATIO</label>
+              <input type="range" class="sw-range" min="-10" max="10" value="-5">
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="sw-section">
+      <h2 class="sw-section-title">4. GRID CARDS <span>// STRUCTURE</span></h2>
+      <div class="sw-grid">
+        <div class="sw-col-4">
+          <div class="sw-card">
+            <span class="sw-badge sw-mb-2">1957 FOUNDATION</span>
+            <h3 class="sw-card-title">HELVETICA TYPEFACE</h3>
+            <p class="sw-text-muted sw-mb-3">Created by Max Miedinger with Eduard Hoffmann. The gold standard of sans-serif design.</p>
+            <button class="sw-btn sw-btn-primary" style="width: 100%;">VIEW SPECIMEN</button>
+          </div>
+        </div>
+        <div class="sw-col-4">
+          <div class="sw-card">
+            <span class="sw-badge sw-mb-2" style="background: var(--sw-color-accent);">1981 MANUAL</span>
+            <h3 class="sw-card-title">GRID SYSTEMS BOOK</h3>
+            <p class="sw-text-muted sw-mb-3">Josef Müller-Brockmann's masterwork on graphic design and grid layout architecture.</p>
+            <button class="sw-btn sw-btn-accent" style="width: 100%;">BUY HANDBOOK</button>
+          </div>
+        </div>
+        <div class="sw-col-4">
+          <div class="sw-card">
+            <span class="sw-badge sw-mb-2" style="background: var(--sw-color-info);">EXHIBITION</span>
+            <h3 class="sw-card-title">ZÜRICH POSTER ART</h3>
+            <p class="sw-text-muted sw-mb-3">Minimalist concert and gallery posters defining 20th century visual typography.</p>
+            <button class="sw-btn sw-btn-outline" style="width: 100%;">ARCHIVE GALLERY</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Components Section -->
+    <section id="components" class="sw-section">
+      <h2 class="sw-section-title">5. GRID COMPONENTS <span>// INTERACTION</span></h2>
+      
+      <!-- Progress Bar -->
+      <div class="sw-mb-4">
+        <div class="sw-flex-between sw-mb-2">
+          <span style="font-weight: 900; text-transform: uppercase;">GRID ALIGNMENT PRECISION</span>
+          <span style="font-weight: 900; color: var(--sw-color-accent);">100% PERFECT</span>
+        </div>
+        <div class="sw-progress">
+          <div class="sw-progress-bar" style="width: 100%;"></div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="sw-tabs">
+        <button class="sw-tab-btn active" data-tab="tab-1">01. PRINCIPLES</button>
+        <button class="sw-tab-btn" data-tab="tab-2">02. TYPOGRAPHY</button>
+        <button class="sw-tab-btn" data-tab="tab-3">03. POSTERS</button>
+      </div>
+
+      <div id="tab-1" class="sw-tab-pane active">
+        <div class="sw-p-3" style="border: var(--sw-border-width) solid var(--sw-border-color);">
+          <h4>OBJECTIVE GRAPHIC DESIGN</h4>
+          <p class="sw-text-muted">Emphasis on cleanliness, readability, and objectivity. Use of a grid system and sans-serif typefaces like Helvetica.</p>
+        </div>
+      </div>
+      <div id="tab-2" class="sw-tab-pane">
+        <div class="sw-p-3" style="border: var(--sw-border-width) solid var(--sw-border-color);">
+          <h4>SANS-SERIF SUPREMACY</h4>
+          <p class="sw-text-muted">Elimination of decorative serifs in favor of universal, highly readable letterforms.</p>
+        </div>
+      </div>
+      <div id="tab-3" class="sw-tab-pane">
+        <div class="sw-p-3" style="border: var(--sw-border-width) solid var(--sw-border-color);">
+          <h4>CONCERT & AUTOMOBILE POSTERS</h4>
+          <p class="sw-text-muted">High contrast black-and-white layouts punctuated by sharp primary accent colors.</p>
+        </div>
+      </div>
+
+      <!-- Accordion -->
+      <h3 style="margin: 3rem 0 1rem; font-weight: 900; text-transform: uppercase;">SWISS STYLE FAQS (ACCORDION)</h3>
+      <div class="sw-accordion-item open">
+        <div class="sw-accordion-header">WHY ARE THERE NO GRADIENTS OR DROP SHADOWS?</div>
+        <div class="sw-accordion-body">
+          Swiss Style relies entirely on pure typography, proportion, scale, and grid alignment. Shadows and gradients are considered unnecessary decorative noise.
+        </div>
+      </div>
+      <div class="sw-accordion-item">
+        <div class="sw-accordion-header">WHAT IS THE ROLE OF NEGATIVE SPACE (WHITE SPACE)?</div>
+        <div class="sw-accordion-body">
+          Negative space is not empty space; it is an active structural element that creates breathing room and focal contrast.
+        </div>
+      </div>
+    </section>
+
+    <!-- Table Section -->
+    <section id="tables" class="sw-section">
+      <h2 class="sw-section-title">6. SWISS DESIGN MASTERS <span>// ARCHIVE</span></h2>
+      <div class="sw-table-container">
+        <table class="sw-table">
+          <thead>
+            <tr>
+              <th>DESIGNER</th>
+              <th>KEY CONTRIBUTION</th>
+              <th>ERA</th>
+              <th>ORIGIN</th>
+              <th>STATUS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Josef Müller-Brockmann</strong></td>
+              <td>Grid Systems Masterwork & Concert Posters</td>
+              <td>1950s - 1980s</td>
+              <td>Zürich, Switzerland</td>
+              <td><span class="sw-badge">LEGEND</span></td>
+            </tr>
+            <tr>
+              <td><strong>Max Miedinger</strong></td>
+              <td>Helvetica Typeface Designer</td>
+              <td>1957</td>
+              <td>Münchenstein, Switzerland</td>
+              <td><span class="sw-badge">CANONICAL</span></td>
+            </tr>
+            <tr>
+              <td><strong>Armin Hofmann</strong></td>
+              <td>Graphic Design Manual & Basel School</td>
+              <td>1965</td>
+              <td>Basel, Switzerland</td>
+              <td><span class="sw-badge">LEGEND</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Modal Component -->
+  <div class="sw-modal-overlay" id="swModalOverlay">
+    <div class="sw-modal">
+      <div class="sw-modal-header">
+        <h3 class="sw-modal-title">🇨🇭 SWISS STYLE MANIFESTO</h3>
+        <button class="sw-close-modal" style="background: none; border: none; font-size: 1.8rem; cursor: pointer; font-weight: 900;">✕</button>
+      </div>
+      <p class="sw-text-muted sw-mb-4">This interface strictly adheres to 100% pure vanilla CSS grid layout principles with zero drop-shadows and zero gradients.</p>
+      <div class="sw-flex sw-gap-2" style="justify-content: flex-end;">
+        <button class="sw-btn sw-btn-outline sw-close-modal">DISMISS</button>
+        <button class="sw-btn sw-btn-primary sw-close-modal">CONFIRM GRID</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas Component -->
+  <div class="sw-offcanvas" id="swOffcanvas">
+    <div class="sw-flex-between sw-mb-4" style="border-bottom: var(--sw-border-width) solid var(--sw-border-color); padding-bottom: 1rem;">
+      <h3 style="font-weight: 900;">SWISS INDEX</h3>
+      <button class="sw-close-modal" id="closeOffcanvas" style="background: none; border: none; font-size: 1.8rem; cursor: pointer; font-weight: 900;">✕</button>
+    </div>
+    <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.5rem;">
+      <li><a href="#" style="color: black; text-decoration: none; font-weight: 900; font-size: 1.2rem;">01 // HELVETICA TYPE SYSTEM</a></li>
+      <li><a href="#" style="color: black; text-decoration: none; font-weight: 900; font-size: 1.2rem;">02 // 12-COLUMN GRID MANUAL</a></li>
+      <li><a href="#" style="color: black; text-decoration: none; font-weight: 900; font-size: 1.2rem;">03 // BASEL SCHOOL EXERCISES</a></li>
+      <li><a href="#" style="color: black; text-decoration: none; font-weight: 900; font-size: 1.2rem;">04 // OBJECTIVE POSTER ARCHIVE</a></li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
