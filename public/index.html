@@ -1,89 +1,497 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pure Vanilla CSS 十大美學風格 Homepage 總覽 Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0d12;
+      color: #e2e8f0;
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .hub-header {
+      padding: 5rem 0 3rem;
+      text-align: center;
+      border-bottom: 1px solid #1e293b;
+    }
+    .hub-badge {
+      display: inline-block;
+      background: #0284c7;
+      color: #ffffff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.4em 1em;
+      border-radius: 999px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .hub-title {
+      font-weight: 900;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.03em;
+    }
+    .hub-subtitle {
+      color: #94a3b8;
+      font-size: 1.15rem;
+      max-width: 720px;
+      margin: 1rem auto 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.8rem;
+      padding: 4rem 0;
+    }
+    .style-card {
+      background: #141824;
+      border: 1px solid #232b3b;
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .style-card:hover {
+      transform: translateY(-6px);
+      border-color: #38bdf8;
+      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.15);
+    }
+    .style-num {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #38bdf8;
+      text-transform: uppercase;
+    }
+    .style-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0.5rem 0 0.75rem;
+    }
+    .style-desc {
+      color: #94a3b8;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .badge-tag {
+      background: #1e2636;
+      color: #cbd5e1;
+      font-size: 0.78rem;
+      padding: 0.3em 0.7em;
+      border-radius: 6px;
+      border: 1px solid #334155;
+    }
+    .card-actions {
+      display: flex;
+      gap: 0.75rem;
+    }
+    .btn-preview {
+      flex: 1;
+      background: #ffffff;
+      color: #0b0d12;
+      font-weight: 700;
+      border-radius: 10px;
+      padding: 0.65rem 1rem;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+    }
+    .btn-preview:hover {
+      background: #38bdf8;
+      color: #0b0d12;
+    }
+    .btn-doc {
+      background: #1e293b;
+      color: #94a3b8;
+      font-weight: 600;
+      border-radius: 10px;
+      padding: 0.65rem 1rem;
+      text-decoration: none;
+      text-align: center;
+      font-size: 0.9rem;
+      border: 1px solid #334155;
+    }
+    .btn-doc:hover {
+      background: #334155;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/12.16.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/12.16.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/12.16.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/12.16.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/12.16.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/12.16.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/12.16.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/12.16.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/12.16.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/12.16.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+  <header class="hub-header container">
+    <span class="hub-badge">100% Pure Vanilla CSS Design Systems</span>
+    <h1 class="hero-title">Pure Vanilla CSS<br><span style="color: var(--accent-cyan);">二十大美學風格</span> Homepage 系統</h1>
+    <p class="hero-subtitle">100% 完全自建 Vanilla CSS 與 JavaScript。零 Bootstrap 5、零外部框架依賴！<br>涵蓋 Apple極簡、誠品木質、露營大地色、高檔飯店、手作繪本、復古報紙、當代藝廊、日系建築、80s Mac、潮流海報、地中海度假、包浩斯、韓系奶油甜點、瑞士字體、賽博龐克微醺、日系幾何雜誌、北歐極簡木質、暗黑哥德精品、美式復古Arcade、當代展覽手冊等二十種極致風格系統。</p>
+  </header>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+  <main class="container">
+    <div class="grid">
+
+      <!-- Style 01 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 01</span>
+          <h3 class="style-name">Apple 官網 / 高級設計雜誌</h3>
+          <p class="style-desc">極簡白與深灰、大留白呼吸感，自建極簡配色系統與膠囊細邊框按鈕。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">極簡白與深灰</span>
+            <span class="badge-tag">自建色彩 Tokens</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-01-apple-style/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-01-apple-style/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 02 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 02</span>
+          <h3 class="style-name">無印良品 / 誠品書店風格</h3>
+          <p class="style-desc">溫暖米白背景、木質調與暗褐色文字，和風原木、抹茶青與柿子橘專屬色彩。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">溫暖米白</span>
+            <span class="badge-tag">和風木質色系</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-02-muji-eslite/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-02-muji-eslite/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 03 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 03</span>
+          <h3 class="style-name">戶外露營 / 文青咖啡廳菜單</h3>
+          <p class="style-desc">大地色系（橄欖綠、燕麥色、暗橘色），重磅直角邊框與露營菜單質感。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">露營橄欖綠</span>
+            <span class="badge-tag">直角硬派</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-03-outdoor-cafe/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-03-outdoor-cafe/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 04 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 04</span>
+          <h3 class="style-name">高檔飯店 / 精品品牌</h3>
+          <p class="style-desc">深墨綠沉穩深色底，搭配皇家金與香檳奶茶點綴，呈現奢華飯店質感。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">深墨綠底</span>
+            <span class="badge-tag">皇家金 Accent</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-04-luxury-hotel/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-04-luxury-hotel/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 05 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 05</span>
+          <h3 class="style-name">手作感 / 溫馨繪本風格</h3>
+          <p class="style-desc">奶油黃與淺奶茶色背景，暗棕手繪邊框、草莓紅點綴與微凸立體陰影。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">奶油黃背景</span>
+            <span class="badge-tag">微凸手繪邊框</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-05-handcrafted-picturebook/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-05-handcrafted-picturebook/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 06 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 06</span>
+          <h3 class="style-name">美式復古報紙 / 舊時代雜誌</h3>
+          <p class="style-desc">米黃舊紙張背景、報墨深黑文字、強烈雙線直欄分割與郵戳紅點綴。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">米黃舊紙張</span>
+            <span class="badge-tag">報墨雙直線</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-06-retro-newspaper/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-06-retro-newspaper/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 07 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 07</span>
+          <h3 class="style-name">當代藝廊 / 當代美術館</h3>
+          <p class="style-desc">極簡大面積純白留白，搭配醒目巨型黑體字標題與當代彩度對比。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">純白大留白</span>
+            <span class="badge-tag">巨型黑體</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-07-art-gallery/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-07-art-gallery/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 08 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 08</span>
+          <h3 class="style-name">建築事務所 / 日系現代設計</h3>
+          <p class="style-desc">水泥白背景，搭配 1px 精細幾何線條分割、大標題與微縮內文級距。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">水泥白背景</span>
+            <span class="badge-tag">1px幾何細線</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-08-architectural-modern/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-08-architectural-modern/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 09 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 09</span>
+          <h3 class="style-name">80 年代 Apple 電腦 / 復古電子</h3>
+          <p class="style-desc">灰綠與暖灰背景，Bevel 雙層立體邊框視窗與 CRT 螢光綠文字點陣質感。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">暖灰綠背景</span>
+            <span class="badge-tag">Bevel立體邊框</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-09-retro-apple80s/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-09-retro-apple80s/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 10 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 10</span>
+          <h3 class="style-name">潮流品牌 / 音樂節宣傳海報</h3>
+          <p class="style-desc">高對比米白搭深墨綠與濃褐色，巨型粗體、5px 實心黑色陰影與動態跑馬燈。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">高對比色</span>
+            <span class="badge-tag">實心黑色陰影</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-10-streetwear-poster/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-10-streetwear-poster/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 11 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 11</span>
+          <h3 class="style-name">希臘聖托里尼 / 地中海度假風</h3>
+          <p class="style-desc">高彩度大海藍與純白色，日照金黃點綴，明亮透澈與海浪柔和弧度邊框。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">大海藍純白</span>
+            <span class="badge-tag">日照金黃 Accent</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-11-santorini-mediterranean/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-11-santorini-mediterranean/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 12 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 12</span>
+          <h3 class="style-name">包浩斯現代主義風 (Bauhaus)</h3>
+          <p class="style-desc">米黃畫布底色，經典紅黃藍三原色重點點綴，極度強烈幾何切分與非對稱佈局。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">米黃背景</span>
+            <span class="badge-tag">經典三原色幾何</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-12-bauhaus-modernism/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-12-bauhaus-modernism/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 13 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 13</span>
+          <h3 class="style-name">韓系奶油甜點風 (Korean Warm)</h3>
+          <p class="style-desc">奶油黃、燕麥色與低飽和薄荷綠，軟萌超大圓角與細緻優雅字的極致療癒感。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">奶油黃燕麥</span>
+            <span class="badge-tag">薄荷綠軟萌大圓角</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-13-korean-minimalist-warm/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-13-korean-minimalist-warm/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 14 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 14</span>
+          <h3 class="style-name">瑞士國際主義字體風 (Swiss Style)</h3>
+          <p class="style-desc">嚴格 12 欄網格對齊，極簡純白底搭配巨大黑體與簡潔黑實線切分，零漸層陰影。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">極簡純白與巨大字體</span>
+            <span class="badge-tag">嚴格網格實線切分</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-14-swiss-style/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-14-swiss-style/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 15 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 15</span>
+          <h3 class="style-name">賽博龐克微燻風 (Cyber-Chic Noir)</h3>
+          <p class="style-desc">深酒紅與墨綠迷幻交織底色，霓虹洋紅與螢光黃細線光暈，深夜故事感吧檯質感。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">深酒紅墨綠基底</span>
+            <span class="badge-tag">霓虹洋紅光暈細線</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-15-cyber-chic-noir/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-15-cyber-chic-noir/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 16 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 16</span>
+          <h3 class="style-name">日系幾何雜誌 / 詩意風格</h3>
+          <p class="style-desc">日本質感雜誌（如 Popeye 或 Brutus）風格，溫暖淡黃灰背景，直排與橫排交錯排版，極細黑線與幾何圓點點綴。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">溫暖淡黃灰</span>
+            <span class="badge-tag">直排與橫排交錯</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-16-japanese-poetic-magazine/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-16-japanese-poetic-magazine/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 17 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 17</span>
+          <h3 class="style-name">北歐極簡木質風 (Nordic Minimalist)</h3>
+          <p class="style-desc">斯堪地那維亞設計與 HAY 傢俱質感，淺灰大理石背景搭配橄欖綠、冷木棕與莫蘭迪灰藍，全靠留白與柔和色塊區隔。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">淺灰大理石色</span>
+            <span class="badge-tag">無邊框平靜留白</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-17-nordic-minimalist/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-17-nordic-minimalist/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 18 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 18</span>
+          <h3 class="style-name">暗黑哥德 / 獨立精品風 (Gothic Luxury)</h3>
+          <p class="style-desc">獨立香氛與哥德精品時尚，深沉炭灰基底搭配銀灰與暗紅，細長古典襯線體 (Serif) 與細微銀邊切分。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">深沉炭灰與血紅</span>
+            <span class="badge-tag">古典襯線體與銀邊</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-18-gothic-luxury/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-18-gothic-luxury/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 19 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 19</span>
+          <h3 class="style-name">新美式復古 Arcade / 嬉皮風 (70s Vintage)</h3>
+          <p class="style-desc">70 年代黑膠唱片行與 Arcade 街機遊戲，暖黃、芥末黃、橘紅與深棕條紋背景，圓潤厚重復古字體與熱情懷舊感。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">70s 黑膠 Arcade</span>
+            <span class="badge-tag">芥末黃橘紅立體陰影</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-19-retro-70s-arcade/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-19-retro-70s-arcade/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
+      <!-- Style 20 -->
+      <div class="style-card">
+        <div>
+          <span class="style-num">STYLE 20</span>
+          <h3 class="style-name">當代展覽手冊 / 概念設計風 (Editorial Exhibition)</h3>
+          <p class="style-desc">當代藝術展覽手冊，高對比灰白背景搭配頁碼感標註（如 01/02/03）與小字號說明欄，大字與小字強烈反差與實驗性排版。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span class="badge-tag">高對比展覽灰白</span>
+            <span class="badge-tag">頁碼標註與前衛對比</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="style-20-editorial-exhibition/index.html" class="btn-preview">開啟風格頁面 →</a>
+          <a href="style-20-editorial-exhibition/README.md" class="btn-doc">README</a>
+        </div>
+      </div>
+
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+  </main>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+  <footer style="padding: 3rem 0; text-align: center; color: #64748b; border-top: 1px solid #1e293b; font-size: 0.85rem;">
+    <p>© 2026 100% Pure Vanilla CSS Multi-Style Collection. Zero Framework Dependencies.</p>
+  </footer>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+</body>
 </html>
