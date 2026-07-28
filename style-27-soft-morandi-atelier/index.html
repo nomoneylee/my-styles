@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格二十七：韓系柔焦莫蘭迪 / 藝文畫廊 (Soft Morandi Atelier)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="mor-navbar">
+    <div class="mor-container mor-navbar-container">
+      <a href="#" class="mor-brand">🩰 MORANDI <span>ATELIER</span></a>
+      <button class="mor-toggler" id="morToggler">選單 Menu</button>
+      <div class="mor-nav-collapse" id="morCollapse">
+        <ul class="mor-nav-links">
+          <li><a href="#hero" class="mor-nav-link active">藝文畫廊</a></li>
+          <li><a href="#palette" class="mor-nav-link">莫蘭迪色盤</a></li>
+          <li><a href="#forms" class="mor-nav-link">柔焦表單</a></li>
+          <li><a href="#cards" class="mor-nav-link">畫廊展覽</a></li>
+          <li><a href="#interactive" class="mor-nav-link">典藏清單</a></li>
+        </ul>
+        <div class="mor-flex mor-gap-2">
+          <a href="../index.html" class="mor-btn mor-btn-outline">HUB 總覽</a>
+          <button class="mor-btn mor-btn-accent" id="openOffcanvasBtn">典藏畫冊 drawer</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="mor-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="mor-hero">
+      <span class="mor-hero-tag">Soft Morandi & Atelier Gallery</span>
+      <h1 class="mor-hero-title">韓系柔焦莫蘭迪與藝文畫廊空間</h1>
+      <p class="mor-hero-desc">
+        低飽和度莫蘭迪色系，溫柔粉灰、霧藍與鼠尾草綠搭配 20px 超大弧度柔邊與羽化陰影（0 10px 30px）。按鈕自帶奶凍般彈性微互動。
+      </p>
+      <div class="mor-flex mor-gap-3" style="justify-content: center;">
+        <button class="mor-btn mor-btn-primary">閱覽當期畫展</button>
+        <button class="mor-btn mor-btn-outline" id="openModalBtn">預約導覽 Modal</button>
+      </div>
+    </section>
+
+    <!-- Color Palette Showcase -->
+    <section id="palette" class="mor-section">
+      <h2 class="mor-section-title">低飽和莫蘭迪配色系統</h2>
+      <p class="mor-section-sub">低調平靜的粉灰、霧藍、鼠尾草綠與暖木咖和諧沉靜美學：</p>
+      
+      <div class="mor-grid">
+        <div class="mor-col-4">
+          <div class="mor-swatch bg-primary">
+            <span>Primary 暖木咖</span>
+            <code>--mor-color-primary (#6e5e55)</code>
+          </div>
+        </div>
+        <div class="mor-col-4">
+          <div class="mor-swatch bg-accent">
+            <span>Accent 霧面灰藍</span>
+            <code>--mor-color-accent (#8b9dc3)</code>
+          </div>
+        </div>
+        <div class="mor-col-4">
+          <div class="mor-swatch bg-secondary">
+            <span>Secondary 沉靜鼠尾草綠</span>
+            <code>--mor-color-secondary (#9bb0a5)</code>
+          </div>
+        </div>
+        <div class="mor-col-3">
+          <div class="mor-swatch bg-info">
+            <span>Info 莫蘭迪天藍</span>
+            <code>--mor-color-info (#7fa1b8)</code>
+          </div>
+        </div>
+        <div class="mor-col-3">
+          <div class="mor-swatch bg-success">
+            <span>Success 莫蘭迪灰綠</span>
+            <code>--mor-color-success (#88a382)</code>
+          </div>
+        </div>
+        <div class="mor-col-3">
+          <div class="mor-swatch bg-warning">
+            <span>Warning 暖燕麥橙</span>
+            <code>--mor-color-warning (#d9ab7e)</code>
+          </div>
+        </div>
+        <div class="mor-col-3">
+          <div class="mor-swatch bg-error">
+            <span>Error 豆沙灰紅</span>
+            <code>--mor-color-error (#c47c77)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alerts Section -->
+    <section class="mor-section">
+      <h2 class="mor-section-title">畫廊藝術展覽提示 (Alerts)</h2>
+      <div class="mor-alert mor-alert-info">
+        <strong>🎨 藝文動態:</strong> 韓國當代水彩詩意畫家「靜謐時光」個人展即日起開放免費觀展。
+      </div>
+      <div class="mor-alert mor-alert-success">
+        <strong>🌿 講座預約:</strong> 「莫蘭迪色調於室內空間應用」專家講座已成功為您保留前排席次。
+      </div>
+      <div class="mor-alert mor-alert-warning">
+        <strong>☕ 藝廊咖啡:</strong> 本月限定「灰藍燕麥奶拿鐵」每日限量提供 30 杯。
+      </div>
+    </section>
+
+    <!-- Form Section -->
+    <section id="forms" class="mor-section">
+      <h2 class="mor-section-title">微浮雕感柔焦表單 (Form Controls)</h2>
+      <p class="mor-section-sub">超圓滑 20px 弧度與溫柔內陰影：</p>
+      
+      <div class="mor-grid">
+        <div class="mor-col-6">
+          <div class="mor-form-group">
+            <label class="mor-form-label">觀展訪客姓名</label>
+            <input type="text" class="mor-input" placeholder="例如：宋藝文 小姐">
+          </div>
+          <div class="mor-form-group">
+            <label class="mor-form-label">展覽門票類別</label>
+            <select class="mor-select">
+              <option>當代繪畫特展門票</option>
+              <option>陶藝與微浮雕手作工作坊</option>
+              <option>藝文畫冊VIP尊榮套票</option>
+            </select>
+          </div>
+          <div class="mor-form-group">
+            <label class="mor-switch-label">
+              <input type="checkbox" checked hidden>
+              <span class="mor-switch"></span>
+              <span>訂閱畫廊每季當代畫冊電子郵件</span>
+            </label>
+          </div>
+        </div>
+        <div class="mor-col-6">
+          <div class="mor-form-group">
+            <label class="mor-form-label">觀展感言與迴響</label>
+            <textarea class="mor-textarea" rows="3" placeholder="請留下您對莫蘭迪色調畫作的體悟..."></textarea>
+          </div>
+          <div class="mor-form-group">
+            <label class="mor-form-label">柔焦光影羽化模糊度 (<span id="morRangeValue">60%</span>)</label>
+            <input type="range" id="morRange" class="mor-range" min="10" max="100" value="60">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Badges & Cards -->
+    <section id="cards" class="mor-section">
+      <h2 class="mor-section-title">微浮雕卡片與柔和 Badges</h2>
+      
+      <div class="mor-mb-4 mor-flex mor-gap-2">
+        <span class="mor-badge mor-badge-blue">SOFT MORANDI</span>
+        <span class="mor-badge mor-badge-green">ATELIER GALLERY</span>
+        <span class="mor-badge mor-badge-wood">SILENT HARMONY</span>
+      </div>
+
+      <div class="mor-grid">
+        <div class="mor-col-4">
+          <div class="mor-card">
+            <h3 class="mor-card-title">🖼️ 靜物油畫《瓶花》</h3>
+            <p class="mor-card-desc">低飽和度暖灰與鼠尾草綠交融，呈現生活物件最靜謐的自然張力。</p>
+            <button class="mor-btn mor-btn-accent">典藏賞析</button>
+          </div>
+        </div>
+        <div class="mor-col-4">
+          <div class="mor-card">
+            <h3 class="mor-card-title">🏺 霧面粉灰陶瓶</h3>
+            <p class="mor-card-desc">手作微浮雕質感，搭配無光澤砂感塗層，給予空間最溫柔的點綴。</p>
+            <button class="mor-btn mor-btn-primary">購藏選品</button>
+          </div>
+        </div>
+        <div class="mor-col-4">
+          <div class="mor-card">
+            <h3 class="mor-card-title">☕ 藝文沙龍茶會</h3>
+            <p class="mor-card-desc">在微醺暖陽下與藝術家近距離交流，品鑑精選冷萃高山烏龍。</p>
+            <button class="mor-btn mor-btn-outline">報名參加</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive & Table Section -->
+    <section id="interactive" class="mor-section">
+      <h2 class="mor-section-title">畫廊導覽與展品對照 (Accordion & Tabs)</h2>
+      
+      <div class="mor-grid">
+        <div class="mor-col-6">
+          <h3 class="mor-mb-3" style="font-size: 1.1rem; color: var(--mor-color-primary);">畫廊導覽須知</h3>
+          <div class="mor-accordion-item">
+            <button class="mor-accordion-header">
+              <span>1. 館內拍照與燈光使用規定？</span>
+              <span>▼</span>
+            </button>
+            <div class="mor-accordion-body">
+              歡迎拍照留念，但為保護油畫顏料與藝術品，請勿使用閃光燈與腳架。
+            </div>
+          </div>
+          <div class="mor-accordion-item">
+            <button class="mor-accordion-header">
+              <span>2. 典藏畫作是否提供私人託管或送府服務？</span>
+              <span>▼</span>
+            </button>
+            <div class="mor-accordion-body">
+              我們的專業防潮恆溫車隊可提供專人配送與現場藝術掛畫佈置。
+            </div>
+          </div>
+        </div>
+
+        <div class="mor-col-6">
+          <h3 class="mor-mb-3" style="font-size: 1.1rem; color: var(--mor-color-primary);">畫廊空間區域切換</h3>
+          <div class="mor-tabs-nav">
+            <button class="mor-tab-btn active" data-target="mtab1">A館 油畫區</button>
+            <button class="mor-tab-btn" data-target="mtab2">B館 雕塑館</button>
+            <button class="mor-tab-btn" data-target="mtab3">C館 藝文中庭</button>
+          </div>
+          <div id="mtab1" class="mor-tab-pane active">
+            <p style="color: var(--mor-text-muted);">展示莫蘭迪等近現代大師之靜物畫與低彩度風景創作。</p>
+          </div>
+          <div id="mtab2" class="mor-tab-pane">
+            <p style="color: var(--mor-text-muted);">收錄現代石雕、有機陶藝與微浮雕複合媒材藝術品。</p>
+          </div>
+          <div id="mtab3" class="mor-tab-pane">
+            <p style="color: var(--mor-text-muted);">採光良好的半戶外空間，提供精緻飲品與藝術書籍閱讀區。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mor-mb-4" style="margin-top: 2rem;">
+        <h3 class="mor-mb-2" style="font-size: 1.1rem; color: var(--mor-color-primary);">典藏畫冊佈展完成度 (82%)</h3>
+        <div class="mor-progress">
+          <div class="mor-progress-bar" style="width: 82%;"></div>
+        </div>
+      </div>
+
+      <table class="mor-table">
+        <thead>
+          <tr>
+            <th>展品名稱</th>
+            <th>創作年份</th>
+            <th>藝術家</th>
+            <th>展出狀態</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>莫蘭迪靜物 #08</td>
+            <td>1952</td>
+            <td>Giorgio Morandi</td>
+            <td><span class="mor-badge mor-badge-blue">常設展出</span></td>
+          </tr>
+          <tr>
+            <td>鼠尾草綠陶器</td>
+            <td>2024</td>
+            <td>韓藝文工作室</td>
+            <td><span class="mor-badge mor-badge-green">可收藏</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- Modal -->
+  <div class="mor-modal-backdrop" id="morModal">
+    <div class="mor-modal">
+      <h3 class="mor-card-title">🩰 預約導覽行程確認</h3>
+      <p class="mor-card-desc">導覽人員將全程為您講解莫蘭迪色彩學與畫作背景。</p>
+      <div class="mor-form-group">
+        <label class="mor-form-label">選擇導覽日期</label>
+        <input type="date" class="mor-input" value="2026-08-05">
+      </div>
+      <div class="mor-flex mor-justify-between" style="margin-top: 1.5rem;">
+        <button class="mor-btn mor-btn-outline" id="closeModalBtn">返回</button>
+        <button class="mor-btn mor-btn-accent">確認預約</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas -->
+  <div class="mor-offcanvas" id="morOffcanvas">
+    <div class="mor-flex mor-justify-between mor-items-center mor-mb-4">
+      <h3 style="font-size: 1.1rem; color: var(--mor-color-primary);">🖼️ 典藏畫冊清單</h3>
+      <button id="closeOffcanvasBtn" style="background:none; border:none; font-size: 1.2rem; cursor:pointer;">✕</button>
+    </div>
+    <div style="flex:1; color: var(--mor-text-muted);">
+      <p class="mor-mb-3">預約賞析畫作 (2):</p>
+      <div style="border-bottom: 1px solid var(--mor-border); padding-bottom: 0.75rem; margin-bottom: 0.75rem;">
+        <strong style="color: var(--mor-color-primary);">莫蘭迪靜物 #08</strong>
+        <div style="font-size: 0.85rem; color: var(--mor-color-accent);">展區 A-04</div>
+      </div>
+      <div style="border-bottom: 1px solid var(--mor-border); padding-bottom: 0.75rem;">
+        <strong style="color: var(--mor-color-primary);">霧面粉灰陶瓶</strong>
+        <div style="font-size: 0.85rem; color: var(--mor-color-secondary);">展區 B-12</div>
+      </div>
+    </div>
+    <button class="mor-btn mor-btn-primary" style="width: 100%;">送出典藏申請</button>
+  </div>
+
+  <footer class="mor-footer">
+    <div class="mor-container">
+      <p>© 2026 Style 27: Soft Morandi Atelier. Pure Vanilla CSS & JS Design System.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

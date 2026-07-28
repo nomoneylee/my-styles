@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格二十二：包裝設計 / 標籤印刷風 (Label & Packaging)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="lbl-navbar">
+    <div class="lbl-container lbl-navbar-container">
+      <a href="#" class="lbl-brand">🏷️ PACKAGING_LAB [v2.2]</a>
+      <button class="lbl-toggler" id="lblToggler">MENU ☰</button>
+      <div class="lbl-nav-collapse" id="lblCollapse">
+        <ul class="lbl-nav-links">
+          <li><a href="#hero" class="lbl-nav-link active">標籤主頁</a></li>
+          <li><a href="#palette" class="lbl-nav-link">印刷配色</a></li>
+          <li><a href="#forms" class="lbl-nav-link">出貨表單</a></li>
+          <li><a href="#cards" class="lbl-nav-link">包裝盒樣</a></li>
+          <li><a href="#interactive" class="lbl-nav-link">檢驗說明</a></li>
+        </ul>
+        <div class="lbl-flex lbl-gap-2">
+          <a href="../index.html" class="lbl-btn">HUB 總覽</a>
+          <button class="lbl-btn lbl-btn-warning" id="openOffcanvasBtn">標籤貼紙夾</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="lbl-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="lbl-hero">
+      <div class="lbl-punch-hole"></div>
+      <div class="lbl-barcode">
+        <span style="width: 4px;"></span>
+        <span style="width: 2px;"></span>
+        <span style="width: 8px;"></span>
+        <span style="width: 3px;"></span>
+        <span style="width: 6px;"></span>
+        <span style="width: 2px;"></span>
+        <span style="width: 5px;"></span>
+        <span style="width: 7px;"></span>
+        <span style="width: 3px;"></span>
+      </div>
+      <br>
+      <span class="lbl-hero-tag">BATCH NO. #2026-PKG-88</span>
+      <h1 class="lbl-hero-title">文創商品包裝與條碼標籤印刷風格</h1>
+      <p class="lbl-hero-desc">
+        元件自帶 2px dashed 虛線裁切邊框、條碼圖示與打孔貼紙視覺。未塗布牛皮紙灰基底結合印表機碳黑與膠帶螢光橘，極具工業包裝趣味。
+      </p>
+      <div class="lbl-flex lbl-gap-3" style="justify-content: center;">
+        <button class="lbl-btn lbl-btn-accent">下載印表範本</button>
+        <button class="lbl-btn lbl-btn-warning" id="openModalBtn">裁切標籤 Modal</button>
+      </div>
+    </section>
+
+    <!-- Color Palette Showcase -->
+    <section id="palette" class="lbl-section">
+      <h2 class="lbl-section-title">印刷與標籤配色系統</h2>
+      <p class="lbl-section-sub">工業未塗布紙質與警告印刷配色標記：</p>
+      
+      <div class="lbl-grid">
+        <div class="lbl-col-4">
+          <div class="lbl-swatch bg-primary">
+            <span>Primary 印表機碳黑</span>
+            <code>--lbl-color-primary (#1e1e1e)</code>
+          </div>
+        </div>
+        <div class="lbl-col-4">
+          <div class="lbl-swatch bg-accent">
+            <span>Accent 膠帶螢光橘</span>
+            <code>--lbl-color-accent (#ff5722)</code>
+          </div>
+        </div>
+        <div class="lbl-col-4">
+          <div class="lbl-swatch bg-warning">
+            <span>Warning 警示標籤黃</span>
+            <code>--lbl-color-warning (#f3b700)</code>
+          </div>
+        </div>
+        <div class="lbl-col-3">
+          <div class="lbl-swatch bg-info">
+            <span>Info 運送藍標</span>
+            <code>--lbl-color-info (#0288d1)</code>
+          </div>
+        </div>
+        <div class="lbl-col-3">
+          <div class="lbl-swatch bg-success">
+            <span>Success 檢驗合格綠</span>
+            <code>--lbl-color-success (#2e7d32)</code>
+          </div>
+        </div>
+        <div class="lbl-col-3">
+          <div class="lbl-swatch bg-error">
+            <span>Error 易碎警戒紅</span>
+            <code>--lbl-color-error (#d32f2f)</code>
+          </div>
+        </div>
+        <div class="lbl-col-3">
+          <div class="lbl-swatch bg-secondary">
+            <span>Secondary 工業紙箱灰</span>
+            <code>--lbl-color-secondary (#8d8b82)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alerts Section -->
+    <section class="lbl-section">
+      <h2 class="lbl-section-title">包裝物流警示 (Alerts)</h2>
+      <div class="lbl-alert lbl-alert-warning">
+        <strong>[CAUTION]:</strong> 本包裹包含易碎文創陶瓷杯，請勿重摔與倒置。
+      </div>
+      <div class="lbl-alert lbl-alert-info">
+        <strong>[LOGISTICS]:</strong> 訂單已通過海關檢驗，預計 24 小時內送達指定配送據點。
+      </div>
+      <div class="lbl-alert lbl-alert-success">
+        <strong>[PASSED]:</strong> 100% 環保可回收牛皮紙箱結構測試通過。
+      </div>
+      <div class="lbl-alert lbl-alert-error">
+        <strong>[DANGER]:</strong> 標籤印字墨水偏淡，請更換碳帶後重新印製。
+      </div>
+    </section>
+
+    <!-- Form Section -->
+    <section id="forms" class="lbl-section">
+      <h2 class="lbl-section-title">出貨標籤表單 (Form Controls)</h2>
+      <p class="lbl-section-sub">2px Dashed 虛線邊框與實體標籤欄位：</p>
+      
+      <div class="lbl-grid">
+        <div class="lbl-col-6">
+          <div class="lbl-form-group">
+            <label class="lbl-form-label">收件人姓名 (SHIP TO)</label>
+            <input type="text" class="lbl-input" value="設計師 專用件">
+          </div>
+          <div class="lbl-form-group">
+            <label class="lbl-form-label">包裝材質選單</label>
+            <select class="lbl-select">
+              <option>未塗布 300g 牛皮卡紙</option>
+              <option>高透光 PP 膠帶</option>
+              <option>瓦楞紙保護內襯</option>
+            </select>
+          </div>
+          <div class="lbl-form-group">
+            <label class="lbl-switch-label">
+              <input type="checkbox" checked hidden>
+              <span class="lbl-switch"></span>
+              <span>貼上「此面朝上」標籤</span>
+            </label>
+          </div>
+        </div>
+        <div class="lbl-col-6">
+          <div class="lbl-form-group">
+            <label class="lbl-form-label">報關物品明細</label>
+            <textarea class="lbl-textarea" rows="3" placeholder="請詳細列出內容物名稱與數量..."></textarea>
+          </div>
+          <div class="lbl-form-group">
+            <label class="lbl-form-label">包裹預估重量 (<span id="lblRangeValue">5 KG</span>)</label>
+            <input type="range" id="lblRange" class="lbl-range" min="1" max="50" value="5">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Badges & Cards -->
+    <section id="cards" class="lbl-section">
+      <h2 class="lbl-section-title">打孔貼紙與虛線包裝卡片 (Cards & Badges)</h2>
+      
+      <div class="lbl-mb-4 lbl-flex lbl-gap-2">
+        <span class="lbl-badge lbl-badge-warning">FRAGILE 易碎</span>
+        <span class="lbl-badge lbl-badge-accent">EXPRESS 快捷</span>
+        <span class="lbl-badge">QC PASSED 合格</span>
+      </div>
+
+      <div class="lbl-grid">
+        <div class="lbl-col-4">
+          <div class="lbl-card">
+            <div class="lbl-card-title">📦 手工精釀啤酒外箱</div>
+            <p class="lbl-card-desc">採用 5 層瓦楞結構與虛線打孔提把，適合長途運送與零售陳列。</p>
+            <button class="lbl-btn">檢視結構圖</button>
+          </div>
+        </div>
+        <div class="lbl-col-4">
+          <div class="lbl-card">
+            <div class="lbl-card-title">🏷️ 條碼標籤貼紙組</div>
+            <p class="lbl-card-desc">撕取式打孔鋸齒邊緣，支援熱感應印表機高速大量列印。</p>
+            <button class="lbl-btn lbl-btn-warning">列印樣張</button>
+          </div>
+        </div>
+        <div class="lbl-col-4">
+          <div class="lbl-card">
+            <div class="lbl-card-title">✉️ 牛皮紙信封內襯</div>
+            <p class="lbl-card-desc">氣泡防震內層與撕撕膠帶封口，兼具質感與最高級防護。</p>
+            <button class="lbl-btn lbl-btn-accent">下單採購</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive & Table Section -->
+    <section id="interactive" class="lbl-section">
+      <h2 class="lbl-section-title">檢驗規格與互動組件 (Accordion & Tabs)</h2>
+      
+      <div class="lbl-grid">
+        <div class="lbl-col-6">
+          <h3 class="lbl-mb-3" style="font-size: 1.1rem;">標籤印刷品質規範 FAQ</h3>
+          <div class="lbl-accordion-item">
+            <button class="lbl-accordion-header">
+              <span>1. 條碼掃描辨識率測試標準？</span>
+              <span>▼</span>
+            </button>
+            <div class="lbl-accordion-body">
+              所有輸出的 Code128 與 QR Code 必須達到 Grade A 以上等級，避免物流自動掃描器退件。
+            </div>
+          </div>
+          <div class="lbl-accordion-item">
+            <button class="lbl-accordion-header">
+              <span>2. 貼紙膠水防潮防油效果？</span>
+              <span>▼</span>
+            </button>
+            <div class="lbl-accordion-body">
+              採用強粘性丙烯酸壓敏膠，在高濕度冷凍環境下亦不脫落。
+            </div>
+          </div>
+        </div>
+
+        <div class="lbl-col-6">
+          <h3 class="lbl-mb-3" style="font-size: 1.1rem;">包裝材質對照頁籤</h3>
+          <div class="lbl-tabs-nav">
+            <button class="lbl-tab-btn active" data-target="ltab1">牛皮紙卡</button>
+            <button class="lbl-tab-btn" data-target="ltab2">銅版貼紙</button>
+            <button class="lbl-tab-btn" data-target="ltab3">破壞袋</button>
+          </div>
+          <div id="ltab1" class="lbl-tab-pane active">
+            <p style="color: var(--lbl-text-muted);">100% 原始植物纖維，質樸溫暖，適合手作商品與文創品牌。</p>
+          </div>
+          <div id="ltab2" class="lbl-tab-pane">
+            <p style="color: var(--lbl-text-muted);">表面光滑覆膜，彩印還原度高，適合高對比色彩圖像標籤。</p>
+          </div>
+          <div id="ltab3" class="lbl-tab-pane">
+            <p style="color: var(--lbl-text-muted);">高密度 PE 材質，防水防拉扯，完美保護電商外送包裹。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lbl-mb-4" style="margin-top: 2rem;">
+        <h3 class="lbl-mb-2" style="font-size: 1.1rem;">印刷產線進度 (85%)</h3>
+        <div class="lbl-progress">
+          <div class="lbl-progress-bar" style="width: 85%;"></div>
+        </div>
+      </div>
+
+      <table class="lbl-table">
+        <thead>
+          <tr>
+            <th>包裝料號</th>
+            <th>規格尺寸</th>
+            <th>耐重限制</th>
+            <th>庫存狀態</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PKG-BOX-A1</td>
+            <td>300 x 200 x 150 mm</td>
+            <td>15.0 KG</td>
+            <td><span class="lbl-badge lbl-badge-warning">充足</span></td>
+          </tr>
+          <tr>
+            <td>PKG-LBL-C2</td>
+            <td>100 x 150 mm (捲筒)</td>
+            <td>--</td>
+            <td><span class="lbl-badge lbl-badge-accent">低庫存</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- Modal -->
+  <div class="lbl-modal-backdrop" id="lblModal">
+    <div class="lbl-modal">
+      <h3 class="lbl-card-title">✂️ 裁切標籤範本確認</h3>
+      <p class="lbl-card-desc">請確認貼紙出血線 (Bleed Line) 與 2px 虛線裁切範圍。</p>
+      <div class="lbl-form-group">
+        <label class="lbl-form-label">印刷批次編號</label>
+        <input type="text" class="lbl-input" value="LOT-2026-0728-X">
+      </div>
+      <div class="lbl-flex lbl-justify-between" style="margin-top: 1.5rem;">
+        <button class="lbl-btn" id="closeModalBtn">取消</button>
+        <button class="lbl-btn lbl-btn-warning">開始排印</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas -->
+  <div class="lbl-offcanvas" id="lblOffcanvas">
+    <div class="lbl-flex lbl-justify-between lbl-items-center lbl-mb-4">
+      <h3 style="font-size: 1.1rem;">🏷️ 標籤貼紙收藏夾</h3>
+      <button id="closeOffcanvasBtn" style="background:none; border:none; font-size: 1.2rem; cursor:pointer;">✕</button>
+    </div>
+    <div style="flex:1; color: var(--lbl-text-muted);">
+      <p class="lbl-mb-3">已選取 2 款標籤格式：</p>
+      <div style="border-bottom: 2px dashed var(--lbl-color-primary); padding-bottom: 0.5rem; margin-bottom: 0.5rem;">
+        <strong>[警示] 易碎物品斜切貼紙</strong>
+        <div>數量: 500 張</div>
+      </div>
+      <div style="border-bottom: 2px dashed var(--lbl-color-primary); padding-bottom: 0.5rem;">
+        <strong>[物流] Code128 條碼標籤</strong>
+        <div>數量: 1000 張</div>
+      </div>
+    </div>
+    <button class="lbl-btn lbl-btn-accent" style="width: 100%;">輸出 PDF 印表檔</button>
+  </div>
+
+  <footer class="lbl-footer">
+    <div class="lbl-container">
+      <p>© 2026 Style 22: Label & Packaging. Pure Vanilla CSS & JS Design System.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

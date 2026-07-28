@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.5">
+  <title>風格二十三：霓虹深夜酒吧 / 爵士音樂室 (Neon Jazz Lounge)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="jaz-navbar">
+    <div class="jaz-container jaz-navbar-container">
+      <a href="#" class="jaz-brand">🎷 NEON <span>JAZZ</span> CLUB</a>
+      <button class="jaz-toggler" id="jazToggler">MENU 🍸</button>
+      <div class="jaz-nav-collapse" id="jazCollapse">
+        <ul class="jaz-nav-links">
+          <li><a href="#hero" class="jaz-nav-link active">深夜微醺</a></li>
+          <li><a href="#palette" class="jaz-nav-link">霓虹色彩</a></li>
+          <li><a href="#forms" class="jaz-nav-link">預約座位</a></li>
+          <li><a href="#cards" class="jaz-nav-link">爵士卡牌</a></li>
+          <li><a href="#interactive" class="jaz-nav-link">調酒酒單</a></li>
+        </ul>
+        <div class="jaz-flex jaz-gap-2">
+          <a href="../index.html" class="jaz-btn jaz-btn-outline">HUB 總覽</a>
+          <button class="jaz-btn jaz-btn-accent" id="openOffcanvasBtn">VIP 點酒單</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="jaz-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="jaz-hero">
+      <span class="jaz-hero-tag">LATE NIGHT MIDNIGHT JAZZ & COCKTAILS</span>
+      <h1 class="jaz-hero-title">深夜 Jazz Bar 與地下微醺空間</h1>
+      <p class="jaz-hero-desc">
+        沉穩極深藍紫底色，搭配霓虹微醺桃與調酒琉璃藍柔光擴散（box-shadow 0 0 15px）。組件帶有低調沉穩的玻璃質感與細微霓虹光暈。
+      </p>
+      <div class="jaz-flex jaz-gap-3" style="justify-content: center;">
+        <button class="jaz-btn jaz-btn-accent">預訂今晚包廂</button>
+        <button class="jaz-btn jaz-btn-info" id="openModalBtn">樂團演出 Modal</button>
+      </div>
+    </section>
+
+    <!-- Color Palette Showcase -->
+    <section id="palette" class="jaz-section">
+      <h2 class="jaz-section-title">霓虹與爵士酒吧配色系統</h2>
+      <p class="jaz-section-sub">極深藍紫底色與光線散射的高對比霓虹組合：</p>
+      
+      <div class="jaz-grid">
+        <div class="jaz-col-4">
+          <div class="jaz-swatch bg-primary">
+            <span>Primary 深夜微醺藍紫</span>
+            <code>--jaz-color-primary (#0a0814)</code>
+          </div>
+        </div>
+        <div class="jaz-col-4">
+          <div class="jaz-swatch bg-accent">
+            <span>Accent 霓虹微醺桃</span>
+            <code>--jaz-color-accent (#ff2a75)</code>
+          </div>
+        </div>
+        <div class="jaz-col-4">
+          <div class="jaz-swatch bg-secondary">
+            <span>Secondary 爵士金屬黃</span>
+            <code>--jaz-color-secondary (#ffc857)</code>
+          </div>
+        </div>
+        <div class="jaz-col-3">
+          <div class="jaz-swatch bg-info">
+            <span>Info 調酒琉璃藍</span>
+            <code>--jaz-color-info (#00f0ff)</code>
+          </div>
+        </div>
+        <div class="jaz-col-3">
+          <div class="jaz-swatch bg-success">
+            <span>Success 薄荷調酒綠</span>
+            <code>--jaz-color-success (#00e676)</code>
+          </div>
+        </div>
+        <div class="jaz-col-3">
+          <div class="jaz-swatch bg-warning">
+            <span>Warning 威士忌琥珀</span>
+            <code>--jaz-color-warning (#ff9100)</code>
+          </div>
+        </div>
+        <div class="jaz-col-3">
+          <div class="jaz-swatch bg-error">
+            <span>Error 雞尾酒烈紅</span>
+            <code>--jaz-color-error (#ff1744)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alerts Section -->
+    <section class="jaz-section">
+      <h2 class="jaz-section-title">酒吧微醺狀態提示 (Alerts)</h2>
+      <div class="jaz-alert jaz-alert-info">
+        <strong>🍸 HAPPY HOUR:</strong> 22:00 前入場即享精選單一麥芽威士忌第 2 杯半價。
+      </div>
+      <div class="jaz-alert jaz-alert-success">
+        <strong>🎷 LIVE SET:</strong> 薩克斯風手 Miles 即將在 10 分鐘後開始進行第一階段演奏。
+      </div>
+      <div class="jaz-alert jaz-alert-warning">
+        <strong>🥃 LIMITED:</strong> 1982 年份經典釀造黑麥威士忌今晚限量僅提供 5 杯。
+      </div>
+      <div class="jaz-alert jaz-alert-error">
+        <strong>🚫 NOTICE:</strong> 吧檯 B 區今晚已全數被私人包場預訂。
+      </div>
+    </section>
+
+    <!-- Form Section -->
+    <section id="forms" class="jaz-section">
+      <h2 class="jaz-section-title">毛玻璃訂位表單 (Form Controls)</h2>
+      <p class="jaz-section-sub">Focus 時自動發散霓虹光暈：</p>
+      
+      <div class="jaz-grid">
+        <div class="jaz-col-6">
+          <div class="jaz-form-group">
+            <label class="jaz-form-label">訂位貴賓姓名</label>
+            <input type="text" class="jaz-input" placeholder="例如：爵士迷 Charlie">
+          </div>
+          <div class="jaz-form-group">
+            <label class="jaz-form-label">座位區域選擇</label>
+            <select class="jaz-select">
+              <option>爵士樂隊舞台前搖滾區</option>
+              <option>高腳調酒吧檯區</option>
+              <option>隱密半開放沙發包廂</option>
+            </select>
+          </div>
+          <div class="jaz-form-group">
+            <label class="jaz-switch-label">
+              <input type="checkbox" checked hidden>
+              <span class="jaz-switch"></span>
+              <span>要求侍酒師現場推車調酒服務</span>
+            </label>
+          </div>
+        </div>
+        <div class="jaz-col-6">
+          <div class="jaz-form-group">
+            <label class="jaz-form-label">特殊酒品或紀念日備註</label>
+            <textarea class="jaz-textarea" rows="3" placeholder="請註明喜好的基酒與風味偏好..."></textarea>
+          </div>
+          <div class="jaz-form-group">
+            <label class="jaz-form-label">爵士音響現場音量 (<span id="jazRangeValue">85 dB</span>)</label>
+            <input type="range" id="jazRange" class="jaz-range" min="50" max="120" value="85">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Badges & Cards -->
+    <section id="cards" class="jaz-section">
+      <h2 class="jaz-section-title">微光卡片與高質感 Badges</h2>
+      
+      <div class="jaz-mb-4 jaz-flex jaz-gap-2">
+        <span class="jaz-badge jaz-badge-pink">NEON NIGHTS</span>
+        <span class="jaz-badge jaz-badge-blue">BLUE NOTE</span>
+        <span class="jaz-badge jaz-badge-gold">GOLDEN SMOOTH</span>
+      </div>
+
+      <div class="jaz-grid">
+        <div class="jaz-col-4">
+          <div class="jaz-card">
+            <h3 class="jaz-card-title">🍸 Midnight Manhattan</h3>
+            <p class="jaz-card-desc">黑麥威士忌、甜苦美思與安格仕苦精，沉穩帶有成熟櫻桃與草本香氣。</p>
+            <button class="jaz-btn jaz-btn-info">品飲細節</button>
+          </div>
+        </div>
+        <div class="jaz-col-4">
+          <div class="jaz-card">
+            <h3 class="jaz-card-title">🎷 Blue Train Saxophone</h3>
+            <p class="jaz-card-desc">經典硬波普爵士風采，重組 50 年代名曲，帶給您沉浸式深夜時光。</p>
+            <button class="jaz-btn jaz-btn-accent">預訂席次</button>
+          </div>
+        </div>
+        <div class="jaz-col-4">
+          <div class="jaz-card">
+            <h3 class="jaz-card-title">🥃 Smoky Islay Malt</h3>
+            <p class="jaz-card-desc">濃郁泥煤煙燻風味，搭配泥炭黑巧克力的完美對比體驗。</p>
+            <button class="jaz-btn jaz-btn-outline">珍藏選項</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive & Table Section -->
+    <section id="interactive" class="jaz-section">
+      <h2 class="jaz-section-title">酒單規則與手風琴 FAQ (Accordion & Tabs)</h2>
+      
+      <div class="jaz-grid">
+        <div class="jaz-col-6">
+          <h3 class="jaz-mb-3" style="font-size: 1.1rem; color: #ffffff;">Jazz Lounge FAQ</h3>
+          <div class="jaz-accordion-item">
+            <button class="jaz-accordion-header">
+              <span>1. 是否有最低消費限制？</span>
+              <span>▼</span>
+            </button>
+            <div class="jaz-accordion-body">
+              平日每位最低消費為一杯特調飲品；爵士樂團演出場次（週五、六）每位為 NT$ 800。
+            </div>
+          </div>
+          <div class="jaz-accordion-item">
+            <button class="jaz-accordion-header">
+              <span>2. 是否提供客製化個人特調？</span>
+              <span>▼</span>
+            </button>
+            <div class="jaz-accordion-body">
+              我們的資深調酒師可依據您的心情、甜酸偏好與基酒打造專屬當晚的特調。
+            </div>
+          </div>
+        </div>
+
+        <div class="jaz-col-6">
+          <h3 class="jaz-mb-3" style="font-size: 1.1rem; color: #ffffff;">精選調酒風格切換</h3>
+          <div class="jaz-tabs-nav">
+            <button class="jaz-tab-btn active" data-target="jtab1">經典特調</button>
+            <button class="jaz-tab-btn" data-target="jtab2">威士忌選單</button>
+            <button class="jaz-tab-btn" data-target="jtab3">無酒精 Mocktail</button>
+          </div>
+          <div id="jtab1" class="jaz-tab-pane active">
+            <p style="color: var(--jaz-text-muted);">Old Fashioned, Negroni, Dry Martini 傳承最正統的酒款比例。</p>
+          </div>
+          <div id="jtab2" class="jaz-tab-pane">
+            <p style="color: var(--jaz-text-muted);">收錄蘇格蘭高地與日本威士忌珍稀單一麥芽原酒。</p>
+          </div>
+          <div id="jtab3" class="jaz-tab-pane">
+            <p style="color: var(--jaz-text-muted);">以新鮮草本、特調氣泡水與果萃打造微醺視覺感的無酒精體驗。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="jaz-mb-4" style="margin-top: 2rem;">
+        <h3 class="jaz-mb-2" style="font-size: 1.1rem; color: #ffffff;">酒吧現場氣氛指數 (92%)</h3>
+        <div class="jaz-progress">
+          <div class="jaz-progress-bar" style="width: 92%;"></div>
+        </div>
+      </div>
+
+      <table class="jaz-table">
+        <thead>
+          <tr>
+            <th>演出節目</th>
+            <th>演奏樂手</th>
+            <th>演出時間</th>
+            <th>席位狀態</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cool Jazz Quintet</td>
+            <td>Davis & Trio</td>
+            <td>21:30 - 23:00</td>
+            <td><span class="jaz-badge jaz-badge-pink">熱門預約</span></td>
+          </tr>
+          <tr>
+            <td>Bossa Nova Chillout</td>
+            <td>Elena Singer</td>
+            <td>23:30 - 01:00</td>
+            <td><span class="jaz-badge jaz-badge-blue">可訂位</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- Modal (Glassmorphism backdrop-filter: blur) -->
+  <div class="jaz-modal-backdrop" id="jazModal">
+    <div class="jaz-modal">
+      <h3 class="jaz-card-title">🎷 爵士樂團現場表演節目表</h3>
+      <p class="jaz-card-desc">今晚專屬表演者將獻上 60 年代經典爵士樂章。</p>
+      <div class="jaz-form-group">
+        <label class="jaz-form-label">選擇希望預約的表演時段</label>
+        <select class="jaz-select">
+          <option>場次一：21:30 - 23:00 (Miles Coltrane Tribute)</option>
+          <option>場次二：23:30 - 01:00 (Midnight Fusion Session)</option>
+        </select>
+      </div>
+      <div class="jaz-flex jaz-justify-between" style="margin-top: 1.5rem;">
+        <button class="jaz-btn jaz-btn-outline" id="closeModalBtn">關閉</button>
+        <button class="jaz-btn jaz-btn-accent">保留演出門票</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas -->
+  <div class="jaz-offcanvas" id="jazOffcanvas">
+    <div class="jaz-flex jaz-justify-between jaz-items-center jaz-mb-4">
+      <h3 style="font-size: 1.1rem; color: #ffffff;">🍸 您的 VIP 點酒單</h3>
+      <button id="closeOffcanvasBtn" style="background:none; border:none; color:#ffffff; font-size: 1.2rem; cursor:pointer;">✕</button>
+    </div>
+    <div style="flex: 1; color: var(--jaz-text-muted);">
+      <p class="jaz-mb-3">已點飲品 (2):</p>
+      <div style="border-bottom: 1px solid rgba(255,42,117,0.3); padding-bottom: 0.75rem; margin-bottom: 0.75rem;">
+        <strong style="color:#ffffff;">Midnight Manhattan</strong>
+        <div style="color: var(--jaz-color-accent);">NT$ 450</div>
+      </div>
+      <div style="border-bottom: 1px solid rgba(0,240,255,0.3); padding-bottom: 0.75rem;">
+        <strong style="color:#ffffff;">Smoky Islay Malt (12y)</strong>
+        <div style="color: var(--jaz-color-info);">NT$ 550</div>
+      </div>
+    </div>
+    <button class="jaz-btn jaz-btn-accent" style="width: 100%;">送出點酒訂單</button>
+  </div>
+
+  <footer class="jaz-footer">
+    <div class="jaz-container">
+      <p>© 2026 Style 23: Neon Jazz Lounge. Pure Vanilla CSS & JS Design System.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

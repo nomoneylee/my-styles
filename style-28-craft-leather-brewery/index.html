@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格二十八：美式手作皮件 / 獨立精釀工坊 (Craft Leather & Brewery)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="lea-navbar">
+    <div class="lea-container lea-navbar-container">
+      <a href="#" class="lea-brand">🔨 CRAFT <span>BREWERY</span></a>
+      <button class="lea-toggler" id="leaToggler">MENU ☰</button>
+      <div class="lea-nav-collapse" id="leaCollapse">
+        <ul class="lea-nav-links">
+          <li><a href="#hero" class="lea-nav-link active">皮件工坊</a></li>
+          <li><a href="#palette" class="lea-nav-link">精釀配色</a></li>
+          <li><a href="#forms" class="lea-nav-link">客製訂單</a></li>
+          <li><a href="#cards" class="lea-nav-link">縫線皮卡</a></li>
+          <li><a href="#interactive" class="lea-nav-link">風味對照</a></li>
+        </ul>
+        <div class="lea-flex lea-gap-2">
+          <a href="../index.html" class="lea-btn">HUB 總覽</a>
+          <button class="lea-btn lea-btn-accent" id="openOffcanvasBtn">工坊工具袋</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="lea-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="lea-hero">
+      <span class="lea-hero-tag">HANDMADE LEATHER & INDEPENDENT BREWERY</span>
+      <h1 class="lea-hero-title">美式手作皮件與獨立精釀啤酒工坊</h1>
+      <p class="lea-hero-desc">
+        粗糙帆布黃背景、深馬鞍棕皮革色與黃銅鉚釘細節。Card 帶有經典雙層縫線視覺 (border: 2px dashed #42281d)，Badges 呈現金屬鉚釘圓扣樣式，硬派熟男美學。
+      </p>
+      <div class="lea-flex lea-gap-3" style="justify-content: center;">
+        <button class="lea-btn lea-btn-primary">探索皮件製品</button>
+        <button class="lea-btn lea-btn-accent" id="openModalBtn">精釀酒單 Modal</button>
+      </div>
+    </section>
+
+    <!-- Color Palette Showcase -->
+    <section id="palette" class="lea-section">
+      <h2 class="lea-section-title">皮革與精釀啤酒配色系統</h2>
+      <p class="lea-section-sub">馬鞍棕、精釀琥珀黃與黃銅金質感的復古熟男調性：</p>
+      
+      <div class="lea-grid">
+        <div class="lea-col-4">
+          <div class="lea-swatch bg-primary">
+            <span>Primary 深馬鞍棕</span>
+            <code>--lea-color-primary (#42281d)</code>
+          </div>
+        </div>
+        <div class="lea-col-4">
+          <div class="lea-swatch bg-accent">
+            <span>Accent 精釀琥珀黃</span>
+            <code>--lea-color-accent (#bf6900)</code>
+          </div>
+        </div>
+        <div class="lea-col-4">
+          <div class="lea-swatch bg-secondary">
+            <span>Secondary 黃銅金</span>
+            <code>--lea-color-secondary (#a57548)</code>
+          </div>
+        </div>
+        <div class="lea-col-3">
+          <div class="lea-swatch bg-info">
+            <span>Info 工業海軍藍</span>
+            <code>--lea-color-info (#3d5a80)</code>
+          </div>
+        </div>
+        <div class="lea-col-3">
+          <div class="lea-swatch bg-success">
+            <span>Success 啤酒花綠</span>
+            <code>--lea-color-success (#4f772d)</code>
+          </div>
+        </div>
+        <div class="lea-col-3">
+          <div class="lea-swatch bg-warning">
+            <span>Warning 熟皮革黃</span>
+            <code>--lea-color-warning (#d4a373)</code>
+          </div>
+        </div>
+        <div class="lea-col-3">
+          <div class="lea-swatch bg-error">
+            <span>Error 櫻桃黑啤紅</span>
+            <code>--lea-color-error (#9e2a2b)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alerts Section -->
+    <section class="lea-section">
+      <h2 class="lea-section-title">工坊與熟成提示 (Alerts)</h2>
+      <div class="lea-alert lea-alert-warning">
+        <strong>🍺 BREWERY NOTICE:</strong> 本週全新一桶美式 IPA (Hop Bomb) 正式開桶熟成供應。
+      </div>
+      <div class="lea-alert lea-alert-info">
+        <strong>🔨 LEATHER CRAFT:</strong> 植鞣皮革隨使用時間將會自然養出專屬復古焦糖光澤 (Patina)。
+      </div>
+      <div class="lea-alert lea-alert-success">
+        <strong>⚙️ QUALITY PASSED:</strong> 手工雙針鞍具縫線強度測試 100% 合格。
+      </div>
+    </section>
+
+    <!-- Form Section -->
+    <section id="forms" class="lea-section">
+      <h2 class="lea-section-title">硬派手作表單 (Form Controls)</h2>
+      <p class="lea-section-sub">黃銅金與馬鞍棕外框鋼印風格：</p>
+      
+      <div class="lea-grid">
+        <div class="lea-col-6">
+          <div class="lea-form-group">
+            <label class="lea-form-label">訂製者姓名 / 鋼印字樣</label>
+            <input type="text" class="lea-input" value="R. MILLER (CUSTOM STAMP)">
+          </div>
+          <div class="lea-form-group">
+            <label class="lea-form-label">皮革硬度與植鞣種類</label>
+            <select class="lea-select">
+              <option>義大利 Buttero 植鞣牛皮 (3.5mm)</option>
+              <option>美式 Horween 霍爾文馬臀皮</option>
+              <option>粗糙蠟感 Canvas 帆布組合</option>
+            </select>
+          </div>
+          <div class="lea-form-group">
+            <label class="lea-switch-label">
+              <input type="checkbox" checked hidden>
+              <span class="lea-switch"></span>
+              <span>手作邊緣打磨與黃銅鉚釘加固</span>
+            </label>
+          </div>
+        </div>
+        <div class="lea-col-6">
+          <div class="lea-form-group">
+            <label class="lea-form-label">客製雕刻需求備註</label>
+            <textarea class="lea-textarea" rows="3" placeholder="請註明欲刻印之英文字母與皮件顏色搭配..."></textarea>
+          </div>
+          <div class="lea-form-group">
+            <label class="lea-form-label">啤酒苦度計算法 (IBU <span id="leaRangeValue">65 IBU</span>)</label>
+            <input type="range" id="leaRange" class="lea-range" min="10" max="100" value="65">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Badges & Cards -->
+    <section id="cards" class="lea-section">
+      <h2 class="lea-section-title">雙層縫線卡片與金屬鉚釘 Badges</h2>
+      
+      <div class="lea-mb-4 lea-flex lea-gap-2">
+        <span class="lea-badge">VEG-TANNED LEATHER</span>
+        <span class="lea-badge lea-badge-accent">IPA BREWED</span>
+        <span class="lea-badge lea-badge-dark">BRASS HARDWARE</span>
+      </div>
+
+      <div class="lea-grid">
+        <div class="lea-col-4">
+          <div class="lea-card">
+            <h3 class="lea-card-title">💼 經典植鞣馬鞍公事包</h3>
+            <p class="lea-card-desc">採用 3.5mm 厚實植鞣牛皮與手工麻線鞍具縫法，耐用可傳承世代。</p>
+            <button class="lea-btn">檢視細節</button>
+          </div>
+        </div>
+        <div class="lea-col-4">
+          <div class="lea-card">
+            <h3 class="lea-card-title">🍺 雙倍美式 IPA 獨立精釀</h3>
+            <p class="lea-card-desc">濃郁熱帶水果與柑橘香氣，搭配強烈啤酒花苦感與醇厚麥芽回甘。</p>
+            <button class="lea-btn lea-btn-accent">預訂酒款</button>
+          </div>
+        </div>
+        <div class="lea-col-4">
+          <div class="lea-card">
+            <h3 class="lea-card-title">🗝️ 黃銅皮帶扣與鑰匙夾</h3>
+            <p class="lea-card-desc">實心黃銅鑄造帶扣與銅鉚釘，展現美式復古機車工坊硬派作風。</p>
+            <button class="lea-btn lea-btn-primary">選購硬件</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive & Table Section -->
+    <section id="interactive" class="lea-section">
+      <h2 class="lea-section-title">皮件保養與工坊常見問題 (Accordion & Tabs)</h2>
+      
+      <div class="lea-grid">
+        <div class="lea-col-6">
+          <h3 class="lea-mb-3" style="font-size: 1.1rem;">Leather Care FAQ</h3>
+          <div class="lea-accordion-item">
+            <button class="lea-accordion-header">
+              <span>1. 植鞣皮革平時該如何保養？</span>
+              <span>▼</span>
+            </button>
+            <div class="lea-accordion-body">
+              建議每 2-3 個月使用貂油或純植物皮革保養油少量塗抹，並保持通風乾燥。
+            </div>
+          </div>
+          <div class="lea-accordion-item">
+            <button class="lea-accordion-header">
+              <span>2. 雙針鞍具縫法與機器縫線有何不同？</span>
+              <span>▼</span>
+            </button>
+            <div class="lea-accordion-body">
+              手工雙針縫線即使單點遭磨損斷裂，整體結構依舊堅固不脫線散開。
+            </div>
+          </div>
+        </div>
+
+        <div class="lea-col-6">
+          <h3 class="lea-mb-3" style="font-size: 1.1rem;">精釀啤酒風格分類</h3>
+          <div class="lea-tabs-nav">
+            <button class="lea-tab-btn active" data-target="ltab1">IPA 啤酒花</button>
+            <button class="lea-tab-btn" data-target="ltab2">Stout 黑啤</button>
+            <button class="lea-tab-btn" data-target="ltab3">Amber 琥珀拉格</button>
+          </div>
+          <div id="ltab1" class="lea-tab-pane active">
+            <p style="color: var(--lea-text-muted);">大量冷乾投啤酒花 (Dry Hopping)，爆發濃郁松針與熱帶水果香氣。</p>
+          </div>
+          <div id="ltab2" class="lea-tab-pane">
+            <p style="color: var(--lea-text-muted);">重度烘焙麥芽，帶來黑巧克力、濃縮咖啡與煙燻焦糖的濃厚韻味。</p>
+          </div>
+          <div id="ltab3" class="lea-tab-pane">
+            <p style="color: var(--lea-text-muted);">麥芽甜感與啤酒花苦味的完美平衡，口感滑順清爽。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lea-mb-4" style="margin-top: 2rem;">
+        <h3 class="lea-mb-2" style="font-size: 1.1rem;">熟成發酵進度 (88%)</h3>
+        <div class="lea-progress">
+          <div class="lea-progress-bar" style="width: 88%;"></div>
+        </div>
+      </div>
+
+      <table class="lea-table">
+        <thead>
+          <tr>
+            <th>製品料號</th>
+            <th>材質規格</th>
+            <th>製造週期</th>
+            <th>工坊庫存</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>LEA-BAG-01</td>
+            <td>馬鞍牛皮 3.5mm</td>
+            <td>12 小時手工縫製</td>
+            <td><span class="lea-badge">現貨 3 件</span></td>
+          </tr>
+          <tr>
+            <td>BREW-IPA-22</td>
+            <td>美式雙倍 IPA (ABV 7.5%)</td>
+            <td>28 天冷溫熟成</td>
+            <td><span class="lea-badge lea-badge-accent">開桶中</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- Modal -->
+  <div class="lea-modal-backdrop" id="leaModal">
+    <div class="lea-modal">
+      <h3 class="lea-card-title">🍺 獨立精釀工坊專屬酒單</h3>
+      <p class="lea-card-desc">請確認今晚現拔生啤酒款與數量。</p>
+      <div class="lea-form-group">
+        <label class="lea-form-label">選擇開桶生啤</label>
+        <select class="lea-select">
+          <option>Hop Bomb Double IPA (pint)</option>
+          <option>Smoky Oatmeal Stout (pint)</option>
+        </select>
+      </div>
+      <div class="lea-flex lea-justify-between" style="margin-top: 1.5rem;">
+        <button class="lea-btn" id="closeModalBtn">關閉</button>
+        <button class="lea-btn lea-btn-accent">加入點酒單</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas -->
+  <div class="lea-offcanvas" id="leaOffcanvas">
+    <div class="lea-flex lea-justify-between lea-items-center lea-mb-4">
+      <h3 style="font-size: 1.1rem; font-weight: 900;">🔨 工坊皮件與工具袋</h3>
+      <button id="closeOffcanvasBtn" style="background:none; border:none; font-size: 1.2rem; cursor:pointer;">✕</button>
+    </div>
+    <div style="flex:1; color: var(--lea-text-muted);">
+      <p class="lea-mb-3">選購項目 (2):</p>
+      <div style="border-bottom: 2px dashed var(--lea-color-primary); padding-bottom: 0.75rem; margin-bottom: 0.75rem;">
+        <strong style="color: var(--lea-color-primary);">馬鞍植鞣長皮夾</strong>
+        <div style="color: var(--lea-color-accent);">NT$ 3,200</div>
+      </div>
+      <div style="border-bottom: 2px dashed var(--lea-color-primary); padding-bottom: 0.75rem;">
+        <strong style="color: var(--lea-color-primary);">實心黃銅鑰匙扣</strong>
+        <div style="color: var(--lea-color-accent);">NT$ 850</div>
+      </div>
+    </div>
+    <button class="lea-btn lea-btn-primary" style="width: 100%;">前往結帳採購</button>
+  </div>
+
+  <footer class="lea-footer">
+    <div class="lea-container">
+      <p>© 2026 Style 28: Craft Leather & Brewery. Pure Vanilla CSS & JS Design System.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

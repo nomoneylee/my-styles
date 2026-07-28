@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格二十五：未來科技極簡 / 電動車跑格 (Futuristic Aero Minimalism)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="aer-navbar">
+    <div class="aer-container aer-navbar-container">
+      <a href="#" class="aer-brand">⚡ AERO <span>POLESTAR</span></a>
+      <button class="aer-toggler" id="aerToggler">MENU ☰</button>
+      <div class="aer-nav-collapse" id="aerCollapse">
+        <ul class="aer-nav-links">
+          <li><a href="#hero" class="aer-nav-link active">極簡跑格</a></li>
+          <li><a href="#palette" class="aer-nav-link">鈦空色系</a></li>
+          <li><a href="#forms" class="aer-nav-link">空氣動力表單</a></li>
+          <li><a href="#cards" class="aer-nav-link">車款簡介</a></li>
+          <li><a href="#interactive" class="aer-nav-link">性能數據</a></li>
+        </ul>
+        <div class="aer-flex aer-gap-2">
+          <a href="../index.html" class="aer-btn aer-btn-outline">HUB 總覽</a>
+          <button class="aer-btn aer-btn-primary" id="openOffcanvasBtn">車主控制台</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="aer-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="aer-hero">
+      <span class="aer-hero-tag">AERODYNAMIC ELECTRIC PERFORMANCE</span>
+      <h1 class="aer-hero-title">未來極簡航太與電動車官網質感</h1>
+      <p class="aer-hero-desc">
+        霧面鈦空銀灰背景、極細 1px 亮線與流線型 20px 微圓角。結合航太冷極藍與電量亮綠，呈現俐落、高級且絕不雜亂的次世代科技風采。
+      </p>
+      <div class="aer-flex aer-gap-3" style="justify-content: center;">
+        <button class="aer-btn aer-btn-accent">預約試駕體驗</button>
+        <button class="aer-btn aer-btn-outline" id="openModalBtn">規格參數 Modal</button>
+      </div>
+    </section>
+
+    <!-- Color Palette Showcase -->
+    <section id="palette" class="aer-section">
+      <h2 class="aer-section-title">航太陽極氧化配色系統</h2>
+      <p class="aer-section-sub">霧面鈦銀、陽極黑與冷光藍交織的極簡現代感：</p>
+      
+      <div class="aer-grid">
+        <div class="aer-col-4">
+          <div class="aer-swatch bg-primary">
+            <span>Primary 陽極氧化黑</span>
+            <code>--aer-color-primary (#0f172a)</code>
+          </div>
+        </div>
+        <div class="aer-col-4">
+          <div class="aer-swatch bg-accent">
+            <span>Accent 航太冷極藍</span>
+            <code>--aer-color-accent (#38bdf8)</code>
+          </div>
+        </div>
+        <div class="aer-col-4">
+          <div class="aer-swatch bg-success">
+            <span>Success 電量亮綠</span>
+            <code>--aer-color-success (#10b981)</code>
+          </div>
+        </div>
+        <div class="aer-col-3">
+          <div class="aer-swatch bg-secondary">
+            <span>Secondary 霧面鈦銀</span>
+            <code>--aer-color-secondary (#94a3b8)</code>
+          </div>
+        </div>
+        <div class="aer-col-3">
+          <div class="aer-swatch bg-info">
+            <span>Info 深極銀藍</span>
+            <code>--aer-color-info (#0284c7)</code>
+          </div>
+        </div>
+        <div class="aer-col-3">
+          <div class="aer-swatch bg-warning">
+            <span>Warning 警示琥珀</span>
+            <code>--aer-color-warning (#f59e0b)</code>
+          </div>
+        </div>
+        <div class="aer-col-3">
+          <div class="aer-swatch bg-error">
+            <span>Error 雷射過載紅</span>
+            <code>--aer-color-error (#ef4444)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alerts Section -->
+    <section class="aer-section">
+      <h2 class="aer-section-title">電動車系統狀態提示 (Alerts)</h2>
+      <div class="aer-alert aer-alert-info">
+        <strong>[OTA UPDATE]:</strong> 車載系統 v4.2 流線升級套件已準備就緒，提供更優化的續航演算法。
+      </div>
+      <div class="aer-alert aer-alert-success">
+        <strong>[CHARGING]:</strong> 800V 高壓超充站連線成功，電量已充至 85%。
+      </div>
+      <div class="aer-alert aer-alert-warning">
+        <strong>[TEMPERATURE]:</strong> 胎壓與電池模組溫度微幅上升，已自動切換散熱冷卻流道。
+      </div>
+    </section>
+
+    <!-- Form Section -->
+    <section id="forms" class="aer-section">
+      <h2 class="aer-section-title">流線車載控制表單 (Form Controls)</h2>
+      <p class="aer-section-sub">極細 1px 邊框與流線型 20px 弧度：</p>
+      
+      <div class="aer-grid">
+        <div class="aer-col-6">
+          <div class="aer-form-group">
+            <label class="aer-form-label">駕駛者個人檔案</label>
+            <input type="text" class="aer-input" value="Aero Pilot #01">
+          </div>
+          <div class="aer-form-group">
+            <label class="aer-form-label">動態驅動模式</label>
+            <select class="aer-select">
+              <option>Aero Sport (前後雙馬達極速動能)</option>
+              <option>Eco Range (長途節能續航)</option>
+              <option>Track Custom (自訂避震與轉向阻尼)</option>
+            </select>
+          </div>
+          <div class="aer-form-group">
+            <label class="aer-switch-label">
+              <input type="checkbox" checked hidden>
+              <span class="aer-switch"></span>
+              <span>開啟 Level 3 自動輔助駕駛巡航</span>
+            </label>
+          </div>
+        </div>
+        <div class="aer-col-6">
+          <div class="aer-form-group">
+            <label class="aer-form-label">車況診斷數據輸出</label>
+            <textarea class="aer-textarea" rows="3" placeholder="即時數據串流正常..."></textarea>
+          </div>
+          <div class="aer-form-group">
+            <label class="aer-form-label">電子巡航限速設定 (<span id="aerRangeValue">160 KM/H</span>)</label>
+            <input type="range" id="aerRange" class="aer-range" min="60" max="280" value="160">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Badges & Cards -->
+    <section id="cards" class="aer-section">
+      <h2 class="aer-section-title">20px 圓角跑格卡片 (Cards & Badges)</h2>
+      
+      <div class="aer-mb-4 aer-flex aer-gap-2">
+        <span class="aer-badge aer-badge-dark">AERODYNAMIC Cd 0.21</span>
+        <span class="aer-badge aer-badge-accent">800V ULTRA-CHARGE</span>
+        <span class="aer-badge aer-badge-green">100% RENEWABLE POWER</span>
+      </div>
+
+      <div class="aer-grid">
+        <div class="aer-col-4">
+          <div class="aer-card">
+            <h3 class="aer-card-title">⚡ Aero GT Roadster</h3>
+            <p class="aer-card-desc">0-100 km/h 僅需 2.8 秒，搭配主動式尾翼與航太級碳纖維底盤。</p>
+            <button class="aer-btn aer-btn-primary">技術規格</button>
+          </div>
+        </div>
+        <div class="aer-col-4">
+          <div class="aer-card">
+            <h3 class="aer-card-title">🔋 100 kWh 固態電池組</h3>
+            <p class="aer-card-desc">極高能量密度，WLTP 規範測試下具備 750 公里單次充電續航力。</p>
+            <button class="aer-btn aer-btn-accent">續航分析</button>
+          </div>
+        </div>
+        <div class="aer-col-4">
+          <div class="aer-card">
+            <h3 class="aer-card-title">🛸 LiDAR 全景感測系統</h3>
+            <p class="aer-card-desc">隱藏於擋風玻璃上方的雷射雷達，提供 500 公尺夜間超遠距離辨識。</p>
+            <button class="aer-btn aer-btn-outline">安全科技</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive & Table Section -->
+    <section id="interactive" class="aer-section">
+      <h2 class="aer-section-title">車款常見問題與分頁 (Accordion & Tabs)</h2>
+      
+      <div class="aer-grid">
+        <div class="aer-col-6">
+          <h3 class="aer-mb-3" style="font-size: 1.1rem; color: var(--aer-color-primary);">Aero Performance FAQ</h3>
+          <div class="aer-accordion-item">
+            <button class="aer-accordion-header">
+              <span>1. 超級快充從 10% 充至 80% 需要多久時間？</span>
+              <span>▼</span>
+            </button>
+            <div class="aer-accordion-body">
+              在 350kW 極速直流快充樁下，僅需 18 分鐘即可完成補能。
+            </div>
+          </div>
+          <div class="aer-accordion-item">
+            <button class="aer-accordion-header">
+              <span>2. 車體剛性與碰撞安全防護評價？</span>
+              <span>▼</span>
+            </button>
+            <div class="aer-accordion-body">
+              採用高強度熱成型硼鋼與一體壓鑄鋁合金結構，榮獲 Euro NCAP 五星最高評價。
+            </div>
+          </div>
+        </div>
+
+        <div class="aer-col-6">
+          <h3 class="aer-mb-3" style="font-size: 1.1rem; color: var(--aer-color-primary);">動力配置切換</h3>
+          <div class="aer-tabs-nav">
+            <button class="aer-tab-btn active" data-target="atab1">雙馬達四驅</button>
+            <button class="aer-tab-btn" data-target="atab2">單馬達後驅</button>
+            <button class="aer-tab-btn" data-target="atab3">賽道競技版</button>
+          </div>
+          <div id="atab1" class="aer-tab-pane active">
+            <p style="color: var(--aer-text-muted);">綜效輸出 580 hp / 850 Nm，任何天候下皆具備極致抓地力。</p>
+          </div>
+          <div id="atab2" class="aer-tab-pane">
+            <p style="color: var(--aer-text-muted);">追求最長行駛里程，車重減輕 150 kg，操控輕盈靈活。</p>
+          </div>
+          <div id="atab3" class="aer-tab-pane">
+            <p style="color: var(--aer-text-muted);">配備 Öhlins 雙流閥避震器與 Brembo 6 活塞卡鉗。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="aer-mb-4" style="margin-top: 2rem;">
+        <h3 class="aer-mb-2" style="font-size: 1.1rem; color: var(--aer-color-primary);">極細冷光電池狀態 (78%)</h3>
+        <div class="aer-progress">
+          <div class="aer-progress-bar" style="width: 78%;"></div>
+        </div>
+      </div>
+
+      <table class="aer-table">
+        <thead>
+          <tr>
+            <th>車款型號</th>
+            <th>0-100 KM/H</th>
+            <th>WLTP 續航里程</th>
+            <th>極速</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Aero GT Performance</td>
+            <td>2.8 sec</td>
+            <td>680 km</td>
+            <td><span class="aer-badge aer-badge-dark">260 KM/H</span></td>
+          </tr>
+          <tr>
+            <td>Aero Long Range</td>
+            <td>4.2 sec</td>
+            <td>750 km</td>
+            <td><span class="aer-badge aer-badge-accent">220 KM/H</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- Modal -->
+  <div class="aer-modal-backdrop" id="aerModal">
+    <div class="aer-modal">
+      <h3 class="aer-card-title">⚡ 規格參數對照視窗</h3>
+      <p class="aer-card-desc">請確認您的配備選單與個人化外觀車色。</p>
+      <div class="aer-form-group">
+        <label class="aer-form-label">選擇車身漆色</label>
+        <select class="aer-select">
+          <option>鈦空銀灰 (Titanium Aero Silver)</option>
+          <option>陽極氧化黑 (Anodized Night Black)</option>
+          <option>冷極極光藍 (Aurora Ice Blue)</option>
+        </select>
+      </div>
+      <div class="aer-flex aer-justify-between" style="margin-top: 1.5rem;">
+        <button class="aer-btn aer-btn-outline" id="closeModalBtn">返回</button>
+        <button class="aer-btn aer-btn-primary">確認車輛設定</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas -->
+  <div class="aer-offcanvas" id="aerOffcanvas">
+    <div class="aer-flex aer-justify-between aer-items-center aer-mb-4">
+      <h3 style="font-size: 1.1rem; font-weight: 700;">⚡ 車主遠端控制台</h3>
+      <button id="closeOffcanvasBtn" style="background:none; border:none; font-size: 1.2rem; cursor:pointer;">✕</button>
+    </div>
+    <div style="flex:1; color: var(--aer-text-muted);">
+      <p class="aer-mb-3">車輛狀態連線中：</p>
+      <div style="border-bottom: 1px solid var(--aer-border); padding-bottom: 0.75rem; margin-bottom: 0.75rem;">
+        <strong style="color: var(--aer-color-primary);">車門鎖定: 閉鎖中</strong>
+        <div style="font-size: 0.85rem; color: var(--aer-color-success);">GPS 定位正常</div>
+      </div>
+      <div style="border-bottom: 1px solid var(--aer-border); padding-bottom: 0.75rem;">
+        <strong style="color: var(--aer-color-primary);">空調設定: 22°C (自動)</strong>
+        <div style="font-size: 0.85rem; color: var(--aer-color-accent);">空氣淨化運轉中</div>
+      </div>
+    </div>
+    <button class="aer-btn aer-btn-accent" style="width: 100%;">預先發動空調</button>
+  </div>
+
+  <footer class="aer-footer">
+    <div class="aer-container">
+      <p>© 2026 Style 25: Futuristic Aero Minimalism. Pure Vanilla CSS & JS Design System.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

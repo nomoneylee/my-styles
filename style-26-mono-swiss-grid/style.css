@@ -1,0 +1,493 @@
+/* ==========================================================================
+   Style 26: 瑞士國際主義黑白刷色 (Mono Swiss Grid)
+   100% Pure Vanilla CSS - No External Framework Dependencies
+   ========================================================================== */
+
+/* 1. Design System & CSS Variables (100% Monochrome / Zero Saturation) */
+:root {
+  --swi-bg: #ffffff;
+  --swi-card-bg: #ffffff;
+  --swi-text-primary: #050505;
+  --swi-text-muted: #666666;
+  --swi-border: #050505;
+
+  /* Pure Monochrome Palette */
+  --swi-color-primary: #050505;   /* 絕對深墨 */
+  --swi-color-white: #ffffff;     /* 紙張純白 */
+  --swi-color-gray-mid: #666666;  /* 報版中灰 */
+  --swi-color-gray-light: #e5e5e5;/* 印刷亮灰 */
+  --swi-color-gray-dark: #333333; /* 墨跡灰 */
+
+  /* Pure Grid Structure - ZERO Border Radius, Bold 4px Borders */
+  --swi-radius: 0px;
+  --swi-border-thick: 4px solid #050505;
+  --swi-border-thin: 1px solid #050505;
+  --swi-transition: all 0.15s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-radius: 0 !important;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: var(--swi-bg);
+  color: var(--swi-text-primary);
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+.swi-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Grid System */
+.swi-grid {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: var(--swi-border-thick);
+  border-left: var(--swi-border-thick);
+}
+.swi-col-12 { width: 100%; border-right: var(--swi-border-thick); border-bottom: var(--swi-border-thick); padding: 1.5rem; }
+.swi-col-6  { width: 50%; border-right: var(--swi-border-thick); border-bottom: var(--swi-border-thick); padding: 1.5rem; }
+.swi-col-4  { width: 33.3333%; border-right: var(--swi-border-thick); border-bottom: var(--swi-border-thick); padding: 1.5rem; }
+.swi-col-3  { width: 25%; border-right: var(--swi-border-thick); border-bottom: var(--swi-border-thick); padding: 1.5rem; }
+
+@media (max-width: 768px) {
+  .swi-col-6, .swi-col-4, .swi-col-3 { width: 100%; }
+}
+
+.swi-flex { display: flex; }
+.swi-items-center { align-items: center; }
+.swi-justify-between { justify-content: space-between; }
+.swi-gap-2 { gap: 0.5rem; }
+.swi-gap-3 { gap: 1rem; }
+.swi-gap-4 { gap: 1.5rem; }
+.swi-mb-3 { margin-bottom: 1rem; }
+.swi-mb-4 { margin-bottom: 1.5rem; }
+
+/* Navbar */
+.swi-navbar {
+  background-color: var(--swi-bg);
+  border-bottom: var(--swi-border-thick);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1.2rem 0;
+}
+.swi-navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.swi-brand {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--swi-color-white);
+  background-color: var(--swi-color-primary);
+  padding: 0.4rem 1rem;
+  text-decoration: none;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+.swi-nav-collapse {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  margin-left: 2.5rem;
+}
+.swi-nav-links {
+  display: flex;
+  list-style: none;
+}
+.swi-nav-link {
+  text-decoration: none;
+  color: var(--swi-color-primary);
+  font-weight: 900;
+  font-size: 0.9rem;
+  padding: 0.6rem 1rem;
+  border-right: 1px solid var(--swi-color-primary);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.swi-nav-links li:first-child .swi-nav-link {
+  border-left: 1px solid var(--swi-color-primary);
+}
+.swi-nav-link:hover, .swi-nav-link.active {
+  background-color: var(--swi-color-primary);
+  color: var(--swi-color-white);
+}
+.swi-toggler {
+  display: none;
+  background: var(--swi-color-primary);
+  color: var(--swi-color-white);
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .swi-toggler { display: block; }
+  .swi-nav-collapse {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-left: 0;
+    background: var(--swi-bg);
+    border-bottom: var(--swi-border-thick);
+    padding: 1.25rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .swi-nav-collapse.show { display: flex; }
+  .swi-nav-links { flex-direction: column; }
+  .swi-nav-link { border-left: none !important; border-bottom: 1px solid var(--swi-color-primary); }
+}
+
+/* Hero Section with Massive Typography */
+.swi-hero {
+  padding: 5rem 0 4rem;
+  border-bottom: var(--swi-border-thick);
+}
+.swi-hero-num {
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: inline-block;
+  border-bottom: 2px solid var(--swi-color-primary);
+}
+.swi-hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.8rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  line-height: 0.95;
+  margin-bottom: 1.5rem;
+}
+.swi-hero-desc {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--swi-color-gray-mid);
+  max-width: 760px;
+  margin-bottom: 2rem;
+}
+
+/* Section Header */
+.swi-section {
+  padding: 4rem 0;
+  border-bottom: var(--swi-border-thick);
+}
+.swi-section-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+/* Swatches (Monochrome Grades) */
+.swi-swatch {
+  border: var(--swi-border-thick);
+  padding: 1.25rem;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: 900;
+}
+.bg-primary    { background-color: var(--swi-color-primary); color: var(--swi-color-white); }
+.bg-gray-dark  { background-color: var(--swi-color-gray-dark); color: var(--swi-color-white); }
+.bg-gray-mid   { background-color: var(--swi-color-gray-mid); color: var(--swi-color-white); }
+.bg-gray-light { background-color: var(--swi-color-gray-light); color: var(--swi-color-primary); }
+.bg-white      { background-color: var(--swi-color-white); color: var(--swi-color-primary); }
+
+/* Buttons with High Contrast Inversion */
+.swi-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.6rem;
+  font-size: 0.95rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: var(--swi-border-thick);
+  cursor: pointer;
+  text-decoration: none;
+  background-color: var(--swi-color-primary);
+  color: var(--swi-color-white);
+  transition: var(--swi-transition);
+}
+.swi-btn:hover {
+  background-color: var(--swi-color-white);
+  color: var(--swi-color-primary);
+}
+.swi-btn-outline {
+  background-color: var(--swi-color-white);
+  color: var(--swi-color-primary);
+}
+.swi-btn-outline:hover {
+  background-color: var(--swi-color-primary);
+  color: var(--swi-color-white);
+}
+
+/* Badges */
+.swi-badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 2px solid var(--swi-color-primary);
+}
+.swi-badge-black { background-color: var(--swi-color-primary); color: var(--swi-color-white); }
+.swi-badge-gray  { background-color: var(--swi-color-gray-light); color: var(--swi-color-primary); }
+
+/* Alerts */
+.swi-alert {
+  padding: 1.25rem;
+  border: var(--swi-border-thick);
+  margin-bottom: 1rem;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+.swi-alert-dark  { background-color: var(--swi-color-primary); color: var(--swi-color-white); }
+.swi-alert-light { background-color: var(--swi-color-gray-light); color: var(--swi-color-primary); }
+
+/* Form Controls with Bold Grid Outlines */
+.swi-form-group { margin-bottom: 1.5rem; }
+.swi-form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+}
+.swi-input, .swi-select, .swi-textarea {
+  width: 100%;
+  padding: 0.8rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  border: var(--swi-border-thick);
+  background-color: #ffffff;
+  color: var(--swi-color-primary);
+  outline: none;
+}
+.swi-input:focus, .swi-select:focus, .swi-textarea:focus {
+  background-color: var(--swi-color-primary);
+  color: var(--swi-color-white);
+}
+
+/* Invert Switch */
+.swi-switch-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.swi-switch {
+  width: 48px;
+  height: 26px;
+  border: var(--swi-border-thick);
+  background-color: #ffffff;
+  position: relative;
+}
+.swi-switch::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--swi-color-primary);
+  transition: transform 0.15s ease;
+}
+input[type="checkbox"]:checked + .swi-switch {
+  background-color: var(--swi-color-primary);
+}
+input[type="checkbox"]:checked + .swi-switch::after {
+  transform: translateX(22px);
+  background-color: var(--swi-color-white);
+}
+
+/* Cards with Full Grid Border */
+.swi-card {
+  background-color: var(--swi-card-bg);
+  border: var(--swi-border-thick);
+  padding: 1.75rem;
+  transition: var(--swi-transition);
+}
+.swi-card:hover {
+  background-color: var(--swi-color-primary);
+  color: var(--swi-color-white);
+}
+.swi-card:hover .swi-card-desc {
+  color: var(--swi-color-gray-light);
+}
+.swi-card-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.swi-card-desc {
+  font-size: 0.95rem;
+  color: var(--swi-color-gray-mid);
+  margin-bottom: 1.5rem;
+}
+
+/* Accordion with Invert Active State */
+.swi-accordion-item {
+  border: var(--swi-border-thick);
+  margin-bottom: 0.75rem;
+}
+.swi-accordion-header {
+  width: 100%;
+  padding: 1.1rem 1.4rem;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  transition: var(--swi-transition);
+}
+.swi-accordion-header.active {
+  background-color: var(--swi-color-primary);
+  color: var(--swi-color-white);
+}
+.swi-accordion-body {
+  display: none;
+  padding: 1.25rem 1.4rem;
+  font-size: 0.95rem;
+  border-top: var(--swi-border-thick);
+}
+.swi-accordion-body.show { display: block; }
+
+/* Tabs with High Intensity Invert */
+.swi-tabs-nav {
+  display: flex;
+  border-bottom: var(--swi-border-thick);
+  margin-bottom: 1.5rem;
+}
+.swi-tab-btn {
+  background-color: transparent;
+  border: var(--swi-border-thick);
+  border-bottom: none;
+  padding: 0.8rem 1.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-right: -4px;
+}
+.swi-tab-btn.active {
+  background-color: var(--swi-color-primary);
+  color: var(--swi-color-white);
+}
+.swi-tab-pane { display: none; }
+.swi-tab-pane.active { display: block; }
+
+/* Modal & Offcanvas */
+.swi-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(5, 5, 5, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.swi-modal-backdrop.show { display: flex; }
+.swi-modal {
+  background-color: #ffffff;
+  border: var(--swi-border-thick);
+  padding: 2.25rem;
+  width: 90%;
+  max-width: 540px;
+}
+
+.swi-offcanvas {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 360px;
+  height: 100vh;
+  background-color: #ffffff;
+  border-left: var(--swi-border-thick);
+  z-index: 2050;
+  transition: right 0.3s ease;
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+}
+.swi-offcanvas.show { right: 0; }
+
+/* Progress & Range */
+.swi-progress {
+  height: 16px;
+  border: var(--swi-border-thick);
+  background-color: #ffffff;
+}
+.swi-progress-bar {
+  height: 100%;
+  background-color: var(--swi-color-primary);
+}
+
+.swi-range {
+  width: 100%;
+  accent-color: var(--swi-color-primary);
+}
+
+/* Table */
+.swi-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: var(--swi-border-thick);
+  background-color: #ffffff;
+}
+.swi-table th, .swi-table td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  border: var(--swi-border-thick);
+  font-size: 0.95rem;
+}
+.swi-table th {
+  background-color: var(--swi-color-primary);
+  color: var(--swi-color-white);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/* Footer */
+.swi-footer {
+  padding: 3.5rem 0;
+  text-align: center;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}

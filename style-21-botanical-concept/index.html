@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格二十一：溫室植物 / 自然選品風 (Botanical Concept)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="bot-navbar">
+    <div class="bot-container bot-navbar-container">
+      <a href="#" class="bot-brand">
+        🌿 Botanical <span>Concept</span>
+      </a>
+      <button class="bot-toggler" id="navbarToggler" aria-label="Toggle navigation">選單 Menu</button>
+      <div class="bot-nav-collapse" id="navCollapse">
+        <ul class="bot-nav-links">
+          <li><a href="#hero" class="bot-nav-link active">自然概念</a></li>
+          <li><a href="#palette" class="bot-nav-link">配色展示</a></li>
+          <li><a href="#forms" class="bot-nav-link">表單元件</a></li>
+          <li><a href="#components" class="bot-nav-link">展示卡片</a></li>
+          <li><a href="#interactive" class="bot-nav-link">互動視窗</a></li>
+        </ul>
+        <div class="bot-flex bot-gap-2">
+          <a href="../index.html" class="bot-btn bot-btn-outline">Hub 總覽</a>
+          <button class="bot-btn bot-btn-accent" id="openOffcanvasBtn">選品抽屜</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="bot-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="bot-hero leaf-vein-border">
+      <span class="bot-hero-tag">Botanical & Organic Living</span>
+      <h1 class="bot-hero-title">溫室植物與有機生活選品</h1>
+      <p class="bot-hero-desc">
+        柔和燕麥白背景搭配深植物綠與陶土燒橙，排版具備自然生長般的鬆弛感與 8px 微圓角，帶來充滿自然呼吸感的現代設計體驗。
+      </p>
+      <div class="bot-flex bot-justify-between bot-items-center" style="max-width: 320px; margin: 0 auto;">
+        <button class="bot-btn bot-btn-primary">探索選品目錄</button>
+        <button class="bot-btn bot-btn-outline" id="openModalBtn">預約溫室導覽</button>
+      </div>
+    </section>
+
+    <!-- Color Palette Showcase -->
+    <section id="palette" class="bot-section">
+      <h2 class="bot-section-title">植物選品色彩系統</h2>
+      <p class="bot-section-sub">專屬燕麥白、深植物綠與陶土橙交織的自然和諧調性：</p>
+      <div class="bot-grid">
+        <div class="bot-col-4">
+          <div class="bot-swatch bg-primary">
+            <span>Primary 深植物綠</span>
+            <code>--bot-color-primary (#2c3e2e)</code>
+          </div>
+        </div>
+        <div class="bot-col-4">
+          <div class="bot-swatch bg-accent">
+            <span>Accent 陶土燒橙</span>
+            <code>--bot-color-accent (#c86d51)</code>
+          </div>
+        </div>
+        <div class="bot-col-4">
+          <div class="bot-swatch bg-secondary">
+            <span>Secondary 溫室灰綠</span>
+            <code>--bot-color-secondary (#8a9a86)</code>
+          </div>
+        </div>
+        <div class="bot-col-3">
+          <div class="bot-swatch bg-info">
+            <span>Info 湖水清綠</span>
+            <code>--bot-color-info (#4a7c85)</code>
+          </div>
+        </div>
+        <div class="bot-col-3">
+          <div class="bot-swatch bg-success">
+            <span>Success 有機嫩葉綠</span>
+            <code>--bot-color-success (#3b7a57)</code>
+          </div>
+        </div>
+        <div class="bot-col-3">
+          <div class="bot-swatch bg-warning">
+            <span>Warning 暖陽黃</span>
+            <code>--bot-color-warning (#d99b26)</code>
+          </div>
+        </div>
+        <div class="bot-col-3">
+          <div class="bot-swatch bg-error">
+            <span>Error 漿果熟紅</span>
+            <code>--bot-color-error (#bc4749)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alerts Section -->
+    <section class="bot-section">
+      <h2 class="bot-section-title">植物養護提示 (Alerts)</h2>
+      <div class="bot-alert bot-alert-info">
+        <strong>提示：</strong> 本週溫室迎來全新一批雨林觀葉植物與陶盆手工藝品。
+      </div>
+      <div class="bot-alert bot-alert-success">
+        <strong>成功：</strong> 您的有機泥炭土訂單已成功完成配貨。
+      </div>
+      <div class="bot-alert bot-alert-warning">
+        <strong>注意：</strong> 夏季午後太陽較強，請適度調整遮光網密度。
+      </div>
+      <div class="bot-alert bot-alert-error">
+        <strong>警告：</strong> 部分高海拔苔蘚植物暫時庫存不足。
+      </div>
+    </section>
+
+    <!-- Form Controls Section -->
+    <section id="forms" class="bot-section">
+      <h2 class="bot-section-title">自然呼吸感表單 (Form Controls)</h2>
+      <p class="bot-section-sub">聚焦時展現陶土橙邊框與柔和光暈：</p>
+      
+      <div class="bot-grid">
+        <div class="bot-col-6">
+          <div class="bot-form-group">
+            <label class="bot-form-label">顧客姓名</label>
+            <input type="text" class="bot-input" placeholder="例如：葉自然的先生">
+          </div>
+          <div class="bot-form-group">
+            <label class="bot-form-label">植物分類選單</label>
+            <select class="bot-select">
+              <option>天南星科觀葉植物</option>
+              <option>塊根與多肉植物</option>
+              <option>蕨類與鹿角蕨</option>
+              <option>手工陶藝植載</option>
+            </select>
+          </div>
+          <div class="bot-form-group">
+            <label class="bot-switch-wrapper">
+              <input type="checkbox" checked hidden>
+              <span class="bot-switch"></span>
+              <span style="font-weight: 500;">訂閱每週植物養護週報</span>
+            </label>
+          </div>
+        </div>
+        <div class="bot-col-6">
+          <div class="bot-form-group">
+            <label class="bot-form-label">選品諮詢備註</label>
+            <textarea class="bot-textarea" rows="4" placeholder="請填寫空間日照條件與偏好植物..."></textarea>
+          </div>
+          <div class="bot-form-group">
+            <label class="bot-form-label">溫室環境濕度調節 (<span id="botRangeValue">65%</span>)</label>
+            <input type="range" id="botRange" class="bot-range" min="0" max="100" value="65">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buttons & Badges & Cards -->
+    <section id="components" class="bot-section">
+      <h2 class="bot-section-title">選品卡片與標籤 (Cards & Badges)</h2>
+      
+      <div class="bot-mb-4 bot-flex bot-gap-2">
+        <span class="bot-badge bot-badge-primary">自然生長</span>
+        <span class="bot-badge bot-badge-accent">陶土燒製</span>
+        <span class="bot-badge bot-badge-info">微風溫室</span>
+      </div>
+
+      <div class="bot-grid">
+        <div class="bot-col-4">
+          <div class="bot-card">
+            <h3 class="bot-card-title">斑葉龜背竹</h3>
+            <p class="bot-card-desc">具備強烈幾何開孔與高質感奶油斑紋，適合放置於明亮散光客廳。</p>
+            <button class="bot-btn bot-btn-outline">檢視細節</button>
+          </div>
+        </div>
+        <div class="bot-col-4">
+          <div class="bot-card">
+            <h3 class="bot-card-title">女皇鹿角蕨</h3>
+            <p class="bot-card-desc">雄偉的冠狀營養葉與垂墜胞子葉，是室內牆面綠化的極致藝術首選。</p>
+            <button class="bot-btn bot-btn-primary">立即選購</button>
+          </div>
+        </div>
+        <div class="bot-col-4">
+          <div class="bot-card">
+            <h3 class="bot-card-title">粗砂手工陶盆</h3>
+            <p class="bot-card-desc">柴燒自然落灰質感，高透氣孔隙結構為植物根系提供最佳呼吸環境。</p>
+            <button class="bot-btn bot-btn-accent">加入收藏</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Section: Accordion & Tabs & Progress & Table -->
+    <section id="interactive" class="bot-section">
+      <h2 class="bot-section-title">互動組件與植物對照 (Interactive & Table)</h2>
+      
+      <div class="bot-grid">
+        <div class="bot-col-6">
+          <h3 class="bot-mb-3" style="font-size: 1.1rem; color: var(--bot-color-primary);">植物養護常見問題</h3>
+          <div class="bot-accordion-item">
+            <button class="bot-accordion-header">
+              <span>澆水頻率與土壤乾濕度如何判斷？</span>
+              <span class="bot-accordion-icon">▼</span>
+            </button>
+            <div class="bot-accordion-body">
+              建議以手指插入土壤兩指節深度，待土壤微乾後再一次性澆透至盆底排水孔出水。
+            </div>
+          </div>
+          <div class="bot-accordion-item">
+            <button class="bot-accordion-header">
+              <span>觀葉植物葉尖發黃該如何處理？</span>
+              <span class="bot-accordion-icon">▼</span>
+            </button>
+            <div class="bot-accordion-body">
+              可能是空氣濕度過低或冷氣直吹，建議增加葉面噴霧或移動至遮陰散光處。
+            </div>
+          </div>
+        </div>
+
+        <div class="bot-col-6">
+          <h3 class="bot-mb-3" style="font-size: 1.1rem; color: var(--bot-color-primary);">選品介紹分頁</h3>
+          <div class="bot-tabs-nav">
+            <button class="bot-tab-btn active" data-target="tab1">環境日照</button>
+            <button class="bot-tab-btn" data-target="tab2">介質配方</button>
+            <button class="bot-tab-btn" data-target="tab3">肥料補充</button>
+          </div>
+          <div id="tab1" class="bot-tab-pane active">
+            <p style="color: var(--bot-text-muted);">散光環境適合天南星科，直射光適合多肉與仙人掌類，適當的通風是維持健康的核心。</p>
+          </div>
+          <div id="tab2" class="bot-tab-pane">
+            <p style="color: var(--bot-text-muted);">使用泥炭土 50% + 樹皮 30% + 珍珠石 20% 調配，確保根系不積水腐爛。</p>
+          </div>
+          <div id="tab3" class="bot-tab-pane">
+            <p style="color: var(--bot-text-muted);">春夏季每兩週施加稀釋有機液肥，秋冬季成長趨緩時暫停施肥。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bot-mb-4" style="margin-top: 2rem;">
+        <h3 class="bot-mb-2" style="font-size: 1.1rem; color: var(--bot-color-primary);">日光吸收完成度</h3>
+        <div class="bot-progress">
+          <div class="bot-progress-bar" style="width: 78%;"></div>
+        </div>
+      </div>
+
+      <table class="bot-table">
+        <thead>
+          <tr>
+            <th>植物名稱</th>
+            <th>適宜溫度</th>
+            <th>日照需求</th>
+            <th>養護難易度</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>斑葉龜背竹</td>
+            <td>20°C - 30°C</td>
+            <td>明亮散光</td>
+            <td><span class="bot-badge bot-badge-primary">簡單</span></td>
+          </tr>
+          <tr>
+            <td>女皇鹿角蕨</td>
+            <td>18°C - 26°C</td>
+            <td>柔和半陰</td>
+            <td><span class="bot-badge bot-badge-accent">中等</span></td>
+          </tr>
+          <tr>
+            <td>安安花燭</td>
+            <td>22°C - 28°C</td>
+            <td>高濕散光</td>
+            <td><span class="bot-badge bot-badge-info">進階</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- Modal -->
+  <div class="bot-modal-backdrop" id="botModal">
+    <div class="bot-modal">
+      <h3 class="bot-card-title">預約溫室導覽行程</h3>
+      <p class="bot-card-desc">我們的專人植栽師將引導您體驗溫室微氣候與各式珍稀觀葉植物。</p>
+      <div class="bot-form-group">
+        <label class="bot-form-label">預約日期</label>
+        <input type="date" class="bot-input" value="2026-08-01">
+      </div>
+      <div class="bot-flex bot-justify-between" style="margin-top: 1.5rem;">
+        <button class="bot-btn bot-btn-outline" id="closeModalBtn">取消</button>
+        <button class="bot-btn bot-btn-accent">確認預約</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas -->
+  <div class="bot-offcanvas" id="botOffcanvas">
+    <div class="bot-flex bot-justify-between bot-items-center bot-mb-4">
+      <h3 style="font-size: 1.2rem; color: var(--bot-color-primary);">🌿 植物選品清單</h3>
+      <button id="closeOffcanvasBtn" style="background:none; border:none; font-size: 1.2rem; cursor:pointer;">✕</button>
+    </div>
+    <div style="flex: 1; color: var(--bot-text-muted);">
+      <p class="bot-mb-3">已選取項目 (2):</p>
+      <div style="border-bottom: 1px dashed var(--bot-border); padding-bottom: 0.75rem; margin-bottom: 0.75rem;">
+        <strong>斑葉龜背竹 (5吋)</strong>
+        <div style="font-size: 0.85rem; color: var(--bot-color-accent);">NT$ 1,800</div>
+      </div>
+      <div style="border-bottom: 1px dashed var(--bot-border); padding-bottom: 0.75rem;">
+        <strong>粗砂手工陶盆</strong>
+        <div style="font-size: 0.85rem; color: var(--bot-color-accent);">NT$ 650</div>
+      </div>
+    </div>
+    <button class="bot-btn bot-btn-primary" style="width: 100%;">前往結帳選購</button>
+  </div>
+
+  <footer class="bot-footer">
+    <div class="bot-container">
+      <p>© 2026 Style 21: Botanical Concept. Pure Vanilla CSS & JS Design System.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

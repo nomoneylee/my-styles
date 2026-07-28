@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格二十九：復古 Apple II / 8 位元點陣視窗 (8-Bit Pixel Terminal)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="pix-navbar">
+    <div class="pix-container pix-navbar-container">
+      <a href="#" class="pix-brand">[ APPLE-II ] TERMINAL_v2.9</a>
+      <button class="pix-toggler" id="pixToggler">RUN MENU</button>
+      <div class="pix-nav-collapse" id="pixCollapse">
+        <ul class="pix-nav-links">
+          <li><a href="#hero" class="pix-nav-link active">SYS.MAIN</a></li>
+          <li><a href="#palette" class="pix-nav-link">CRT.COLOR</a></li>
+          <li><a href="#forms" class="pix-nav-link">PROMPT.IN</a></li>
+          <li><a href="#cards" class="pix-nav-link">DISKS.CARD</a></li>
+          <li><a href="#interactive" class="pix-nav-link">ROM.DATA</a></li>
+        </ul>
+        <div class="pix-flex pix-gap-2">
+          <a href="../index.html" class="pix-btn">HUB 總覽</a>
+          <button class="pix-btn pix-btn-accent" id="openOffcanvasBtn">FLOPPY DRAWER</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pix-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="pix-hero">
+      <span class="pix-hero-tag">6502 CPU @ 1.023 MHz // 64K RAM</span>
+      <h1 class="pix-hero-title">APPLE II & COMMODORE 64 磷光綠螢幕終端機</h1>
+      <p class="pix-hero-desc">
+        綠黑高對比、像素點陣與 CSS linear-gradient 掃描線 (Scanline) 背景紋理。所有邊框皆為像素接縫 (box-shadow 模擬像素角)，極具 GEEK 懷舊客製感。
+      </p>
+      <div class="pix-flex pix-gap-3" style="justify-content: center;">
+        <button class="pix-btn pix-btn-accent">LOAD "BASIC",8,1</button>
+        <button class="pix-btn pix-btn-warning" id="openModalBtn">SYSTEM MODAL</button>
+      </div>
+    </section>
+
+    <!-- Color Palette Showcase -->
+    <section id="palette" class="pix-section">
+      <h2 class="pix-section-title">8-BIT CRT 螢幕磷光配色系統</h2>
+      <p class="pix-section-sub">單色磷光綠與警告琥珀黃高明度像素發光效果：</p>
+      
+      <div class="pix-grid">
+        <div class="pix-col-4">
+          <div class="pix-swatch bg-primary">
+            <span>Primary 終端機深黑</span>
+            <code>--pix-color-primary (#0c0d0d)</code>
+          </div>
+        </div>
+        <div class="pix-col-4">
+          <div class="pix-swatch bg-accent">
+            <span>Accent 磷光綠</span>
+            <code>--pix-color-accent (#00ff66)</code>
+          </div>
+        </div>
+        <div class="pix-col-4">
+          <div class="pix-swatch bg-secondary">
+            <span>Secondary 暗草綠</span>
+            <code>--pix-color-secondary (#008833)</code>
+          </div>
+        </div>
+        <div class="pix-col-3">
+          <div class="pix-swatch bg-warning">
+            <span>Warning 警告琥珀黃</span>
+            <code>--pix-color-warning (#ffaa00)</code>
+          </div>
+        </div>
+        <div class="pix-col-3">
+          <div class="pix-swatch bg-info">
+            <span>Info 青藍點陣</span>
+            <code>--pix-color-info (#00e5ff)</code>
+          </div>
+        </div>
+        <div class="pix-col-3">
+          <div class="pix-swatch bg-success">
+            <span>Success 像素嫩綠</span>
+            <code>--pix-color-success (#00ffaa)</code>
+          </div>
+        </div>
+        <div class="pix-col-3">
+          <div class="pix-swatch bg-error">
+            <span>Error 系統崩潰紅</span>
+            <code>--pix-color-error (#ff3344)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alerts Section -->
+    <section class="pix-section">
+      <h2 class="pix-section-title">CRT 終端機狀態訊息 (Alerts)</h2>
+      <div class="pix-alert">
+        <strong>[READY]:</strong> 系統已就緒，請輸入 RUN 指令啟動 8 位元程式。
+      </div>
+      <div class="pix-alert pix-alert-warning">
+        <strong>[WARNING]:</strong> 5.25 吋軟碟機 A: 讀寫頭磁區偏移，請執行校正。
+      </div>
+      <div class="pix-alert pix-alert-error">
+        <strong>[SYNTAX ERROR]:</strong> 行號 120 發生語法錯誤，記憶體位置 0x0400 覆寫。
+      </div>
+    </section>
+
+    <!-- Form Section -->
+    <section id="forms" class="pix-section">
+      <h2 class="pix-section-title">COMMAND PROMPT 表單 (Form Controls)</h2>
+      <p class="pix-section-sub">像素外框與綠螢幕 Focus 內陰影：</p>
+      
+      <div class="pix-grid">
+        <div class="pix-col-6">
+          <div class="pix-form-group">
+            <label class="pix-form-label">USER ID / USERNAME</label>
+            <input type="text" class="pix-input" value="WZN_GEEK_1984">
+          </div>
+          <div class="pix-form-group">
+            <label class="pix-form-label">GRAPHIC DISPLAY MODE</label>
+            <select class="pix-select">
+              <option>TEXT MODE 40x24 (GREEN MONOCHROME)</option>
+              <option>HI-RES GRAPHICS (280x192 6-COLOR)</option>
+              <option>LO-RES GRAPHICS (40x48 16-COLOR)</option>
+            </select>
+          </div>
+          <div class="pix-form-group">
+            <label class="pix-switch-label">
+              <input type="checkbox" checked hidden>
+              <span class="pix-switch"></span>
+              <span>ENABLE CRT SCANLINE EMULATION</span>
+            </label>
+          </div>
+        </div>
+        <div class="pix-col-6">
+          <div class="pix-form-group">
+            <label class="pix-form-label">ASSEMBLY CODE INSTRUCTION</label>
+            <textarea class="pix-textarea" rows="3" placeholder="LDA #$01 &#10;STA $C030 &#10;RTS"></textarea>
+          </div>
+          <div class="pix-form-group">
+            <label class="pix-form-label">CPU FREQUENCY SPEED (<span id="pixRangeValue">1 MHZ</span>)</label>
+            <input type="range" id="pixRange" class="pix-range" min="1" max="8" value="1">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Badges & Cards -->
+    <section id="cards" class="pix-section">
+      <h2 class="pix-section-title">8-BIT 磁碟卡片與點陣 Badges</h2>
+      
+      <div class="pix-mb-4 pix-flex pix-gap-2">
+        <span class="pix-badge">MOS 6502</span>
+        <span class="pix-badge pix-badge-warning">APPLE DOS 3.3</span>
+        <span class="pix-badge pix-badge-info">CRT SCANLINE</span>
+      </div>
+
+      <div class="pix-grid">
+        <div class="pix-col-4">
+          <div class="pix-card">
+            <h3 class="pix-card-title">💾 DISK II DRIVE</h3>
+            <p class="pix-card-desc">Steve Wozniak 經典設計，以最少晶片實現 140KB 軟碟讀寫。</p>
+            <button class="pix-btn">CATALOG</button>
+          </div>
+        </div>
+        <div class="pix-col-4">
+          <div class="pix-card">
+            <h3 class="pix-card-title">👾 8-BIT PAC-MAN</h3>
+            <p class="pix-card-desc">街機經典轉移至家用電腦，純純像素方塊點陣樂趣。</p>
+            <button class="pix-btn pix-btn-accent">EXECUTE</button>
+          </div>
+        </div>
+        <div class="pix-col-4">
+          <div class="pix-card">
+            <h3 class="pix-card-title">📟 SILICON VALLEY '84</h3>
+            <p class="pix-card-desc">矽谷車庫創業傳奇，個人電腦革命的最初原點。</p>
+            <button class="pix-btn pix-btn-warning">READ ROM</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive & Table Section -->
+    <section id="interactive" class="pix-section">
+      <h2 class="pix-section-title">ROM 記憶體狀態與對照 (Accordion & Tabs)</h2>
+      
+      <div class="pix-grid">
+        <div class="pix-col-6">
+          <h3 class="pix-mb-3" style="font-size: 1.1rem;">TERMINAL COMMAND FAQ</h3>
+          <div class="pix-accordion-item">
+            <button class="pix-accordion-header">
+              <span>1. 如何清空 CRT 螢幕 (HOME / CALL -151)？</span>
+              <span>▼</span>
+            </button>
+            <div class="pix-accordion-body">
+              輸入 HOME 可直接游標歸位並清空螢幕；CALL -151 進入機器碼 Monitor 模式。
+            </div>
+          </div>
+          <div class="pix-accordion-item">
+            <button class="pix-accordion-header">
+              <span>2. 掃描線 (Scanline) 背景如何實現？</span>
+              <span>▼</span>
+            </button>
+            <div class="pix-accordion-body">
+              採用 Pure Vanilla CSS 2-tier linear-gradient，無需任何圖片即可模擬 CRT 螢幕細微掃描紋路。
+            </div>
+          </div>
+        </div>
+
+        <div class="pix-col-6">
+          <h3 class="pix-mb-3" style="font-size: 1.1rem;">8 位元主機規格對照</h3>
+          <div class="pix-tabs-nav">
+            <button class="pix-tab-btn active" data-target="ptab1">APPLE II</button>
+            <button class="pix-tab-btn" data-target="ptab2">C64</button>
+            <button class="pix-tab-btn" data-target="ptab3">ATARI 800</button>
+          </div>
+          <div id="ptab1" class="pix-tab-pane active">
+            <p style="color: var(--pix-text-muted);">6502 @ 1MHz, 48K RAM, 經典彩色 High-Res 模式。</p>
+          </div>
+          <div id="ptab2" class="pix-tab-pane">
+            <p style="color: var(--pix-text-muted);">6510 @ 1MHz, 64K RAM, VIC-II 晶片與 SID 音效強大處理能力。</p>
+          </div>
+          <div id="ptab3" class="pix-tab-pane">
+            <p style="color: var(--pix-text-muted);">專用 ANTIC 圖像處理器，流暢的街機等級動態橫向捲軸。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pix-mb-4" style="margin-top: 2rem;">
+        <h3 class="pix-mb-2" style="font-size: 1.1rem;">RAM MEMORY LOAD (64K / 64K)</h3>
+        <div class="pix-progress">
+          <div class="pix-progress-bar" style="width: 100%;"></div>
+        </div>
+      </div>
+
+      <table class="pix-table">
+        <thead>
+          <tr>
+            <th>HEX ADDR</th>
+            <th>LABEL</th>
+            <th>INSTRUCTION</th>
+            <th>STATUS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>$03F0</td>
+            <td>RESET_VEC</td>
+            <td>JMP $FA62</td>
+            <td><span class="pix-badge">LOCKED</span></td>
+          </tr>
+          <tr>
+            <td>$C000</td>
+            <td>KBD_DATA</td>
+            <td>LDA $C000</td>
+            <td><span class="pix-badge pix-badge-warning">READING</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- Modal -->
+  <div class="pix-modal-backdrop" id="pixModal">
+    <div class="pix-modal">
+      <h3 class="pix-card-title">🖥️ 8-BIT TERMINAL SYSTEM DIALOG</h3>
+      <p class="pix-card-desc">DO YOU WISH TO FORMAT 5.25 FLOPPY DISK IN DRIVE A:?</p>
+      <div class="pix-form-group">
+        <label class="pix-form-label">VOLUME NAME</label>
+        <input type="text" class="pix-input" value="DISK_VOL_001">
+      </div>
+      <div class="pix-flex pix-justify-between" style="margin-top: 1.5rem;">
+        <button class="pix-btn" id="closeModalBtn">ABORT</button>
+        <button class="pix-btn pix-btn-accent">INIT DISK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas -->
+  <div class="pix-offcanvas" id="pixOffcanvas">
+    <div class="pix-flex pix-justify-between pix-items-center pix-mb-4">
+      <h3 style="font-size: 1.1rem;">💾 5.25" FLOPPY DRAWER</h3>
+      <button id="closeOffcanvasBtn" style="background:none; border:none; color: var(--pix-color-accent); font-size: 1.2rem; cursor:pointer;">✕</button>
+    </div>
+    <div style="flex:1; color: var(--pix-text-muted);">
+      <p class="pix-mb-3">MOUNTED DISKS (2):</p>
+      <div style="border-bottom: 2px dashed var(--pix-color-accent); padding-bottom: 0.75rem; margin-bottom: 0.75rem;">
+        <strong style="color: var(--pix-color-accent);">[DSK_01]: DOS 3.3 SYSTEM MASTER</strong>
+      </div>
+      <div style="border-bottom: 2px dashed var(--pix-color-accent); padding-bottom: 0.75rem;">
+        <strong style="color: var(--pix-color-accent);">[DSK_02]: VISICALC SPREADSHEET</strong>
+      </div>
+    </div>
+    <button class="pix-btn pix-btn-warning" style="width: 100%;">EJECT DISKS</button>
+  </div>
+
+  <footer class="pix-footer">
+    <div class="pix-container">
+      <p>© 2026 Style 29: 8-Bit Pixel Terminal. Pure Vanilla CSS & JS Design System.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

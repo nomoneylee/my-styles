@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格二十六：瑞士國際主義黑白刷色 (Mono Swiss Grid)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="swi-navbar">
+    <div class="swi-container swi-navbar-container">
+      <a href="#" class="swi-brand">MONO SWISS GRID</a>
+      <button class="swi-toggler" id="swiToggler">INDEX ☰</button>
+      <div class="swi-nav-collapse" id="swiCollapse">
+        <ul class="swi-nav-links">
+          <li><a href="#hero" class="swi-nav-link active">01 // GRID</a></li>
+          <li><a href="#palette" class="swi-nav-link">02 // MONO</a></li>
+          <li><a href="#forms" class="swi-nav-link">03 // INPUT</a></li>
+          <li><a href="#cards" class="swi-nav-link">04 // TYPE</a></li>
+          <li><a href="#interactive" class="swi-nav-link">05 // DATA</a></li>
+        </ul>
+        <div class="swi-flex swi-gap-2">
+          <a href="../index.html" class="swi-btn swi-btn-outline">HUB 總覽</a>
+          <button class="swi-btn" id="openOffcanvasBtn">SWISS DRAWER</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="swi-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="swi-hero">
+      <span class="swi-hero-num">SYS / REF #2026-SWISS-MONO</span>
+      <h1 class="swi-hero-title">瑞士國際主義極致單色黑白刷色</h1>
+      <p class="swi-hero-desc">
+        取消任何彩度，純粹依賴巨大的 HELVETICA 筆觸、極粗 4PX 黑實線與 100% 滿版 GRID 網格切分。強烈黑白反相（INVERT）切換展現極致張力。
+      </p>
+      <div class="swi-flex swi-gap-3">
+        <button class="swi-btn">SWISS MANIFESTO</button>
+        <button class="swi-btn swi-btn-outline" id="openModalBtn">INVERT MODAL</button>
+      </div>
+    </section>
+
+    <!-- Color Palette Showcase -->
+    <section id="palette" class="swi-section">
+      <h2 class="swi-section-title">02 // 純粹單色階層色標 (MONOCHROME)</h2>
+      <p class="swi-mb-4" style="color: var(--swi-color-gray-mid);">零彩度印刷階調對比：</p>
+      
+      <div class="swi-grid">
+        <div class="swi-col-4">
+          <div class="swi-swatch bg-primary">
+            <span>01 // 絕對深墨</span>
+            <code>--swi-color-primary (#050505)</code>
+          </div>
+        </div>
+        <div class="swi-col-4">
+          <div class="swi-swatch bg-gray-dark">
+            <span>02 // 墨跡深灰</span>
+            <code>--swi-color-gray-dark (#333333)</code>
+          </div>
+        </div>
+        <div class="swi-col-4">
+          <div class="swi-swatch bg-gray-mid">
+            <span>03 // 報版中灰</span>
+            <code>--swi-color-gray-mid (#666666)</code>
+          </div>
+        </div>
+        <div class="swi-col-6">
+          <div class="swi-swatch bg-gray-light">
+            <span>04 // 印刷亮灰</span>
+            <code>--swi-color-gray-light (#e5e5e5)</code>
+          </div>
+        </div>
+        <div class="swi-col-6">
+          <div class="swi-swatch bg-white">
+            <span>05 // 紙張純白</span>
+            <code>--swi-color-white (#ffffff)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alerts Section -->
+    <section class="swi-section">
+      <h2 class="swi-section-title">系統狀態標示 (ALERTS)</h2>
+      <div class="swi-alert swi-alert-dark">
+        <strong>[NOTICE 01]:</strong> 瑞士設計風格核心：明確的結構、客觀的版面與嚴格的網格對齊。
+      </div>
+      <div class="swi-alert swi-alert-light">
+        <strong>[NOTICE 02]:</strong> 本系統已完全排除所有彩度，僅靠高強度黑白字級階層建立視覺反差。
+      </div>
+    </section>
+
+    <!-- Form Section -->
+    <section id="forms" class="swi-section">
+      <h2 class="swi-section-title">03 // 黑白網格表單 (INPUT CONTROLS)</h2>
+      <p class="swi-mb-4" style="color: var(--swi-color-gray-mid);">極粗 4PX 實線與純黑 FOCUS 反相：</p>
+      
+      <div class="swi-grid">
+        <div class="swi-col-6">
+          <div class="swi-form-group">
+            <label class="swi-form-label">DESIGNER NAME</label>
+            <input type="text" class="swi-input" value="MAX Miedinger">
+          </div>
+          <div class="swi-form-group">
+            <label class="swi-form-label">TYPOGRAPHY CHOICE</label>
+            <select class="swi-select">
+              <option>HELVETICA BOLD 900</option>
+              <option>UNIVERS MEDIUM</option>
+              <option>AKZIDENZ-GROTESK</option>
+            </select>
+          </div>
+          <div class="swi-form-group">
+            <label class="swi-switch-label">
+              <input type="checkbox" checked hidden>
+              <span class="swi-switch"></span>
+              <span>ENABLE 100% INVERT GRID MODE</span>
+            </label>
+          </div>
+        </div>
+        <div class="swi-col-6">
+          <div class="swi-form-group">
+            <label class="swi-form-label">MANIFESTO STATEMENT</label>
+            <textarea class="swi-textarea" rows="3" placeholder="ORDER AND RATIONALITY IN DESIGN..."></textarea>
+          </div>
+          <div class="swi-form-group">
+            <label class="swi-form-label">GRID FONT SIZE (<span id="swiRangeValue">72 PT</span>)</label>
+            <input type="range" id="swiRange" class="swi-range" min="12" max="144" value="72">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Badges & Cards -->
+    <section id="cards" class="swi-section">
+      <h2 class="swi-section-title">04 // 滿版網格卡片 (GRID CARDS)</h2>
+      
+      <div class="swi-mb-4 swi-flex swi-gap-2">
+        <span class="swi-badge swi-badge-black">HELVETICA</span>
+        <span class="swi-badge swi-badge-gray">12-COLUMN GRID</span>
+        <span class="swi-badge swi-badge-black">ZERO COLOR</span>
+      </div>
+
+      <div class="swi-grid">
+        <div class="swi-col-4">
+          <div class="swi-card">
+            <h3 class="swi-card-title">HELVETICA 1957</h3>
+            <p class="swi-card-desc">由 Max Miedinger 設計的經典無襯線體，成為 20 世紀最具影響力的字型。</p>
+            <button class="swi-btn">VIEW TYPE</button>
+          </div>
+        </div>
+        <div class="swi-col-4">
+          <div class="swi-card">
+            <h3 class="swi-card-title">RASTER SYSTEM</h3>
+            <p class="swi-card-desc">Josef Müller-Brockmann 所奠定的嚴格網格排版學，追求客觀真實。</p>
+            <button class="swi-btn swi-btn-outline">READ GRID</button>
+          </div>
+        </div>
+        <div class="swi-col-4">
+          <div class="swi-card">
+            <h3 class="swi-card-title">NEUTRALITY</h3>
+            <p class="swi-card-desc">設計本身不應帶有情緒偏見，而是作為精準傳遞訊息的純粹載體。</p>
+            <button class="swi-btn">EXPLORE</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive & Table Section -->
+    <section id="interactive" class="swi-section">
+      <h2 class="swi-section-title">05 // 黑白反相互動組件 (INTERACTIVE)</h2>
+      
+      <div class="swi-grid">
+        <div class="swi-col-6">
+          <h3 class="swi-mb-3" style="font-size: 1.2rem; font-weight: 900;">ACCORDION INVERT FAQ</h3>
+          <div class="swi-accordion-item">
+            <button class="swi-accordion-header active">
+              <span>01 // 為什麼堅持零色彩？</span>
+              <span>▼</span>
+            </button>
+            <div class="swi-accordion-body show">
+              黑與白的對比具備最高強度的視覺讀取清晰度，排除干擾，專注於資訊結構本身。
+            </div>
+          </div>
+          <div class="swi-accordion-item">
+            <button class="swi-accordion-header">
+              <span>02 // 粗 4PX 實線的作用？</span>
+              <span>▼</span>
+            </button>
+            <div class="swi-accordion-body">
+              建立絕對嚴謹的區塊分割線，確保版面上每一個元素皆落於明確的網格交界。
+            </div>
+          </div>
+        </div>
+
+        <div class="swi-col-6">
+          <h3 class="swi-mb-3" style="font-size: 1.2rem; font-weight: 900;">SWISS ARCHIVE TABS</h3>
+          <div class="swi-tabs-nav">
+            <button class="swi-tab-btn active" data-target="stab1">ZÜRICH</button>
+            <button class="swi-tab-btn" data-target="stab2">BASEL</button>
+            <button class="swi-tab-btn" data-target="stab3">GENEVA</button>
+          </div>
+          <div id="stab1" class="swi-tab-pane active">
+            <p style="color: var(--swi-color-gray-mid);">蘇黎世學派：強調嚴謹數字比例與具備絕對邏輯性的平面排版學。</p>
+          </div>
+          <div id="stab2" class="swi-tab-pane">
+            <p style="color: var(--swi-color-gray-mid);">巴塞爾設計學校：阿明·霍夫曼 (Armin Hofmann) 奠定的字體與符號學體系。</p>
+          </div>
+          <div id="stab3" class="swi-tab-pane">
+            <p style="color: var(--swi-color-gray-mid);">日內瓦展演手冊與國際組織視覺識別規範。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="swi-mb-4" style="margin-top: 2.5rem;">
+        <h3 class="swi-mb-2" style="font-size: 1.1rem; font-weight: 900;">GRID ALIGNMENT PROGRESS (100%)</h3>
+        <div class="swi-progress">
+          <div class="swi-progress-bar" style="width: 100%;"></div>
+        </div>
+      </div>
+
+      <table class="swi-table">
+        <thead>
+          <tr>
+            <th>ITEM ID</th>
+            <th>SWISS DESIGNER</th>
+            <th>YEAR</th>
+            <th>STATUS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SWI-01</td>
+            <td>Josef Müller-Brockmann</td>
+            <td>1955</td>
+            <td><span class="swi-badge swi-badge-black">ARCHIVED</span></td>
+          </tr>
+          <tr>
+            <td>SWI-02</td>
+            <td>Armin Hofmann</td>
+            <td>1965</td>
+            <td><span class="swi-badge swi-badge-gray">PUBLISHED</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- Modal -->
+  <div class="swi-modal-backdrop" id="swiModal">
+    <div class="swi-modal">
+      <h3 class="swi-card-title">SWISS MONO INVERT DIALOG</h3>
+      <p class="swi-card-desc">FULL MONOCHROME SYSTEM ACTIVATED. ZERO COLOR DETECTED.</p>
+      <div class="swi-form-group">
+        <label class="swi-form-label">CONFIRMATION CODE</label>
+        <input type="text" class="swi-input" value="SWISS-100-GRID">
+      </div>
+      <div class="swi-flex swi-justify-between" style="margin-top: 1.5rem;">
+        <button class="swi-btn swi-btn-outline" id="closeModalBtn">CLOSE</button>
+        <button class="swi-btn">EXECUTE</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas -->
+  <div class="swi-offcanvas" id="swiOffcanvas">
+    <div class="swi-flex swi-justify-between swi-items-center swi-mb-4">
+      <h3 style="font-size: 1.2rem; font-weight: 900;">SWISS DRAWER</h3>
+      <button id="closeOffcanvasBtn" style="background:none; border:none; font-size: 1.4rem; font-weight: 900; cursor:pointer;">✕</button>
+    </div>
+    <div style="flex:1; color: var(--swi-color-gray-mid);">
+      <p class="swi-mb-3">SELECTED GRID MODULES:</p>
+      <div style="border-bottom: var(--swi-border-thick); padding-bottom: 0.75rem; margin-bottom: 0.75rem;">
+        <strong style="color: var(--swi-color-primary);">GRID #01: 100% MONOCHROME</strong>
+      </div>
+      <div style="border-bottom: var(--swi-border-thick); padding-bottom: 0.75rem;">
+        <strong style="color: var(--swi-color-primary);">GRID #02: BOLD 4PX BORDER</strong>
+      </div>
+    </div>
+    <button class="swi-btn" style="width: 100%;">APPLY GRID</button>
+  </div>
+
+  <footer class="swi-footer">
+    <div class="swi-container">
+      <p>© 2026 Style 26: Mono Swiss Grid. Pure Vanilla CSS & JS Design System.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

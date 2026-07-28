@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格二十四：包浩斯再造 / 現代幾何構圖 (Neo-Geometric Bauhaus)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="bau-navbar">
+    <div class="bau-container bau-navbar-container">
+      <a href="#" class="bau-brand">BAUHAUS <span>NEO-GEO</span></a>
+      <button class="bau-toggler" id="bauToggler">MENU ☰</button>
+      <div class="bau-nav-collapse" id="bauCollapse">
+        <ul class="bau-nav-links">
+          <li><a href="#hero" class="bau-nav-link active">建築構圖</a></li>
+          <li><a href="#palette" class="bau-nav-link">幾何對比色</a></li>
+          <li><a href="#forms" class="bau-nav-link">無圓角表單</a></li>
+          <li><a href="#cards" class="bau-nav-link">重疊卡片</a></li>
+          <li><a href="#interactive" class="bau-nav-link">幾何對照</a></li>
+        </ul>
+        <div class="bau-flex bau-gap-2">
+          <a href="../index.html" class="bau-btn">HUB 總覽</a>
+          <button class="bau-btn bau-btn-accent" id="openOffcanvasBtn">構圖選單 Drawer</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="bau-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="bau-hero">
+      <div class="bau-hero-bg-accent"></div>
+      <div class="bau-hero-content">
+        <span class="bau-hero-tag">NEO-GEOMETRIC FORM & FUNCTION</span>
+        <h1 class="bau-hero-title">包浩斯再造與現代幾何重疊構圖</h1>
+        <p class="bau-hero-desc">
+          經典包浩斯現代化，運用強烈的斜角切割、幾何色塊與零圓角 (border-radius: 0) 重疊外框。畫布特灰白結合構圖剛硬黑與新包浩斯紅、電光黃、鈷藍色。
+        </p>
+        <div class="bau-flex bau-gap-3">
+          <button class="bau-btn bau-btn-accent">閱覽幾何展演</button>
+          <button class="bau-btn bau-btn-secondary" id="openModalBtn">幾何 Modal</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Color Palette Showcase -->
+    <section id="palette" class="bau-section">
+      <h2 class="bau-section-title">新包浩斯幾何配色系統</h2>
+      <p class="bau-mb-4" style="color: var(--bau-text-muted);">高彩度初級色對比與畫布灰白質地：</p>
+      
+      <div class="bau-grid">
+        <div class="bau-col-4">
+          <div class="bau-swatch bg-primary">
+            <span>Primary 構圖剛硬黑</span>
+            <code>--bau-color-primary (#1a1a1b)</code>
+          </div>
+        </div>
+        <div class="bau-col-4">
+          <div class="bau-swatch bg-accent">
+            <span>Accent 新包浩斯紅</span>
+            <code>--bau-color-accent (#e63946)</code>
+          </div>
+        </div>
+        <div class="bau-col-4">
+          <div class="bau-swatch bg-secondary">
+            <span>Secondary 電光黃</span>
+            <code>--bau-color-secondary (#ffb703)</code>
+          </div>
+        </div>
+        <div class="bau-col-3">
+          <div class="bau-swatch bg-info">
+            <span>Info 鈷藍色</span>
+            <code>--bau-color-info (#1d3557)</code>
+          </div>
+        </div>
+        <div class="bau-col-3">
+          <div class="bau-swatch bg-success">
+            <span>Success 幾何綠</span>
+            <code>--bau-color-success (#2a9d8f)</code>
+          </div>
+        </div>
+        <div class="bau-col-3">
+          <div class="bau-swatch bg-warning">
+            <span>Warning 幾何橙</span>
+            <code>--bau-color-warning (#f4a261)</code>
+          </div>
+        </div>
+        <div class="bau-col-3">
+          <div class="bau-swatch bg-error">
+            <span>Error 建築深紅</span>
+            <code>--bau-color-error (#d62828)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alerts Section -->
+    <section class="bau-section">
+      <h2 class="bau-section-title">建築結構狀態告示 (Alerts)</h2>
+      <div class="bau-alert bau-alert-yellow">
+        <strong>[COMPOSITION]:</strong> 100 週期包浩斯紀念展「形隨機能」特展即將於國立當代美術館登場。
+      </div>
+      <div class="bau-alert bau-alert-info">
+        <strong>[STRUCTURAL]:</strong> 幾何鋼骨樑柱與全玻璃帷幕網格計算完成。
+      </div>
+      <div class="bau-alert bau-alert-accent">
+        <strong>[CRITICAL]:</strong> 所有邊框強制歸零 (border-radius: 0)，禁用任何圓角修飾。
+      </div>
+    </section>
+
+    <!-- Form Section -->
+    <section id="forms" class="bau-section">
+      <h2 class="bau-section-title">剛硬幾何表單 (Form Controls)</h2>
+      <p class="bau-mb-4" style="color: var(--bau-text-muted);">重黑 3px 外框與斜切 Focus 色塊：</p>
+      
+      <div class="bau-grid">
+        <div class="bau-col-6">
+          <div class="bau-form-group">
+            <label class="bau-form-label">幾何設計師姓名</label>
+            <input type="text" class="bau-input" value="Walter Gropius">
+          </div>
+          <div class="bau-form-group">
+            <label class="bau-form-label">構圖元素選擇</label>
+            <select class="bau-select">
+              <option>正方形與矩形幾何 (Square)</option>
+              <option>純粹半圓形弧面 (Circle)</option>
+              <option>45 度對角線切分 (Diagonal)</option>
+            </select>
+          </div>
+          <div class="bau-form-group">
+            <label class="bau-switch-label">
+              <input type="checkbox" checked hidden>
+              <span class="bau-switch"></span>
+              <span>啟用三原色高彩度硬切換</span>
+            </label>
+          </div>
+        </div>
+        <div class="bau-col-6">
+          <div class="bau-form-group">
+            <label class="bau-form-label">設計理念論述</label>
+            <textarea class="bau-textarea" rows="3" placeholder="形式永遠跟隨機能，刪除所有無意義之裝飾..."></textarea>
+          </div>
+          <div class="bau-form-group">
+            <label class="bau-form-label">斜角切割角度 (<span id="bauRangeValue">45°</span>)</label>
+            <input type="range" id="bauRange" class="bau-range" min="0" max="90" value="45">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Badges & Cards -->
+    <section id="cards" class="bau-section">
+      <h2 class="bau-section-title">無圓角卡片與高對比 Badges</h2>
+      
+      <div class="bau-mb-4 bau-flex bau-gap-2">
+        <span class="bau-badge bau-badge-accent">FORM & FUNCTION</span>
+        <span class="bau-badge bau-badge-info">GRID & STRUCTURE</span>
+        <span class="bau-badge bau-badge-yellow">PRIMARY COLORS</span>
+      </div>
+
+      <div class="bau-grid">
+        <div class="bau-col-4">
+          <div class="bau-card">
+            <h3 class="bau-card-title">🟥 三原色幾何椅子</h3>
+            <p class="bau-card-desc">以鋼管與三原色皮革構成的極簡座椅，展現工業量產與藝術交融。</p>
+            <button class="bau-btn bau-btn-accent">設計圖稿</button>
+          </div>
+        </div>
+        <div class="bau-col-4">
+          <div class="bau-card">
+            <h3 class="bau-card-title">🟦 現代主義建築藍圖</h3>
+            <p class="bau-card-desc">捨棄繁複雕花，以通透玻璃牆與露出式混凝土柱體打造新時代地標。</p>
+            <button class="bau-btn bau-btn-info">結構計算</button>
+          </div>
+        </div>
+        <div class="bau-col-4">
+          <div class="bau-card">
+            <h3 class="bau-card-title">🟨 實驗排版海報設計</h3>
+            <p class="bau-card-desc">無襯線 Sans-Serif 字體與粗黑實線切分，打破對稱的新版面哲學。</p>
+            <button class="bau-btn bau-btn-secondary">下載海報</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive & Table Section -->
+    <section id="interactive" class="bau-section">
+      <h2 class="bau-section-title">包浩斯歷史與對照 (Accordion & Tabs)</h2>
+      
+      <div class="bau-grid">
+        <div class="bau-col-6">
+          <h3 class="bau-mb-3" style="font-size: 1.1rem; text-transform: uppercase; font-weight: 900;">Bauhaus 原則問答</h3>
+          <div class="bau-accordion-item">
+            <button class="bau-accordion-header">
+              <span>1. 什麼是「形隨機能」(Form Follows Function)？</span>
+              <span>▼</span>
+            </button>
+            <div class="bau-accordion-body">
+              物件的外形應直接反映其用途與結構，而非為了純粹觀賞而添加多餘的飾條或花紋。
+            </div>
+          </div>
+          <div class="bau-accordion-item">
+            <button class="bau-accordion-header">
+              <span>2. 為什麼強調無圓角與強烈對比？</span>
+              <span>▼</span>
+            </button>
+            <div class="bau-accordion-body">
+              直線與直角象徵工業製造的精準度，而原色對比能極大化傳遞明確的視覺訊息。
+            </div>
+          </div>
+        </div>
+
+        <div class="bau-col-6">
+          <h3 class="bau-mb-3" style="font-size: 1.1rem; text-transform: uppercase; font-weight: 900;">幾何時期分頁</h3>
+          <div class="bau-tabs-nav">
+            <button class="bau-tab-btn active" data-target="btab1">魏瑪時期</button>
+            <button class="bau-tab-btn" data-target="btab2">德紹時期</button>
+            <button class="bau-tab-btn" data-target="btab3">柏林時期</button>
+          </div>
+          <div id="btab1" class="bau-tab-pane active">
+            <p style="color: var(--bau-text-muted);">1919-1925：手工藝與藝術的結合，建立初期的基礎課程體系。</p>
+          </div>
+          <div id="btab2" class="bau-tab-pane">
+            <p style="color: var(--bau-text-muted);">1925-1932：黃金鼎盛期，著名的德紹校舍建築落成，走向工業設計。</p>
+          </div>
+          <div id="btab3" class="bau-tab-pane">
+            <p style="color: var(--bau-text-muted);">1932-1933：短暫的結尾，思想精神隨大師們散播至全球現代設計。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bau-mb-4" style="margin-top: 2rem;">
+        <h3 class="bau-mb-2" style="font-size: 1.1rem; text-transform: uppercase; font-weight: 900;">幾何比例完成度 (90%)</h3>
+        <div class="bau-progress">
+          <div class="bau-progress-bar" style="width: 90%;"></div>
+        </div>
+      </div>
+
+      <table class="bau-table">
+        <thead>
+          <tr>
+            <th>幾何元素</th>
+            <th>代表色彩</th>
+            <th>象徵意涵</th>
+            <th>運用對象</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>正方形 (Square)</td>
+            <td>包浩斯紅 (#e63946)</td>
+            <td>穩定與剛硬結構</td>
+            <td><span class="bau-badge bau-badge-accent">建築框構</span></td>
+          </tr>
+          <tr>
+            <td>圓形 (Circle)</td>
+            <td>鈷藍色 (#1d3557)</td>
+            <td>無限與流動運動</td>
+            <td><span class="bau-badge bau-badge-info">燈飾設計</span></td>
+          </tr>
+          <tr>
+            <td>三角形 (Triangle)</td>
+            <td>電光黃 (#ffb703)</td>
+            <td>銳利與方向指向</td>
+            <td><span class="bau-badge bau-badge-yellow">平面海報</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- Modal -->
+  <div class="bau-modal-backdrop" id="bauModal">
+    <div class="bau-modal">
+      <h3 class="bau-card-title">📐 幾何構圖對稱性確認</h3>
+      <p class="bau-card-desc">請確認所有按鈕與邊框皆完全無圓角 (border-radius: 0)。</p>
+      <div class="bau-form-group">
+        <label class="bau-form-label">計畫命名</label>
+        <input type="text" class="bau-input" value="NEO-BAUHAUS-EXHIBIT-2026">
+      </div>
+      <div class="bau-flex bau-justify-between" style="margin-top: 1.5rem;">
+        <button class="bau-btn" id="closeModalBtn">取消</button>
+        <button class="bau-btn bau-btn-accent">執行渲染</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas -->
+  <div class="bau-offcanvas" id="bauOffcanvas">
+    <div class="bau-flex bau-justify-between bau-items-center bau-mb-4">
+      <h3 style="font-size: 1.1rem; text-transform: uppercase; font-weight: 900;">📐 構圖模組選單</h3>
+      <button id="closeOffcanvasBtn" style="background:none; border:none; font-size: 1.3rem; font-weight: 900; cursor:pointer;">✕</button>
+    </div>
+    <div style="flex: 1; color: var(--bau-text-muted);">
+      <p class="bau-mb-3">已選取區塊 (2):</p>
+      <div style="border-bottom: 3px solid var(--bau-color-primary); padding-bottom: 0.75rem; margin-bottom: 0.75rem;">
+        <strong style="color: var(--bau-color-primary);">[BLOCK_01]: 45° 斜切 Header</strong>
+        <div style="font-size: 0.85rem; color: var(--bau-color-accent);">RED & YELLOW</div>
+      </div>
+      <div style="border-bottom: 3px solid var(--bau-color-primary); padding-bottom: 0.75rem;">
+        <strong style="color: var(--bau-color-primary);">[BLOCK_02]: 重疊方塊卡片</strong>
+        <div style="font-size: 0.85rem; color: var(--bau-color-info);">BLUE & BLACK</div>
+      </div>
+    </div>
+    <button class="bau-btn bau-btn-secondary" style="width: 100%;">套用幾何構圖</button>
+  </div>
+
+  <footer class="bau-footer">
+    <div class="bau-container">
+      <p>© 2026 Style 24: Neo-Geometric Bauhaus. Pure Vanilla CSS & JS Design System.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

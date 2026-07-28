@@ -1,4 +1,4 @@
-# Pure Vanilla CSS 十大至二十大美學風格 Homepage 系統
+# Pure Vanilla CSS 三十大美學風格 Homepage 系統
 
 本專案為 **100% 完全自建 Pure Vanilla CSS & Vanilla JavaScript** 的 Homepage 美學風格系統庫。完全零 Bootstrap 5 或任何外部框架依賴！
 
@@ -111,6 +111,58 @@
 - **風格定位**：當代藝術展覽手冊，高對比灰白背景搭配頁碼感標註（如 01/02/03）與小字號說明欄，大字與小字強烈反差與實驗性排版。
 - **配色系統**：展覽灰白 (`#f0f0f0`)、概念純黑 (`#0a0a0a`)、展覽標註藍 (`#0022ff`)、實驗亮紅 (`#ff3300`)。
 - **連結**：[開啟風格頁面](file:///e:/codes/styles/style-20-editorial-exhibition/index.html) | [查看 README](file:///e:/codes/styles/style-20-editorial-exhibition/README.md)
+
+---
+
+### 21. 溫室植物 / 自然選品風 (Botanical Concept)
+- **風格定位**：溫室花園與有機選品店質感，柔和燕麥白背景搭配深植物綠與陶土燒橙，排版具備自然生長般的鬆弛感與微圓角（8px）。
+- **配色系統**：柔和燕麥白 (`#f7f5f0`)、深植物綠 (`#2c3e2e`)、陶土燒橙 (`#c86d51`)、溫室灰綠 (`#8a9a86`)。
+- **連結**：[開啟風格頁面](file:///e:/codes/styles/style-21-botanical-concept/index.html) | [查看 README](file:///e:/codes/styles/style-21-botanical-concept/README.md)
+
+### 22. 包裝設計 / 標籤印刷風 (Label & Packaging)
+- **風格定位**：文創商品包裝與實體條碼標籤風格，元件自帶虛線裁切邊框（dashed）、條碼裝飾圖示與打孔圓洞效果。
+- **配色系統**：未塗布牛皮紙灰 (`#e9e7e1`)、印表機碳黑 (`#1e1e1e`)、警示標籤黃 (`#f3b700`)、膠帶螢光橘 (`#ff5722`)。
+- **連結**：[開啟風格頁面](file:///e:/codes/styles/style-22-label-packaging/index.html) | [查看 README](file:///e:/codes/styles/style-22-label-packaging/README.md)
+
+### 23. 霓虹深夜酒吧 / 爵士音樂室 (Neon Jazz Lounge)
+- **風格定位**：深夜 Jazz Bar 與地下微醺空間，沉穩極深藍紫底色，搭配 Neon 霓虹桃紅與微弱柔光擴散（box-shadow: 0 0 15px）。
+- **配色系統**：深夜微醺藍紫 (`#0a0814`)、霓虹微醺桃 (`#ff2a75`)、爵士金屬黃 (`#ffc857`)、調酒琉璃藍 (`#00f0ff`)。
+- **連結**：[開啟風格頁面](file:///e:/codes/styles/style-23-neon-jazz-lounge/index.html) | [查看 README](file:///e:/codes/styles/style-23-neon-jazz-lounge/README.md)
+
+### 24. 包浩斯再造 / 現代幾何構圖 (Neo-Geometric Bauhaus)
+- **風格定位**：經典包浩斯現代化，運用強烈的 45 度斜角切割、半圓形與正方形裝飾區塊，搭配高彩度對比色塊。
+- **配色系統**：畫布特灰白 (`#f2ede4`)、構圖剛硬黑 (`#1a1a1b`)、新包浩斯紅 (`#e63946`)、電光黃 (`#ffb703`)、鈷藍色 (`#1d3557`)。
+- **連結**：[開啟風格頁面](file:///e:/codes/styles/style-24-neo-geometric-bauhaus/index.html) | [查看 README](file:///e:/codes/styles/style-24-neo-geometric-bauhaus/README.md)
+
+### 25. 未來科技極簡 / 電動車跑格 (Futuristic Aero Minimalism)
+- **風格定位**：極簡航太與高級電動車（如 Polestar/Tesla）官網質感，霧面銀灰背景、極細 1px 亮線與流線型微圓角（20px）。
+- **配色系統**：鈦空銀灰 (`#e2e8f0`)、陽極氧化黑 (`#0f172a`)、航太冷極藍 (`#38bdf8`)、電量亮綠 (`#10b981`)。
+- **連結**：[開啟風格頁面](file:///e:/codes/styles/style-25-futuristic-aero-minimalism/index.html) | [查看 README](file:///e:/codes/styles/style-25-futuristic-aero-minimalism/README.md)
+
+### 26. 瑞士國際主義黑白刷色 (Mono Swiss Grid)
+- **風格定位**：極致單色（Monochrome）黑白刷色，取消任何彩度，純粹依賴巨大的 Helvetica 筆觸、極粗 4px 黑實線與 100% 滿版 Grid。
+- **配色系統**：絕對深墨 (`#050505`)、紙張純白 (`#ffffff`)、報版中灰 (`#666666`)、印刷亮灰 (`#e5e5e5`)。
+- **連結**：[開啟風格頁面](file:///e:/codes/styles/style-26-mono-swiss-grid/index.html) | [查看 README](file:///e:/codes/styles/style-26-mono-swiss-grid/README.md)
+
+### 27. 韓系柔焦莫蘭迪 / 藝文畫廊 (Soft Morandi Atelier)
+- **風格定位**：低飽和度莫蘭迪色系，溫柔粉灰、霧藍與灰綠搭配超大弧度柔邊（16px~24px）與超柔和羽化陰影（0 10px 30px rgba(...)）。
+- **配色系統**：莫蘭迪粉灰 (`#f4efe9`)、霧面灰藍 (`#8b9dc3`)、沉靜鼠尾草綠 (`#9bb0a5`)、暖木咖 (`#6e5e55`)。
+- **連結**：[開啟風格頁面](file:///e:/codes/styles/style-27-soft-morandi-atelier/index.html) | [查看 README](file:///e:/codes/styles/style-27-soft-morandi-atelier/README.md)
+
+### 28. 美式手作皮件 / 獨立精釀工坊 (Craft Leather & Brewery)
+- **風格定位**：手作皮件工坊與獨立精釀啤酒廠質感，粗糙帆布黃背景、深馬鞍棕皮革色與黃銅鉚釘質感細節。
+- **配色系統**：粗糙帆布黃 (`#ece2d0`)、深馬鞍棕 (`#42281d`)、精釀琥珀黃 (`#bf6900`)、黃銅金 (`#a57548`)。
+- **連結**：[開啟風格頁面](file:///e:/codes/styles/style-28-craft-leather-brewery/index.html) | [查看 README](file:///e:/codes/styles/style-28-craft-leather-brewery/README.md)
+
+### 29. 復古 Apple II / 8 位元點陣視窗 (8-Bit Pixel Terminal)
+- **風格定位**：80 年代 Apple II / Commodore 64 經典綠螢幕終端機，綠黑高對比、像素點陣字體與 Scanline 掃描線背景紋理。
+- **配色系統**：終端機深黑 (`#0c0d0d`)、磷光綠 (`#00ff66`)、暗草綠 (`#008833`)、警告警報琥珀黃 (`#ffaa00`)。
+- **連結**：[開啟風格頁面](file:///e:/codes/styles/style-29-8bit-pixel-terminal/index.html) | [查看 README](file:///e:/codes/styles/style-29-8bit-pixel-terminal/README.md)
+
+### 30. 當代展覽膠囊 / 複合展演空間 (Capsule Exhibition Space)
+- **風格定位**：美術館售票處與複合式展演空間，採用巨大的「半圓膠囊型（border-radius: 999px）」區塊切分與極高彩度碰撞。
+- **配色系統**：展演明白 (`#fafafa`)、膠囊深紫 (`#2b124c`)、高彩螢光黃 (`#e2f952`)、電磁亮藍 (`#5246e2`)。
+- **連結**：[開啟風格頁面](file:///e:/codes/styles/style-30-capsule-exhibition-space/index.html) | [查看 README](file:///e:/codes/styles/style-30-capsule-exhibition-space/README.md)
 
 ---
 

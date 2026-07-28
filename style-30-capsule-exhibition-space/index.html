@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格三十：當代展覽膠囊 / 複合展演空間 (Capsule Exhibition Space)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Capsule Navbar -->
+  <div class="cap-container">
+    <nav class="cap-navbar">
+      <div class="cap-navbar-inner">
+        <a href="#" class="cap-brand">💊 CAPSULE <span>EXHIBIT</span></a>
+        <button class="cap-toggler" id="capToggler">MENU ☰</button>
+        <div class="cap-nav-collapse" id="capCollapse">
+          <ul class="cap-nav-links">
+            <li><a href="#hero" class="cap-nav-link active">膠囊展區</a></li>
+            <li><a href="#palette" class="cap-nav-link">高彩配色</a></li>
+            <li><a href="#forms" class="cap-nav-link">售票表單</a></li>
+            <li><a href="#cards" class="cap-nav-link">展演膠囊</a></li>
+            <li><a href="#interactive" class="cap-nav-link">節目清單</a></li>
+          </ul>
+          <div class="cap-flex cap-gap-2">
+            <a href="../index.html" class="cap-btn cap-btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">HUB 總覽</a>
+            <button class="cap-btn cap-btn-accent" id="openOffcanvasBtn" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">購票抽屜 Drawer</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <main class="cap-container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="cap-hero">
+      <div class="cap-hero-banner">
+        <span class="cap-hero-badge">FULL-PILL 999PX CAPSULE DESIGN</span>
+        <h1 class="cap-hero-title">當代展覽膠囊與複合展演空間</h1>
+        <p class="cap-hero-desc">
+          美術館售票處與當代複合展演空間。採用巨大的「半圓膠囊型（border-radius: 999px）」區塊切分與極高彩度碰撞，以螢光黃與電磁藍作為視線焦點。
+        </p>
+        <div class="cap-flex cap-gap-3" style="justify-content: center;">
+          <button class="cap-btn cap-btn-accent">預訂展演門票</button>
+          <button class="cap-btn cap-btn-outline" id="openModalBtn">空間地圖 Modal</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Color Palette Showcase -->
+    <section id="palette" class="cap-section">
+      <h2 class="cap-section-title">當代膠囊高彩度配色系統</h2>
+      <p class="cap-section-sub">膠囊深紫背景撞擊高彩螢光黃與電磁亮藍：</p>
+      
+      <div class="cap-grid">
+        <div class="cap-col-4">
+          <div class="cap-swatch bg-primary">
+            <span>Primary 膠囊深紫</span>
+            <code>--cap-color-primary (#2b124c)</code>
+          </div>
+        </div>
+        <div class="cap-col-4">
+          <div class="cap-swatch bg-accent">
+            <span>Accent 高彩螢光黃</span>
+            <code>--cap-color-accent (#e2f952)</code>
+          </div>
+        </div>
+        <div class="cap-col-4">
+          <div class="cap-swatch bg-info">
+            <span>Info 電磁亮藍</span>
+            <code>--cap-color-info (#5246e2)</code>
+          </div>
+        </div>
+        <div class="cap-col-3">
+          <div class="cap-swatch bg-secondary">
+            <span>Secondary 展演桃粉</span>
+            <code>--cap-color-secondary (#ff6b8b)</code>
+          </div>
+        </div>
+        <div class="cap-col-3">
+          <div class="cap-swatch bg-success">
+            <span>Success 螢光嫩綠</span>
+            <code>--cap-color-success (#00d284)</code>
+          </div>
+        </div>
+        <div class="cap-col-3">
+          <div class="cap-swatch bg-warning">
+            <span>Warning 太陽亮黃</span>
+            <code>--cap-color-warning (#ffaa00)</code>
+          </div>
+        </div>
+        <div class="cap-col-3">
+          <div class="cap-swatch bg-error">
+            <span>Error 警示霓紅</span>
+            <code>--cap-color-error (#ff3366)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alerts Section -->
+    <section class="cap-section">
+      <h2 class="cap-section-title">展演動態通知 (Alerts)</h2>
+      <div class="cap-alert cap-alert-accent">
+        <strong>⚡ 焦點展演:</strong> 當代跨界聲光藝術展「膠囊重力」即將於 19:30 在 Main Stage 登場。
+      </div>
+      <div class="cap-alert cap-alert-info">
+        <strong>🎫 售票系統:</strong> 早鳥優惠膠囊門票今日倒數最後 120 張。
+      </div>
+      <div class="cap-alert cap-alert-success">
+        <strong>🎉 複合空間:</strong> 戶外音樂廣場與膠囊咖啡酒吧區正式對外開放。
+      </div>
+    </section>
+
+    <!-- Form Section -->
+    <section id="forms" class="cap-section">
+      <h2 class="cap-section-title">Full-Pill 膠囊表單 (Form Controls)</h2>
+      <p class="cap-section-sub">完整半圓膠囊造型 (border-radius: 999px) 輸入元件：</p>
+      
+      <div class="cap-grid">
+        <div class="cap-col-6">
+          <div class="cap-form-group">
+            <label class="cap-form-label">觀眾姓名</label>
+            <input type="text" class="cap-input" value="當代藝術迷 Alex">
+          </div>
+          <div class="cap-form-group">
+            <label class="cap-form-label">展演膠囊場次選擇</label>
+            <select class="cap-select">
+              <option>展區 A：電磁聲光互動膠囊</option>
+              <option>展區 B：數位新媒體裝置展</option>
+              <option>展區 C：實驗聲響微型音樂會</option>
+            </select>
+          </div>
+          <div class="cap-form-group">
+            <label class="cap-switch-label">
+              <input type="checkbox" checked hidden>
+              <span class="cap-switch"></span>
+              <span>加購展演紀念膠囊徽章與限定專刊</span>
+            </label>
+          </div>
+        </div>
+        <div class="cap-col-6">
+          <div class="cap-form-group">
+            <label class="cap-form-label">展演體驗意見回饋</label>
+            <textarea class="cap-textarea" rows="3" placeholder="請留下您對複合展演空間的評價..."></textarea>
+          </div>
+          <div class="cap-form-group">
+            <label class="cap-form-label">聲光頻率調節 (<span id="capRangeValue">440 Hz</span>)</label>
+            <input type="range" id="capRange" class="cap-range" min="100" max="1000" value="440">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Badges & Cards -->
+    <section id="cards" class="cap-section">
+      <h2 class="cap-section-title">膠囊造型卡片與高彩 Badges</h2>
+      
+      <div class="cap-mb-4 cap-flex cap-gap-2">
+        <span class="cap-badge cap-badge-yellow">CAPSULE SPACE</span>
+        <span class="cap-badge cap-badge-blue">ELECTRONIC SOUND</span>
+        <span class="cap-badge cap-badge-pink">CONTEMPORARY ART</span>
+      </div>
+
+      <div class="cap-grid">
+        <div class="cap-col-4">
+          <div class="cap-card">
+            <h3 class="cap-card-title">💊 聲光重力膠囊 01</h3>
+            <p class="cap-card-desc">運用巨型半圓 LED 牆面與環繞音響，打造全沉浸式感官震撼。</p>
+            <button class="cap-btn cap-btn-accent">觀看片段</button>
+          </div>
+        </div>
+        <div class="cap-col-4">
+          <div class="cap-card">
+            <h3 class="cap-card-title">🎭 複合展演空間 02</h3>
+            <p class="cap-card-desc">結合當代美術館與極簡酒吧，為都市帶來前衛夜晚的新地標。</p>
+            <button class="cap-btn cap-btn-info">空間介紹</button>
+          </div>
+        </div>
+        <div class="cap-col-4">
+          <div class="cap-card">
+            <h3 class="cap-card-title">🎨 新媒體聯展 03</h3>
+            <p class="cap-card-desc">來自 12 位國際當代新銳藝術家，探討數位時代的個體邊界。</p>
+            <button class="cap-btn cap-btn-accent">參展名單</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive & Table Section -->
+    <section id="interactive" class="cap-section">
+      <h2 class="cap-section-title">展演常見問題與膠囊分頁 (Accordion & Tabs)</h2>
+      
+      <div class="cap-grid">
+        <div class="cap-col-6">
+          <h3 class="cap-mb-3" style="font-size: 1.1rem; color: var(--cap-color-primary);">Capsule Exhibition FAQ</h3>
+          <div class="cap-accordion-item">
+            <button class="cap-accordion-header">
+              <span>1. 展演膠囊單次體驗時間多久？</span>
+              <span>▼</span>
+            </button>
+            <div class="cap-accordion-body">
+              每場次聲光沉浸體驗約為 45 分鐘，結束後可自由於複合空間酒吧交流。
+            </div>
+          </div>
+          <div class="cap-accordion-item">
+            <button class="cap-accordion-header">
+              <span>2. 門票是否包含膠囊調酒或特調飲品？</span>
+              <span>▼</span>
+            </button>
+            <div class="cap-accordion-body">
+              單人套票均包含 1 杯限定螢光螢彩特調飲品或無酒精 Mocktail。
+            </div>
+          </div>
+        </div>
+
+        <div class="cap-col-6">
+          <h3 class="cap-mb-3" style="font-size: 1.1rem; color: var(--cap-color-primary);">膠囊展區分頁</h3>
+          <div class="cap-tabs-nav">
+            <button class="cap-tab-btn active" data-target="ctab1">主展演區</button>
+            <button class="cap-tab-btn" data-target="ctab2">實驗音效</button>
+            <button class="cap-tab-btn" data-target="ctab3">露天膠囊</button>
+          </div>
+          <div id="ctab1" class="cap-tab-pane active">
+            <p style="color: var(--cap-text-muted);">Main Capsule Stage: 全球最大型室內半圓膠囊螢光展演舞台。</p>
+          </div>
+          <div id="ctab2" class="cap-tab-pane">
+            <p style="color: var(--cap-text-muted);">Sound Lab: 獨立高聲壓低頻實驗空間，感受音波於體內的共振。</p>
+          </div>
+          <div id="ctab3" class="cap-tab-pane">
+            <p style="color: var(--cap-text-muted);">Open Air Lounge: 頂樓戶外星空膠囊，提供精緻輕食與夜景視角。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cap-mb-4" style="margin-top: 2rem;">
+        <h3 class="cap-mb-2" style="font-size: 1.1rem; color: var(--cap-color-primary);">膠囊能源蓄積進度 (95%)</h3>
+        <div class="cap-progress">
+          <div class="cap-progress-bar" style="width: 95%;"></div>
+        </div>
+      </div>
+
+      <table class="cap-table">
+        <thead>
+          <tr>
+            <th>展演名稱</th>
+            <th>展出時間</th>
+            <th>膠囊展區</th>
+            <th>門票狀態</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>膠囊重力沉浸展</td>
+            <td>19:30 - 21:00</td>
+            <td>Main Capsule Stage</td>
+            <td><span class="cap-badge cap-badge-yellow">即將售罄</span></td>
+          </tr>
+          <tr>
+            <td>電磁聲波微型表演</td>
+            <td>21:30 - 23:00</td>
+            <td>Sound Lab B</td>
+            <td><span class="cap-badge cap-badge-blue">熱賣中</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- Modal -->
+  <div class="cap-modal-backdrop" id="capModal">
+    <div class="cap-modal">
+      <h3 class="cap-card-title">💊 展演空間區域地圖</h3>
+      <p class="cap-card-desc">請選擇您要探索的 Full-Pill 膠囊展區。</p>
+      <div class="cap-form-group">
+        <label class="cap-form-label">選擇欲參觀區域</label>
+        <select class="cap-select">
+          <option>A區：巨型螢光膠囊燈塔</option>
+          <option>B區：電磁聲光沙龍</option>
+        </select>
+      </div>
+      <div class="cap-flex cap-justify-between" style="margin-top: 1.5rem;">
+        <button class="cap-btn cap-btn-info" id="closeModalBtn">關閉</button>
+        <button class="cap-btn cap-btn-accent">確認地點</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas -->
+  <div class="cap-offcanvas" id="capOffcanvas">
+    <div class="cap-flex cap-justify-between cap-items-center cap-mb-4">
+      <h3 style="font-size: 1.1rem; font-weight: 900; color: var(--cap-color-primary);">🎫 展演門票抽屜</h3>
+      <button id="closeOffcanvasBtn" style="background:none; border:none; font-size: 1.2rem; cursor:pointer;">✕</button>
+    </div>
+    <div style="flex:1; color: var(--cap-text-muted);">
+      <p class="cap-mb-3">已選擇門票 (2):</p>
+      <div style="border-bottom: 1px solid var(--cap-border); padding-bottom: 0.75rem; margin-bottom: 0.75rem;">
+        <strong style="color: var(--cap-color-primary);">膠囊重力沉浸展 (早鳥票)</strong>
+        <div style="color: var(--cap-color-info);">NT$ 600</div>
+      </div>
+      <div style="border-bottom: 1px solid var(--cap-border); padding-bottom: 0.75rem;">
+        <strong style="color: var(--cap-color-primary);">限定螢光螢彩特調</strong>
+        <div style="color: var(--cap-color-info);">NT$ 350</div>
+      </div>
+    </div>
+    <button class="cap-btn cap-btn-accent" style="width: 100%;">前往結帳購票</button>
+  </div>
+
+  <footer class="cap-footer">
+    <div class="cap-container">
+      <p>© 2026 Style 30: Capsule Exhibition Space. Pure Vanilla CSS & JS Design System.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

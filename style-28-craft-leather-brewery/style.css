@@ -1,0 +1,507 @@
+/* ==========================================================================
+   Style 28: 美式手作皮件 / 獨立精釀工坊 (Craft Leather & Brewery)
+   100% Pure Vanilla CSS - No External Framework Dependencies
+   ========================================================================== */
+
+/* 1. Design System & CSS Variables */
+:root {
+  --lea-bg: #ece2d0;
+  --lea-card-bg: #f7f2e8;
+  --lea-text-primary: #42281d;
+  --lea-text-muted: #6e5041;
+  --lea-border: #42281d;
+
+  /* Color Palette */
+  --lea-color-primary: #42281d;   /* 深馬鞍棕 */
+  --lea-color-accent: #bf6900;    /* 精釀琥珀黃 */
+  --lea-color-secondary: #a57548; /* 黃銅金 */
+  --lea-color-info: #3d5a80;      /* 工業海軍藍 */
+  --lea-color-success: #4f772d;   /* 啤酒花綠 */
+  --lea-color-warning: #d4a373;   /* 熟皮革黃 */
+  --lea-color-error: #9e2a2b;     /* 櫻桃黑啤紅 */
+
+  --lea-radius: 6px;
+  --lea-shadow: 4px 4px 0 #42281d;
+  --lea-shadow-hover: 6px 6px 0 #42281d;
+  --lea-transition: all 0.2s ease-in-out;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif, system-ui;
+  background-color: var(--lea-bg);
+  color: var(--lea-text-primary);
+  line-height: 1.5;
+  background-image: radial-gradient(rgba(66, 40, 29, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.lea-container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Grid */
+.lea-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.75rem;
+}
+.lea-col-12 { width: 100%; padding: 0.75rem; }
+.lea-col-6  { width: 50%; padding: 0.75rem; }
+.lea-col-4  { width: 33.3333%; padding: 0.75rem; }
+.lea-col-3  { width: 25%; padding: 0.75rem; }
+
+@media (max-width: 768px) {
+  .lea-col-6, .lea-col-4, .lea-col-3 { width: 100%; }
+}
+
+.lea-flex { display: flex; }
+.lea-items-center { align-items: center; }
+.lea-justify-between { justify-content: space-between; }
+.lea-gap-2 { gap: 0.5rem; }
+.lea-gap-3 { gap: 1rem; }
+.lea-gap-4 { gap: 1.5rem; }
+.lea-mb-3 { margin-bottom: 1rem; }
+.lea-mb-4 { margin-bottom: 1.5rem; }
+
+/* Navbar */
+.lea-navbar {
+  background-color: var(--lea-bg);
+  border-bottom: 3px solid var(--lea-color-primary);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+}
+.lea-navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lea-brand {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--lea-bg);
+  background-color: var(--lea-color-primary);
+  padding: 0.4rem 1rem;
+  text-decoration: none;
+  border: 2px solid var(--lea-color-secondary);
+  box-shadow: var(--lea-shadow);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.lea-nav-collapse {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  margin-left: 2.5rem;
+}
+.lea-nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+.lea-nav-link {
+  text-decoration: none;
+  color: var(--lea-color-primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.25rem 0.5rem;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+.lea-nav-link:hover, .lea-nav-link.active {
+  border-color: var(--lea-color-accent);
+  color: var(--lea-color-accent);
+}
+.lea-toggler {
+  display: none;
+  background: var(--lea-color-primary);
+  color: var(--lea-bg);
+  border: 2px solid var(--lea-color-secondary);
+  padding: 0.4rem 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .lea-toggler { display: block; }
+  .lea-nav-collapse {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-left: 0;
+    background: var(--lea-bg);
+    border-bottom: 3px solid var(--lea-color-primary);
+    padding: 1.25rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .lea-nav-collapse.show { display: flex; }
+  .lea-nav-links { flex-direction: column; gap: 0.5rem; }
+}
+
+/* Hero Section */
+.lea-hero {
+  padding: 5rem 0 3.5rem;
+  text-align: center;
+  border-bottom: 3px solid var(--lea-color-primary);
+  position: relative;
+}
+.lea-hero-tag {
+  display: inline-block;
+  background: var(--lea-color-accent);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.3rem 0.9rem;
+  border: 2px solid var(--lea-color-primary);
+  box-shadow: 2px 2px 0 var(--lea-color-primary);
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.lea-hero-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+  font-weight: 900;
+  color: var(--lea-color-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+.lea-hero-desc {
+  max-width: 680px;
+  margin: 0 auto 2rem;
+  color: var(--lea-text-muted);
+  font-size: 1.1rem;
+}
+
+/* Section Header */
+.lea-section {
+  padding: 3.5rem 0;
+  border-bottom: 3px solid var(--lea-color-primary);
+}
+.lea-section-title {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--lea-color-primary);
+  margin-bottom: 0.5rem;
+}
+.lea-section-sub {
+  color: var(--lea-text-muted);
+  margin-bottom: 2rem;
+}
+
+/* Swatches */
+.lea-swatch {
+  border: 2px solid var(--lea-color-primary);
+  box-shadow: var(--lea-shadow);
+  padding: 1.25rem;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: 700;
+}
+.lea-swatch span { font-size: 0.95rem; }
+.lea-swatch code { font-size: 0.8rem; opacity: 0.9; }
+
+.bg-primary   { background-color: var(--lea-color-primary); color: var(--lea-bg); }
+.bg-accent    { background-color: var(--lea-color-accent); color: #ffffff; }
+.bg-secondary { background-color: var(--lea-color-secondary); color: #ffffff; }
+.bg-info      { background-color: var(--lea-color-info); color: #ffffff; }
+.bg-success   { background-color: var(--lea-color-success); color: #ffffff; }
+.bg-warning   { background-color: var(--lea-color-warning); color: var(--lea-color-primary); }
+.bg-error     { background-color: var(--lea-color-error); color: #ffffff; }
+
+/* Hard Craft Buttons */
+.lea-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.4rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: 2px solid var(--lea-color-primary);
+  cursor: pointer;
+  text-decoration: none;
+  background-color: var(--lea-card-bg);
+  color: var(--lea-color-primary);
+  box-shadow: var(--lea-shadow);
+  transition: var(--lea-transition);
+}
+.lea-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--lea-shadow-hover);
+}
+.lea-btn-accent {
+  background-color: var(--lea-color-accent);
+  color: #ffffff;
+}
+.lea-btn-primary {
+  background-color: var(--lea-color-primary);
+  color: var(--lea-bg);
+}
+
+/* Metallic Rivet Badges (圓扣樣式) */
+.lea-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border: 2px solid var(--lea-color-primary);
+  background-color: var(--lea-color-secondary);
+  color: #ffffff;
+  border-radius: 99px;
+  position: relative;
+}
+.lea-badge::before {
+  content: '⚙';
+  font-size: 0.7rem;
+  color: var(--lea-bg);
+}
+.lea-badge-accent { background-color: var(--lea-color-accent); }
+.lea-badge-dark   { background-color: var(--lea-color-primary); }
+
+/* Alerts */
+.lea-alert {
+  padding: 1rem 1.25rem;
+  border: 2px solid var(--lea-color-primary);
+  box-shadow: 3px 3px 0 var(--lea-color-primary);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+}
+.lea-alert-info    { background-color: #e8f1f5; }
+.lea-alert-success { background-color: #eaf2e8; }
+.lea-alert-warning { background-color: #fdf5e6; }
+.lea-alert-error   { background-color: #fbebea; }
+
+/* Leather Form Controls */
+.lea-form-group { margin-bottom: 1.25rem; }
+.lea-form-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.lea-input, .lea-select, .lea-textarea {
+  width: 100%;
+  padding: 0.7rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  border: 2px solid var(--lea-color-primary);
+  background-color: #ffffff;
+  color: var(--lea-text-primary);
+  outline: none;
+}
+.lea-input:focus, .lea-select:focus, .lea-textarea:focus {
+  border-color: var(--lea-color-accent);
+  box-shadow: 3px 3px 0 var(--lea-color-accent);
+}
+
+/* Switch */
+.lea-switch-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+.lea-switch {
+  width: 44px;
+  height: 24px;
+  background-color: #d1c7b7;
+  border: 2px solid var(--lea-color-primary);
+  position: relative;
+}
+.lea-switch::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 18px;
+  height: 18px;
+  background-color: var(--lea-color-primary);
+  transition: transform 0.2s;
+}
+input[type="checkbox"]:checked + .lea-switch {
+  background-color: var(--lea-color-accent);
+}
+input[type="checkbox"]:checked + .lea-switch::after {
+  transform: translateX(20px);
+  background-color: #ffffff;
+}
+
+/* Double-Stitching Cards (雙層縫線視覺 border: 2px dashed #42281d) */
+.lea-card {
+  background-color: var(--lea-card-bg);
+  border: 2px dashed var(--lea-color-primary);
+  padding: 1.5rem;
+  outline: 2px solid var(--lea-color-primary);
+  outline-offset: 4px;
+  box-shadow: var(--lea-shadow);
+  transition: var(--lea-transition);
+  margin: 4px;
+}
+.lea-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--lea-shadow-hover);
+}
+.lea-card-title {
+  font-size: 1.25rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+.lea-card-desc {
+  font-size: 0.92rem;
+  color: var(--lea-text-muted);
+  margin-bottom: 1.25rem;
+}
+
+/* Accordion */
+.lea-accordion-item {
+  border: 2px solid var(--lea-color-primary);
+  margin-bottom: 0.75rem;
+  background-color: var(--lea-card-bg);
+}
+.lea-accordion-header {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+.lea-accordion-body {
+  display: none;
+  padding: 1rem 1.25rem;
+  font-size: 0.92rem;
+  border-top: 2px dashed var(--lea-color-primary);
+  color: var(--lea-text-muted);
+}
+.lea-accordion-body.show { display: block; }
+
+/* Tabs */
+.lea-tabs-nav {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 3px solid var(--lea-color-primary);
+  margin-bottom: 1.5rem;
+}
+.lea-tab-btn {
+  background: transparent;
+  border: 2px solid transparent;
+  border-bottom: none;
+  padding: 0.6rem 1.2rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.lea-tab-btn.active {
+  background-color: var(--lea-color-primary);
+  color: var(--lea-bg);
+  border-color: var(--lea-color-primary);
+}
+.lea-tab-pane { display: none; }
+.lea-tab-pane.active { display: block; }
+
+/* Modal & Offcanvas */
+.lea-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(66, 40, 29, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.lea-modal-backdrop.show { display: flex; }
+.lea-modal {
+  background-color: var(--lea-bg);
+  border: 3px solid var(--lea-color-primary);
+  box-shadow: 8px 8px 0 var(--lea-color-primary);
+  padding: 1.75rem;
+  width: 90%;
+  max-width: 500px;
+}
+
+.lea-offcanvas {
+  position: fixed;
+  top: 0;
+  right: -380px;
+  width: 350px;
+  height: 100vh;
+  background-color: var(--lea-bg);
+  border-left: 3px solid var(--lea-color-primary);
+  z-index: 2050;
+  transition: right 0.3s ease;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+.lea-offcanvas.show { right: 0; }
+
+/* Progress & Range */
+.lea-progress {
+  height: 12px;
+  border: 2px solid var(--lea-color-primary);
+  background-color: #ffffff;
+}
+.lea-progress-bar {
+  height: 100%;
+  background-color: var(--lea-color-accent);
+}
+
+.lea-range {
+  width: 100%;
+  accent-color: var(--lea-color-accent);
+}
+
+/* Table */
+.lea-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid var(--lea-color-primary);
+  background-color: #ffffff;
+}
+.lea-table th, .lea-table td {
+  padding: 0.85rem 1.1rem;
+  text-align: left;
+  border: 1px solid var(--lea-color-primary);
+  font-size: 0.92rem;
+}
+.lea-table th {
+  background-color: var(--lea-color-warning);
+  font-weight: 900;
+}
+
+/* Footer */
+.lea-footer {
+  padding: 3rem 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
