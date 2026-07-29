@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>高密度儀表板 Terminal - App 展示模擬</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- App Header -->
+    <header class="app-header">
+      <h1 class="app-title">root@terminal:~# sysstat</h1>
+      <button class="icon-btn" id="term-btn" aria-label="Terminal">💻</button>
+    </header>
+
+    <main class="app-content">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <h2 class="display-title">> HIGH_FREQ_TRADING</h2>
+        <p class="body-subtext">純黑底 (#000000)、螢光綠 (#00FF66)、等寬 Monospace 字體與高密度數據。</p>
+      </section>
+
+      <!-- Terminal Card -->
+      <div class="card terminal-card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="icon">🖥️</span>
+            <h3 class="card-title">CLUSTER_NODE_01</h3>
+          </div>
+          <span class="badge">HIGH_LOAD</span>
+        </div>
+        <div class="card-body">
+          <span class="label">[RAM_ALLOCATION] 15.3GB / 16.0GB (96%)</span>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill" style="width: 96%;"></div>
+          </div>
+          <div class="card-footer">
+            <span class="latency-text">LATENCY: 0.12ms</span>
+            <span class="status-tag">THROUGHPUT: 42.8k</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls Section -->
+      <section class="control-section">
+        <h3 class="section-title">> SEARCH_LOGS_REGEX</h3>
+        
+        <div class="input-group">
+          <label for="cli-input" class="input-label">CLI QUERY INPUT</label>
+          <input type="text" id="cli-input" class="text-input" value="grep -rn &quot;LATENCY_CRITICAL&quot; /var/log/sys.log">
+        </div>
+
+        <div class="card terminal-card list-card">
+          <div class="list-item">
+            <div class="list-item-info">
+              <span class="item-title">HIGH_FREQUENCY_ORDER_ROUTER</span>
+              <span class="item-sub">Enable sub-millisecond FPGA DMA channel</span>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="dma-switch" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="list-item" id="ebpf-item">
+            <div class="list-item-info">
+              <span class="item-title">KERNEL_TRACING_SYSTEM_CALLS</span>
+              <span class="item-sub">eBPF probe listening on eth0 socket</span>
+            </div>
+            <span class="chevron">▶</span>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button class="btn btn-primary" id="exec-btn">[EXEC_COMMAND]</button>
+          <button class="btn btn-secondary" id="clear-btn">[CLEAR_LOGS]</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

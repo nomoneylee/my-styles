@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>玻璃擬物風 Glassmorphism - App 展示模擬</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+
+  <div class="app-container">
+    <!-- App Header -->
+    <header class="app-header">
+      <h1 class="app-title">玻璃擬物風 GLASSMORPHISM</h1>
+      <button class="icon-btn" id="blur-btn" aria-label="Blur">✨</button>
+    </header>
+
+    <main class="app-content">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <h2 class="display-title">Web3 晶瑩資產</h2>
+        <p class="body-subtext">通透半透明卡片、BackdropFilter 毛玻璃與發光微邊框。</p>
+      </section>
+
+      <!-- Glassmorphic Card -->
+      <div class="card glass-card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="icon">💎</span>
+            <h3 class="card-title">Ethereum Node #04</h3>
+          </div>
+          <span class="badge">STAKING</span>
+        </div>
+        <div class="card-body">
+          <span class="label">節點同步池進度 (88%)</span>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill" style="width: 88%;"></div>
+          </div>
+          <div class="card-footer">
+            <span class="eth-val">42.85 ETH</span>
+            <span class="apy-text">+ 12.4% APY</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls Section -->
+      <section class="control-section">
+        <h3 class="section-title">智能合約地址</h3>
+        
+        <div class="input-group">
+          <label for="contract-addr" class="input-label">CONTRACT ADDRESS</label>
+          <input type="text" id="contract-addr" class="text-input" value="0x8F92...C401_WEB3_WALLET">
+        </div>
+
+        <div class="card glass-card list-card">
+          <div class="list-item">
+            <div class="list-item-info">
+              <span class="item-title">硬體錢包雙重簽署</span>
+              <span class="item-sub">Ledger Nano X 認證保護</span>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="security-switch" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="list-item" id="bridge-item">
+            <div class="list-item-info">
+              <span class="item-title">跨鏈智能橋接跨接</span>
+              <span class="item-sub">Arbitrum One 快速通關</span>
+            </div>
+            <span class="chevron">›</span>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button class="btn btn-primary" id="stake-btn">發起閃電質押</button>
+          <button class="btn btn-secondary" id="explorer-btn">瀏覽鏈上數據</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

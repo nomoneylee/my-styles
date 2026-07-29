@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>現代 SaaS Modern Flat - App 展示模擬</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- App Header -->
+    <header class="app-header">
+      <h1 class="app-title">現代 SaaS MODERN FLAT</h1>
+      <button class="icon-btn" id="dashboard-btn" aria-label="Dashboard">📊</button>
+    </header>
+
+    <main class="app-content">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <h2 class="display-title">團隊營收分析</h2>
+        <p class="body-subtext">高明度雙色漸層、彩色半透明陰影與清爽現代企業感 UI。</p>
+      </section>
+
+      <!-- SaaS Card with Gradient Shadow -->
+      <div class="card saas-card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="icon">📈</span>
+            <h3 class="card-title">ARR 年度經常性收入</h3>
+          </div>
+          <span class="badge">+ 24.5%</span>
+        </div>
+        <div class="card-body">
+          <span class="label">季度目標達成率 (78%)</span>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill" style="width: 78%;"></div>
+          </div>
+          <div class="card-footer">
+            <span class="arr-val">$ 1,280,000 USD</span>
+            <span class="status-tag">超越同業預期</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls Section -->
+      <section class="control-section">
+        <h3 class="section-title">企業網域名稱</h3>
+        
+        <div class="input-group">
+          <label for="saas-domain" class="input-label">CUSTOM DOMAIN URL</label>
+          <input type="text" id="saas-domain" class="text-input" value="team-workspace-pro.saas.io">
+        </div>
+
+        <div class="card saas-card list-card">
+          <div class="list-item">
+            <div class="list-item-info">
+              <span class="item-title">Slack & Asana 自動化通知</span>
+              <span class="item-sub">專案變更時自動同步至 #general 頻道</span>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="slack-switch" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="list-item" id="sso-item">
+            <div class="list-item-info">
+              <span class="item-title">SSO 單一身分驗證存取</span>
+              <span class="item-sub">Okta / Google Workspace 整合權限</span>
+            </div>
+            <span class="chevron">›</span>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button class="btn btn-primary" id="upgrade-btn">升級 Pro 企業版</button>
+          <button class="btn btn-secondary" id="csv-btn">匯出財務 CSV</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

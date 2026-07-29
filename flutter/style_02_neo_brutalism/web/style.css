@@ -1,0 +1,315 @@
+/* Neo-Brutalism Design System */
+:root {
+  --primary-color: #FFE66D;
+  --secondary-color: #FF6B6B;
+  --tertiary-color: #4ECDC4;
+  --bg-color: #F4F4F0;
+  --surface-color: #FFFFFF;
+  --pure-black: #000000;
+  --border-width: 3px;
+  --radius: 4px;
+  --font-family: 'Impact', 'Arial Black', sans-serif, system-ui;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--pure-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 420px;
+  background-color: var(--bg-color);
+  border: var(--border-width) solid var(--pure-black);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  box-shadow: 6px 6px 0px var(--pure-black);
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: var(--border-width) solid var(--pure-black);
+}
+
+.app-title {
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.icon-btn {
+  background: var(--primary-color);
+  border: var(--border-width) solid var(--pure-black);
+  box-shadow: 2px 2px 0px var(--pure-black);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius);
+}
+
+.hero-section {
+  margin-bottom: 20px;
+}
+
+.display-title {
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+
+.body-subtext {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Hard Offset Shadow Wrapper */
+.card-shadow-wrapper {
+  background-color: var(--pure-black);
+  border-radius: var(--radius);
+  padding-left: 5px;
+  padding-top: 5px;
+  margin-bottom: 24px;
+}
+
+.product-card {
+  background-color: var(--primary-color);
+  border: var(--border-width) solid var(--pure-black);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.card-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.badge {
+  background-color: var(--secondary-color);
+  color: var(--pure-black);
+  font-size: 12px;
+  font-weight: 900;
+  padding: 4px 10px;
+  border: 2px solid var(--pure-black);
+  border-radius: var(--radius);
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 14px;
+  background-color: var(--pure-black);
+  border: 2px solid var(--pure-black);
+  border-radius: var(--radius);
+  margin: 8px 0 14px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--secondary-color);
+  transition: width 0.3s ease;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-text {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.status-tag {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.text-input {
+  width: 100%;
+  background-color: white;
+  border: var(--border-width) solid var(--pure-black);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  font-size: 15px;
+  font-weight: 800;
+  outline: none;
+  box-shadow: 3px 3px 0px var(--pure-black);
+}
+
+.list-card-shadow-wrapper {
+  background-color: var(--pure-black);
+  border-radius: var(--radius);
+  padding-left: 4px;
+  padding-top: 4px;
+  margin-bottom: 24px;
+}
+
+.list-card {
+  background-color: white;
+  border: var(--border-width) solid var(--pure-black);
+  border-radius: var(--radius);
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+}
+
+.list-item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-title {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.item-sub {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  margin-top: 2px;
+}
+
+.arrow {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.divider {
+  height: 2.5px;
+  background-color: var(--pure-black);
+}
+
+/* Neo Brutalism Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: white;
+  border: 2.5px solid var(--pure-black);
+  transition: .2s;
+  border-radius: var(--radius);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 2px;
+  bottom: 2px;
+  background-color: var(--pure-black);
+  transition: .2s;
+  border-radius: 2px;
+}
+
+input:checked + .slider {
+  background-color: var(--secondary-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.button-group {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  flex: 1;
+  padding: 14px;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 900;
+  cursor: pointer;
+  border: var(--border-width) solid var(--pure-black);
+  box-shadow: 4px 4px 0px var(--pure-black);
+  transition: all 0.1s ease;
+}
+
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--pure-black);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--pure-black);
+}
+
+.btn-secondary {
+  background-color: var(--tertiary-color);
+  color: var(--pure-black);
+}

@@ -164,11 +164,71 @@
 - **配色系統**：展演明白 (`#fafafa`)、膠囊深紫 (`#2b124c`)、高彩螢光黃 (`#e2f952`)、電磁亮藍 (`#5246e2`)。
 - **連結**：[開啟風格頁面](file:///e:/codes/styles/style-30-capsule-exhibition-space/index.html) | [查看 README](file:///e:/codes/styles/style-30-capsule-exhibition-space/README.md)
 
+
+---
+
+## 📱 Flutter App 主題系統 (Theme System) 模板專區
+
+在 `flutter/` 目錄下包含了採用 Flutter 主題系統（`ThemeData` & `Theme.of(context)`）完全解耦開發的 5 大風格 App 模板。Widget 內部**零寫死 Hardcode 樣式**，可隨時替換主題風格。
+
+### 01. 極簡科技風 (Apple-style Minimalist)
+- **視覺特色**：大圓角 (20px)、極極輕微柔和陰影、大量留白與 iOS 經典藍。
+- **目錄**：`flutter/style_01_apple_minimal/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_01_apple_minimal/web/index.html) | [查看 Flutter 專案 README](flutter/style_01_apple_minimal/README.md)
+
+### 02. 新粗獷主義 (Neo-Brutalism)
+- **視覺特色**：純黑 3px 粗邊框、硬邊 Offset 塊陰影 (Blur 0)、高飽和撞色與潮牌字階。
+- **目錄**：`flutter/style_02_neo_brutalism/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_02_neo_brutalism/web/index.html) | [查看 Flutter 專案 README](flutter/style_02_neo_brutalism/README.md)
+
+### 03. 新瑞士主義 / 包浩斯 (Swiss Modernism)
+- **視覺特色**：完全 0px 零圓角、零陰影、純靠瑞士紅 (`#FF2A00`) 色塊 (Color Block) 與粗體字階對比。
+- **目錄**：`flutter/style_03_swiss_modernism/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_03_swiss_modernism/web/index.html) | [查看 Flutter 專案 README](flutter/style_03_swiss_modernism/README.md)
+
+### 04. 玻璃擬物風 (Glassmorphism / Frost UI)
+- **視覺特色**：通透半透明卡片、BackdropFilter 毛玻璃高模糊、1px 微光白邊框與 Web3 深藍漸層。
+- **目錄**：`flutter/style_04_glassmorphism/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_04_glassmorphism/web/index.html) | [查看 Flutter 專案 README](flutter/style_04_glassmorphism/README.md)
+
+### 05. 復古賽博朋克 / 霓虹暗黑 (Cyberpunk Neon)
+- **視覺特色**：純黑夜幕背景、霓虹青 (`#00F0FF`) / 霓虹粉 (`#FF007A`) 外發光 Neon Glow 邊框與科技切角。
+- **目錄**：`flutter/style_05_cyberpunk_neon/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_05_cyberpunk_neon/web/index.html) | [查看 Flutter 專案 README](flutter/style_05_cyberpunk_neon/README.md)
+
+### 06. 柔和莫蘭迪 / 自然有機風 (Soft Organic)
+- **視覺特色**：超大 28px 有機圓角、Stadium 膠囊按鈕、燕麥色 (`#F2EFE9`) 與鼠尾草綠 (`#8A9A86`) 莫蘭迪色調。
+- **目錄**：`flutter/style_06_soft_organic/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_06_soft_organic/web/index.html) | [查看 Flutter 專案 README](flutter/style_06_soft_organic/README.md)
+
+### 07. 復古 Y2K / 90 年代電腦風 (Retro Y2K / OS Classic)
+- **視覺特色**：完全 0px 方塊直角、經典 3D Bevel 邊框、電腦灰 (`#C0C0C0`) 與深藍標題列 (`#000080`)。
+- **目錄**：`flutter/style_07_retro_y2k/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_07_retro_y2k/web/index.html) | [查看 Flutter 專案 README](flutter/style_07_retro_y2k/README.md)
+
+### 08. 新擬物風 (Neumorphism / Soft UI)
+- **視覺特色**：同色系背景 (`#E0E5EC`) 雕刻質感、雙重「右上亮影 (`#FFFFFF`) + 左下暗影 (`#A3B1C6`)」浮雕陰影。
+- **目錄**：`flutter/style_08_neumorphism/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_08_neumorphism/web/index.html) | [查看 Flutter 專案 README](flutter/style_08_neumorphism/README.md)
+
+### 09. 扁平化微漸層 / 現代 SaaS 風 (Modern SaaS)
+- **視覺特色**：適中 12px 圓角、高明度雙色漸層 (靛藍 `#6366F1` ➔ 天空藍 `#3B82F6`) 與彩色半透明陰影。
+- **目錄**：`flutter/style_09_modern_saas/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_09_modern_saas/web/index.html) | [查看 Flutter 專案 README](flutter/style_09_modern_saas/README.md)
+
+### 10. 高密度儀表板 / 終端機風格 (Terminal Dashboard)
+- **視覺特色**：純黑底 (`#000000`)、螢光綠 (`#00FF66`) Monospace 等寬字體、0px 緊密表格網格與高數據吞吐量。
+- **目錄**：`flutter/style_10_terminal_dashboard/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_10_terminal_dashboard/web/index.html) | [查看 Flutter 專案 README](flutter/style_10_terminal_dashboard/README.md)
+
+
 ---
 
 ## 🛠️ 開發與視覺規範 (Development Standards)
 
-1. **100% Pure Vanilla CSS/JS**：禁止使用 Bootstrap 5 或任何外部框架 CDN。
-2. **完全響應式 RWD 彈性對齊**：所有導覽列、Modal 對話框、表單控制項與表單全數支援從小螢幕手機到 4K 桌機的完美自動適應與防撐爆。
-3. **原生自建 UI 元件庫**：每一種風格獨立實作按鈕、標籤、表單輸入框、單選/多選/開關/Slider、卡片、手風琴、分頁 Tab、Modal 彈窗、Offcanvas 側欄、進度條、表格等。
-4. **繁體中文維護**：所有文檔、註解與界面文字皆採用規範繁體中文。
+1. **100% Pure Vanilla CSS/JS**：Web Showcase 禁止使用 Bootstrap 5 或任何外部框架 CDN。
+2. **Flutter Theme.of(context) 樣式切離**：所有的 Flutter Widget 嚴禁 Hardcode 色彩、圓角與字階數值，統一讀取 `Theme.of(context)`。
+3. **完全響應式 RWD 彈性對齊**：所有導覽列、Modal 對話框、表單控制項與表單全數支援從小螢幕手機到 4K 桌機的自動適應。
+4. **原生自建 UI 元件庫**：每一種風格獨立實作按鈕、標籤、表單輸入框、單選/多選/開關/Slider、卡片、手風琴、分頁 Tab、Modal 彈窗、Offcanvas 側欄、進度條、表格等。
+5. **繁體中文維護**：所有文檔、註解與界面文字皆採用規範繁體中文。
+

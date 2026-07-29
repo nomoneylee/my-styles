@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新擬物風 Neumorphism - App 展示模擬</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- App Header -->
+    <header class="app-header">
+      <h1 class="app-title">新擬物風 NEUMORPHISM</h1>
+      <button class="icon-btn" id="config-btn" aria-label="Config">🎛️</button>
+    </header>
+
+    <main class="app-content">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <h2 class="display-title">觸覺擬物面板</h2>
+        <p class="body-subtext">同色系一體化背景 (#E0E5EC)、右上亮影與左下暗影呈現浮雕觸感。</p>
+      </section>
+
+      <!-- Neumorphic Soft Card -->
+      <div class="card neu-card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="icon">🔊</span>
+            <h3 class="card-title">智慧音響揚聲器</h3>
+          </div>
+          <span class="badge">PLAYING</span>
+        </div>
+        <div class="card-body">
+          <span class="label">主音量控制指標 (70%)</span>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill" style="width: 70%;"></div>
+          </div>
+          <div class="card-footer">
+            <span class="speaker-mode">客廳音響 - Hi-Fi 模式</span>
+            <span class="db-val">70 dB</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls Section -->
+      <section class="control-section">
+        <h3 class="section-title">中樞裝置命名</h3>
+        
+        <div class="input-group">
+          <label for="device-id" class="input-label">DEVICE IDENTIFIER</label>
+          <div class="neu-input-wrapper">
+            <input type="text" id="device-id" class="text-input" value="SMART_HOME_HUB_PRO">
+          </div>
+        </div>
+
+        <div class="card neu-card list-card">
+          <div class="list-item">
+            <div class="list-item-info">
+              <span class="item-title">自動環境燈光排程</span>
+              <span class="item-sub">日落後自動開啟擬物暖黃照明</span>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="light-switch" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="list-item" id="temp-item">
+            <div class="list-item-info">
+              <span class="item-title">溫濕度感測器調節</span>
+              <span class="item-sub">目前室溫：24°C / 濕度 55%</span>
+            </div>
+            <span class="chevron">›</span>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button class="btn btn-primary" id="save-btn">儲存浮雕參數</button>
+          <button class="btn btn-secondary" id="reset-btn">復原預設硬體</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

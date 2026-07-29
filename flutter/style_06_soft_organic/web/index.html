@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>柔和莫蘭迪 Soft Organic - App 展示模擬</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- App Header -->
+    <header class="app-header">
+      <h1 class="app-title">柔和莫蘭迪 SOFT ORGANIC</h1>
+      <button class="icon-btn" id="spa-btn" aria-label="SPA">🌿</button>
+    </header>
+
+    <main class="app-content">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <h2 class="display-title">每日心靈植栽</h2>
+        <p class="body-subtext">超大有機橢圓角、莫蘭迪鼠尾草綠與質樸人文溫潤感。</p>
+      </section>
+
+      <!-- Soft Organic Card -->
+      <div class="card organic-card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="icon">🪴</span>
+            <h3 class="card-title">龜背竹水分紀錄</h3>
+          </div>
+          <span class="badge">HEALTHY</span>
+        </div>
+        <div class="card-body">
+          <span class="label">土壤濕度目標 (60%)</span>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill" style="width: 60%;"></div>
+          </div>
+          <div class="card-footer">
+            <span class="water-text">下次澆水：明日 09:00</span>
+            <span class="status-tag">濕度適宜</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls Section -->
+      <section class="control-section">
+        <h3 class="section-title">日記隨手記</h3>
+        
+        <div class="input-group">
+          <label for="diary-title" class="input-label">PODCAST TITLE</label>
+          <input type="text" id="diary-title" class="text-input" value="森林早晨呼吸冥想日記">
+        </div>
+
+        <div class="card organic-card list-card">
+          <div class="list-item">
+            <div class="list-item-info">
+              <span class="item-title">助眠白噪音播放</span>
+              <span class="item-sub">夜間自動播放 30 分鐘森林雨聲</span>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="rain-switch" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="list-item" id="breath-item">
+            <div class="list-item-info">
+              <span class="item-title">引導式呼吸訓練</span>
+              <span class="item-sub">4-7-8 舒壓放鬆練習課程</span>
+            </div>
+            <span class="chevron">›</span>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button class="btn btn-primary" id="start-btn">開始冥想時刻</button>
+          <button class="btn btn-secondary" id="log-btn">查看修復日誌</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

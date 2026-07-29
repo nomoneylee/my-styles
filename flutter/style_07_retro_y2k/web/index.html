@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>復古 Y2K 90s OS - App 展示模擬</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- App Header -->
+    <header class="app-header">
+      <h1 class="app-title">💾 RETRO Y2K // OS 1999</h1>
+      <button class="icon-btn" id="close-btn" aria-label="Close">✕</button>
+    </header>
+
+    <main class="app-content">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <h2 class="display-title">Y2K_PLAYER.EXE</h2>
+        <p class="body-subtext">經典 90 年代 OS 視窗灰、3D Bevel 邊框與懷舊像素感。</p>
+      </section>
+
+      <!-- Windows 95 Window Card -->
+      <div class="window-card">
+        <div class="window-header">
+          <span class="window-title">💿 WINAMP_SHOWCASE.WAV</span>
+          <button class="win-btn">X</button>
+        </div>
+        <div class="window-body">
+          <span class="label">位元率解碼緩衝器 (55%)</span>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill" style="width: 55%;"></div>
+          </div>
+          <div class="card-footer">
+            <span class="track-text">TRACK 09 // 128 kbps</span>
+            <span class="status-tag">STEREO 44.1kHz</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls Section -->
+      <section class="control-section">
+        <h3 class="section-title">執行指令 (RUN CMD)</h3>
+        
+        <div class="input-group">
+          <label for="cmd-input" class="input-label">COMMAND PATH</label>
+          <input type="text" id="cmd-input" class="text-input" value="C:\WINDOWS\SYSTEM32\Y2K.EXE">
+        </div>
+
+        <div class="window-card list-card">
+          <div class="list-item">
+            <div class="list-item-info">
+              <span class="item-title">開啟 86MB 虛擬記憶體分頁</span>
+              <span class="item-sub">啟用 3.5 吋軟碟機自動掛載機制</span>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="mem-switch" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="list-item" id="modem-item">
+            <div class="list-item-info">
+              <span class="item-title">撥號連線網際網路 (56k Modem)</span>
+              <span class="item-sub">發出連線嗶嗶聲響與波形數據交換</span>
+            </div>
+            <span class="arrow">▶</span>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button class="btn btn-primary" id="ok-btn">確定 (OK)</button>
+          <button class="btn btn-secondary" id="cancel-btn">取消 (CANCEL)</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

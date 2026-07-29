@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新粗獷主義 Neo-Brutalism - App 展示模擬</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- App Header -->
+    <header class="app-header">
+      <h1 class="app-title">新粗獷主義 NEO-BRUTALISM</h1>
+      <button class="icon-btn" id="flash-btn" aria-label="Flash">⚡</button>
+    </header>
+
+    <main class="app-content">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <h2 class="display-title">LIMITED DROP 01</h2>
+        <p class="body-subtext">叛逆高撞色、純黑粗邊框與硬塊位移陰影視覺呈現。</p>
+      </section>
+
+      <!-- Neo Brutalism Card with Hard Offset Shadow Wrapper -->
+      <div class="card-shadow-wrapper">
+        <div class="card product-card">
+          <div class="card-header">
+            <div class="card-title-group">
+              <span class="icon">🛍️</span>
+              <h3 class="card-title">CYBER_HOODIE #09</h3>
+            </div>
+            <span class="badge">HOT</span>
+          </div>
+          <div class="card-body">
+            <span class="label">庫存剩餘數量 (65%)</span>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progress-fill" style="width: 65%;"></div>
+            </div>
+            <div class="card-footer">
+              <span class="price-text">NT$ 3,800</span>
+              <span class="status-tag">搶購即將截止</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls Section -->
+      <section class="control-section">
+        <h3 class="section-title">折扣優惠碼輸入</h3>
+        
+        <div class="input-group">
+          <label for="promo-code" class="input-label">VIP PROMO CODE</label>
+          <input type="text" id="promo-code" class="text-input" value="LIMITLESS_STREETWEAR_2026">
+        </div>
+
+        <div class="list-card-shadow-wrapper">
+          <div class="card list-card">
+            <div class="list-item">
+              <div class="list-item-info">
+                <span class="item-title">開啟簡訊開賣通知</span>
+                <span class="item-sub">發售前 10 分鐘自動傳送簡訊</span>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="sms-switch" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="divider"></div>
+            <div class="list-item" id="express-item">
+              <div class="list-item-info">
+                <span class="item-title">全台極速宅配通</span>
+                <span class="item-sub">當天 24H 快速送達指定地址</span>
+              </div>
+              <span class="arrow">➔</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button class="btn btn-primary" id="cart-btn">立即加入購物車</button>
+          <button class="btn btn-secondary" id="fav-btn">加入收藏庫</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

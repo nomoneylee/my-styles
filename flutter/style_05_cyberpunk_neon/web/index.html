@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>賽博朋克 Cyberpunk Neon - App 展示模擬</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- App Header -->
+    <header class="app-header">
+      <h1 class="app-title">CYBERPUNK // NEON DARK</h1>
+      <button class="icon-btn" id="glow-btn" aria-label="Glow">⚡</button>
+    </header>
+
+    <main class="app-content">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <h2 class="display-title">SYSTEM OVERDRIVE</h2>
+        <p class="body-subtext">霓虹青 (CYAN) 與粉紅 (MAGENTA) 外發光科技面板與電競幾何UI。</p>
+      </section>
+
+      <!-- Cyberpunk Card -->
+      <div class="card neon-card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="icon">💾</span>
+            <h3 class="card-title">QUANTUM CORE v7.5</h3>
+          </div>
+          <span class="badge">ONLINE</span>
+        </div>
+        <div class="card-body">
+          <span class="label">核心超頻負載 (94%)</span>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill" style="width: 94%;"></div>
+          </div>
+          <div class="card-footer">
+            <span class="freq-text">5.2 GHz // 1.2V</span>
+            <span class="status-tag">NEON STABLE</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls Section -->
+      <section class="control-section">
+        <h3 class="section-title">量子指令鎖定</h3>
+        
+        <div class="input-group">
+          <label for="neon-key" class="input-label">NEON COMMAND KEY</label>
+          <input type="text" id="neon-key" class="text-input" value="NEON_CORE_OVERDRIVE_2077">
+        </div>
+
+        <div class="card neon-card list-card">
+          <div class="list-item">
+            <div class="list-item-info">
+              <span class="item-title">神經元矩陣連線 (NEURAL LINK)</span>
+              <span class="item-sub">即時腦波資料同步傳輸中</span>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="neural-switch" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="list-item" id="firewall-item">
+            <div class="list-item-info">
+              <span class="item-title">防火牆量子加密矩陣</span>
+              <span class="item-sub">自動阻絕外部駭客入侵攻擊</span>
+            </div>
+            <span class="chevron">❯</span>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button class="btn btn-primary" id="overclock-btn">啟動超頻模組</button>
+          <button class="btn btn-secondary" id="backup-btn">備份量子矩陣</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

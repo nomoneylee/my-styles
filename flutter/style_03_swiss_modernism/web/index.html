@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新瑞士主義 Swiss Modernism - App 展示模擬</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- App Header -->
+    <header class="app-header">
+      <h1 class="app-title">SWISS MODERNISM // GRID</h1>
+      <button class="icon-btn" id="grid-btn" aria-label="Grid">⊞</button>
+    </header>
+
+    <main class="app-content">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <h2 class="display-title">01 // ARCHITECTURE</h2>
+        <p class="body-subtext">完全零圓角、極致網格對齊與瑞士紅 (SWISS RED) 色塊呈現。</p>
+      </section>
+
+      <!-- Color Block Card -->
+      <div class="card exhibition-card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="square-icon"></span>
+            <h3 class="card-title">EXHIBITION 2026</h3>
+          </div>
+          <span class="tag">VOL. 42</span>
+        </div>
+        <div class="card-body">
+          <span class="label">展覽容量負載指標 (82%)</span>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill" style="width: 82%;"></div>
+          </div>
+          <div class="card-footer">
+            <span class="location-text">ZÜRICH MUSEUM</span>
+            <span class="status-tag">OPEN TODAY</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls Section -->
+      <section class="control-section">
+        <h3 class="section-title">02 // SEARCH & SEARCH</h3>
+        
+        <div class="input-group">
+          <label for="archive-code" class="input-label">ARCHIVE INDEX CODE</label>
+          <input type="text" id="archive-code" class="text-input" value="HELVETICA_GRID_SYSTEM_1957">
+        </div>
+
+        <div class="card list-card">
+          <div class="list-item">
+            <div class="list-item-info">
+              <span class="item-title">GRID ALIGNMENT GUIDE</span>
+              <span class="item-sub">Show 12-column baseline grid overlay</span>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="grid-switch" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="list-item" id="typography-item">
+            <div class="list-item-info">
+              <span class="item-title">TYPOGRAPHY SCALER</span>
+              <span class="item-sub">Helvetica Neue bold contrast preset</span>
+            </div>
+            <span class="arrow">▶</span>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button class="btn btn-primary" id="pdf-btn">GENERATE PDF</button>
+          <button class="btn btn-secondary" id="export-btn">EXPORT GRID</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
