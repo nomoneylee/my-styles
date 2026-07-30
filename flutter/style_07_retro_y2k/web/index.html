@@ -3,78 +3,133 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>復古 Y2K 90s OS - App 展示模擬</title>
+  <title>復古 Y2K Retro Y2K - 共用 UI 元件展示</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="app-container">
-    <!-- App Header -->
     <header class="app-header">
-      <h1 class="app-title">💾 RETRO Y2K // OS 1999</h1>
-      <button class="icon-btn" id="close-btn" aria-label="Close">✕</button>
+      <h1 class="app-title">RETRO Y2K // 2000s</h1>
+      <button class="icon-btn" aria-label="星星圖示">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </button>
     </header>
 
     <main class="app-content">
-      <!-- Hero Section -->
       <section class="hero-section">
-        <h2 class="display-title">Y2K_PLAYER.EXE</h2>
-        <p class="body-subtext">經典 90 年代 OS 視窗灰、3D Bevel 邊框與懷舊像素感。</p>
+        <h2 class="display-title">千禧流行 UI 元件</h2>
+        <p class="body-subtext">粉紅光澤、銀電炫彩與 Y2K 復古潮流質感。</p>
       </section>
 
-      <!-- Windows 95 Window Card -->
-      <div class="window-card">
-        <div class="window-header">
-          <span class="window-title">💿 WINAMP_SHOWCASE.WAV</span>
-          <button class="win-btn">X</button>
-        </div>
-        <div class="window-body">
-          <span class="label">位元率解碼緩衝器 (55%)</span>
-          <div class="progress-bar">
-            <div class="progress-fill" id="progress-fill" style="width: 55%;"></div>
-          </div>
-          <div class="card-footer">
-            <span class="track-text">TRACK 09 // 128 kbps</span>
-            <span class="status-tag">STEREO 44.1kHz</span>
-          </div>
-        </div>
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF0080" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" class="search-input" placeholder="SEARCH Y2K STUFF...">
       </div>
 
-      <!-- Controls Section -->
-      <section class="control-section">
-        <h3 class="section-title">執行指令 (RUN CMD)</h3>
-        
+      <!-- Segmented Control -->
+      <div class="segmented-control">
+        <button class="segment-btn active">POP</button>
+        <button class="segment-btn">GLAM</button>
+        <button class="segment-btn">MODALS</button>
+      </div>
+
+      <!-- 1. Buttons -->
+      <section class="component-section">
+        <h3 class="section-title">1. 按鈕變體 (Buttons)</h3>
+        <div class="button-wrap">
+          <button class="btn btn-pink">POPPING PINK</button>
+          <button class="btn btn-purple">ELECTRIC PURPLE</button>
+          <button class="btn btn-outlined">OUTLINED</button>
+          <button class="btn btn-text">TEXT LINK</button>
+        </div>
+      </section>
+
+      <!-- 2. Inputs & Selection -->
+      <section class="component-section">
+        <h3 class="section-title">2. 輸入與選擇 (Inputs)</h3>
         <div class="input-group">
-          <label for="cmd-input" class="input-label">COMMAND PATH</label>
-          <input type="text" id="cmd-input" class="text-input" value="C:\WINDOWS\SYSTEM32\Y2K.EXE">
+          <label for="y2k-input" class="input-label">Y2K_USERNAME</label>
+          <input type="text" id="y2k-input" class="text-input" value="Y2K_CYBER_BABY_2000">
         </div>
 
-        <div class="window-card list-card">
-          <div class="list-item">
-            <div class="list-item-info">
-              <span class="item-title">開啟 86MB 虛擬記憶體分頁</span>
-              <span class="item-sub">啟用 3.5 吋軟碟機自動掛載機制</span>
-            </div>
+        <div class="card y2k-card">
+          <div class="control-row">
+            <span class="control-label">GLITTER MODE (Switch)</span>
             <label class="switch">
-              <input type="checkbox" id="mem-switch" checked>
-              <span class="slider"></span>
+              <input type="checkbox" id="y2k-switch" checked>
+              <span class="slider-toggle"></span>
             </label>
           </div>
           <div class="divider"></div>
-          <div class="list-item" id="modem-item">
-            <div class="list-item-info">
-              <span class="item-title">撥號連線網際網路 (56k Modem)</span>
-              <span class="item-sub">發出連線嗶嗶聲響與波形數據交換</span>
+          <div class="control-row">
+            <span class="control-label">AUTO SYNC (Checkbox)</span>
+            <label class="checkbox-container">
+              <input type="checkbox" id="y2k-checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-col">
+            <div class="slider-header">
+              <span class="control-label">BASS BOOST (Slider)</span>
+              <span class="slider-value-text" id="slider-val-text">85%</span>
             </div>
-            <span class="arrow">▶</span>
+            <input type="range" id="sample-slider" class="range-slider" min="0" max="100" value="85">
           </div>
         </div>
+      </section>
 
-        <div class="button-group">
-          <button class="btn btn-primary" id="ok-btn">確定 (OK)</button>
-          <button class="btn btn-secondary" id="cancel-btn">取消 (CANCEL)</button>
+      <!-- 3. Cards & Views -->
+      <section class="component-section">
+        <h3 class="section-title">3. 卡片與視圖 (Cards)</h3>
+        <div class="card y2k-card">
+          <div class="card-header">
+            <span class="card-title">Y2K MUSIC PLAYER</span>
+            <span class="badge badge-pink">TOP 100</span>
+          </div>
+          <p class="progress-label" id="progress-val-text">TRACK PROGRESS: 85%</p>
+          <div class="progress-bar">
+            <div class="progress-fill progress-fill-85" id="progress-fill"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Modals & Overlays -->
+      <section class="component-section">
+        <h3 class="section-title">4. 彈窗與回饋 (Modals)</h3>
+        <div class="button-row">
+          <button class="btn btn-pink btn-half" id="dialog-trigger-btn">ALERT DIALOG</button>
+          <button class="btn btn-outlined btn-half" id="sheet-trigger-btn">BOTTOM SHEET</button>
         </div>
       </section>
     </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active">MUSIC</button>
+      <button class="nav-item">STYLE</button>
+      <button class="nav-item">FAV</button>
+    </nav>
+
+    <!-- Dialog -->
+    <div class="modal-overlay hidden" id="sample-dialog">
+      <div class="modal-box y2k-modal">
+        <h3 class="modal-title">💖 Y2K POP ALERT!</h3>
+        <p class="modal-content">千禧復古炫彩風格 Alert Dialog 元件。</p>
+        <div class="modal-actions">
+          <button class="btn btn-pink" id="dialog-close">LOVE IT!</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sheet -->
+    <div class="sheet-overlay hidden" id="sample-sheet">
+      <div class="sheet-box y2k-sheet">
+        <h3 class="sheet-title">✨ Y2K POP SHEET</h3>
+        <p class="sheet-desc">千禧年流行質感之 Bottom Sheet 面板。</p>
+        <button class="btn btn-purple btn-full" id="sheet-close">CLOSE</button>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>

@@ -3,81 +3,133 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>高密度儀表板 Terminal - App 展示模擬</title>
+  <title>終端機面板 Terminal Dashboard - 共用 UI 元件展示</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="app-container">
-    <!-- App Header -->
     <header class="app-header">
-      <h1 class="app-title">root@terminal:~# sysstat</h1>
-      <button class="icon-btn" id="term-btn" aria-label="Terminal">💻</button>
+      <h1 class="app-title">root@terminal:~# ./showcase.sh</h1>
+      <button class="icon-btn" aria-label="終端機圖示">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00FF66" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+      </button>
     </header>
 
     <main class="app-content">
-      <!-- Hero Section -->
       <section class="hero-section">
-        <h2 class="display-title">> HIGH_FREQ_TRADING</h2>
-        <p class="body-subtext">純黑底 (#000000)、螢光綠 (#00FF66)、等寬 Monospace 字體與高密度數據。</p>
+        <h2 class="display-title">> UI_ELEMENTS_INIT</h2>
+        <p class="body-subtext">STATUS: ALL_SYSTEMS_OPERATIONAL // 2026</p>
       </section>
 
-      <!-- Terminal Card -->
-      <div class="card terminal-card">
-        <div class="card-header">
-          <div class="card-title-group">
-            <span class="icon">🖥️</span>
-            <h3 class="card-title">CLUSTER_NODE_01</h3>
-          </div>
-          <span class="badge">HIGH_LOAD</span>
-        </div>
-        <div class="card-body">
-          <span class="label">[RAM_ALLOCATION] 15.3GB / 16.0GB (96%)</span>
-          <div class="progress-bar">
-            <div class="progress-fill" id="progress-fill" style="width: 96%;"></div>
-          </div>
-          <div class="card-footer">
-            <span class="latency-text">LATENCY: 0.12ms</span>
-            <span class="status-tag">THROUGHPUT: 42.8k</span>
-          </div>
-        </div>
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00FF66" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" class="search-input" placeholder='grep -i "component"...'>
       </div>
 
-      <!-- Controls Section -->
-      <section class="control-section">
-        <h3 class="section-title">> SEARCH_LOGS_REGEX</h3>
-        
+      <!-- Segmented Control -->
+      <div class="segmented-control">
+        <button class="segment-btn active">[1]IO</button>
+        <button class="segment-btn">[2]SYS</button>
+        <button class="segment-btn">[3]LOG</button>
+      </div>
+
+      <!-- 1. Buttons -->
+      <section class="component-section">
+        <h3 class="section-title">> 1. BUTTON_VARIANTS</h3>
+        <div class="button-wrap">
+          <button class="btn btn-green">[ELEVATED_GREEN]</button>
+          <button class="btn btn-cyan">[FILLED_CYAN]</button>
+          <button class="btn btn-outlined">[OUTLINED]</button>
+          <button class="btn btn-text">cat_link.sh</button>
+        </div>
+      </section>
+
+      <!-- 2. Inputs & Selection -->
+      <section class="component-section">
+        <h3 class="section-title">> 2. INPUTS_AND_CONTROLS</h3>
         <div class="input-group">
-          <label for="cli-input" class="input-label">CLI QUERY INPUT</label>
-          <input type="text" id="cli-input" class="text-input" value="grep -rn &quot;LATENCY_CRITICAL&quot; /var/log/sys.log">
+          <label for="term-input" class="input-label">COMMAND_PROMPT_INPUT</label>
+          <input type="text" id="term-input" class="text-input" value="root@matrix-node-01:~#">
         </div>
 
-        <div class="card terminal-card list-card">
-          <div class="list-item">
-            <div class="list-item-info">
-              <span class="item-title">HIGH_FREQUENCY_ORDER_ROUTER</span>
-              <span class="item-sub">Enable sub-millisecond FPGA DMA channel</span>
-            </div>
+        <div class="card term-card">
+          <div class="control-row">
+            <span class="control-label">DAEMON_SWITCH</span>
             <label class="switch">
-              <input type="checkbox" id="dma-switch" checked>
-              <span class="slider"></span>
+              <input type="checkbox" id="term-switch" checked>
+              <span class="slider-toggle"></span>
             </label>
           </div>
           <div class="divider"></div>
-          <div class="list-item" id="ebpf-item">
-            <div class="list-item-info">
-              <span class="item-title">KERNEL_TRACING_SYSTEM_CALLS</span>
-              <span class="item-sub">eBPF probe listening on eth0 socket</span>
+          <div class="control-row">
+            <span class="control-label">ENABLE_VERBOSE_LOGS</span>
+            <label class="checkbox-container">
+              <input type="checkbox" id="term-checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-col">
+            <div class="slider-header">
+              <span class="control-label">ALLOCATED_MEM_SLIDER</span>
+              <span class="slider-value-text" id="slider-val-text">95%</span>
             </div>
-            <span class="chevron">▶</span>
+            <input type="range" id="sample-slider" class="range-slider" min="0" max="100" value="95">
           </div>
         </div>
+      </section>
 
-        <div class="button-group">
-          <button class="btn btn-primary" id="exec-btn">[EXEC_COMMAND]</button>
-          <button class="btn btn-secondary" id="clear-btn">[CLEAR_LOGS]</button>
+      <!-- 3. Cards & Views -->
+      <section class="component-section">
+        <h3 class="section-title">> 3. SYSTEM_TELEMETRY</h3>
+        <div class="card term-card">
+          <div class="card-header">
+            <span class="card-title">BUFFER_UTILIZATION</span>
+            <span class="badge badge-green">OK</span>
+          </div>
+          <p class="progress-label" id="progress-val-text">RAM_USAGE: 95%</p>
+          <div class="progress-bar">
+            <div class="progress-fill progress-fill-95" id="progress-fill"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Modals & Overlays -->
+      <section class="component-section">
+        <h3 class="section-title">> 4. DIALOGS_AND_OVERLAYS</h3>
+        <div class="button-row">
+          <button class="btn btn-green btn-half" id="dialog-trigger-btn">ALERT DIALOG</button>
+          <button class="btn btn-outlined btn-half" id="sheet-trigger-btn">BOTTOM SHEET</button>
         </div>
       </section>
     </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active">CLI</button>
+      <button class="nav-item">NODES</button>
+      <button class="nav-item">MEM</button>
+    </nav>
+
+    <!-- Dialog -->
+    <div class="modal-overlay hidden" id="sample-dialog">
+      <div class="modal-box term-modal">
+        <h3 class="modal-title">> TERMINAL_EXEC_PROMPT</h3>
+        <p class="modal-content">> Execute system diagnostics overlay command?</p>
+        <div class="modal-actions">
+          <button class="btn btn-green" id="dialog-close">[EXECUTE]</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sheet -->
+    <div class="sheet-overlay hidden" id="sample-sheet">
+      <div class="sheet-box term-sheet">
+        <h3 class="sheet-title">> TERMINAL_DRAWER_BUFFER</h3>
+        <p class="sheet-desc">> Active processes and thread logs buffer.</p>
+        <button class="btn btn-cyan btn-full" id="sheet-close">CLOSE</button>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>

@@ -3,81 +3,133 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>新瑞士主義 Swiss Modernism - App 展示模擬</title>
+  <title>瑞士現代主義 Swiss Modernism - 共用 UI 元件展示</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="app-container">
-    <!-- App Header -->
     <header class="app-header">
-      <h1 class="app-title">SWISS MODERNISM // GRID</h1>
-      <button class="icon-btn" id="grid-btn" aria-label="Grid">⊞</button>
+      <h1 class="app-title">HELVETICA // SWISS</h1>
+      <button class="icon-btn" aria-label="網格圖示">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
+      </button>
     </header>
 
     <main class="app-content">
-      <!-- Hero Section -->
       <section class="hero-section">
-        <h2 class="display-title">01 // ARCHITECTURE</h2>
-        <p class="body-subtext">完全零圓角、極致網格對齊與瑞士紅 (SWISS RED) 色塊呈現。</p>
+        <h2 class="display-title">UI ELEMENTS</h2>
+        <p class="body-subtext">INTERNATIONAL TYPOGRAPHIC STYLE / 1950s</p>
       </section>
 
-      <!-- Color Block Card -->
-      <div class="card exhibition-card">
-        <div class="card-header">
-          <div class="card-title-group">
-            <span class="square-icon"></span>
-            <h3 class="card-title">EXHIBITION 2026</h3>
-          </div>
-          <span class="tag">VOL. 42</span>
-        </div>
-        <div class="card-body">
-          <span class="label">展覽容量負載指標 (82%)</span>
-          <div class="progress-bar">
-            <div class="progress-fill" id="progress-fill" style="width: 82%;"></div>
-          </div>
-          <div class="card-footer">
-            <span class="location-text">ZÜRICH MUSEUM</span>
-            <span class="status-tag">OPEN TODAY</span>
-          </div>
-        </div>
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" class="search-input" placeholder="SEARCH IN GRID...">
       </div>
 
-      <!-- Controls Section -->
-      <section class="control-section">
-        <h3 class="section-title">02 // SEARCH & SEARCH</h3>
-        
+      <!-- Segmented Control -->
+      <div class="segmented-control">
+        <button class="segment-btn active">OVERVIEW</button>
+        <button class="segment-btn">CONTROLS</button>
+        <button class="segment-btn">MODALS</button>
+      </div>
+
+      <!-- 1. Buttons -->
+      <section class="component-section">
+        <h3 class="section-title">1. BUTTON VARIANTS</h3>
+        <div class="button-wrap">
+          <button class="btn btn-red">PRIMARY (RED)</button>
+          <button class="btn btn-black">FILLED (BLACK)</button>
+          <button class="btn btn-outlined">OUTLINED</button>
+          <button class="btn btn-text">TEXT LINK</button>
+        </div>
+      </section>
+
+      <!-- 2. Inputs & Selection -->
+      <section class="component-section">
+        <h3 class="section-title">2. INPUTS & SELECTION</h3>
         <div class="input-group">
-          <label for="archive-code" class="input-label">ARCHIVE INDEX CODE</label>
-          <input type="text" id="archive-code" class="text-input" value="HELVETICA_GRID_SYSTEM_1957">
+          <label for="swiss-input" class="input-label">INPUT FIELD LABEL</label>
+          <input type="text" id="swiss-input" class="text-input" value="SWISS_GRID_SYSTEM_2026">
         </div>
 
-        <div class="card list-card">
-          <div class="list-item">
-            <div class="list-item-info">
-              <span class="item-title">GRID ALIGNMENT GUIDE</span>
-              <span class="item-sub">Show 12-column baseline grid overlay</span>
-            </div>
+        <div class="card">
+          <div class="control-row">
+            <span class="control-label">SWITCH CONTROL</span>
             <label class="switch">
-              <input type="checkbox" id="grid-switch" checked>
-              <span class="slider"></span>
+              <input type="checkbox" id="swiss-switch" checked>
+              <span class="slider-toggle"></span>
             </label>
           </div>
           <div class="divider"></div>
-          <div class="list-item" id="typography-item">
-            <div class="list-item-info">
-              <span class="item-title">TYPOGRAPHY SCALER</span>
-              <span class="item-sub">Helvetica Neue bold contrast preset</span>
+          <div class="control-row">
+            <span class="control-label">CHECKBOX ITEM</span>
+            <label class="checkbox-container">
+              <input type="checkbox" id="swiss-checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-col">
+            <div class="slider-header">
+              <span class="control-label">VALUE SLIDER</span>
+              <span class="slider-value-text" id="slider-val-text">80%</span>
             </div>
-            <span class="arrow">▶</span>
+            <input type="range" id="sample-slider" class="range-slider" min="0" max="100" value="80">
           </div>
         </div>
+      </section>
 
-        <div class="button-group">
-          <button class="btn btn-primary" id="pdf-btn">GENERATE PDF</button>
-          <button class="btn btn-secondary" id="export-btn">EXPORT GRID</button>
+      <!-- 3. Cards & Views -->
+      <section class="component-section">
+        <h3 class="section-title">3. CARDS & VIEWS</h3>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">GRID CARD ITEM</span>
+            <span class="badge badge-swiss">CH-8000</span>
+          </div>
+          <p class="progress-label" id="progress-val-text">METRIC PROGRESS: 80%</p>
+          <div class="progress-bar">
+            <div class="progress-fill progress-fill-80" id="progress-fill"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Modals & Overlays -->
+      <section class="component-section">
+        <h3 class="section-title">4. MODALS & OVERLAYS</h3>
+        <div class="button-row">
+          <button class="btn btn-red btn-half" id="dialog-trigger-btn">SHOW DIALOG</button>
+          <button class="btn btn-outlined btn-half" id="sheet-trigger-btn">BOTTOM SHEET</button>
         </div>
       </section>
     </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active">INDEX</button>
+      <button class="nav-item">GRID</button>
+      <button class="nav-item">MENU</button>
+    </nav>
+
+    <!-- Dialog -->
+    <div class="modal-overlay hidden" id="sample-dialog">
+      <div class="modal-box">
+        <h3 class="modal-title">SWISS DIALOG</h3>
+        <p class="modal-content">極簡精密邊框的對話框元件。</p>
+        <div class="modal-actions">
+          <button class="btn btn-black" id="dialog-close">CONFIRM</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sheet -->
+    <div class="sheet-overlay hidden" id="sample-sheet">
+      <div class="sheet-box">
+        <h3 class="sheet-title">SWISS BOTTOM PANEL</h3>
+        <p class="sheet-desc">網格排列之底部面板範例。</p>
+        <button class="btn btn-red btn-full" id="sheet-close">CLOSE</button>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>

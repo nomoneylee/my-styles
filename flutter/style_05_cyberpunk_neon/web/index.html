@@ -3,81 +3,133 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>賽博朋克 Cyberpunk Neon - App 展示模擬</title>
+  <title>賽博朋克霓虹 Cyberpunk Neon - 共用 UI 元件展示</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="app-container">
-    <!-- App Header -->
     <header class="app-header">
-      <h1 class="app-title">CYBERPUNK // NEON DARK</h1>
-      <button class="icon-btn" id="glow-btn" aria-label="Glow">⚡</button>
+      <h1 class="app-title">CYBERPUNK // 2077</h1>
+      <button class="icon-btn" aria-label="終端機圖示">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+      </button>
     </header>
 
     <main class="app-content">
-      <!-- Hero Section -->
       <section class="hero-section">
-        <h2 class="display-title">SYSTEM OVERDRIVE</h2>
-        <p class="body-subtext">霓虹青 (CYAN) 與粉紅 (MAGENTA) 外發光科技面板與電競幾何UI。</p>
+        <h2 class="display-title">NEON UI ELEMENTS</h2>
+        <p class="body-subtext">HIGH TECH / LOW LIFE // HARDWARE INTERFACE</p>
       </section>
 
-      <!-- Cyberpunk Card -->
-      <div class="card neon-card">
-        <div class="card-header">
-          <div class="card-title-group">
-            <span class="icon">💾</span>
-            <h3 class="card-title">QUANTUM CORE v7.5</h3>
-          </div>
-          <span class="badge">ONLINE</span>
-        </div>
-        <div class="card-body">
-          <span class="label">核心超頻負載 (94%)</span>
-          <div class="progress-bar">
-            <div class="progress-fill" id="progress-fill" style="width: 94%;"></div>
-          </div>
-          <div class="card-footer">
-            <span class="freq-text">5.2 GHz // 1.2V</span>
-            <span class="status-tag">NEON STABLE</span>
-          </div>
-        </div>
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" class="search-input" placeholder="SEARCH_NEURAL_NODES...">
       </div>
 
-      <!-- Controls Section -->
-      <section class="control-section">
-        <h3 class="section-title">量子指令鎖定</h3>
-        
+      <!-- Segmented Control -->
+      <div class="segmented-control">
+        <button class="segment-btn active">CORE</button>
+        <button class="segment-btn">NODES</button>
+        <button class="segment-btn">LOGS</button>
+      </div>
+
+      <!-- 1. Buttons -->
+      <section class="component-section">
+        <h3 class="section-title">1. BUTTON VARIANTS</h3>
+        <div class="button-wrap">
+          <button class="btn btn-pink">PINK_NEON</button>
+          <button class="btn btn-cyan">CYAN_FILLED</button>
+          <button class="btn btn-yellow">YELLOW_BORDER</button>
+          <button class="btn btn-text">TEXT_LINK</button>
+        </div>
+      </section>
+
+      <!-- 2. Inputs & Selection -->
+      <section class="component-section">
+        <h3 class="section-title">2. INPUTS & SELECTION</h3>
         <div class="input-group">
-          <label for="neon-key" class="input-label">NEON COMMAND KEY</label>
-          <input type="text" id="neon-key" class="text-input" value="NEON_CORE_OVERDRIVE_2077">
+          <label for="cyber-input" class="input-label">NEURAL_INPUT_STRING</label>
+          <input type="text" id="cyber-input" class="text-input" value="CYBER_CORE_v2.077">
         </div>
 
-        <div class="card neon-card list-card">
-          <div class="list-item">
-            <div class="list-item-info">
-              <span class="item-title">神經元矩陣連線 (NEURAL LINK)</span>
-              <span class="item-sub">即時腦波資料同步傳輸中</span>
-            </div>
+        <div class="card cyber-card">
+          <div class="control-row">
+            <span class="control-label">SWITCH OVERCLOCK</span>
             <label class="switch">
-              <input type="checkbox" id="neural-switch" checked>
-              <span class="slider"></span>
+              <input type="checkbox" id="cyber-switch" checked>
+              <span class="slider-toggle"></span>
             </label>
           </div>
           <div class="divider"></div>
-          <div class="list-item" id="firewall-item">
-            <div class="list-item-info">
-              <span class="item-title">防火牆量子加密矩陣</span>
-              <span class="item-sub">自動阻絕外部駭客入侵攻擊</span>
+          <div class="control-row">
+            <span class="control-label">CHECKBOX MATRIX</span>
+            <label class="checkbox-container">
+              <input type="checkbox" id="cyber-checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-col">
+            <div class="slider-header">
+              <span class="control-label">POWER SLIDER</span>
+              <span class="slider-value-text" id="slider-val-text">90%</span>
             </div>
-            <span class="chevron">❯</span>
+            <input type="range" id="sample-slider" class="range-slider" min="0" max="100" value="90">
           </div>
         </div>
+      </section>
 
-        <div class="button-group">
-          <button class="btn btn-primary" id="overclock-btn">啟動超頻模組</button>
-          <button class="btn btn-secondary" id="backup-btn">備份量子矩陣</button>
+      <!-- 3. Cards & Views -->
+      <section class="component-section">
+        <h3 class="section-title">3. CARDS & VIEWS</h3>
+        <div class="card cyber-card">
+          <div class="card-header">
+            <span class="card-title">DATA_NODE_01</span>
+            <span class="badge badge-pink">ONLINE</span>
+          </div>
+          <p class="progress-label" id="progress-val-text">SYNC_PROGRESS: 90%</p>
+          <div class="progress-bar">
+            <div class="progress-fill progress-fill-90" id="progress-fill"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Modals & Overlays -->
+      <section class="component-section">
+        <h3 class="section-title">4. MODALS & OVERLAYS</h3>
+        <div class="button-row">
+          <button class="btn btn-pink btn-half" id="dialog-trigger-btn">ALERT DIALOG</button>
+          <button class="btn btn-yellow btn-half" id="sheet-trigger-btn">BOTTOM SHEET</button>
         </div>
       </section>
     </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active">CORE</button>
+      <button class="nav-item">NODES</button>
+      <button class="nav-item">SYSTEM</button>
+    </nav>
+
+    <!-- Dialog -->
+    <div class="modal-overlay hidden" id="sample-dialog">
+      <div class="modal-box cyber-modal">
+        <h3 class="modal-title">⚠️ SYSTEM_ALERT // 2077</h3>
+        <p class="modal-content">Cyberpunk 霓虹風格之對話框指令視窗。</p>
+        <div class="modal-actions">
+          <button class="btn btn-pink" id="dialog-close">EXECUTE</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sheet -->
+    <div class="sheet-overlay hidden" id="sample-sheet">
+      <div class="sheet-box cyber-sheet">
+        <h3 class="sheet-title">⚡ CYBER_DRAWER_INTERFACE</h3>
+        <p class="sheet-desc">極客霓虹邊框之 Bottom Sheet 選單。</p>
+        <button class="btn btn-cyan btn-full" id="sheet-close">CLOSE</button>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// 範例展示頁面 (Sample Showcase Screen) - 復古賽博朋克 (Cyberpunk Neon)
-///
-/// 規範重點：組件完全讀取 Theme.of(context)，內部無任何寫死樣式數值。
+/// 範例展示頁面 (Cyberpunk Neon Showcase Screen)
 class SampleShowcaseScreen extends StatefulWidget {
   const SampleShowcaseScreen({super.key});
 
@@ -11,44 +9,202 @@ class SampleShowcaseScreen extends StatefulWidget {
 }
 
 class _SampleShowcaseScreenState extends State<SampleShowcaseScreen> {
+  int _currentNavIndex = 0;
+  int _segmentedIndex = 0;
   bool _switchValue = true;
-  double _progressValue = 0.94;
-  final TextEditingController _textController = TextEditingController(text: 'NEON_CORE_OVERDRIVE_2077');
+  bool _checkboxValue = true;
+  double _sliderValue = 0.90;
+  final TextEditingController _textController =
+      TextEditingController(text: 'CYBER_CORE_v2.077');
 
-  @override
-  void dispose() {
-    _textController.dispose();
-    super.dispose();
+  void _showSampleDialog() {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        backgroundColor: const Color(0FF0A0A12),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.zero,
+          side: const BorderSide(color: Color(0FFFF007F), width: 2.0),
+        ),
+        title: const Text('⚠️ SYSTEM_ALERT // 2077', style: TextStyle(color: Color(0FFFF007F), fontWeight: FontWeight.w900)),
+        content: const Text('Cyberpunk 霓虹風格之對話框指令視窗。', style: TextStyle(color: Colors.white70)),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('ABORT', style: TextStyle(color: Color(0FF00F0FF))),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('EXECUTE'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _showSampleBottomSheet() {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: const Color(0FF161622),
+      builder: (context) => Container(
+        padding: const EdgeInsets.all(24.0),
+        decoration: const BoxDecoration(
+          border: Border(top: BorderSide(color: Color(0FF00F0FF), width: 2.5)),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('⚡ CYBER_DRAWER_INTERFACE',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w900, color: Color(0FF00F0FF))),
+            const SizedBox(height: 12),
+            const Text('極客霓虹邊框之 Bottom Sheet 選單。', style: TextStyle(color: Colors.white70)),
+            const SizedBox(height: 20),
+            ListTile(
+              leading: const Icon(Icons.developer_board, color: Color(0FFFF007F)),
+              title: const Text('OVERCLOCK_NEURAL_LINK', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+              onTap: () => Navigator.pop(context),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
-    final colorScheme = theme.colorScheme;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('CYBERPUNK // NEON DARK'),
+        title: const Text('CYBERPUNK NEON // 2077'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.memory_rounded),
+            icon: const Icon(Icons.terminal_rounded),
             onPressed: () {},
           ),
         ],
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 16.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 標頭 Hero 區塊
-            Text('SYSTEM OVERDRIVE', style: textTheme.displayLarge),
+            Text('NEON UI ELEMENTS', style: textTheme.displayLarge),
             const SizedBox(height: 4),
-            Text('霓虹青 (CYAN) 與粉紅 (MAGENTA) 外發光科技面板與電競幾何UI。', style: textTheme.bodyMedium),
+            Text('HIGH TECH / LOW LIFE // HARDWARE INTERFACE', style: textTheme.bodyMedium),
+            const SizedBox(height: 16),
+
+            // Search Bar
+            SearchBar(
+              hintText: 'SEARCH_NEURAL_NODES...',
+              hintStyle: WidgetStateProperty.all(const TextStyle(color: Colors.white54)),
+              textStyle: WidgetStateProperty.all(const TextStyle(color: Colors.white)),
+              leading: const Icon(Icons.search, color: Color(0FF00F0FF)),
+              elevation: WidgetStateProperty.all(0),
+              backgroundColor: WidgetStateProperty.all(const Color(0FF161622)),
+              shape: WidgetStateProperty.all(
+                const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.zero,
+                  side: BorderSide(color: Color(0FF00F0FF), width: 1.5),
+                ),
+              ),
+            ),
             const SizedBox(height: 20),
 
-            // Card 元件範例：賽博霓虹發光面板
+            // Segmented Control
+            SegmentedButton<int>(
+              segments: const [
+                ButtonSegment(value: 0, label: Text('CORE', style: TextStyle(color: Colors.white))),
+                ButtonSegment(value: 1, label: Text('NODES', style: TextStyle(color: Colors.white))),
+                ButtonSegment(value: 2, label: Text('LOGS', style: TextStyle(color: Colors.white))),
+              ],
+              selected: {_segmentedIndex},
+              onSelectionChanged: (val) => setState(() => _segmentedIndex = val.first),
+            ),
+            const SizedBox(height: 24),
+
+            // 1. Buttons
+            Text('1. BUTTON VARIANTS', style: textTheme.headlineMedium),
+            const SizedBox(height: 12),
+            Wrap(
+              spacing: 10,
+              runSpacing: 10,
+              children: [
+                ElevatedButton(onPressed: () {}, child: const Text('PINK_NEON')),
+                FilledButton(onPressed: () {}, child: const Text('CYAN_FILLED')),
+                OutlinedButton(onPressed: () {}, child: const Text('YELLOW_BORDER')),
+                TextButton(onPressed: () {}, child: const Text('TEXT_LINK')),
+              ],
+            ),
+            const SizedBox(height: 24),
+
+            // 2. Inputs & Selection
+            Text('2. INPUTS & SELECTION', style: textTheme.headlineMedium),
+            const SizedBox(height: 12),
+            TextField(
+              controller: _textController,
+              style: const TextStyle(color: Colors.white),
+              decoration: const InputDecoration(
+                labelText: 'NEURAL_INPUT_STRING',
+                prefixIcon: Icon(Icons.memory, color: Color(0FF00F0FF)),
+              ),
+            ),
+            const SizedBox(height: 16),
+
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text('SWITCH OVERCLOCK', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                        Switch(
+                          value: _switchValue,
+                          onChanged: (val) => setState(() => _switchValue = val),
+                        ),
+                      ],
+                    ),
+                    const Divider(color: Color(0FF00F0FF)),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text('CHECKBOX MATRIX', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                        Checkbox(
+                          value: _checkboxValue,
+                          onChanged: (val) => setState(() => _checkboxValue = val ?? false),
+                        ),
+                      ],
+                    ),
+                    const Divider(color: Color(0FF00F0FF)),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Text('POWER SLIDER', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                            Text('${(_sliderValue * 100).toInt()}%', style: const TextStyle(color: Color(0FFFF007F), fontWeight: FontWeight.bold)),
+                          ],
+                        ),
+                        Slider(
+                          value: _sliderValue,
+                          onChanged: (val) => setState(() => _sliderValue = val),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 24),
+
+            // 3. Cards & Views
+            Text('3. CARDS & VIEWS', style: textTheme.headlineMedium),
+            const SizedBox(height: 12),
             Card(
               child: Padding(
                 padding: const EdgeInsets.all(18.0),
@@ -58,103 +214,61 @@ class _SampleShowcaseScreenState extends State<SampleShowcaseScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
-                          children: [
-                            Icon(Icons.developer_board_rounded, size: 28, color: colorScheme.primary),
-                            const SizedBox(width: 10),
-                            Text('QUANTUM CORE v7.5', style: textTheme.titleLarge),
-                          ],
-                        ),
-                        Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                          decoration: BoxDecoration(
-                            color: colorScheme.secondary,
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                          child: Text(
-                            'ONLINE',
-                            style: textTheme.labelLarge?.copyWith(fontSize: 12),
-                          ),
+                        const Text('DATA_NODE_01', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
+                        Badge(
+                          label: const Text('ONLINE'),
+                          backgroundColor: const Color(0FFFF007F),
                         ),
                       ],
                     ),
-                    const SizedBox(height: 16),
-                    Text('核心超頻負載 (94%)', style: textTheme.bodyLarge?.copyWith(color: colorScheme.tertiary)),
+                    const SizedBox(height: 12),
+                    Text('SYNC_PROGRESS: ${(_sliderValue * 100).toInt()}%', style: const TextStyle(color: Colors.white70)),
                     const SizedBox(height: 8),
-                    LinearProgressIndicator(value: _progressValue),
-                    const SizedBox(height: 16),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('5.2 GHz // 1.2V', style: textTheme.bodyLarge),
-                        Text('NEON STABLE', style: textTheme.bodyMedium?.copyWith(color: colorScheme.primary)),
-                      ],
-                    ),
+                    LinearProgressIndicator(value: _sliderValue),
                   ],
                 ),
               ),
             ),
             const SizedBox(height: 24),
 
-            // InputTextField 元件範例
-            Text('量子指令鎖定', style: textTheme.headlineMedium),
-            const SizedBox(height: 10),
-            TextField(
-              controller: _textController,
-              decoration: const InputDecoration(
-                labelText: 'NEON COMMAND KEY',
-                prefixIcon: Icon(Icons.terminal_rounded),
-              ),
-            ),
-            const SizedBox(height: 20),
-
-            // ListTile 元件與 Switch 範例
-            Card(
-              child: Column(
-                children: [
-                  ListTile(
-                    leading: const Icon(Icons.wifi_tethering_rounded),
-                    title: Text('神經元矩陣連線 (NEURAL LINK)', style: textTheme.bodyLarge),
-                    subtitle: Text('即時腦波資料同步傳輸中', style: textTheme.bodyMedium),
-                    trailing: Switch(
-                      value: _switchValue,
-                      onChanged: (val) {
-                        setState(() => _switchValue = val);
-                      },
-                    ),
-                  ),
-                  Divider(height: 1, color: colorScheme.outline.withOpacity(0.3)),
-                  ListTile(
-                    leading: const Icon(Icons.security_rounded),
-                    title: Text('防火牆量子加密矩陣', style: textTheme.bodyLarge),
-                    subtitle: Text('自動阻絕外部駭客入侵攻擊', style: textTheme.bodyMedium),
-                    trailing: const Icon(Icons.chevron_right_rounded),
-                    onTap: () {},
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 24),
-
-            // 按鈕組合範例 (PrimaryButton & SecondaryButton)
+            // 4. Modals
+            Text('4. MODALS & OVERLAYS', style: textTheme.headlineMedium),
+            const SizedBox(height: 12),
             Row(
               children: [
                 Expanded(
                   child: ElevatedButton(
-                    onPressed: () {},
-                    child: const Text('啟動超頻模組'),
+                    onPressed: _showSampleDialog,
+                    child: const Text('ALERT DIALOG'),
                   ),
                 ),
                 const SizedBox(width: 12),
                 Expanded(
                   child: OutlinedButton(
-                    onPressed: () {},
-                    child: const Text('備份量子矩陣'),
+                    onPressed: _showSampleBottomSheet,
+                    child: const Text('BOTTOM SHEET'),
                   ),
                 ),
               ],
             ),
             const SizedBox(height: 32),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          border: Border(top: BorderSide(color: Color(0FFFF007F), width: 2.0)),
+        ),
+        child: BottomNavigationBar(
+          currentIndex: _currentNavIndex,
+          onTap: (idx) => setState(() => _currentNavIndex = idx),
+          backgroundColor: const Color(0FF0A0A12),
+          selectedItemColor: const Color(0FFFF007F),
+          unselectedItemColor: const Color(0FF00F0FF),
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.memory), label: 'CORE'),
+            BottomNavigationBarItem(icon: Icon(Icons.subtitles), label: 'NODES'),
+            BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'SYSTEM'),
           ],
         ),
       ),

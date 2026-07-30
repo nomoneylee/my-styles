@@ -1,19 +1,51 @@
+// Neo Brutalism Web Interactive Script
+
 document.addEventListener('DOMContentLoaded', () => {
-  const cartBtn = document.getElementById('cart-btn');
-  const favBtn = document.getElementById('fav-btn');
-  const promoInput = document.getElementById('promo-code');
-  const flashBtn = document.getElementById('flash-btn');
+  const slider = document.getElementById('sample-slider');
+  const sliderValText = document.getElementById('slider-val-text');
+  const progressValLabel = document.getElementById('progress-val-label');
+  const progressFill = document.getElementById('progress-fill');
 
-  cartBtn.addEventListener('click', () => {
-    alert(`⚡ [CYBER_HOODIE #09] 已加入購物車！優惠碼：${promoInput.value}`);
+  if (slider && sliderValText && progressFill) {
+    slider.addEventListener('input', (e) => {
+      const val = e.target.value;
+      sliderValText.textContent = `${val}%`;
+      if (progressValLabel) progressValLabel.textContent = `PROGRESS: ${val}%`;
+      progressFill.style.width = `${val}%`;
+    });
+  }
+
+  const segmentBtns = document.querySelectorAll('.segment-btn');
+  segmentBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      segmentBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
   });
 
-  favBtn.addEventListener('click', () => {
-    favBtn.style.backgroundColor = '#FF6B6B';
-    favBtn.textContent = '★ 已收藏';
-  });
+  const dialogTriggerBtn = document.getElementById('dialog-trigger-btn');
+  const sampleDialog = document.getElementById('sample-dialog');
+  const dialogClose = document.getElementById('dialog-close');
 
-  flashBtn.addEventListener('click', () => {
-    document.body.style.backgroundColor = document.body.style.backgroundColor === 'rgb(255, 230, 109)' ? '#F4F4F0' : '#FFE66D';
+  if (dialogTriggerBtn && sampleDialog) {
+    dialogTriggerBtn.addEventListener('click', () => sampleDialog.classList.remove('hidden'));
+    if (dialogClose) dialogClose.addEventListener('click', () => sampleDialog.classList.add('hidden'));
+  }
+
+  const sheetTriggerBtn = document.getElementById('sheet-trigger-btn');
+  const sampleSheet = document.getElementById('sample-sheet');
+  const sheetClose = document.getElementById('sheet-close');
+
+  if (sheetTriggerBtn && sampleSheet) {
+    sheetTriggerBtn.addEventListener('click', () => sampleSheet.classList.remove('hidden'));
+    if (sheetClose) sheetClose.addEventListener('click', () => sampleSheet.classList.add('hidden'));
+  }
+
+  const navItems = document.querySelectorAll('.nav-item');
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      navItems.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+    });
   });
 });

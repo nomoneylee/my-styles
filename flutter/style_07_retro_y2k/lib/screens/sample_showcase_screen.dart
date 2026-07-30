@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// 範例展示頁面 (Sample Showcase Screen) - 復古 Y2K (Retro Y2K / OS Classic)
-///
-/// 規範重點：組件完全讀取 Theme.of(context)，內部無任何寫死樣式數值。
+/// 範例展示頁面 (Retro Y2K Showcase Screen)
 class SampleShowcaseScreen extends StatefulWidget {
   const SampleShowcaseScreen({super.key});
 
@@ -11,154 +9,261 @@ class SampleShowcaseScreen extends StatefulWidget {
 }
 
 class _SampleShowcaseScreenState extends State<SampleShowcaseScreen> {
+  int _currentNavIndex = 0;
+  int _segmentedIndex = 0;
   bool _switchValue = true;
-  double _progressValue = 0.55;
-  final TextEditingController _textController = TextEditingController(text: 'C:\\WINDOWS\\SYSTEM32\\Y2K.EXE');
+  bool _checkboxValue = true;
+  double _sliderValue = 0.85;
+  final TextEditingController _textController =
+      TextEditingController(text: 'Y2K_CYBER_BABY_2000');
 
-  @override
-  void dispose() {
-    _textController.dispose();
-    super.dispose();
+  void _showSampleDialog() {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        backgroundColor: const Color(0xFFFDF0F8),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+          side: const BorderSide(color: Color(0FFFF0080), width: 2.5),
+        ),
+        title: const Text('💖 Y2K POP ALERT!', style: TextStyle(color: Color(0FFFF0080), fontWeight: FontWeight.w900)),
+        content: const Text('千禧復古炫彩風格 Alert Dialog 元件。'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('CLOSE'),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('LOVE IT!'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _showSampleBottomSheet() {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: const Color(0xFFFDF0F8),
+      builder: (context) => Container(
+        padding: const EdgeInsets.all(24.0),
+        decoration: const BoxDecoration(
+          border: Border(top: BorderSide(color: Color(0FFFF0080), width: 3.0)),
+          borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('✨ Y2K POP SHEET',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w900, color: Color(0FFFF0080))),
+            const SizedBox(height: 12),
+            const Text('千禧年流行質感之 Bottom Sheet 面板。'),
+            const SizedBox(height: 20),
+            ListTile(
+              leading: const Icon(Icons.music_note, color: Color(0FF7B2CBF)),
+              title: const Text('PLAYLIST 2000s', style: TextStyle(fontWeight: FontWeight.bold)),
+              onTap: () => Navigator.pop(context),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
-    final colorScheme = theme.colorScheme;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('💾 RETRO Y2K // OS 1999'),
+        title: const Text('復古 Y2K RETRO 2000s'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.close_sharp),
+            icon: const Icon(Icons.stars),
             onPressed: () {},
           ),
         ],
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 視窗標題說明
-            Text('Y2K_PLAYER.EXE', style: textTheme.displayLarge),
-            const SizedBox(height: 4),
-            Text('經典 90 年代 OS 視窗灰、3D Bevel 邊框與懷舊像素感。', style: textTheme.bodyMedium),
+            Text('千禧流行 UI 元件', style: textTheme.displayLarge),
+            const SizedBox(height: 6),
+            Text('粉紅光澤、銀電炫彩與 Y2K 復古潮流質感。', style: textTheme.bodyMedium),
             const SizedBox(height: 16),
 
-            // Card 元件範例：經典 Windows 95 風格視窗
-            Card(
-              child: Column(
-                children: [
-                  // 視窗內部的深藍標題列
-                  Container(
-                    color: colorScheme.primary,
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            const Icon(Icons.disc_full_sharp, size: 18, color: Colors.white),
-                            const SizedBox(width: 8),
-                            Text('WINAMP_SHOWCASE.WAV', style: textTheme.titleLarge),
-                          ],
-                        ),
-                        Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                          color: colorScheme.surface,
-                          child: Text('X', style: textTheme.labelLarge?.copyWith(fontSize: 12)),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('位元率解碼緩衝器 (55%)', style: textTheme.bodyLarge),
-                        const SizedBox(height: 8),
-                        LinearProgressIndicator(value: _progressValue),
-                        const SizedBox(height: 14),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text('TRACK 09 // 128 kbps', style: textTheme.bodyLarge),
-                            Text('STEREO 44.1kHz', style: textTheme.bodyMedium),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+            // Search Bar
+            SearchBar(
+              hintText: 'SEARCH Y2K STUFF...',
+              leading: const Icon(Icons.search, color: Color(0FFFF0080)),
+              elevation: WidgetStateProperty.all(0),
+              backgroundColor: WidgetStateProperty.all(Colors.white),
+              shape: WidgetStateProperty.all(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  side: const BorderSide(color: Color(0FFFF0080), width: 2.0),
+                ),
               ),
             ),
             const SizedBox(height: 20),
 
-            // InputTextField 元件範例
-            Text('執行指令 (RUN CMD)', style: textTheme.headlineMedium),
-            const SizedBox(height: 8),
+            // Segmented Control
+            SegmentedButton<int>(
+              segments: const [
+                ButtonSegment(value: 0, label: Text('POP')),
+                ButtonSegment(value: 1, label: Text('GLAM')),
+                ButtonSegment(value: 2, label: Text('MODALS')),
+              ],
+              selected: {_segmentedIndex},
+              onSelectionChanged: (val) => setState(() => _segmentedIndex = val.first),
+            ),
+            const SizedBox(height: 24),
+
+            // 1. Buttons
+            Text('1. 按鈕變體 (Buttons)', style: textTheme.headlineMedium),
+            const SizedBox(height: 12),
+            Wrap(
+              spacing: 10,
+              runSpacing: 10,
+              children: [
+                ElevatedButton(onPressed: () {}, child: const Text('POPPING PINK')),
+                FilledButton(onPressed: () {}, child: const Text('ELECTRIC PURPLE')),
+                OutlinedButton(onPressed: () {}, child: const Text('OUTLINED')),
+                TextButton(onPressed: () {}, child: const Text('TEXT LINK')),
+              ],
+            ),
+            const SizedBox(height: 24),
+
+            // 2. Inputs & Selection
+            Text('2. 輸入與選擇 (Inputs)', style: textTheme.headlineMedium),
+            const SizedBox(height: 12),
             TextField(
               controller: _textController,
               decoration: const InputDecoration(
-                labelText: 'COMMAND PATH',
-                prefixIcon: Icon(Icons.folder_open_sharp),
+                labelText: 'Y2K_USERNAME',
+                prefixIcon: Icon(Icons.favorite, color: Color(0FFFF0080)),
               ),
             ),
-            const SizedBox(height: 18),
+            const SizedBox(height: 16),
 
-            // ListTile 元件與 Switch 範例
             Card(
-              child: Column(
-                children: [
-                  ListTile(
-                    leading: const Icon(Icons.computer_sharp),
-                    title: Text('開啟 86MB 虛擬記憶體分頁', style: textTheme.bodyLarge),
-                    subtitle: Text('啟用 3.5 吋軟碟機自動掛載機制', style: textTheme.bodyMedium),
-                    trailing: Switch(
-                      value: _switchValue,
-                      onChanged: (val) {
-                        setState(() => _switchValue = val);
-                      },
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text('GLITTER MODE (Switch)', style: TextStyle(fontWeight: FontWeight.bold)),
+                        Switch(
+                          value: _switchValue,
+                          onChanged: (val) => setState(() => _switchValue = val),
+                        ),
+                      ],
                     ),
-                  ),
-                  Container(height: 2, color: colorScheme.outline),
-                  ListTile(
-                    leading: const Icon(Icons.dialpad_sharp),
-                    title: Text('撥號連線網際網路 (56k Modem)', style: textTheme.bodyLarge),
-                    subtitle: Text('發出連線嗶嗶聲響與波形數據交換', style: textTheme.bodyMedium),
-                    trailing: const Icon(Icons.arrow_forward_sharp),
-                    onTap: () {},
-                  ),
-                ],
+                    const Divider(color: Color(0FFFF0080)),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text('AUTO SYNC (Checkbox)', style: TextStyle(fontWeight: FontWeight.bold)),
+                        Checkbox(
+                          value: _checkboxValue,
+                          onChanged: (val) => setState(() => _checkboxValue = val ?? false),
+                        ),
+                      ],
+                    ),
+                    const Divider(color: Color(0FFFF0080)),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Text('BASS BOOST (Slider)', style: TextStyle(fontWeight: FontWeight.bold)),
+                            Text('${(_sliderValue * 100).toInt()}%', style: const TextStyle(color: Color(0FFFF0080), fontWeight: FontWeight.bold)),
+                          ],
+                        ),
+                        Slider(
+                          value: _sliderValue,
+                          onChanged: (val) => setState(() => _sliderValue = val),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 24),
 
-            // 按鈕組合範例 (PrimaryButton & SecondaryButton)
+            // 3. Cards & Views
+            Text('3. 卡片與視圖 (Cards)', style: textTheme.headlineMedium),
+            const SizedBox(height: 12),
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text('Y2K MUSIC PLAYER', style: TextStyle(fontWeight: FontWeight.bold)),
+                        Badge(
+                          label: const Text('TOP 100'),
+                          backgroundColor: const Color(0FFFF0080),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 12),
+                    Text('TRACK PROGRESS: ${(_sliderValue * 100).toInt()}%', style: const TextStyle(color: Color(0FF8E5B9D))),
+                    const SizedBox(height: 8),
+                    LinearProgressIndicator(value: _sliderValue),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 24),
+
+            // 4. Modals
+            Text('4. 彈窗與回饋 (Modals)', style: textTheme.headlineMedium),
+            const SizedBox(height: 12),
             Row(
               children: [
                 Expanded(
                   child: ElevatedButton(
-                    onPressed: () {},
-                    child: const Text('確定 (OK)'),
+                    onPressed: _showSampleDialog,
+                    child: const Text('ALERT DIALOG'),
                   ),
                 ),
-                const SizedBox(width: 10),
+                const SizedBox(width: 12),
                 Expanded(
                   child: OutlinedButton(
-                    onPressed: () {},
-                    child: const Text('取消 (CANCEL)'),
+                    onPressed: _showSampleBottomSheet,
+                    child: const Text('BOTTOM SHEET'),
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 28),
+            const SizedBox(height: 32),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentNavIndex,
+        onTap: (idx) => setState(() => _currentNavIndex = idx),
+        backgroundColor: Colors.white,
+        selectedItemColor: const Color(0FFFF0080),
+        unselectedItemColor: const Color(0FF7B2CBF),
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.album), label: 'MUSIC'),
+          BottomNavigationBarItem(icon: Icon(Icons.sparkles), label: 'STYLE'),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'FAV'),
+        ],
       ),
     );
   }

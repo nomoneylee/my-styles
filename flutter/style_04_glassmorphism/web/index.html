@@ -3,86 +3,133 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>玻璃擬物風 Glassmorphism - App 展示模擬</title>
+  <title>玻璃擬態 Glassmorphism - 共用 UI 元件展示</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="background-blobs">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-  </div>
-
   <div class="app-container">
-    <!-- App Header -->
     <header class="app-header">
-      <h1 class="app-title">玻璃擬物風 GLASSMORPHISM</h1>
-      <button class="icon-btn" id="blur-btn" aria-label="Blur">✨</button>
+      <h1 class="app-title">GLASSMORPHISM</h1>
+      <button class="icon-btn" aria-label="星星圖示">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </button>
     </header>
 
     <main class="app-content">
-      <!-- Hero Section -->
       <section class="hero-section">
-        <h2 class="display-title">Web3 晶瑩資產</h2>
-        <p class="body-subtext">通透半透明卡片、BackdropFilter 毛玻璃與發光微邊框。</p>
+        <h2 class="display-title">晶瑩半透明 UI 元件</h2>
+        <p class="body-subtext">光影流轉、柔和背景模糊與薄層毛玻璃質感。</p>
       </section>
 
-      <!-- Glassmorphic Card -->
-      <div class="card glass-card">
-        <div class="card-header">
-          <div class="card-title-group">
-            <span class="icon">💎</span>
-            <h3 class="card-title">Ethereum Node #04</h3>
-          </div>
-          <span class="badge">STAKING</span>
-        </div>
-        <div class="card-body">
-          <span class="label">節點同步池進度 (88%)</span>
-          <div class="progress-bar">
-            <div class="progress-fill" id="progress-fill" style="width: 88%;"></div>
-          </div>
-          <div class="card-footer">
-            <span class="eth-val">42.85 ETH</span>
-            <span class="apy-text">+ 12.4% APY</span>
-          </div>
-        </div>
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00F2FE" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" class="search-input" placeholder="搜尋晶透元件...">
       </div>
 
-      <!-- Controls Section -->
-      <section class="control-section">
-        <h3 class="section-title">智能合約地址</h3>
-        
+      <!-- Segmented Control -->
+      <div class="segmented-control">
+        <button class="segment-btn active">控制</button>
+        <button class="segment-btn">視覺</button>
+        <button class="segment-btn">彈窗</button>
+      </div>
+
+      <!-- 1. Buttons -->
+      <section class="component-section">
+        <h3 class="section-title">1. 按鈕變體 (Buttons)</h3>
+        <div class="button-wrap">
+          <button class="btn btn-neon">Elevated (Neon)</button>
+          <button class="btn btn-glass">Filled Glass</button>
+          <button class="btn btn-outlined">Outlined</button>
+          <button class="btn btn-text">Text Link</button>
+        </div>
+      </section>
+
+      <!-- 2. Inputs & Selection -->
+      <section class="component-section">
+        <h3 class="section-title">2. 輸入與選擇 (Inputs)</h3>
         <div class="input-group">
-          <label for="contract-addr" class="input-label">CONTRACT ADDRESS</label>
-          <input type="text" id="contract-addr" class="text-input" value="0x8F92...C401_WEB3_WALLET">
+          <label for="glass-input" class="input-label">CRYSTAL_INPUT</label>
+          <input type="text" id="glass-input" class="text-input" value="GLASS_CRYSTAL_UI_2026">
         </div>
 
-        <div class="card glass-card list-card">
-          <div class="list-item">
-            <div class="list-item-info">
-              <span class="item-title">硬體錢包雙重簽署</span>
-              <span class="item-sub">Ledger Nano X 認證保護</span>
-            </div>
+        <div class="card glass-card">
+          <div class="control-row">
+            <span class="control-label">Switch 毛玻璃開態</span>
             <label class="switch">
-              <input type="checkbox" id="security-switch" checked>
-              <span class="slider"></span>
+              <input type="checkbox" id="glass-switch" checked>
+              <span class="slider-toggle"></span>
             </label>
           </div>
           <div class="divider"></div>
-          <div class="list-item" id="bridge-item">
-            <div class="list-item-info">
-              <span class="item-title">跨鏈智能橋接跨接</span>
-              <span class="item-sub">Arbitrum One 快速通關</span>
+          <div class="control-row">
+            <span class="control-label">Checkbox 晶透勾選框</span>
+            <label class="checkbox-container">
+              <input type="checkbox" id="glass-checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-col">
+            <div class="slider-header">
+              <span class="control-label">Slider 毛玻璃滑桿</span>
+              <span class="slider-value-text" id="slider-val-text">70%</span>
             </div>
-            <span class="chevron">›</span>
+            <input type="range" id="sample-slider" class="range-slider" min="0" max="100" value="70">
           </div>
         </div>
+      </section>
 
-        <div class="button-group">
-          <button class="btn btn-primary" id="stake-btn">發起閃電質押</button>
-          <button class="btn btn-secondary" id="explorer-btn">瀏覽鏈上數據</button>
+      <!-- 3. Cards & Views -->
+      <section class="component-section">
+        <h3 class="section-title">3. 卡片與視圖 (Cards)</h3>
+        <div class="card glass-card">
+          <div class="card-header">
+            <span class="card-title">GLASS CONTAINER</span>
+            <span class="badge badge-neon">PRO</span>
+          </div>
+          <p class="progress-label" id="progress-val-text">COMPLETION: 70%</p>
+          <div class="progress-bar">
+            <div class="progress-fill progress-fill-70" id="progress-fill"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Modals & Overlays -->
+      <section class="component-section">
+        <h3 class="section-title">4. 彈窗與回饋 (Modals)</h3>
+        <div class="button-row">
+          <button class="btn btn-neon btn-half" id="dialog-trigger-btn">ALERT DIALOG</button>
+          <button class="btn btn-glass btn-half" id="sheet-trigger-btn">BOTTOM SHEET</button>
         </div>
       </section>
     </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active">GLASS</button>
+      <button class="nav-item">COMPONENTS</button>
+      <button class="nav-item">THEME</button>
+    </nav>
+
+    <!-- Dialog -->
+    <div class="modal-overlay hidden" id="sample-dialog">
+      <div class="modal-box glass-modal">
+        <h3 class="modal-title">💎 毛玻璃彈窗 (Glass Dialog)</h3>
+        <p class="modal-content">半透明模糊濾鏡與水晶質感 Dialog。</p>
+        <div class="modal-actions">
+          <button class="btn btn-neon" id="dialog-close">確定</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sheet -->
+    <div class="sheet-overlay hidden" id="sample-sheet">
+      <div class="sheet-box glass-sheet">
+        <h3 class="sheet-title">✨ 玻璃底部面板 (Glass Sheet)</h3>
+        <p class="sheet-desc">高雅半透明 BackdropFilter 彈出選單。</p>
+        <button class="btn btn-neon btn-full" id="sheet-close">關閉面板</button>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>

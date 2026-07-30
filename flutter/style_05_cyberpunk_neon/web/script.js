@@ -1,21 +1,51 @@
+// Cyberpunk Neon Web Interactive Script
+
 document.addEventListener('DOMContentLoaded', () => {
-  const overclockBtn = document.getElementById('overclock-btn');
-  const backupBtn = document.getElementById('backup-btn');
-  const neonKeyInput = document.getElementById('neon-key');
-  const glowBtn = document.getElementById('glow-btn');
+  const slider = document.getElementById('sample-slider');
+  const sliderValText = document.getElementById('slider-val-text');
+  const progressValText = document.getElementById('progress-val-text');
+  const progressFill = document.getElementById('progress-fill');
 
-  overclockBtn.addEventListener('click', () => {
-    alert(`⚡ 量子超頻指令：[${neonKeyInput.value}] 執行完畢！核心運作效率提升 +120%！`);
+  if (slider && sliderValText && progressFill) {
+    slider.addEventListener('input', (e) => {
+      const val = e.target.value;
+      sliderValText.textContent = `${val}%`;
+      if (progressValText) progressValText.textContent = `SYNC_PROGRESS: ${val}%`;
+      progressFill.style.width = `${val}%`;
+    });
+  }
+
+  const segmentBtns = document.querySelectorAll('.segment-btn');
+  segmentBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      segmentBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
   });
 
-  backupBtn.addEventListener('click', () => {
-    alert('神經元矩陣備份檔已寫入冷存儲晶片！');
-  });
+  const dialogTriggerBtn = document.getElementById('dialog-trigger-btn');
+  const sampleDialog = document.getElementById('sample-dialog');
+  const dialogClose = document.getElementById('dialog-close');
 
-  glowBtn.addEventListener('click', () => {
-    const cards = document.querySelectorAll('.neon-card');
-    cards.forEach(card => {
-      card.style.boxShadow = card.style.boxShadow.includes('25px') ? '0 0 15px rgba(0, 240, 255, 0.2)' : '0 0 25px #FF007A';
+  if (dialogTriggerBtn && sampleDialog) {
+    dialogTriggerBtn.addEventListener('click', () => sampleDialog.classList.remove('hidden'));
+    if (dialogClose) dialogClose.addEventListener('click', () => sampleDialog.classList.add('hidden'));
+  }
+
+  const sheetTriggerBtn = document.getElementById('sheet-trigger-btn');
+  const sampleSheet = document.getElementById('sample-sheet');
+  const sheetClose = document.getElementById('sheet-close');
+
+  if (sheetTriggerBtn && sampleSheet) {
+    sheetTriggerBtn.addEventListener('click', () => sampleSheet.classList.remove('hidden'));
+    if (sheetClose) sheetClose.addEventListener('click', () => sampleSheet.classList.add('hidden'));
+  }
+
+  const navItems = document.querySelectorAll('.nav-item');
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      navItems.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
     });
   });
 });

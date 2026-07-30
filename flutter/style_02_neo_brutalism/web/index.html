@@ -3,85 +3,133 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>新粗獷主義 Neo-Brutalism - App 展示模擬</title>
+  <title>新殘酷主義 Neo Brutalism - 共用 UI 元件展示</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="app-container">
-    <!-- App Header -->
     <header class="app-header">
-      <h1 class="app-title">新粗獷主義 NEO-BRUTALISM</h1>
-      <button class="icon-btn" id="flash-btn" aria-label="Flash">⚡</button>
+      <h1 class="app-title">NEO BRUTALISM</h1>
+      <button class="icon-btn" aria-label="閃電圖示">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M11 21l-1-7H4l9-13 1 7h6l-9 13z"/></svg>
+      </button>
     </header>
 
     <main class="app-content">
-      <!-- Hero Section -->
       <section class="hero-section">
-        <h2 class="display-title">LIMITED DROP 01</h2>
-        <p class="body-subtext">叛逆高撞色、純黑粗邊框與硬塊位移陰影視覺呈現。</p>
+        <h2 class="display-title">共用 UI 元件庫</h2>
+        <p class="body-subtext">粗黑邊框、高飽和色塊與強烈硬陰影樣式。</p>
       </section>
 
-      <!-- Neo Brutalism Card with Hard Offset Shadow Wrapper -->
-      <div class="card-shadow-wrapper">
-        <div class="card product-card">
-          <div class="card-header">
-            <div class="card-title-group">
-              <span class="icon">🛍️</span>
-              <h3 class="card-title">CYBER_HOODIE #09</h3>
-            </div>
-            <span class="badge">HOT</span>
-          </div>
-          <div class="card-body">
-            <span class="label">庫存剩餘數量 (65%)</span>
-            <div class="progress-bar">
-              <div class="progress-fill" id="progress-fill" style="width: 65%;"></div>
-            </div>
-            <div class="card-footer">
-              <span class="price-text">NT$ 3,800</span>
-              <span class="status-tag">搶購即將截止</span>
-            </div>
-          </div>
-        </div>
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" class="search-input" placeholder="SEARCH_COMPONENTS...">
       </div>
 
-      <!-- Controls Section -->
-      <section class="control-section">
-        <h3 class="section-title">折扣優惠碼輸入</h3>
-        
+      <!-- Segmented Control -->
+      <div class="segmented-control">
+        <button class="segment-btn active">控制項</button>
+        <button class="segment-btn">卡片視圖</button>
+        <button class="segment-btn">彈窗區</button>
+      </div>
+
+      <!-- 1. Buttons & Actions -->
+      <section class="component-section">
+        <h3 class="section-title">1. 按鈕變體 (Buttons & Actions)</h3>
+        <div class="button-wrap">
+          <button class="btn btn-filled-yellow">Elevated (Yellow)</button>
+          <button class="btn btn-filled-red">Filled (Red)</button>
+          <button class="btn btn-filled-cyan">Outlined (Blue)</button>
+          <button class="btn btn-text">Text Button</button>
+        </div>
+      </section>
+
+      <!-- 2. Inputs & Selection -->
+      <section class="component-section">
+        <h3 class="section-title">2. 輸入與選擇 (Input & Selection)</h3>
         <div class="input-group">
-          <label for="promo-code" class="input-label">VIP PROMO CODE</label>
-          <input type="text" id="promo-code" class="text-input" value="LIMITLESS_STREETWEAR_2026">
+          <label for="text-input-field" class="input-label">BRUTAL_INPUT_FIELD</label>
+          <input type="text" id="text-input-field" class="text-input" value="NEO_BRUTALISM_2026">
         </div>
 
-        <div class="list-card-shadow-wrapper">
-          <div class="card list-card">
-            <div class="list-item">
-              <div class="list-item-info">
-                <span class="item-title">開啟簡訊開賣通知</span>
-                <span class="item-sub">發售前 10 分鐘自動傳送簡訊</span>
-              </div>
-              <label class="switch">
-                <input type="checkbox" id="sms-switch" checked>
-                <span class="slider"></span>
-              </label>
+        <div class="card cyan-card">
+          <div class="control-row">
+            <span class="control-label">SWITCH_TRIGGER</span>
+            <label class="switch">
+              <input type="checkbox" id="brutal-switch" checked>
+              <span class="slider-toggle"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-row">
+            <span class="control-label">CHECKBOX_SELECTION</span>
+            <label class="checkbox-container">
+              <input type="checkbox" id="brutal-checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-col">
+            <div class="slider-header">
+              <span class="control-label">SLIDER_CONTROL</span>
+              <span class="slider-value-text" id="slider-val-text">65%</span>
             </div>
-            <div class="divider"></div>
-            <div class="list-item" id="express-item">
-              <div class="list-item-info">
-                <span class="item-title">全台極速宅配通</span>
-                <span class="item-sub">當天 24H 快速送達指定地址</span>
-              </div>
-              <span class="arrow">➔</span>
-            </div>
+            <input type="range" id="sample-slider" class="range-slider" min="0" max="100" value="65">
           </div>
         </div>
+      </section>
 
-        <div class="button-group">
-          <button class="btn btn-primary" id="cart-btn">立即加入購物車</button>
-          <button class="btn btn-secondary" id="fav-btn">加入收藏庫</button>
+      <!-- 3. Cards & Views -->
+      <section class="component-section">
+        <h3 class="section-title">3. 卡片與視圖 (Cards & Views)</h3>
+        <div class="card white-card">
+          <div class="card-header">
+            <span class="badge badge-red">HOT</span>
+            <span class="status-label">STATUS: ACTIVE</span>
+          </div>
+          <p class="progress-title" id="progress-val-label">PROGRESS: 65%</p>
+          <div class="progress-bar">
+            <div class="progress-fill progress-fill-65" id="progress-fill"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Modals & Feedback -->
+      <section class="component-section">
+        <h3 class="section-title">4. 彈窗與回饋 (Modals & Feedback)</h3>
+        <div class="button-row">
+          <button class="btn btn-filled-yellow btn-half" id="dialog-trigger-btn">ALERT DIALOG</button>
+          <button class="btn btn-filled-cyan btn-half" id="sheet-trigger-btn">BOTTOM SHEET</button>
         </div>
       </section>
     </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active">MAIN</button>
+      <button class="nav-item">COMPONENTS</button>
+      <button class="nav-item">CONFIG</button>
+    </nav>
+
+    <!-- Dialog -->
+    <div class="modal-overlay hidden" id="sample-dialog">
+      <div class="modal-box">
+        <h3 class="modal-title">⚠️ 殘酷警示視窗</h3>
+        <p class="modal-content">Neo Brutalism 風格的強烈黑框 Dialog 彈窗呈現。</p>
+        <div class="modal-actions">
+          <button class="btn btn-filled-yellow" id="dialog-close">明白！</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sheet -->
+    <div class="sheet-overlay hidden" id="sample-sheet">
+      <div class="sheet-box">
+        <h3 class="sheet-title">⚡ 殘酷底部面板 (Bottom Sheet)</h3>
+        <p class="sheet-desc">高對比強烈視覺之 Bottom Sheet 範例。</p>
+        <button class="btn btn-filled-red btn-full" id="sheet-close">關閉面板</button>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>

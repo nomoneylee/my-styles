@@ -1,32 +1,28 @@
 import 'package:flutter/material.dart';
 
-/// 復古賽博朋克 / 霓虹暗黑 (Cyberpunk / Neon Dark) 主題系統
+/// 賽博朋克霓虹 (Cyberpunk Neon) 主題系統
 ///
-/// 特色：純黑/暗夜藍背景、霓虹青與霓虹粉高彩度發光外框、切角與未來科技感 UI。
+/// 特色：極致暗黑底色、高飽和霓虹螢光 (Neon Pink, Cyber Cyan, Electric Yellow)、斜角與網格鋸齒線條。
 class AppTheme {
   AppTheme._();
 
-  static const Color primaryColor = Color(0FF00F0FF); // 霓虹青 Cyan
-  static const Color secondaryColor = Color(0FFFF007A); // 霓虹粉 Magenta
-  static const Color tertiaryColor = Color(0FF39FF14); // 螢光發光綠
-  static const Color backgroundColor = Color(0FF090A0F); // 夜幕深黑
-  static const Color surfaceColor = Color(0FF121520); // 科技面板黑
-  static const Color textPrimaryColor = Color(0FFFFFFFF); // 霓虹純白
-  static const Color textSecondaryColor = Color(0FF7D8FA6); // 科技灰
+  static const Color primaryColor = Color(0FFFF007F); // 霓虹桃紅
+  static const Color secondaryColor = Color(0FF00F0FF); // 賽博青藍
+  static const Color accentColor = Color(0xFFFFE600); // 電光黃
+  static const Color backgroundColor = Color(0FF0A0A12); // 極致深暗底
+  static const Color surfaceColor = Color(0FF161622); // 暗紫灰卡片
+  static const Color textPrimaryColor = Color(0FFFFFFFF); // 純白字
+  static const Color textSecondaryColor = Color(0FF8F8FA8); // 次要字
 
-  static ThemeData get darkTheme {
+  static ThemeData get lightTheme {
     final baseColorScheme = ColorScheme.dark(
       primary: primaryColor,
-      onPrimary: backgroundColor,
+      onPrimary: Colors.white,
       secondary: secondaryColor,
-      onSecondary: Colors.white,
-      tertiary: tertiaryColor,
-      onTertiary: backgroundColor,
+      onSecondary: Colors.black,
       surface: surfaceColor,
       onSurface: textPrimaryColor,
-      error: const Color(0FFFF2A6D),
-      onError: Colors.white,
-      outline: primaryColor,
+      outline: secondaryColor,
     );
 
     return ThemeData(
@@ -34,22 +30,17 @@ class AppTheme {
       scaffoldBackgroundColor: backgroundColor,
       colorScheme: baseColorScheme,
 
-      // 文字系統規範 (Typography): 電競賽博風格
       textTheme: const TextTheme(
         displayLarge: TextStyle(
-          fontSize: 32,
+          fontSize: 30,
           fontWeight: FontWeight.w900,
-          color: primaryColor,
-          letterSpacing: 1.0,
-          shadows: [
-            Shadow(color: primaryColor, blurRadius: 10),
-          ],
+          color: textPrimaryColor,
+          letterSpacing: 1.2,
         ),
         headlineMedium: TextStyle(
           fontSize: 22,
           fontWeight: FontWeight.w800,
-          color: textPrimaryColor,
-          letterSpacing: 0.5,
+          color: secondaryColor,
         ),
         titleLarge: TextStyle(
           fontSize: 18,
@@ -57,139 +48,150 @@ class AppTheme {
           color: textPrimaryColor,
         ),
         bodyLarge: TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.w600,
+          fontSize: 15,
           color: textPrimaryColor,
-          height: 1.4,
         ),
         bodyMedium: TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.w500,
+          fontSize: 13,
           color: textSecondaryColor,
-          height: 1.4,
-        ),
-        labelLarge: TextStyle(
-          fontSize: 15,
-          fontWeight: FontWeight.w900,
-          color: backgroundColor,
-          letterSpacing: 1.0,
         ),
       ),
 
-      // 卡片主題 (CardTheme): 霓虹青邊框 + 暗黑面板
       cardTheme: CardTheme(
         color: surfaceColor,
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(4.0),
-          side: const BorderSide(color: primaryColor, width: 1.5),
+          side: const BorderSide(color: secondaryColor, width: 1.5),
         ),
         margin: EdgeInsets.zero,
       ),
 
-      // 主要按鈕主題 (ElevatedButtonTheme): 霓虹粉發光按鈕
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: secondaryColor,
+          backgroundColor: primaryColor,
           foregroundColor: Colors.white,
           elevation: 0,
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(4.0),
-            side: const BorderSide(color: secondaryColor, width: 1.5),
+            side: const BorderSide(color: Colors.white, width: 1.5),
           ),
           textStyle: const TextStyle(
-            fontSize: 16,
+            fontSize: 15,
             fontWeight: FontWeight.w900,
             letterSpacing: 1.0,
           ),
         ),
       ),
 
-      // 次要按鈕主題 (OutlinedButtonTheme)
-      outlinedButtonTheme: OutlinedButtonThemeData(
-        style: OutlinedButton.styleFrom(
-          backgroundColor: Colors.transparent,
-          foregroundColor: primaryColor,
-          side: const BorderSide(color: primaryColor, width: 1.5),
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+      filledButtonTheme: FilledButtonThemeData(
+        style: FilledButton.styleFrom(
+          backgroundColor: secondaryColor,
+          foregroundColor: Colors.black,
+          elevation: 0,
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(4.0),
           ),
           textStyle: const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w800,
-            letterSpacing: 0.5,
+            fontSize: 15,
+            fontWeight: FontWeight.w900,
           ),
         ),
       ),
 
-      // 輸入框主題 (InputDecorationTheme): 霓虹青外框
-      inputDecorationTheme: const InputDecorationTheme(
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+          foregroundColor: accentColor,
+          side: const BorderSide(color: accentColor, width: 1.5),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(4.0),
+          ),
+          textStyle: const TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+      ),
+
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+          foregroundColor: secondaryColor,
+          textStyle: const TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.w800,
+          ),
+        ),
+      ),
+
+      inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: Color(0FF0D111A),
-        contentPadding: EdgeInsets.symmetric(horizontal: 18, vertical: 16),
-        labelStyle: TextStyle(color: primaryColor, fontWeight: FontWeight.w700),
-        hintStyle: TextStyle(color: textSecondaryColor, fontSize: 14),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(4.0)),
-          borderSide: BorderSide(color: primaryColor, width: 1.5),
+        fillColor: surfaceColor,
+        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+        hintStyle: const TextStyle(color: textSecondaryColor, fontSize: 14),
+        border: const OutlineInputBorder(
+          borderRadius: BorderRadius.zero,
+          borderSide: BorderSide(color: secondaryColor, width: 1.5),
         ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(4.0)),
-          borderSide: BorderSide(color: primaryColor, width: 1.5),
+        enabledBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.zero,
+          borderSide: BorderSide(color: secondaryColor, width: 1.5),
         ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(4.0)),
-          borderSide: BorderSide(color: secondaryColor, width: 2.0),
-        ),
-      ),
-
-      // 列表主題 (ListTileTheme)
-      listTileTheme: ListTileThemeData(
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        iconColor: primaryColor,
-        textColor: textPrimaryColor,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4.0),
-          side: const BorderSide(color: Color(0xFF1E293B), width: 1.5),
+        focusedBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.zero,
+          borderSide: BorderSide(color: primaryColor, width: 2.0),
         ),
       ),
 
-      // 開關主題 (SwitchTheme): 霓虹粉與青綠切換
       switchTheme: SwitchThemeData(
-        thumbColor: WidgetStateProperty.all(backgroundColor),
+        thumbColor: WidgetStateProperty.all(Colors.black),
         trackColor: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.selected)) {
             return primaryColor;
           }
-          return secondaryColor;
+          return surfaceColor;
         }),
-        trackOutlineColor: WidgetStateProperty.all(Colors.transparent),
+        trackOutlineColor: WidgetStateProperty.all(secondaryColor),
       ),
 
-      // 進度條主題 (ProgressIndicatorTheme)
+      checkboxTheme: CheckboxThemeData(
+        fillColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
+            return primaryColor;
+          }
+          return surfaceColor;
+        }),
+        checkColor: WidgetStateProperty.all(Colors.white),
+        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+        side: const BorderSide(color: secondaryColor, width: 1.5),
+      ),
+
+      sliderTheme: const SliderThemeData(
+        activeTrackColor: primaryColor,
+        inactiveTrackColor: surfaceColor,
+        thumbColor: secondaryColor,
+      ),
+
       progressIndicatorTheme: const ProgressIndicatorThemeData(
-        color: tertiaryColor,
-        linearTrackColor: Color(0FF1E293B),
+        color: primaryColor,
+        linearTrackColor: surfaceColor,
       ),
 
-      // AppBar 主題
       appBarTheme: const AppBarTheme(
         backgroundColor: backgroundColor,
         surfaceTintColor: Colors.transparent,
         elevation: 0,
         centerTitle: false,
+        shape: Border(bottom: BorderSide(color: primaryColor, width: 2.0)),
         titleTextStyle: TextStyle(
           color: primaryColor,
-          fontSize: 20,
+          fontSize: 18,
           fontWeight: FontWeight.w900,
-          letterSpacing: 1.0,
-          shadows: [
-            Shadow(color: primaryColor, blurRadius: 8),
-          ],
+          letterSpacing: 1.5,
         ),
-        iconTheme: IconThemeData(color: primaryColor, size: 26),
+        iconTheme: IconThemeData(color: secondaryColor),
       ),
     );
   }

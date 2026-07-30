@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 
-/// 扁平化微漸層 / 現代 SaaS 風 (Modern Flat / Vibrant Gradient) 主題系統
+/// 現代 SaaS (Modern SaaS Dashboard) 主題系統
 ///
-/// 特色：現代化企業感、高明度雙色漸層 (靛藍 #6366F1 到天空藍 #3B82F6)、彩色微漸層陰影與適中圓角 (12px)。
+/// 特色：高階藍靛紫主色 (#6366F1 Indigo)、極簡乾淨灰白背景 (#F8FAFC)、俐落 12px 圓角與高效能專業質感。
 class AppTheme {
   AppTheme._();
 
-  static const Color primaryColor = Color(0FF6366F1); // 現代 SaaS 靛藍
-  static const Color secondaryColor = Color(0FF3B82F6); // 天空藍
-  static const Color accentGradientEnd = Color(0FF8B5CF6); // 紫色漸層點綴
-  static const Color backgroundColor = Color(0FFF8FAFC); // 亮純潔白
-  static const Color surfaceColor = Color(0FFFFFFFF); // 卡片純白
-  static const Color textPrimaryColor = Color(0FF0F172A); // 深藍黑
-  static const Color textSecondaryColor = Color(0FF64748B); // 簡潔灰
+  static const Color primaryColor = Color(0FF6366F1); // Indigo 藍紫
+  static const Color secondaryColor = Color(0FF4F46E5); // 深靛藍
+  static const Color accentColor = Color(0FF10B981); // Emerald 翡翠綠
+  static const Color backgroundColor = Color(0FFF8FAFC); // 乾淨灰白底
+  static const Color surfaceColor = Color(0FFFFFF); // 純白卡片
+  static const Color textPrimaryColor = Color(0FF0F172A); // 濃灰黑
+  static const Color textSecondaryColor = Color(0FF64748B); // 霧灰字
+  static const Color borderColor = Color(0FFE2E8F0); // 細緻分界線
 
   static ThemeData get lightTheme {
     final baseColorScheme = ColorScheme.light(
@@ -22,9 +23,7 @@ class AppTheme {
       onSecondary: Colors.white,
       surface: surfaceColor,
       onSurface: textPrimaryColor,
-      error: const Color(0FFEF4444),
-      onError: Colors.white,
-      outline: const Color(0FFE2E8F0),
+      outline: borderColor,
     );
 
     return ThemeData(
@@ -32,146 +31,164 @@ class AppTheme {
       scaffoldBackgroundColor: backgroundColor,
       colorScheme: baseColorScheme,
 
-      // 文字系統規範 (Typography): 親和活潑 Enterprise 字階
       textTheme: const TextTheme(
         displayLarge: TextStyle(
-          fontSize: 32,
-          fontWeight: FontWeight.w800,
+          fontSize: 28,
+          fontWeight: FontWeight.w700,
           color: textPrimaryColor,
-          letterSpacing: -0.6,
+          letterSpacing: -0.5,
         ),
         headlineMedium: TextStyle(
-          fontSize: 22,
-          fontWeight: FontWeight.w700,
+          fontSize: 20,
+          fontWeight: FontWeight.w600,
           color: textPrimaryColor,
         ),
         titleLarge: TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.w700,
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
           color: textPrimaryColor,
         ),
         bodyLarge: TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.w500,
+          fontSize: 14,
           color: textPrimaryColor,
-          height: 1.4,
         ),
         bodyMedium: TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.w400,
+          fontSize: 13,
           color: textSecondaryColor,
-          height: 1.4,
-        ),
-        labelLarge: TextStyle(
-          fontSize: 15,
-          fontWeight: FontWeight.w700,
-          color: Colors.white,
         ),
       ),
 
-      // 卡片主題 (CardTheme): 適中圓角 (12px) + 微細邊框與彩色半透明陰影
       cardTheme: CardTheme(
         color: surfaceColor,
-        elevation: 0,
+        elevation: 0.5,
+        shadowColor: Colors.black.withOpacity(0.05),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12.0),
-          side: const BorderSide(color: Color(0FFE2E8F0), width: 1.0),
+          side: const BorderSide(color: borderColor, width: 1.0),
         ),
         margin: EdgeInsets.zero,
       ),
 
-      // 主要按鈕主題 (ElevatedButtonTheme): SaaS 高明度按鈕
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: primaryColor,
           foregroundColor: Colors.white,
           elevation: 0,
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0),
           ),
           textStyle: const TextStyle(
-            fontSize: 15,
-            fontWeight: FontWeight.w700,
-          ),
-        ),
-      ),
-
-      // 次要按鈕主題 (OutlinedButtonTheme)
-      outlinedButtonTheme: OutlinedButtonThemeData(
-        style: OutlinedButton.styleFrom(
-          foregroundColor: primaryColor,
-          side: const BorderSide(color: Color(0FFCBD5E1), width: 1.2),
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0),
-          ),
-          textStyle: const TextStyle(
-            fontSize: 15,
+            fontSize: 14,
             fontWeight: FontWeight.w600,
           ),
         ),
       ),
 
-      // 輸入框主題 (InputDecorationTheme): 乾淨簡約
+      filledButtonTheme: FilledButtonThemeData(
+        style: FilledButton.styleFrom(
+          backgroundColor: const Color(0FFEEF2FF),
+          foregroundColor: primaryColor,
+          elevation: 0,
+          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          textStyle: const TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+          foregroundColor: textPrimaryColor,
+          side: const BorderSide(color: borderColor, width: 1.0),
+          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          textStyle: const TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+          foregroundColor: primaryColor,
+          textStyle: const TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: Colors.white,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
-        labelStyle: const TextStyle(color: textSecondaryColor),
+        fillColor: surfaceColor,
+        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         hintStyle: const TextStyle(color: textSecondaryColor, fontSize: 14),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),
-          borderSide: const BorderSide(color: Color(0FFCBD5E1), width: 1.2),
+          borderSide: const BorderSide(color: borderColor, width: 1.0),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),
-          borderSide: const BorderSide(color: Color(0FFCBD5E1), width: 1.2),
+          borderSide: const BorderSide(color: borderColor, width: 1.0),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),
-          borderSide: const BorderSide(color: primaryColor, width: 2.0),
+          borderSide: const BorderSide(color: primaryColor, width: 1.5),
         ),
       ),
 
-      // 列表主題 (ListTileTheme)
-      listTileTheme: ListTileThemeData(
-        contentPadding: const EdgeInsets.symmetric(horizontal: 18, vertical: 6),
-        iconColor: primaryColor,
-        textColor: textPrimaryColor,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-      ),
-
-      // 開關主題 (SwitchTheme): 靛藍亮色開關
       switchTheme: SwitchThemeData(
         thumbColor: WidgetStateProperty.all(Colors.white),
         trackColor: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.selected)) {
             return primaryColor;
           }
-          return const Color(0FFE2E8F0);
+          return const Color(0FFCBD5E1);
         }),
         trackOutlineColor: WidgetStateProperty.all(Colors.transparent),
       ),
 
-      // 進度條主題 (ProgressIndicatorTheme)
+      checkboxTheme: CheckboxThemeData(
+        fillColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
+            return primaryColor;
+          }
+          return Colors.white;
+        }),
+        checkColor: WidgetStateProperty.all(Colors.white),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+        side: const BorderSide(color: Color(0FFCBD5E1), width: 1.2),
+      ),
+
+      sliderTheme: const SliderThemeData(
+        activeTrackColor: primaryColor,
+        inactiveTrackColor: Color(0FFE2E8F0),
+        thumbColor: primaryColor,
+      ),
+
       progressIndicatorTheme: const ProgressIndicatorThemeData(
         color: primaryColor,
         linearTrackColor: Color(0FFE2E8F0),
       ),
 
-      // AppBar 主題
       appBarTheme: const AppBarTheme(
-        backgroundColor: backgroundColor,
+        backgroundColor: surfaceColor,
         surfaceTintColor: Colors.transparent,
         elevation: 0,
         centerTitle: false,
+        shape: Border(bottom: BorderSide(color: borderColor, width: 1.0)),
         titleTextStyle: TextStyle(
           color: textPrimaryColor,
-          fontSize: 18,
-          fontWeight: FontWeight.w800,
+          fontSize: 17,
+          fontWeight: FontWeight.w600,
         ),
         iconTheme: IconThemeData(color: primaryColor),
       ),

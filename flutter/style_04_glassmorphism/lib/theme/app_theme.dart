@@ -1,29 +1,27 @@
 import 'package:flutter/material.dart';
 
-/// 玻璃擬物風 (Glassmorphism / Frost UI) 主題系統
+/// 玻璃擬態 (Glassmorphism) 主題系統
 ///
-/// 特色：通透半透明感、深色漸層背景、微光 1px 白色邊框與毛玻璃深度視覺。
+/// 特色：半透明毛玻璃質感 (BackdropFilter Blur)、微薄白邊框、高飽和漸層背景、極具現代未來感。
 class AppTheme {
   AppTheme._();
 
-  static const Color primaryColor = Color(0FF38BDF8); // 冰晶天空藍
-  static const Color secondaryColor = Color(0FFC084FC); // 夢幻霓紫
-  static const Color backgroundColor = Color(0FF0F172A); // 深邃夜空藍
-  static const Color surfaceGlassColor = Color(0x20FFFFFF); // 15% 半透明白
-  static const Color glassBorderColor = Color(0x40FFFFFF); // 25% 半透明白細邊
-  static const Color textPrimaryColor = Color(0xFFF8FAFC); // 純白晶瑩字
-  static const Color textSecondaryColor = Color(0xFF94A3B8); // 霧灰次要字
+  static const Color primaryColor = Color(0FF00F2FE); // 水晶霓虹藍
+  static const Color secondaryColor = Color(0FF4FACFE); // 亮藍
+  static const Color backgroundColor = Color(0FF0F172A); // 深藍灰夜色背景
+  static const Color glassSurfaceColor = Color(0x25FFFFFF); // 25% 半透明白
+  static const Color glassBorderColor = Color(0x40FFFFFF); // 40% 半透明白邊框
+  static const Color textPrimaryColor = Color(0xFFFFFFFF); // 純白字
+  static const Color textSecondaryColor = Color(0xFF94A3B8); // 次要灰藍字
 
-  static ThemeData get darkTheme {
+  static ThemeData get lightTheme {
     final baseColorScheme = ColorScheme.dark(
       primary: primaryColor,
-      onPrimary: backgroundColor,
+      onPrimary: Colors.black,
       secondary: secondaryColor,
       onSecondary: Colors.white,
-      surface: surfaceGlassColor,
+      surface: glassSurfaceColor,
       onSurface: textPrimaryColor,
-      error: const Color(0FFFF6B6B),
-      onError: Colors.white,
       outline: glassBorderColor,
     );
 
@@ -32,16 +30,12 @@ class AppTheme {
       scaffoldBackgroundColor: backgroundColor,
       colorScheme: baseColorScheme,
 
-      // 文字系統規範 (Typography): 未來科技通透字階
       textTheme: const TextTheme(
         displayLarge: TextStyle(
-          fontSize: 32,
+          fontSize: 30,
           fontWeight: FontWeight.w700,
           color: textPrimaryColor,
           letterSpacing: -0.5,
-          shadows: [
-            Shadow(color: Color(0x4038BDF8), blurRadius: 12),
-          ],
         ),
         headlineMedium: TextStyle(
           fontSize: 22,
@@ -54,120 +48,136 @@ class AppTheme {
           color: textPrimaryColor,
         ),
         bodyLarge: TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.w400,
+          fontSize: 15,
           color: textPrimaryColor,
-          height: 1.4,
         ),
         bodyMedium: TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.w400,
+          fontSize: 13,
           color: textSecondaryColor,
-          height: 1.4,
-        ),
-        labelLarge: TextStyle(
-          fontSize: 15,
-          fontWeight: FontWeight.w600,
-          color: Colors.white,
         ),
       ),
 
-      // 卡片主題 (CardTheme): 15% 半透明白 + 1px 亮邊框 + 圓角 20px
       cardTheme: CardTheme(
-        color: surfaceGlassColor,
+        color: glassSurfaceColor,
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.0),
-          side: const BorderSide(color: glassBorderColor, width: 1.0),
+          side: const BorderSide(color: glassBorderColor, width: 1.2),
         ),
         margin: EdgeInsets.zero,
       ),
 
-      // 主要按鈕主題 (ElevatedButtonTheme): 漸層透光質感按鈕
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: primaryColor,
-          foregroundColor: backgroundColor,
+          foregroundColor: Colors.black,
           elevation: 0,
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16.0),
-            side: const BorderSide(color: glassBorderColor, width: 1.0),
           ),
           textStyle: const TextStyle(
-            fontSize: 16,
+            fontSize: 15,
             fontWeight: FontWeight.w700,
           ),
         ),
       ),
 
-      // 次要按鈕主題 (OutlinedButtonTheme)
+      filledButtonTheme: FilledButtonThemeData(
+        style: FilledButton.styleFrom(
+          backgroundColor: glassSurfaceColor,
+          foregroundColor: Colors.white,
+          elevation: 0,
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16.0),
+            side: const BorderSide(color: glassBorderColor, width: 1.2),
+          ),
+          textStyle: const TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
+      ),
+
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
-          backgroundColor: const Color(0x15FFFFFF),
-          foregroundColor: textPrimaryColor,
-          side: const BorderSide(color: glassBorderColor, width: 1.0),
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+          foregroundColor: primaryColor,
+          side: const BorderSide(color: primaryColor, width: 1.5),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16.0),
           ),
           textStyle: const TextStyle(
-            fontSize: 16,
+            fontSize: 15,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
+      ),
+
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+          foregroundColor: primaryColor,
+          textStyle: const TextStyle(
+            fontSize: 15,
             fontWeight: FontWeight.w600,
           ),
         ),
       ),
 
-      // 輸入框主題 (InputDecorationTheme): 半透明透光框
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: const Color(0x1AFFFFFF),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-        labelStyle: const TextStyle(color: textSecondaryColor),
+        fillColor: glassSurfaceColor,
+        contentPadding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
         hintStyle: const TextStyle(color: textSecondaryColor, fontSize: 14),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16.0),
-          borderSide: const BorderSide(color: glassBorderColor, width: 1.0),
+          borderSide: const BorderSide(color: glassBorderColor, width: 1.2),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16.0),
-          borderSide: const BorderSide(color: glassBorderColor, width: 1.0),
+          borderSide: const BorderSide(color: glassBorderColor, width: 1.2),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16.0),
-          borderSide: const BorderSide(color: primaryColor, width: 1.5),
+          borderSide: const BorderSide(color: primaryColor, width: 1.8),
         ),
       ),
 
-      // 列表主題 (ListTileTheme)
-      listTileTheme: ListTileThemeData(
-        contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-        iconColor: primaryColor,
-        textColor: textPrimaryColor,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16.0),
-        ),
-      ),
-
-      // 開關主題 (SwitchTheme): 冰天藍亮光 Switch
       switchTheme: SwitchThemeData(
         thumbColor: WidgetStateProperty.all(Colors.white),
         trackColor: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.selected)) {
             return primaryColor;
           }
-          return const Color(0x33FFFFFF);
+          return glassSurfaceColor;
         }),
         trackOutlineColor: WidgetStateProperty.all(glassBorderColor),
       ),
 
-      // 進度條主題 (ProgressIndicatorTheme)
-      progressIndicatorTheme: const ProgressIndicatorThemeData(
-        color: primaryColor,
-        linearTrackColor: Color(0x22FFFFFF),
+      checkboxTheme: CheckboxThemeData(
+        fillColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
+            return primaryColor;
+          }
+          return glassSurfaceColor;
+        }),
+        checkColor: WidgetStateProperty.all(Colors.black),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+        side: const BorderSide(color: glassBorderColor, width: 1.2),
       ),
 
-      // AppBar 主題
+      sliderTheme: const SliderThemeData(
+        activeTrackColor: primaryColor,
+        inactiveTrackColor: glassSurfaceColor,
+        thumbColor: Colors.white,
+      ),
+
+      progressIndicatorTheme: const ProgressIndicatorThemeData(
+        color: primaryColor,
+        linearTrackColor: glassSurfaceColor,
+      ),
+
       appBarTheme: const AppBarTheme(
         backgroundColor: Colors.transparent,
         surfaceTintColor: Colors.transparent,
@@ -176,9 +186,9 @@ class AppTheme {
         titleTextStyle: TextStyle(
           color: textPrimaryColor,
           fontSize: 18,
-          fontWeight: FontWeight.w600,
+          fontWeight: FontWeight.w700,
         ),
-        iconTheme: IconThemeData(color: primaryColor),
+        iconTheme: IconThemeData(color: textPrimaryColor),
       ),
     );
   }

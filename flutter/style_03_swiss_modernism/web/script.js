@@ -1,22 +1,51 @@
+// Swiss Modernism Web Interactive Script
+
 document.addEventListener('DOMContentLoaded', () => {
-  const pdfBtn = document.getElementById('pdf-btn');
-  const exportBtn = document.getElementById('export-btn');
-  const gridSwitch = document.getElementById('grid-switch');
+  const slider = document.getElementById('sample-slider');
+  const sliderValText = document.getElementById('slider-val-text');
+  const progressValText = document.getElementById('progress-val-text');
+  const progressFill = document.getElementById('progress-fill');
 
-  pdfBtn.addEventListener('click', () => {
-    alert('SWISS GRID PDF 匯出完成！');
+  if (slider && sliderValText && progressFill) {
+    slider.addEventListener('input', (e) => {
+      const val = e.target.value;
+      sliderValText.textContent = `${val}%`;
+      if (progressValText) progressValText.textContent = `METRIC PROGRESS: ${val}%`;
+      progressFill.style.width = `${val}%`;
+    });
+  }
+
+  const segmentBtns = document.querySelectorAll('.segment-btn');
+  segmentBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      segmentBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
   });
 
-  exportBtn.addEventListener('click', () => {
-    alert('GRID SYSTEM 規格 JSON 已成功複製至剪貼簿！');
-  });
+  const dialogTriggerBtn = document.getElementById('dialog-trigger-btn');
+  const sampleDialog = document.getElementById('sample-dialog');
+  const dialogClose = document.getElementById('dialog-close');
 
-  gridSwitch.addEventListener('change', (e) => {
-    if (e.target.checked) {
-      document.body.style.backgroundImage = 'linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px)';
-      document.body.style.backgroundSize = '20px 100%';
-    } else {
-      document.body.style.backgroundImage = 'none';
-    }
+  if (dialogTriggerBtn && sampleDialog) {
+    dialogTriggerBtn.addEventListener('click', () => sampleDialog.classList.remove('hidden'));
+    if (dialogClose) dialogClose.addEventListener('click', () => sampleDialog.classList.add('hidden'));
+  }
+
+  const sheetTriggerBtn = document.getElementById('sheet-trigger-btn');
+  const sampleSheet = document.getElementById('sample-sheet');
+  const sheetClose = document.getElementById('sheet-close');
+
+  if (sheetTriggerBtn && sampleSheet) {
+    sheetTriggerBtn.addEventListener('click', () => sampleSheet.classList.remove('hidden'));
+    if (sheetClose) sheetClose.addEventListener('click', () => sampleSheet.classList.add('hidden'));
+  }
+
+  const navItems = document.querySelectorAll('.nav-item');
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      navItems.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+    });
   });
 });

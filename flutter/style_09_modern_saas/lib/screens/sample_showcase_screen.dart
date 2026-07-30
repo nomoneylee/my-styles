@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// 範例展示頁面 (Sample Showcase Screen) - 扁平化微漸層 (Modern SaaS)
-///
-/// 規範重點：組件完全讀取 Theme.of(context)，內部無任何寫死樣式數值。
+/// 範例展示頁面 (Modern SaaS Showcase Screen)
 class SampleShowcaseScreen extends StatefulWidget {
   const SampleShowcaseScreen({super.key});
 
@@ -11,160 +9,236 @@ class SampleShowcaseScreen extends StatefulWidget {
 }
 
 class _SampleShowcaseScreenState extends State<SampleShowcaseScreen> {
+  int _currentNavIndex = 0;
+  int _segmentedIndex = 0;
   bool _switchValue = true;
-  double _progressValue = 0.78;
-  final TextEditingController _textController = TextEditingController(text: 'team-workspace-pro.saas.io');
+  bool _checkboxValue = true;
+  double _sliderValue = 0.82;
+  final TextEditingController _textController =
+      TextEditingController(text: 'enterprise-workspace-2026');
 
-  @override
-  void dispose() {
-    _textController.dispose();
-    super.dispose();
+  void _showSampleDialog() {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        title: const Text('SaaS Workspace Alert'),
+        content: const Text('專業且簡潔之 B2B Dashboard 對話框 (Alert Dialog)。'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Cancel'),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Confirm Action'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _showSampleBottomSheet() {
+    showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (context) => Container(
+        padding: const EdgeInsets.all(24.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('Workspace Quick Actions',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            const SizedBox(height: 12),
+            const Text('極致乾淨與高效能之 Bottom Sheet 選單。'),
+            const SizedBox(height: 20),
+            ListTile(
+              leading: const Icon(Icons.analytics_outlined, color: Color(0FF6366F1)),
+              title: const Text('Export Analytics Report'),
+              onTap: () => Navigator.pop(context),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
-    final colorScheme = theme.colorScheme;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('現代 SaaS MODERN FLAT'),
+        title: const Text('現代 SaaS MODERN DASHBOARD'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.space_dashboard_rounded),
+            icon: const Icon(Icons.notifications_none_rounded),
             onPressed: () {},
           ),
         ],
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 16.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 標頭 Hero 區塊
-            Text('團隊營收分析', style: textTheme.displayLarge),
-            const SizedBox(height: 6),
-            Text('高明度雙色漸層、彩色半透明陰影與清爽現代企業感 UI。', style: textTheme.bodyMedium),
+            Text('SaaS Design Components', style: textTheme.displayLarge),
+            const SizedBox(height: 4),
+            Text('Enterprise B2B Level UI System / Indigo Theme', style: textTheme.bodyMedium),
+            const SizedBox(height: 16),
+
+            // Search Bar
+            SearchBar(
+              hintText: 'Search metrics, APIs, users...',
+              leading: const Icon(Icons.search, color: Color(0FF6366F1)),
+              elevation: WidgetStateProperty.all(0),
+              backgroundColor: WidgetStateProperty.all(Colors.white),
+              shape: WidgetStateProperty.all(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  side: const BorderSide(color: Color(0FFE2E8F0), width: 1.0),
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+
+            // Segmented Control
+            SegmentedButton<int>(
+              segments: const [
+                ButtonSegment(value: 0, label: Text('Metrics')),
+                ButtonSegment(value: 1, label: Text('Controls')),
+                ButtonSegment(value: 2, label: Text('Modals')),
+              ],
+              selected: {_segmentedIndex},
+              onSelectionChanged: (val) => setState(() => _segmentedIndex = val.first),
+            ),
             const SizedBox(height: 24),
 
-            // SaaS Card 元件範例 (包覆漸層色彩與彩色陰影)
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12.0),
-                boxShadow: [
-                  BoxShadow(
-                    color: colorScheme.primary.withOpacity(0.2),
-                    blurRadius: 16,
-                    offset: const Offset(0, 8),
-                  ),
-                ],
+            // 1. Buttons
+            Text('1. Button Variants', style: textTheme.headlineMedium),
+            const SizedBox(height: 12),
+            Wrap(
+              spacing: 10,
+              runSpacing: 10,
+              children: [
+                ElevatedButton(onPressed: () {}, child: const Text('Primary Action')),
+                FilledButton(onPressed: () {}, child: const Text('Secondary Tonal')),
+                OutlinedButton(onPressed: () {}, child: const Text('Outlined Button')),
+                TextButton(onPressed: () {}, child: const Text('Text Link')),
+              ],
+            ),
+            const SizedBox(height: 24),
+
+            // 2. Inputs & Selection
+            Text('2. Inputs & Controls', style: textTheme.headlineMedium),
+            const SizedBox(height: 12),
+            TextField(
+              controller: _textController,
+              decoration: const InputDecoration(
+                labelText: 'Organization Subdomain',
+                prefixIcon: Icon(Icons.language, color: Color(0FF6366F1)),
               ),
-              child: Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              Icon(Icons.insights_rounded, size: 28, color: colorScheme.primary),
-                              const SizedBox(width: 12),
-                              Text('ARR 年度經常性收入', style: textTheme.titleLarge),
-                            ],
-                          ),
-                          Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                            decoration: BoxDecoration(
-                              color: colorScheme.primary.withOpacity(0.1),
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Text(
-                              '+ 24.5%',
-                              style: textTheme.bodyMedium?.copyWith(
-                                color: colorScheme.primary,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 16),
-                      Text('季度目標達成率 (78%)', style: textTheme.bodyMedium),
-                      const SizedBox(height: 8),
-                      LinearProgressIndicator(value: _progressValue),
-                      const SizedBox(height: 16),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('\$ 1,280,000 USD', style: textTheme.displayLarge?.copyWith(fontSize: 24)),
-                          Text('超越同業預期', style: textTheme.bodyMedium),
-                        ],
-                      ),
-                    ],
-                  ),
+            ),
+            const SizedBox(height: 16),
+
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text('Two-Factor Authentication', style: TextStyle(fontWeight: FontWeight.w600)),
+                        Switch(
+                          value: _switchValue,
+                          onChanged: (val) => setState(() => _switchValue = val),
+                        ),
+                      ],
+                    ),
+                    const Divider(color: Color(0FFE2E8F0)),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text('Enable API Access Logs', style: TextStyle(fontWeight: FontWeight.w600)),
+                        Checkbox(
+                          value: _checkboxValue,
+                          onChanged: (val) => setState(() => _checkboxValue = val ?? false),
+                        ),
+                      ],
+                    ),
+                    const Divider(color: Color(0FFE2E8F0)),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Text('API Rate Threshold', style: TextStyle(fontWeight: FontWeight.w600)),
+                            Text('${(_sliderValue * 100).toInt()}%', style: const TextStyle(color: Color(0FF6366F1), fontWeight: FontWeight.bold)),
+                          ],
+                        ),
+                        Slider(
+                          value: _sliderValue,
+                          onChanged: (val) => setState(() => _sliderValue = val),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ),
             const SizedBox(height: 24),
 
-            // InputTextField 元件範例
-            Text('企業網域名稱', style: textTheme.headlineMedium),
+            // 3. Cards & Views
+            Text('3. Data Displays', style: textTheme.headlineMedium),
             const SizedBox(height: 12),
-            TextField(
-              controller: _textController,
-              decoration: const InputDecoration(
-                labelText: 'CUSTOM DOMAIN URL',
-                prefixIcon: Icon(Icons.language_rounded),
-              ),
-            ),
-            const SizedBox(height: 20),
-
-            // ListTile 元件與 Switch 範例
             Card(
-              child: Column(
-                children: [
-                  ListTile(
-                    leading: const Icon(Icons.slack_rounded),
-                    title: Text('Slack & Asana 自動化通知', style: textTheme.bodyLarge),
-                    subtitle: Text('專案變更時自動同步至 #general 頻道', style: textTheme.bodyMedium),
-                    trailing: Switch(
-                      value: _switchValue,
-                      onChanged: (val) {
-                        setState(() => _switchValue = val);
-                      },
+              child: Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text('Server Cluster Status', style: TextStyle(fontWeight: FontWeight.bold)),
+                        Badge(
+                          label: const Text('HEALTHY'),
+                          backgroundColor: const Color(0FF10B981),
+                        ),
+                      ],
                     ),
-                  ),
-                  const Divider(height: 1, indent: 20, endIndent: 20),
-                  ListTile(
-                    leading: const Icon(Icons.badge_rounded),
-                    title: Text('SSO 單一身分驗證存取', style: textTheme.bodyLarge),
-                    subtitle: Text('Okta / Google Workspace 整合權限', style: textTheme.bodyMedium),
-                    trailing: const Icon(Icons.chevron_right_rounded),
-                    onTap: () {},
-                  ),
-                ],
+                    const SizedBox(height: 12),
+                    Text('System Load: ${(_sliderValue * 100).toInt()}%', style: const TextStyle(color: Color(0FF64748B))),
+                    const SizedBox(height: 8),
+                    LinearProgressIndicator(value: _sliderValue),
+                  ],
+                ),
               ),
             ),
             const SizedBox(height: 24),
 
-            // 按鈕組合範例 (PrimaryButton & SecondaryButton)
+            // 4. Modals
+            Text('4. Overlays & Dialogs', style: textTheme.headlineMedium),
+            const SizedBox(height: 12),
             Row(
               children: [
                 Expanded(
                   child: ElevatedButton(
-                    onPressed: () {},
-                    child: const Text('升級 Pro 企業版'),
+                    onPressed: _showSampleDialog,
+                    child: const Text('ALERT DIALOG'),
                   ),
                 ),
                 const SizedBox(width: 12),
                 Expanded(
                   child: OutlinedButton(
-                    onPressed: () {},
-                    child: const Text('匯出財務 CSV'),
+                    onPressed: _showSampleBottomSheet,
+                    child: const Text('BOTTOM SHEET'),
                   ),
                 ),
               ],
@@ -172,6 +246,18 @@ class _SampleShowcaseScreenState extends State<SampleShowcaseScreen> {
             const SizedBox(height: 32),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentNavIndex,
+        onTap: (idx) => setState(() => _currentNavIndex = idx),
+        backgroundColor: Colors.white,
+        selectedItemColor: const Color(0FF6366F1),
+        unselectedItemColor: const Color(0FF64748B),
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.dashboard_outlined), label: 'Dashboard'),
+          BottomNavigationBarItem(icon: Icon(Icons.bar_chart_outlined), label: 'Analytics'),
+          BottomNavigationBarItem(icon: Icon(Icons.settings_outlined), label: 'Settings'),
+        ],
       ),
     );
   }
