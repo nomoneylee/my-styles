@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>北歐極簡木質 Nordic Minimalist - 共用 UI 元件展示</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1 class="app-title">北歐極簡 NORDIC</h1>
+      <button class="icon-btn" aria-label="樹木圖示">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A5D4E" stroke-width="2"><path d="M12 2L4 14h6v8h4v-8h6L12 2z"/></svg>
+      </button>
+    </header>
+
+    <main class="app-content">
+      <section class="hero-section">
+        <h2 class="display-title">極簡木質 UI 元件</h2>
+        <p class="body-subtext">橄欖綠、冷木棕與斯堪地那維亞大留白。</p>
+      </section>
+
+      <div class="search-bar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4A5D4E" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" class="search-input" placeholder="搜尋北歐傢俱或選品店...">
+      </div>
+
+      <div class="segmented-control">
+        <button class="segment-btn active">傢俱</button>
+        <button class="segment-btn">燈飾</button>
+        <button class="segment-btn">家飾</button>
+      </div>
+
+      <section class="component-section">
+        <h3 class="section-title">1. 按鈕變體 (Buttons)</h3>
+        <div class="button-wrap">
+          <button class="btn btn-green">Nordic Green</button>
+          <button class="btn btn-brown">Wood Brown</button>
+          <button class="btn btn-outlined">Outlined</button>
+          <button class="btn btn-text">Text Link</button>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">2. 輸入與選擇 (Inputs)</h3>
+        <div class="input-group">
+          <label for="nordic-input" class="input-label">DESIGN_COLLECTION</label>
+          <input type="text" id="nordic-input" class="text-input" value="HAY_NORDIC_DESIGN_2026">
+        </div>
+
+        <div class="card nordic-card">
+          <div class="control-row">
+            <span class="control-label">實木認證標籤 (Switch)</span>
+            <label class="switch">
+              <input type="checkbox" id="nordic-switch" checked>
+              <span class="slider-toggle"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-row">
+            <span class="control-label">環保再生材質 (Checkbox)</span>
+            <label class="checkbox-container">
+              <input type="checkbox" id="nordic-checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-col">
+            <div class="slider-header">
+              <span class="control-label">空間留白比例 (Slider)</span>
+              <span class="slider-value-text" id="slider-val-text">80%</span>
+            </div>
+            <input type="range" id="sample-slider" class="range-slider" min="0" max="100" value="80">
+          </div>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">3. 卡片與視圖 (Cards)</h3>
+        <div class="card nordic-card">
+          <div class="card-header">
+            <span class="card-title">COPENHAGEN 羊毛單椅</span>
+            <span class="badge badge-grey">NORDIC</span>
+          </div>
+          <p class="progress-label" id="progress-val-text">庫存狀況: 80%</p>
+          <div class="progress-bar">
+            <div class="progress-fill progress-fill-80" id="progress-fill"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">4. 彈窗與回饋 (Modals)</h3>
+        <div class="button-row">
+          <button class="btn btn-green btn-half" id="dialog-trigger-btn">ALERT DIALOG</button>
+          <button class="btn btn-outlined btn-half" id="sheet-trigger-btn">BOTTOM SHEET</button>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active">傢俱</button>
+      <button class="nav-item">燈飾</button>
+      <button class="nav-item">我的</button>
+    </nav>
+
+    <div class="modal-overlay hidden" id="sample-dialog">
+      <div class="modal-box nordic-modal">
+        <h3 class="modal-title">🌲 北歐木質對話框</h3>
+        <p class="modal-content">斯堪地那維亞極簡留白 Alert Dialog 元件。</p>
+        <div class="modal-actions">
+          <button class="btn btn-green" id="dialog-close">選購傢俱</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="sheet-overlay hidden" id="sample-sheet">
+      <div class="sheet-box nordic-sheet">
+        <h3 class="sheet-title">🌿 斯堪地那維亞選單 (Bottom Sheet)</h3>
+        <p class="sheet-desc">柔和自然木色質感 Bottom Sheet 面板。</p>
+        <button class="btn btn-brown btn-full" id="sheet-close">關閉面板</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

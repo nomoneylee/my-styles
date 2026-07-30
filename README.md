@@ -169,7 +169,7 @@
 
 ## 📱 Flutter App 主題系統 (Theme System) 模板專區
 
-在 `flutter/` 目錄下包含了採用 Flutter 主題系統（`ThemeData` & `Theme.of(context)`）完全解耦開發的 5 大風格 App 模板。Widget 內部**零寫死 Hardcode 樣式**，可隨時替換主題風格。
+在 `flutter/` 目錄下包含了採用 Flutter 主題系統（`ThemeData` & `Theme.of(context)`）完全解耦開發的 20 大風格 App 模板。Widget 內部**零寫死 Hardcode 樣式**，可隨時替換主題風格。
 
 ### 01. 極簡科技風 (Apple-style Minimalist)
 - **視覺特色**：大圓角 (20px)、極極輕微柔和陰影、大量留白與 iOS 經典藍。
@@ -220,6 +220,56 @@
 - **視覺特色**：純黑底 (`#000000`)、螢光綠 (`#00FF66`) Monospace 等寬字體、0px 緊密表格網格與高數據吞吐量。
 - **目錄**：`flutter/style_10_terminal_dashboard/`
 - **連結**：[開啟 Web 模擬展示](flutter/style_10_terminal_dashboard/web/index.html) | [查看 Flutter 專案 README](flutter/style_10_terminal_dashboard/README.md)
+
+### 11. 希臘聖托里尼 / 地中海度假風 (Santorini Mediterranean)
+- **視覺特色**：愛琴海蔚藍 (`#0055B8`) 與日照金黃 (`#F5A623`)，搭配純白圓頂與海浪弧邊 (20px 圓角)。
+- **目錄**：`flutter/style_11_santorini_mediterranean/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_11_santorini_mediterranean/web/index.html) | [查看 Flutter 專案 README](flutter/style_11_santorini_mediterranean/README.md)
+
+### 12. 包浩斯現代主義風 (Bauhaus Modernism)
+- **視覺特色**：米黃畫布底色，經典紅黃藍三原色 (`#D9381E` / `#FFB703` / `#00509D`) 重點點綴，強烈幾何切分與非對稱佈局。
+- **目錄**：`flutter/style_12_bauhaus_modernism/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_12_bauhaus_modernism/web/index.html) | [查看 Flutter 專案 README](flutter/style_12_bauhaus_modernism/README.md)
+
+### 13. 韓系奶油甜點風 (Korean Minimalist Warm)
+- **視覺特色**：溫柔奶油黃 (`#F6E7C1`)、燕麥色與低飽和薄荷綠，軟萌超大圓角 (28px) 與極致療癒感。
+- **目錄**：`flutter/style_13_korean_minimalist_warm/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_13_korean_minimalist_warm/web/index.html) | [查看 Flutter 專案 README](flutter/style_13_korean_minimalist_warm/README.md)
+
+### 14. 瑞士國際主義字體風 (Swiss Style)
+- **視覺特色**：嚴格 12 欄網格對齊，極簡純白底搭配巨大黑體與簡潔黑實線切分，瑞士紅 (`#FF0000`) 色塊與零漸層陰影。
+- **目錄**：`flutter/style_14_swiss_style/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_14_swiss_style/web/index.html) | [查看 Flutter 專案 README](flutter/style_14_swiss_style/README.md)
+
+### 15. 賽博龐克微燻風 (Cyber-Chic Noir)
+- **視覺特色**：深酒紅 (`#180A17`) 迷幻底色，霓虹洋紅 (`#FF2A85`) 與螢光黃細線光暈，深夜 Lounge 吧檯質感。
+- **目錄**：`flutter/style_15_cyber_chic_noir/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_15_cyber_chic_noir/web/index.html) | [查看 Flutter 專案 README](flutter/style_15_cyber_chic_noir/README.md)
+
+### 16. 日系幾何雜誌 / 詩意風格 (Japanese Poetic Magazine)
+- **視覺特色**：日本雜誌 (Popeye / Brutus) 質感，淡黃灰紙張 (`#F5F2EB`)、詩意朱紅 (`#C83E2B`) 點綴與極細黑網格。
+- **目錄**：`flutter/style_16_japanese_poetic_magazine/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_16_japanese_poetic_magazine/web/index.html) | [查看 Flutter 專案 README](flutter/style_16_japanese_poetic_magazine/README.md)
+
+### 17. 北歐極簡木質風 (Nordic Minimalist)
+- **視覺特色**：斯堪地那維亞設計與 HAY 傢俱質感，淺灰大理石背景搭配橄欖綠 (`#4A5D4E`) 與冷木棕。
+- **目錄**：`flutter/style_17_nordic_minimalist/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_17_nordic_minimalist/web/index.html) | [查看 Flutter 專案 README](flutter/style_17_nordic_minimalist/README.md)
+
+### 18. 暗黑哥德 / 獨立精品風 (Gothic Luxury)
+- **視覺特色**：獨立香氛與哥德精品時尚，深沉炭灰基底 (`#141416`) 搭配暗夜血紅 (`#800A1C`) 與古典細襯線字。
+- **目錄**：`flutter/style_18_gothic_luxury/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_18_gothic_luxury/web/index.html) | [查看 Flutter 專案 README](flutter/style_18_gothic_luxury/README.md)
+
+### 19. 新美式復古 Arcade / 嬉皮風 (Retro 70s Arcade)
+- **視覺特色**：70 年代黑膠唱片行與 Arcade 街機遊戲，芥末黃 (`#E3A826`)、嬉皮橘紅與厚重黑膠粗邊框。
+- **目錄**：`flutter/style_19_retro_70s_arcade/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_19_retro_70s_arcade/web/index.html) | [查看 Flutter 專案 README](flutter/style_19_retro_70s_arcade/README.md)
+
+### 20. 當代展覽手冊 / 概念設計風 (Editorial Exhibition)
+- **視覺特色**：當代藝術展覽手冊，高對比灰白背景 (`#F0F0F0`) 搭配頁碼感標註 [01/02] 與標註藍 (`#0022FF`)。
+- **目錄**：`flutter/style_20_editorial_exhibition/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_20_editorial_exhibition/web/index.html) | [查看 Flutter 專案 README](flutter/style_20_editorial_exhibition/README.md)
 
 
 ---

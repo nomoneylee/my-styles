@@ -1,0 +1,19 @@
+name: style_20_editorial_exhibition
+description: "當代展覽手冊概念設計風 (Editorial Exhibition) Flutter App 範本"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true

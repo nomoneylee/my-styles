@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>當代展覽手冊 Editorial Exhibition - 共用 UI 元件展示</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1 class="app-title">[01] EDITORIAL // EXHIBITION</h1>
+      <button class="icon-btn" aria-label="展覽圖示">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2"><path d="M4 3h16v18H4zM8 7h8M8 11h8M8 15h4"/></svg>
+      </button>
+    </header>
+
+    <main class="app-content">
+      <section class="hero-section">
+        <h2 class="display-title">CONCEPTUAL UI</h2>
+        <p class="body-subtext">EDITORIAL EXHIBITION CATALOGUE // 2026</p>
+      </section>
+
+      <div class="search-bar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" class="search-input" placeholder="SEARCH IN CATALOGUE #01...">
+      </div>
+
+      <div class="segmented-control">
+        <button class="segment-btn active">[01]ROOM</button>
+        <button class="segment-btn">[02]WORK</button>
+        <button class="segment-btn">[03]TEXT</button>
+      </div>
+
+      <section class="component-section">
+        <h3 class="section-title">1. BUTTON VARIANTS</h3>
+        <div class="button-wrap">
+          <button class="btn btn-blue">BLUE INDEX</button>
+          <button class="btn btn-red">RED SIGNAL</button>
+          <button class="btn btn-outlined">OUTLINED</button>
+          <button class="btn btn-text">TEXT LINK</button>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">2. INPUTS & CONTROLS</h3>
+        <div class="input-group">
+          <label for="edit-input" class="input-label">EXHIBITION_ENTRY_ID</label>
+          <input type="text" id="edit-input" class="text-input" value="EDITORIAL_EXHIBITION_01/2026">
+        </div>
+
+        <div class="card edit-card">
+          <div class="control-row">
+            <span class="control-label">CURATORIAL AUDIO (Switch)</span>
+            <label class="switch">
+              <input type="checkbox" id="edit-switch" checked>
+              <span class="slider-toggle"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-row">
+            <span class="control-label">EXHIBITION CATALOGUE ACCESS</span>
+            <label class="checkbox-container">
+              <input type="checkbox" id="edit-checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-col">
+            <div class="slider-header">
+              <span class="control-label">CONTRAST RATIO SLIDER</span>
+              <span class="slider-value-text" id="slider-val-text">95%</span>
+            </div>
+            <input type="range" id="sample-slider" class="range-slider" min="0" max="100" value="95">
+          </div>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">3. CARDS & VIEWS</h3>
+        <div class="card edit-card">
+          <div class="card-header">
+            <span class="card-title">EXHIBITION ROOM A // 01</span>
+            <span class="badge badge-blue">CATALOGUE</span>
+          </div>
+          <p class="progress-label" id="progress-val-text">PROGRESS: 95%</p>
+          <div class="progress-bar">
+            <div class="progress-fill progress-fill-95" id="progress-fill"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">4. MODALS & OVERLAYS</h3>
+        <div class="button-row">
+          <button class="btn btn-blue btn-half" id="dialog-trigger-btn">ALERT DIALOG</button>
+          <button class="btn btn-outlined btn-half" id="sheet-trigger-btn">BOTTOM SHEET</button>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active">[01]INDEX</button>
+      <button class="nav-item">[02]GALLERY</button>
+      <button class="nav-item">[03]INFO</button>
+    </nav>
+
+    <div class="modal-overlay hidden" id="sample-dialog">
+      <div class="modal-box edit-modal">
+        <h3 class="modal-title">[01/02] 展覽策展警示</h3>
+        <p class="modal-content">當代藝術展覽冊大號標註與實驗性 layout 對話框。</p>
+        <div class="modal-actions">
+          <button class="btn btn-blue" id="dialog-close">ENTER EXHIBITION</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="sheet-overlay hidden" id="sample-sheet">
+      <div class="sheet-box edit-sheet">
+        <h3 class="sheet-title">📄 展覽目錄選單 (Bottom Sheet)</h3>
+        <p class="sheet-desc">頁碼感標註與小字號說明欄。</p>
+        <button class="btn btn-red btn-full" id="sheet-close">CLOSE</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+name: style_19_retro_70s_arcade
+description: "新美式復古 Arcade 嬉皮風 (Retro 70s Arcade) Flutter App 範本"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true

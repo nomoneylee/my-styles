@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>賽博龐克微燻 Cyber-Chic Noir - 共用 UI 元件展示</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1 class="app-title">賽博微燻 CYBER NOIR</h1>
+      <button class="icon-btn" aria-label="調酒圖示">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF2A85" stroke-width="2"><path d="M8 22h8M12 11v11M19 3l-7 8-7-8h14z"/></svg>
+      </button>
+    </header>
+
+    <main class="app-content">
+      <section class="hero-section">
+        <h2 class="display-title">微燻霓虹 UI 元件</h2>
+        <p class="body-subtext">深酒紅基底、霓虹洋紅與螢光黃柔光質感。</p>
+      </section>
+
+      <div class="search-bar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF2A85" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" class="search-input" placeholder="SEARCH_NOIR_MENU...">
+      </div>
+
+      <div class="segmented-control">
+        <button class="segment-btn active">LOUNGE</button>
+        <button class="segment-btn">DRINKS</button>
+        <button class="segment-btn">VIBES</button>
+      </div>
+
+      <section class="component-section">
+        <h3 class="section-title">1. 按鈕變體 (Buttons)</h3>
+        <div class="button-wrap">
+          <button class="btn btn-pink">NEON PINK</button>
+          <button class="btn btn-yellow">ELECTRIC YELLOW</button>
+          <button class="btn btn-outlined">OUTLINED</button>
+          <button class="btn btn-text">TEXT LINK</button>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">2. 輸入與選擇 (Inputs)</h3>
+        <div class="input-group">
+          <label for="noir-input" class="input-label">NOIR_MEMBER_ID</label>
+          <input type="text" id="noir-input" class="text-input" value="NOIR_LOUNGE_BAR_2026">
+        </div>
+
+        <div class="card noir-card">
+          <div class="control-row">
+            <span class="control-label">VIP 柔光模式 (Switch)</span>
+            <label class="switch">
+              <input type="checkbox" id="noir-switch" checked>
+              <span class="slider-toggle"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-row">
+            <span class="control-label">自動調酒推播 (Checkbox)</span>
+            <label class="checkbox-container">
+              <input type="checkbox" id="noir-checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-col">
+            <div class="slider-header">
+              <span class="control-label">微燻氛圍值 (Slider)</span>
+              <span class="slider-value-text" id="slider-val-text">88%</span>
+            </div>
+            <input type="range" id="sample-slider" class="range-slider" min="0" max="100" value="88">
+          </div>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">3. 卡片與視圖 (Cards)</h3>
+        <div class="card noir-card">
+          <div class="card-header">
+            <span class="card-title">MIDNIGHT JAZZ VIBE</span>
+            <span class="badge badge-pink">NOIR</span>
+          </div>
+          <p class="progress-label" id="progress-val-text">VIBE LEVEL: 88%</p>
+          <div class="progress-bar">
+            <div class="progress-fill progress-fill-88" id="progress-fill"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">4. 彈窗與回饋 (Modals)</h3>
+        <div class="button-row">
+          <button class="btn btn-pink btn-half" id="dialog-trigger-btn">ALERT DIALOG</button>
+          <button class="btn btn-outlined btn-half" id="sheet-trigger-btn">BOTTOM SHEET</button>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active">BAR</button>
+      <button class="nav-item">JAZZ</button>
+      <button class="nav-item">VIP</button>
+    </nav>
+
+    <div class="modal-overlay hidden" id="sample-dialog">
+      <div class="modal-box noir-modal">
+        <h3 class="modal-title">🍸 賽博微燻警示</h3>
+        <p class="modal-content">深夜酒紅與霓虹微光質感對話框。</p>
+        <div class="modal-actions">
+          <button class="btn btn-pink" id="dialog-close">DRINK NOW</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="sheet-overlay hidden" id="sample-sheet">
+      <div class="sheet-box noir-sheet">
+        <h3 class="sheet-title">🌃 深夜 Lounge 面板 (Bottom Sheet)</h3>
+        <p class="sheet-desc">賽博時尚暗黑酒吧選單。</p>
+        <button class="btn btn-yellow btn-full" id="sheet-close">CLOSE</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
