@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space UI / NASA HUD - Pure Vanilla Web Showcase</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1 class="app-title">SPACE UI // NASA HUD</h1>
+      <button class="icon-btn" id="refresh-btn">🚀</button>
+    </header>
+
+    <main class="app-content">
+      <section class="hero-section">
+        <h2 class="display-title">NASA HUD COCKPIT</h2>
+        <p class="body-subtext">深邃太空黑與螢光青綠對焦刻度 HUD 抬頭顯示樣板。</p>
+      </section>
+
+      <div class="search-bar">
+        <input type="text" class="search-input" value="ORBITAL_HUD_SYS_2026_NASA" placeholder="搜尋軌道目標...">
+      </div>
+
+      <div class="segmented-control">
+        <button class="segment-btn active">RADAR</button>
+        <button class="segment-btn">ORBIT</button>
+        <button class="segment-btn">TELEMETRY</button>
+      </div>
+
+      <section class="component-section">
+        <h3 class="section-title">1. HUD 觸發按鈕 (Buttons)</h3>
+        <div class="button-wrap">
+          <button class="btn btn-filled">CYAN RADAR</button>
+          <button class="btn btn-secondary">SOLAR AMBER</button>
+          <button class="btn btn-outlined">GRID OUTLINE</button>
+          <button class="btn btn-text">SYSTEM LINK</button>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">2. 艙內數據控制 (Telemetry Controls)</h3>
+        <div class="card control-card">
+          <div class="control-row">
+            <span class="control-label">啟用姿態控制反推火箭 (RCS Control)</span>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider-toggle"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-row">
+            <span class="control-label">自動追蹤國際太空站 Docking 姿態</span>
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-col">
+            <div class="slider-header">
+              <span class="control-label">主推進器輸出功率 (THRUST)</span>
+              <span class="slider-value-text" id="slider-val-text">94%</span>
+            </div>
+            <input type="range" id="sample-slider" class="range-slider" min="0" max="100" value="94">
+          </div>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">3. HUD 卡片網格 (HUD Cards)</h3>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">ARTEMIS MOON MISSION 2026</span>
+            <span class="badge">NASA HUD</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width: 94%;"></div></div>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">4. 視窗與面板 (Overlays)</h3>
+        <div class="button-row">
+          <button class="btn btn-filled btn-half" id="dialog-trigger-btn">HUD DIALOG</button>
+          <button class="btn btn-outlined btn-half" id="sheet-trigger-btn">HUD SHEET</button>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active"><span>HUD 抬頭</span></button>
+      <button class="nav-item"><span>軌道追蹤</span></button>
+      <button class="nav-item"><span>艙內控制</span></button>
+    </nav>
+
+    <!-- Modal Dialog -->
+    <div class="modal-overlay hidden" id="sample-dialog">
+      <div class="modal-box">
+        <h3 class="modal-title">🛰️ 太空艙 HUD 軌道警示</h3>
+        <p class="modal-content">太空人抬頭顯示器、對焦瞄準刻度與螢光青綠系統警示。</p>
+        <div class="modal-actions">
+          <button class="btn btn-text" id="dialog-close">ABORT</button>
+          <button class="btn btn-filled" id="dialog-confirm">ENGAGE</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Sheet -->
+    <div class="sheet-overlay hidden" id="sample-sheet">
+      <div class="sheet-box">
+        <h3 class="sheet-title">🚀 太空站資源監控面板</h3>
+        <p class="sheet-desc">檢視國際太空站生命維持系統與氧氣壓力指標。</p>
+        <button class="btn btn-filled" id="sheet-close" style="margin-top:16px; width:100%;">關閉面板</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

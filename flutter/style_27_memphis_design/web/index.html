@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memphis Design - Pure Vanilla Web Showcase</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1 class="app-title">MEMPHIS DESIGN 80S</h1>
+      <button class="icon-btn" id="refresh-btn">⚡</button>
+    </header>
+
+    <main class="app-content">
+      <section class="hero-section">
+        <h2 class="display-title">MEMPHIS 80S POP</h2>
+        <p class="body-subtext">80 年代孟菲斯後現代主義撞色與粗黑幾何邊框樣板。</p>
+      </section>
+
+      <div class="search-bar">
+        <input type="text" class="search-input" value="MEMPHIS_80S_POP_ART!" placeholder="搜尋印花與點陣...">
+      </div>
+
+      <div class="segmented-control">
+        <button class="segment-btn active">[01] PINK</button>
+        <button class="segment-btn">[02] YELLOW</button>
+        <button class="segment-btn">[03] CYAN</button>
+      </div>
+
+      <section class="component-section">
+        <h3 class="section-title">1. 孟菲斯按鈕 (Buttons)</h3>
+        <div class="button-wrap">
+          <button class="btn btn-filled">MAGENTA PINK</button>
+          <button class="btn btn-secondary">ELECTRIC YELLOW</button>
+          <button class="btn btn-outlined">CYAN BLUE</button>
+          <button class="btn btn-text">QUICK POP LINK</button>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">2. 輸入與表單 (Inputs & Controls)</h3>
+        <div class="card control-card">
+          <div class="control-row">
+            <span class="control-label">啟用波浪點陣動態背景 (Wave)</span>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider-toggle"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-row">
+            <span class="control-label">開啟幾何傾斜疊加視角 (Tilt)</span>
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-col">
+            <div class="slider-header">
+              <span class="control-label">色彩飽和度 (POP CHROMA)</span>
+              <span class="slider-value-text" id="slider-val-text">90%</span>
+            </div>
+            <input type="range" id="sample-slider" class="range-slider" min="0" max="100" value="90">
+          </div>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">3. 孟菲斯卡片 (Cards)</h3>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">POSTMODERN ART 1981</span>
+            <span class="badge">MEMPHIS</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width: 90%;"></div></div>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">4. 視窗與面板 (Overlays)</h3>
+        <div class="button-row">
+          <button class="btn btn-filled btn-half" id="dialog-trigger-btn">POP DIALOG</button>
+          <button class="btn btn-outlined btn-half" id="sheet-trigger-btn">POP SHEET</button>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active"><span>POP 80S</span></button>
+      <button class="nav-item"><span>PATTERN</span></button>
+      <button class="nav-item"><span>INFO</span></button>
+    </nav>
+
+    <!-- Modal Dialog -->
+    <div class="modal-overlay hidden" id="sample-dialog">
+      <div class="modal-box">
+        <h3 class="modal-title">⚡ MEMPHIS 80S ALERT!</h3>
+        <p class="modal-content">大膽鮮艷撞色、幾何斑點與 3px 粗黑邊框之孟菲斯風格對話視窗！</p>
+        <div class="modal-actions">
+          <button class="btn btn-text" id="dialog-close">CANCEL</button>
+          <button class="btn btn-filled" id="dialog-confirm">POP IT!</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Sheet -->
+    <div class="sheet-overlay hidden" id="sample-sheet">
+      <div class="sheet-box">
+        <h3 class="sheet-title">🎉 孟菲斯後現代幾何選單</h3>
+        <p class="sheet-desc">選擇波浪印花、幾何點陣與撞色浮點圖案。</p>
+        <button class="btn btn-filled" id="sheet-close" style="margin-top:16px; width:100%;">關閉面板</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

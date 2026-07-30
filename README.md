@@ -271,8 +271,59 @@
 - **目錄**：`flutter/style_20_editorial_exhibition/`
 - **連結**：[開啟 Web 模擬展示](flutter/style_20_editorial_exhibition/web/index.html) | [查看 Flutter 專案 README](flutter/style_20_editorial_exhibition/README.md)
 
+### 21. Bento Grid 便當盒網格 / AI 儀表板風 (Bento Grid AI Dashboard)
+- **視覺特色**：現代 AI 控制台/儀表板風格，深鋅灰底 (`#09090B`)、霓虹藍紫 (`#6366F1`) 與螢光青色 (`#06B6D4`)、1px 玻璃光澤邊框與 16px 幾何圓角。
+- **目錄**：`flutter/style_21_bento_grid/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_21_bento_grid/web/index.html) | [查看 Flutter 專案 README](flutter/style_21_bento_grid/README.md)
+
+### 22. 微軟 Fluent 2 設計系統風 (Microsoft Fluent 2)
+- **視覺特色**：微軟 Fluent Design 2，柔和亞克力背景 (`#F3F3F3`)、Fluent 品牌藍 (`#0078D4`)、8px 軟圓角與階層深度陰影。
+- **目錄**：`flutter/style_22_fluent_design/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_22_fluent_design/web/index.html) | [查看 Flutter 專案 README](flutter/style_22_fluent_design/README.md)
+
+### 23. IBM Carbon 企業級設計風 (IBM Carbon Design)
+- **視覺特色**：IBM 企業級 Carbon Design System，硬朗 0px 直角邊框、高對比炭灰基底 (`#161616`) 與 IBM 經典藍 (`#0F62FE`)、高數據密度 1px 結構線條。
+- **目錄**：`flutter/style_23_carbon_design/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_23_carbon_design/web/index.html) | [查看 Flutter 專案 README](flutter/style_23_carbon_design/README.md)
+
+### 24. Material You 動態色彩風 (Material 3 Expressive)
+- **視覺特色**：Google Material 3 / Material You 動態色彩系統，28px 超大流線圓角、調和色調 Tonal Palette (紫色系 `#6750A4` / `#E8DEF8`)、標誌性 FAB 與膠囊視圖。
+- **目錄**：`flutter/style_24_material_you/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_24_material_you/web/index.html) | [查看 Flutter 專案 README](flutter/style_24_material_you/README.md)
+
+### 25. 黏土手作立體風 (Claymorphism)
+- **視覺特色**：黏土手作風 (Clay UI)，澎澎軟軟的立體雙重內/外凹凸陰影、馬卡龍馬卡龍柔粉色 (`#FF8DA1`) 與超大 30px 黏土蓬鬆圓角。
+- **目錄**：`flutter/style_25_claymorphism/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_25_claymorphism/web/index.html) | [查看 Flutter 專案 README](flutter/style_25_claymorphism/README.md)
+
+### 26. 奢華黑金尊爵風 (Luxury Black & Gold)
+- **視覺特色**：曜石墨黑背景 (`#0B0B0E`) 搭配皇家璀璨金 (`#D4AF37`) 與香檳金 (`#E5C158`)、細緻 1px 金絲光澤邊框與 VIP 尊爵質感。
+- **目錄**：`flutter/style_26_luxury_black_gold/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_26_luxury_black_gold/web/index.html) | [查看 Flutter 專案 README](flutter/style_26_luxury_black_gold/README.md)
+
+### 27. 80 年代孟菲斯後現代風 (Memphis Design)
+- **視覺特色**：80 年代孟菲斯後現代主義，大膽撞色 (亮粉 `#FF007F` / 電光黃 `#FFE600` / 湖水綠 `#00E5FF`)、幾何點陣波浪印花與 3px 粗黑邊框。
+- **目錄**：`flutter/style_27_memphis_design/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_27_memphis_design/web/index.html) | [查看 Flutter 專案 README](flutter/style_27_memphis_design/README.md)
+
+### 28. 太空艙抬頭顯示風 (Space UI / NASA HUD)
+- **視覺特色**：太空艙/科幻 HUD 抬頭顯示器，深邃太空黑 (`#050B14`) 搭配螢光青綠 (`#00FFCC`) 與太陽橘 (`#FF9900`)、十字對焦刻度線與網格線條。
+- **目錄**：`flutter/style_28_space_hud/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_28_space_hud/web/index.html) | [查看 Flutter 專案 README](flutter/style_28_space_hud/README.md)
+
+### 29. 頂級渡假飯店風格 (Luxury Hotel / Resort)
+- **視覺特色**：海島頂級奢華度假飯店，沉穩深墨綠 (`#1B3B2B`) 與暖沙米白 (`#F7F4EF`)、細緻香檳金 (`#C5A059`) 點綴與優雅字體排版。
+- **目錄**：`flutter/style_29_luxury_resort/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_29_luxury_resort/web/index.html) | [查看 Flutter 專案 README](flutter/style_29_luxury_resort/README.md)
+
+### 30. 美式漫畫美波普風 (Comic Pop Art)
+- **視覺特色**：美式漫畫波普藝術 (Roy Lichtenstein 質感)，濃烈經典原色 (漫畫紅 `#FF2A2A` / 鮮黃 `#FFE500` / 亮藍 `#0066FF`)、Halftone 網點與粗黑對話框。
+- **目錄**：`flutter/style_30_pop_art/`
+- **連結**：[開啟 Web 模擬展示](flutter/style_30_pop_art/web/index.html) | [查看 Flutter 專案 README](flutter/style_30_pop_art/README.md)
+
 
 ---
+
 
 ## 🛠️ 開發與視覺規範 (Development Standards)
 

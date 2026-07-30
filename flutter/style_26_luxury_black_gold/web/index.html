@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Black & Gold - Pure Vanilla Web Showcase</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1 class="app-title">LUXURY // BLACK & GOLD</h1>
+      <button class="icon-btn" id="refresh-btn">👑</button>
+    </header>
+
+    <main class="app-content">
+      <section class="hero-section">
+        <h2 class="display-title">Luxury Black & Gold</h2>
+        <p class="body-subtext">曜石墨黑與皇家璀璨金絲邊框之極致尊爵樣板。</p>
+      </section>
+
+      <div class="search-bar">
+        <input type="text" class="search-input" value="ROYAL_BLACK_GOLD_VIP_999" placeholder="搜尋 VIP 專屬禮遇...">
+      </div>
+
+      <div class="segmented-control">
+        <button class="segment-btn active">VIP 禮賓</button>
+        <button class="segment-btn">黑金資產</button>
+        <button class="segment-btn">專屬禮遇</button>
+      </div>
+
+      <section class="component-section">
+        <h3 class="section-title">1. 金絲按鈕變體 (Buttons)</h3>
+        <div class="button-wrap">
+          <button class="btn btn-filled">Royal Gold</button>
+          <button class="btn btn-secondary">Champagne Accent</button>
+          <button class="btn btn-outlined">Gold Wire Outline</button>
+          <button class="btn btn-text">Gold Link</button>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">2. 私人資產輸入 (Inputs & Controls)</h3>
+        <div class="card control-card">
+          <div class="control-row">
+            <span class="control-label">開啟 24/7 私人黑卡管家服務</span>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider-toggle"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-row">
+            <span class="control-label">訂閱海外豪華會所與酒莊通行權</span>
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-col">
+            <div class="slider-header">
+              <span class="control-label">尊爵信用額度上限 (Limit)</span>
+              <span class="slider-value-text" id="slider-val-text">90%</span>
+            </div>
+            <input type="range" id="sample-slider" class="range-slider" min="0" max="100" value="90">
+          </div>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">3. 黑金卡片視圖 (Cards)</h3>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">BLACK CARD VIP EDITION</span>
+            <span class="badge">BLACK GOLD</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width: 90%;"></div></div>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">4. 視窗與面板 (Overlays)</h3>
+        <div class="button-row">
+          <button class="btn btn-filled btn-half" id="dialog-trigger-btn">VIP Dialog</button>
+          <button class="btn btn-outlined btn-half" id="sheet-trigger-btn">Gold Sheet</button>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active"><span>黑金會籍</span></button>
+      <button class="nav-item"><span>奢華資產</span></button>
+      <button class="nav-item"><span>私人禮賓</span></button>
+    </nav>
+
+    <!-- Modal Dialog -->
+    <div class="modal-overlay hidden" id="sample-dialog">
+      <div class="modal-box">
+        <h3 class="modal-title">👑 VIP 尊爵專屬邀請</h3>
+        <p class="modal-content">極致曜石黑與皇家璀璨金金絲邊框之黑金尊爵對話視窗。</p>
+        <div class="modal-actions">
+          <button class="btn btn-text" id="dialog-close">稍後</button>
+          <button class="btn btn-filled" id="dialog-confirm">進入私人會所</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Sheet -->
+    <div class="sheet-overlay hidden" id="sample-sheet">
+      <div class="sheet-box">
+        <h3 class="sheet-title">🍸 黑金私人禮賓選單</h3>
+        <p class="sheet-desc">預約頂級私人私人銀行理財與豪華禮賓接送服務。</p>
+        <button class="btn btn-filled" id="sheet-close" style="margin-top:16px; width:100%;">關閉面板</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

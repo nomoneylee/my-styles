@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comic Pop Art - Pure Vanilla Web Showcase</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1 class="app-title">COMIC POP ART // 2026</h1>
+      <button class="icon-btn" id="refresh-btn">💥</button>
+    </header>
+
+    <main class="app-content">
+      <section class="hero-section">
+        <h2 class="display-title">COMIC POP ART!</h2>
+        <p class="body-subtext">美式漫畫原色 Halftone 網點與粗黑對話框樣板。</p>
+      </section>
+
+      <div class="search-bar">
+        <input type="text" class="search-input" value="BOOM! POP_ART_HERO_2026!" placeholder="搜尋漫畫對話框...">
+      </div>
+
+      <div class="segmented-control">
+        <button class="segment-btn active">BOOM!</button>
+        <button class="segment-btn">POW!</button>
+        <button class="segment-btn">ZAP!</button>
+      </div>
+
+      <section class="component-section">
+        <h3 class="section-title">1. 漫畫波普按鈕 (Buttons)</h3>
+        <div class="button-wrap">
+          <button class="btn btn-filled">RED BLAST</button>
+          <button class="btn btn-secondary">YELLOW POW</button>
+          <button class="btn btn-outlined">BLUE ZAP</button>
+          <button class="btn btn-text">QUICK HERO LINK</button>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">2. 漫畫角色控制 (Comic Controls)</h3>
+        <div class="card control-card">
+          <div class="control-row">
+            <span class="control-label">啟用 Halftone 網點背景質感</span>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider-toggle"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-row">
+            <span class="control-label">開啟 3.5px 手繪黑邊對話框框</span>
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-col">
+            <div class="slider-header">
+              <span class="control-label">英雄能量極限 (HERO POWER)</span>
+              <span class="slider-value-text" id="slider-val-text">95%</span>
+            </div>
+            <input type="range" id="sample-slider" class="range-slider" min="0" max="100" value="95">
+          </div>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">3. 漫畫卡片與進度 (Comic Cards)</h3>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">CAPTAIN POP ART #01</span>
+            <span class="badge">POP ART</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width: 95%;"></div></div>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">4. 視窗與面板 (Overlays)</h3>
+        <div class="button-row">
+          <button class="btn btn-filled btn-half" id="dialog-trigger-btn">POW DIALOG</button>
+          <button class="btn btn-outlined btn-half" id="sheet-trigger-btn">BOOM SHEET</button>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active"><span>COMIC</span></button>
+      <button class="nav-item"><span>HERO</span></button>
+      <button class="nav-item"><span>BADGE</span></button>
+    </nav>
+
+    <!-- Modal Dialog -->
+    <div class="modal-overlay hidden" id="sample-dialog">
+      <div class="modal-box">
+        <h3 class="modal-title">💥 POW! 漫畫驚嘆號提示</h3>
+        <p class="modal-content">Roy Lichtenstein 美波普 Halftone 斑點與對話框風格之 Pop Art Alert！</p>
+        <div class="modal-actions">
+          <button class="btn btn-text" id="dialog-close">SKIP!</button>
+          <button class="btn btn-filled" id="dialog-confirm">KABOOM!</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Sheet -->
+    <div class="sheet-overlay hidden" id="sample-sheet">
+      <div class="sheet-box">
+        <h3 class="sheet-title">🗯️ 漫畫英雄技能與道具選單</h3>
+        <p class="sheet-desc">選擇三原色 Halftone 斑點與漫畫對話氣泡貼紙。</p>
+        <button class="btn btn-filled" id="sheet-close" style="margin-top:16px; width:100%;">關閉面板</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Hotel & Resort - Pure Vanilla Web Showcase</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1 class="app-title">LUXURY HOTEL & RESORT</h1>
+      <button class="icon-btn" id="refresh-btn">🌿</button>
+    </header>
+
+    <main class="app-content">
+      <section class="hero-section">
+        <h2 class="display-title">Luxury Hotel & Resort</h2>
+        <p class="body-subtext">沉穩墨綠與暖沙米白配香檳金點綴之渡假飯店樣板。</p>
+      </section>
+
+      <div class="search-bar">
+        <input type="text" class="search-input" value="AMAZONIA_LUXURY_SUITE_01" placeholder="搜尋尊榮客房...">
+      </div>
+
+      <div class="segmented-control">
+        <button class="segment-btn active">套房 (Suites)</button>
+        <button class="segment-btn">SPA 療程</button>
+        <button class="segment-btn">美饌 (Dining)</button>
+      </div>
+
+      <section class="component-section">
+        <h3 class="section-title">1. 典雅按鈕 (Buttons)</h3>
+        <div class="button-wrap">
+          <button class="btn btn-filled">Emerald Reserve</button>
+          <button class="btn btn-secondary">Champagne Gold</button>
+          <button class="btn btn-outlined">Sage Green</button>
+          <button class="btn btn-text">Gold Action</button>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">2. 預訂與偏好設定 (Booking Preferences)</h3>
+        <div class="card control-card">
+          <div class="control-row">
+            <span class="control-label">包含晨間有機養生早餐與機場接送</span>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider-toggle"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-row">
+            <span class="control-label">預約無邊際海景泳池私人日光浴席</span>
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-col">
+            <div class="slider-header">
+              <span class="control-label">飯店滿意度滿意指數 (Rating)</span>
+              <span class="slider-value-text" id="slider-val-text">88%</span>
+            </div>
+            <input type="range" id="sample-slider" class="range-slider" min="0" max="100" value="88">
+          </div>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">3. 渡假 Villa 卡片 (Cards)</h3>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">AMAZONIA OCEAN VILLA</span>
+            <span class="badge">5-STAR RESORT</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width: 88%;"></div></div>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">4. 視窗與面板 (Overlays)</h3>
+        <div class="button-row">
+          <button class="btn btn-filled btn-half" id="dialog-trigger-btn">Resort Dialog</button>
+          <button class="btn btn-outlined btn-half" id="sheet-trigger-btn">Resort Sheet</button>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active"><span>度假村</span></button>
+      <button class="nav-item"><span>設施與 SPA</span></button>
+      <button class="nav-item"><span>我的預訂</span></button>
+    </nav>
+
+    <!-- Modal Dialog -->
+    <div class="modal-overlay hidden" id="sample-dialog">
+      <div class="modal-box">
+        <h3 class="modal-title">🌿 五星級飯店預訂確認</h3>
+        <p class="modal-content">沉穩墨綠與香檳金點綴之頂級渡假飯店 SPA 對話視窗。</p>
+        <div class="modal-actions">
+          <button class="btn btn-text" id="dialog-close">變更日期</button>
+          <button class="btn btn-filled" id="dialog-confirm">確認預訂</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Sheet -->
+    <div class="sheet-overlay hidden" id="sample-sheet">
+      <div class="sheet-box">
+        <h3 class="sheet-title">🍸 Resort SPA & Dining</h3>
+        <p class="sheet-desc">預約飯店香薰 SPA 療程、無邊際泳池與米其林星級晚餐。</p>
+        <button class="btn btn-filled" id="sheet-close" style="margin-top:16px; width:100%;">關閉面板</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

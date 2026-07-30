@@ -1,0 +1,111 @@
+:root {
+  --bg-color: #161616;
+  --surface-color: #262626;
+  --border-color: #393939;
+  --primary-color: #0F62FE;
+  --secondary-color: #393939;
+  --text-primary: #F4F4F4;
+  --text-secondary: #C6C6C6;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: "IBM Plex Sans", -apple-system, sans-serif; border-radius: 0 !important; }
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 420px;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #262626;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.app-title { font-size: 14px; font-weight: 600; letter-spacing: 0.5px; }
+.icon-btn { background: transparent; border: none; cursor: pointer; color: var(--text-primary); }
+.app-content { padding: 20px; display: flex; flex-direction: column; gap: 20px; }
+
+.display-title { font-size: 24px; font-weight: 700; }
+.body-subtext { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+
+.search-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border-color);
+  background: #262626;
+  color: var(--text-primary);
+  font-size: 13px;
+  outline: none;
+}
+
+.segmented-control {
+  display: flex;
+  background: #262626;
+  border: 1px solid var(--border-color);
+}
+.segment-btn {
+  flex: 1; border: none; background: transparent; padding: 10px;
+  font-size: 12px; font-weight: 600; cursor: pointer; color: var(--text-secondary);
+}
+.segment-btn.active { background: var(--primary-color); color: #FFF; }
+
+.component-section { display: flex; flex-direction: column; gap: 12px; }
+.section-title { font-size: 14px; font-weight: 600; letter-spacing: 0.5px; }
+.button-wrap, .button-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn-half { flex: 1; }
+
+.btn {
+  padding: 12px 16px; font-size: 13px; font-weight: 600; border: none; cursor: pointer;
+}
+.btn-filled { background: var(--primary-color); color: #FFF; }
+.btn-secondary { background: var(--secondary-color); color: #FFF; }
+.btn-outlined { background: transparent; border: 1px solid var(--text-primary); color: var(--text-primary); }
+.btn-text { background: transparent; color: var(--primary-color); }
+
+.card {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  padding: 16px;
+}
+.control-row { display: flex; justify-content: space-between; align-items: center; }
+.divider { height: 1px; background: var(--border-color); margin: 12px 0; }
+.slider-header { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 12px; }
+.slider-value-text { color: var(--primary-color); font-weight: 700; }
+.range-slider { width: 100%; accent-color: var(--primary-color); }
+
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.card-title { font-size: 14px; font-weight: 600; }
+.badge { background: var(--primary-color); color: #FFF; padding: 2px 8px; font-size: 10px; font-weight: 700; }
+
+.progress-bar { height: 6px; background: #393939; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary-color); }
+
+.bottom-nav { display: flex; justify-content: space-around; padding: 14px 0; background: #161616; border-top: 1px solid var(--border-color); }
+.nav-item { background: transparent; border: none; color: var(--text-secondary); font-size: 12px; font-weight: 600; cursor: pointer; }
+.nav-item.active { color: var(--primary-color); }
+
+/* Modal */
+.modal-overlay, .sheet-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center; }
+.hidden { display: none; }
+.modal-box, .sheet-box { background: #262626; border: 1px solid var(--border-color); padding: 24px; width: 90%; max-width: 360px; }
+.modal-title, .sheet-title { font-size: 16px; margin-bottom: 8px; color: #FFF; }
+.modal-content, .sheet-desc { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
+.modal-actions { display: flex; justify-content: flex-end; gap: 8px; }

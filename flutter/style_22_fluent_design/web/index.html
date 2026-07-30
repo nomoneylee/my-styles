@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microsoft Fluent 2 - Pure Vanilla Web Showcase</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1 class="app-title">Microsoft Fluent 2 Showcase</h1>
+      <button class="icon-btn" id="refresh-btn">🔄</button>
+    </header>
+
+    <main class="app-content">
+      <section class="hero-section">
+        <h2 class="display-title">Fluent 2 Design</h2>
+        <p class="body-subtext">微軟跨平台設計語言與現代 Windows 11 精致視覺樣板。</p>
+      </section>
+
+      <div class="search-bar">
+        <input type="text" class="search-input" value="Windows 11 Fluent 2 Design" placeholder="搜尋 Fluent 元件...">
+      </div>
+
+      <div class="segmented-control">
+        <button class="segment-btn active">系統概覽</button>
+        <button class="segment-btn">控制項</button>
+        <button class="segment-btn">狀態頁</button>
+      </div>
+
+      <section class="component-section">
+        <h3 class="section-title">1. Fluent 按鈕 (Buttons)</h3>
+        <div class="button-wrap">
+          <button class="btn btn-filled">Primary Accent</button>
+          <button class="btn btn-secondary">Secondary Tint</button>
+          <button class="btn btn-outlined">Standard Outline</button>
+          <button class="btn btn-text">Subtle Text</button>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">2. 輸入與切換 (Inputs & Toggles)</h3>
+        <div class="card control-card">
+          <div class="control-row">
+            <span class="control-label">開啓 Mica 雲母背景效果</span>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider-toggle"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-row">
+            <span class="control-label">自動對齊系統夜間模式</span>
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="control-col">
+            <div class="slider-header">
+              <span class="control-label">亞克力透明度 (Acrylic Opacity)</span>
+              <span class="slider-value-text" id="slider-val-text">65%</span>
+            </div>
+            <input type="range" id="sample-slider" class="range-slider" min="0" max="100" value="65">
+          </div>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">3. Fluent 卡片 (Cards)</h3>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Windows 11 Build 26100</span>
+            <span class="badge">Fluent 2</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width: 65%;"></div></div>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <h3 class="section-title">4. 視窗與彈窗 (Overlays)</h3>
+        <div class="button-row">
+          <button class="btn btn-filled btn-half" id="dialog-trigger-btn">Alert Dialog</button>
+          <button class="btn btn-outlined btn-half" id="sheet-trigger-btn">Bottom Sheet</button>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active"><span>主頁</span></button>
+      <button class="nav-item"><span>應用庫</span></button>
+      <button class="nav-item"><span>設定</span></button>
+    </nav>
+
+    <!-- Modal Dialog -->
+    <div class="modal-overlay hidden" id="sample-dialog">
+      <div class="modal-box">
+        <h3 class="modal-title">Microsoft Fluent 2 對話框</h3>
+        <p class="modal-content">具備標準 8px 圓角與亞克力視覺質感之 Fluent 對話視窗。</p>
+        <div class="modal-actions">
+          <button class="btn btn-text" id="dialog-close">取消</button>
+          <button class="btn btn-filled" id="dialog-confirm">確定</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Sheet -->
+    <div class="sheet-overlay hidden" id="sample-sheet">
+      <div class="sheet-box">
+        <h3 class="sheet-title">🪟 Fluent 系統控制選單</h3>
+        <p class="sheet-desc">選擇要執行的 Windows 系統操作與亞克力主題偏好設定。</p>
+        <button class="btn btn-filled" id="sheet-close" style="margin-top:16px; width:100%;">關閉面板</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

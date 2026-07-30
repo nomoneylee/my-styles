@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pure Vanilla CSS 30 大美學風格 & 20 大 Flutter App 主題系統 總覽 Hub</title>
+  <title>Pure Vanilla CSS 30 大美學風格 & 30 大 Flutter App 主題系統 總覽 Hub</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       background-color: #0b0d12;
@@ -15,17 +23,20 @@
       line-height: 1.5;
       overflow-x: hidden;
     }
+
     .container {
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
+
     .hub-header {
       padding: 5rem 0 3rem;
       text-align: center;
       border-bottom: 1px solid #1e293b;
     }
+
     .hub-badge {
       display: inline-block;
       background: #0284c7;
@@ -37,6 +48,7 @@
       text-transform: uppercase;
       margin-bottom: 1rem;
     }
+
     .hub-title {
       font-weight: 900;
       font-size: clamp(2.2rem, 5vw, 3.8rem);
@@ -45,18 +57,21 @@
       -webkit-text-fill-color: transparent;
       letter-spacing: -0.03em;
     }
+
     .hub-subtitle {
       color: #94a3b8;
       font-size: 1.15rem;
       max-width: 720px;
       margin: 1rem auto 0;
     }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 1.8rem;
       padding: 3rem 0;
     }
+
     .style-card {
       background: #141824;
       border: 1px solid #232b3b;
@@ -69,11 +84,13 @@
       word-break: break-word;
       overflow: hidden;
     }
+
     .style-card:hover {
       transform: translateY(-6px);
       border-color: #38bdf8;
       box-shadow: 0 12px 30px rgba(56, 189, 248, 0.15);
     }
+
     .style-num {
       font-size: 0.85rem;
       font-weight: 700;
@@ -81,6 +98,7 @@
       color: #38bdf8;
       text-transform: uppercase;
     }
+
     .style-name {
       font-size: 1.35rem;
       font-weight: 700;
@@ -88,12 +106,14 @@
       margin: 0.5rem 0 0.75rem;
       line-height: 1.3;
     }
+
     .style-desc {
       color: #94a3b8;
       font-size: 0.92rem;
       line-height: 1.6;
       margin-bottom: 1.5rem;
     }
+
     .badge-tag {
       background: #1e2636;
       color: #cbd5e1;
@@ -102,10 +122,12 @@
       border-radius: 6px;
       border: 1px solid #334155;
     }
+
     .card-actions {
       display: flex;
       gap: 0.75rem;
     }
+
     .btn-preview {
       flex: 1;
       background: #ffffff;
@@ -118,10 +140,12 @@
       transition: all 0.2s;
       font-size: 0.9rem;
     }
+
     .btn-preview:hover {
       background: #38bdf8;
       color: #0b0d12;
     }
+
     .btn-doc {
       background: #1e293b;
       color: #94a3b8;
@@ -133,10 +157,12 @@
       font-size: 0.9rem;
       border: 1px solid #334155;
     }
+
     .btn-doc:hover {
       background: #334155;
       color: #ffffff;
     }
+
     .btn-github {
       display: inline-flex;
       align-items: center;
@@ -152,6 +178,7 @@
       transition: all 0.2s ease;
       margin-top: 1.5rem;
     }
+
     .btn-github:hover {
       background: #0f172a;
       border-color: #38bdf8;
@@ -160,23 +187,40 @@
     }
 
     @media (max-width: 640px) {
-      .hub-header { padding: 3rem 0 2rem; }
-      .grid { grid-template-columns: 1fr; gap: 1.2rem; }
-      .style-card { padding: 1.25rem; }
-      .card-actions { flex-direction: column; }
+      .hub-header {
+        padding: 3rem 0 2rem;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .style-card {
+        padding: 1.25rem;
+      }
+
+      .card-actions {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <header class="hub-header container">
     <span class="hub-badge">100% Pure Vanilla CSS & Flutter Theme System</span>
-    <h1 class="hub-title">Pure Vanilla CSS 三十大美學風格<br><span style="color: var(--accent-cyan, #38bdf8);">& 20 大 Flutter App 主題系統</span></h1>
-    <p class="hub-subtitle">100% 完全自建 Vanilla CSS 與 JavaScript，配合 Flutter Theme.of(context) 解耦樣式設計！<br>涵蓋 30 種網站頂級美學風格與 20 款 Flutter App 風格範例模板。</p>
+    <h1 class="hub-title">Pure Vanilla CSS 三十大美學風格<br><span style="color: var(--accent-cyan, #38bdf8);">& 30 大 Flutter
+        App 主題系統</span></h1>
+    <p class="hub-subtitle">100% 完全自建 Vanilla CSS 與 JavaScript，配合 Flutter Theme.of(context) 解耦樣式設計！<br>涵蓋 30 種網站頂級美學風格與
+      30 款 Flutter App 風格範例模板。</p>
     <div>
       <a href="https://github.com/nomoneylee/my-styles" target="_blank" rel="noopener noreferrer" class="btn-github">
         <svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor">
-          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+          <path
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+          </path>
         </svg>
         檢視 GitHub 專案儲存庫 (nomoneylee/my-styles)
       </a>
@@ -458,7 +502,7 @@
         </div>
       </div>
 
-            <!-- Style 17 -->
+      <!-- Style 17 -->
       <div class="style-card">
         <div>
           <span class="style-num">STYLE 17</span>
@@ -475,7 +519,7 @@
         </div>
       </div>
 
-<!-- Style 18 -->
+      <!-- Style 18 -->
       <div class="style-card">
         <div>
           <span class="style-num">STYLE 18</span>
@@ -702,7 +746,8 @@
     <div class="container" style="padding-top: 4rem; border-top: 1px dashed #334155; margin-top: 2rem;">
       <div style="text-align: center; margin-bottom: 3rem;">
         <span class="hub-badge" style="background: #0284c7;">FLUTTER TEMPLATES</span>
-        <h2 style="font-size: 2.2rem; font-weight: 800; color: #ffffff; margin-top: 0.5rem;">📱 Flutter App 主題系統 (Theme System) 模板範例</h2>
+        <h2 style="font-size: 2.2rem; font-weight: 800; color: #ffffff; margin-top: 0.5rem;">📱 Flutter App 主題系統 (Theme
+          System) 模板範例</h2>
         <p style="color: #94a3b8; margin-top: 0.5rem;">採用 Theme.of(context) 完全解耦樣式設計，零內聯寫死，方便隨時切換主題風格。</p>
       </div>
 
@@ -1067,14 +1112,202 @@
           </div>
         </div>
 
+        <!-- Flutter 21 -->
+        <div class="style-card" style="border-color: #6366F1;">
+          <div>
+            <span class="style-num" style="color: #6366F1;">FLUTTER APP 21</span>
+            <h3 class="style-name">Bento Grid 便當盒網格 / AI 儀表板風 (Bento Grid AI Dashboard)</h3>
+            <p class="style-desc">現代 AI 控制台/儀表板風格，深鋅灰底 (#09090B)、霓虹藍紫 (#6366F1) 與螢光青色 (#06B6D4)、1px 玻璃光澤邊框與 16px 幾何圓角。
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+              <span class="badge-tag">Bento Grid AI</span>
+              <span class="badge-tag">Electric Purple #6366F1</span>
+              <span class="badge-tag">16px 幾何網格</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="flutter/style_21_bento_grid/web/index.html" class="btn-preview">開啟 Web 模擬 →</a>
+            <a href="flutter/style_21_bento_grid/README.md" class="btn-doc">README</a>
+          </div>
+        </div>
+
+        <!-- Flutter 22 -->
+        <div class="style-card" style="border-color: #0078D4;">
+          <div>
+            <span class="style-num" style="color: #0078D4;">FLUTTER APP 22</span>
+            <h3 class="style-name">微軟 Fluent 2 設計系統風 (Microsoft Fluent 2)</h3>
+            <p class="style-desc">微軟 Fluent Design 2，柔和亞克力背景 (#F3F3F3)、Fluent 品牌藍 (#0078D4)、8px 軟圓角與階層深度陰影。</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+              <span class="badge-tag">Fluent Blue #0078D4</span>
+              <span class="badge-tag">Acrylic 亞克力質感</span>
+              <span class="badge-tag">Windows 11 8px 圓角</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="flutter/style_22_fluent_design/web/index.html" class="btn-preview">開啟 Web 模擬 →</a>
+            <a href="flutter/style_22_fluent_design/README.md" class="btn-doc">README</a>
+          </div>
+        </div>
+
+        <!-- Flutter 23 -->
+        <div class="style-card" style="border-color: #0F62FE;">
+          <div>
+            <span class="style-num" style="color: #0F62FE;">FLUTTER APP 23</span>
+            <h3 class="style-name">IBM Carbon 企業級設計風 (IBM Carbon Design)</h3>
+            <p class="style-desc">IBM 企業級 Carbon Design System，硬朗 0px 直角邊框、高對比炭灰基底 (#161616) 與 IBM 經典藍 (#0F62FE)、高數據密度
+              1px 結構線條。</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+              <span class="badge-tag">IBM Blue #0F62FE</span>
+              <span class="badge-tag">0px 直角硬朗邊框</span>
+              <span class="badge-tag">Carbon Enterprise</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="flutter/style_23_carbon_design/web/index.html" class="btn-preview">開啟 Web 模擬 →</a>
+            <a href="flutter/style_23_carbon_design/README.md" class="btn-doc">README</a>
+          </div>
+        </div>
+
+        <!-- Flutter 24 -->
+        <div class="style-card" style="border-color: #6750A4;">
+          <div>
+            <span class="style-num" style="color: #6750A4;">FLUTTER APP 24</span>
+            <h3 class="style-name">Material You 動態色彩風 (Material 3 Expressive)</h3>
+            <p class="style-desc">Google Material 3 / Material You 動態色彩系統，28px 超大流線圓角、調和色調 Tonal Palette (紫色系 #6750A4 /
+              #E8DEF8)、標誌性 FAB 與膠囊視圖。</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+              <span class="badge-tag">M3 Purple #6750A4</span>
+              <span class="badge-tag">Monet Tonal Palette</span>
+              <span class="badge-tag">28px 超大膠囊圓角</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="flutter/style_24_material_you/web/index.html" class="btn-preview">開啟 Web 模擬 →</a>
+            <a href="flutter/style_24_material_you/README.md" class="btn-doc">README</a>
+          </div>
+        </div>
+
+        <!-- Flutter 25 -->
+        <div class="style-card" style="border-color: #FF8DA1;">
+          <div>
+            <span class="style-num" style="color: #FF8DA1;">FLUTTER APP 25</span>
+            <h3 class="style-name">黏土手作立體風 (Claymorphism)</h3>
+            <p class="style-desc">黏土手作風 (Clay UI)，澎澎軟軟的立體雙重內/外凹凸陰影、馬卡龍馬卡龍柔粉色 (#FF8DA1) 與超大 30px 黏土蓬鬆圓角。</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+              <span class="badge-tag">Clay Pastel #FF8DA1</span>
+              <span class="badge-tag">3D 雙重立體軟影</span>
+              <span class="badge-tag">30px 蓬鬆黏土角</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="flutter/style_25_claymorphism/web/index.html" class="btn-preview">開啟 Web 模擬 →</a>
+            <a href="flutter/style_25_claymorphism/README.md" class="btn-doc">README</a>
+          </div>
+        </div>
+
+        <!-- Flutter 26 -->
+        <div class="style-card" style="border-color: #D4AF37;">
+          <div>
+            <span class="style-num" style="color: #D4AF37;">FLUTTER APP 26</span>
+            <h3 class="style-name">奢華黑金尊爵風 (Luxury Black & Gold)</h3>
+            <p class="style-desc">曜石墨黑背景 (#0B0B0E) 搭配皇家璀璨金 (#D4AF37) 與香檳金 (#E5C158)、細緻 1px 金絲光澤邊框與 VIP 尊爵質感。</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+              <span class="badge-tag">Royal Gold #D4AF37</span>
+              <span class="badge-tag">曜石墨黑 #0B0B0E</span>
+              <span class="badge-tag">1px 金絲邊框</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="flutter/style_26_luxury_black_gold/web/index.html" class="btn-preview">開啟 Web 模擬 →</a>
+            <a href="flutter/style_26_luxury_black_gold/README.md" class="btn-doc">README</a>
+          </div>
+        </div>
+
+        <!-- Flutter 27 -->
+        <div class="style-card" style="border-color: #FF007F;">
+          <div>
+            <span class="style-num" style="color: #FF007F;">FLUTTER APP 27</span>
+            <h3 class="style-name">80 年代孟菲斯後現代風 (Memphis Design)</h3>
+            <p class="style-desc">80 年代孟菲斯後現代主義，大膽撞色 (亮粉 #FF007F / 電光黃 #FFE600 / 湖水綠 #00E5FF)、幾何點陣波浪印花與 3px 粗黑邊框。</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+              <span class="badge-tag">Memphis Pink #FF007F</span>
+              <span class="badge-tag">80s 波普撞色</span>
+              <span class="badge-tag">3px 粗黑手繪框</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="flutter/style_27_memphis_design/web/index.html" class="btn-preview">開啟 Web 模擬 →</a>
+            <a href="flutter/style_27_memphis_design/README.md" class="btn-doc">README</a>
+          </div>
+        </div>
+
+        <!-- Flutter 28 -->
+        <div class="style-card" style="border-color: #00FFCC;">
+          <div>
+            <span class="style-num" style="color: #00FFCC;">FLUTTER APP 28</span>
+            <h3 class="style-name">太空艙抬頭顯示風 (Space UI / NASA HUD)</h3>
+            <p class="style-desc">太空艙/科幻 HUD 抬頭顯示器，深邃太空黑 (#050B14) 搭配螢光青綠 (#00FFCC) 與太陽橘 (#FF9900)、十字對焦刻度線與網格線條。</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+              <span class="badge-tag">HUD Neon Cyan #00FFCC</span>
+              <span class="badge-tag">太空艙瞄準刻度</span>
+              <span class="badge-tag">Monospace 科幻感</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="flutter/style_28_space_hud/web/index.html" class="btn-preview">開啟 Web 模擬 →</a>
+            <a href="flutter/style_28_space_hud/README.md" class="btn-doc">README</a>
+          </div>
+        </div>
+
+        <!-- Flutter 29 -->
+        <div class="style-card" style="border-color: #1B3B2B;">
+          <div>
+            <span class="style-num" style="color: #1B3B2B;">FLUTTER APP 29</span>
+            <h3 class="style-name">頂級渡假飯店風格 (Luxury Hotel / Resort)</h3>
+            <p class="style-desc">海島頂級奢華度假飯店，沉穩深墨綠 (#1B3B2B) 與暖沙米白 (#F7F4EF)、細緻香檳金 (#C5A059) 點綴與優雅字體排版。</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+              <span class="badge-tag">Forest Green #1B3B2B</span>
+              <span class="badge-tag">Warm Sand #F7F4EF</span>
+              <span class="badge-tag">香檳金優雅排版</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="flutter/style_29_luxury_resort/web/index.html" class="btn-preview">開啟 Web 模擬 →</a>
+            <a href="flutter/style_29_luxury_resort/README.md" class="btn-doc">README</a>
+          </div>
+        </div>
+
+        <!-- Flutter 30 -->
+        <div class="style-card" style="border-color: #FF2A2A;">
+          <div>
+            <span class="style-num" style="color: #FF2A2A;">FLUTTER APP 30</span>
+            <h3 class="style-name">美式漫畫美波普風 (Comic Pop Art)</h3>
+            <p class="style-desc">美式漫畫波普藝術 (Roy Lichtenstein 質感)，濃烈經典原色 (漫畫紅 #FF2A2A / 鮮黃 #FFE500 / 亮藍 #0066FF)、Halftone
+              網點與粗黑對話框。</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+              <span class="badge-tag">Comic Red #FF2A2A</span>
+              <span class="badge-tag">Halftone 網點斑點</span>
+              <span class="badge-tag">漫畫對話框</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="flutter/style_30_pop_art/web/index.html" class="btn-preview">開啟 Web 模擬 →</a>
+            <a href="flutter/style_30_pop_art/README.md" class="btn-doc">README</a>
+          </div>
+        </div>
+
       </div>
     </div>
   </main>
 
-  <footer style="padding: 3rem 0; text-align: center; color: #64748b; border-top: 1px solid #1e293b; font-size: 0.85rem;">
+  <footer
+    style="padding: 3rem 0; text-align: center; color: #64748b; border-top: 1px solid #1e293b; font-size: 0.85rem;">
     <p>© 2026 100% Pure Vanilla CSS & Flutter Theme System Multi-Style Collection.</p>
-    <p style="margin-top: 0.5rem; color: #94a3b8;">GitHub 專案儲存庫：<a href="https://github.com/nomoneylee/my-styles" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none;">github.com/nomoneylee/my-styles</a></p>
+    <p style="margin-top: 0.5rem; color: #94a3b8;">GitHub 專案儲存庫：<a href="https://github.com/nomoneylee/my-styles"
+        target="_blank" rel="noopener noreferrer"
+        style="color: #38bdf8; text-decoration: none;">github.com/nomoneylee/my-styles</a></p>
   </footer>
 
 </body>
+
 </html>
